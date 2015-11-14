@@ -1,0 +1,783 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		231B62D0DBC41845C1585129 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70118BB690DE390C19463A77 /* libPods.a */; };
+		4D15D6EF1BF698BD00F922DB /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6ED1BF698BD00F922DB /* Intro.storyboard */; };
+		4D15D6F01BF698BD00F922DB /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6ED1BF698BD00F922DB /* Intro.storyboard */; };
+		4D15D6F41BF6995200F922DB /* GaggleDev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */; };
+		4D15D6F51BF6995200F922DB /* GaggleDev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */; };
+		4D15D6FD1BF6A84F00F922DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D15D6FC1BF6A84F00F922DB /* libPods.a */; };
+		4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
+		4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
+		4DBF07EC1B6163210068092C /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E71B6163210068092C /* Lato-Hairline.ttf */; };
+		4DBF07ED1B6163210068092C /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E71B6163210068092C /* Lato-Hairline.ttf */; };
+		4DBF07EE1B6163210068092C /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E81B6163210068092C /* Lato-Light.ttf */; };
+		4DBF07EF1B6163210068092C /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E81B6163210068092C /* Lato-Light.ttf */; };
+		4DBF07F01B6163210068092C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E91B6163210068092C /* Lato-Regular.ttf */; };
+		4DBF07F11B6163210068092C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E91B6163210068092C /* Lato-Regular.ttf */; };
+		76054DD61BBA2C0200AA2D5A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76054DD51BBA2C0200AA2D5A /* Button.swift */; };
+		76054DD71BBA2C0200AA2D5A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76054DD51BBA2C0200AA2D5A /* Button.swift */; };
+		7605EAA71B09461A00F302BB /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */; };
+		7605EAA91B09461A00F302BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */; };
+		7605EAAE1B09461A00F302BB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76A1F6621AFAF9E000CB1825 /* LaunchScreen.xib */; };
+		7605EAAF1B09461A00F302BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A1F6601AFAF9E000CB1825 /* Images.xcassets */; };
+		761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E0AC21B2A9262008C3E74 /* IntroView.swift */; };
+		761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E0AC21B2A9262008C3E74 /* IntroView.swift */; };
+		767F90071B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
+		767F90081B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
+		76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */; };
+		76A1F65C1AFAF9E000CB1825 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */; };
+		76A1F6611AFAF9E000CB1825 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A1F6601AFAF9E000CB1825 /* Images.xcassets */; };
+		76A1F6641AFAF9E000CB1825 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76A1F6621AFAF9E000CB1825 /* LaunchScreen.xib */; };
+		76A1F6701AFAF9E000CB1825 /* GaggleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F66F1AFAF9E000CB1825 /* GaggleTests.swift */; };
+		76D360881BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D360871BAE1D6A00022990 /* LoginSignupViewController.swift */; };
+		76D360891BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D360871BAE1D6A00022990 /* LoginSignupViewController.swift */; };
+		76D3608E1BAE275700022990 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D3608D1BAE275700022990 /* BarButtonItem.swift */; };
+		76D3608F1BAE275700022990 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D3608D1BAE275700022990 /* BarButtonItem.swift */; };
+		76D360911BAE28D600022990 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D360901BAE28D600022990 /* NavigationController.swift */; };
+		76D360921BAE28D600022990 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D360901BAE28D600022990 /* NavigationController.swift */; };
+		76EA19C51B50B00C00A11248 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19C41B50B00C00A11248 /* Animation.swift */; };
+		76EA19C61B50B00C00A11248 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19C41B50B00C00A11248 /* Animation.swift */; };
+		76EA19C81B50C50000A11248 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19C71B50C50000A11248 /* Style.swift */; };
+		76EA19C91B50C50000A11248 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19C71B50C50000A11248 /* Style.swift */; };
+		76EA19CE1B50CBB100A11248 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19CD1B50CBB100A11248 /* SeparatorView.swift */; };
+		76EA19CF1B50CBB100A11248 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19CD1B50CBB100A11248 /* SeparatorView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		76A1F66A1AFAF9E000CB1825 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76A1F64C1AFAF9E000CB1825 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76A1F6531AFAF9E000CB1825;
+			remoteInfo = Gaggle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D15D6ED1BF698BD00F922DB /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Intro.storyboard; path = Gaggle/Storyboards/Intro.storyboard; sourceTree = SOURCE_ROOT; };
+		4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GaggleDev-Info.plist"; path = "Gaggle/SupportingFiles/GaggleDev-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4D15D6FC1BF6A84F00F922DB /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		4D5495E51BF4F643002E0746 /* Gaggle-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Gaggle-Bridging-Header.h"; path = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		4DBF07E61B6163210068092C /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Assets/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		4DBF07E71B6163210068092C /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Hairline.ttf"; path = "Assets/Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		4DBF07E81B6163210068092C /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "Assets/Lato-Light.ttf"; sourceTree = "<group>"; };
+		4DBF07E91B6163210068092C /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Assets/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		70118BB690DE390C19463A77 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		76054DD51BBA2C0200AA2D5A /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		7605EAB41B09461A00F302BB /* GaggleDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaggleDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		761E0AC21B2A9262008C3E74 /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroView.swift; path = Views/IntroView.swift; sourceTree = "<group>"; };
+		767F90061B2D12FC007895A8 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroView.xib; path = Views/IntroView.xib; sourceTree = "<group>"; };
+		76A1F6541AFAF9E000CB1825 /* Gaggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A1F6581AFAF9E000CB1825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../Dropbox (Personal)/Work/BlueLibrarySwift/BlueLibrarySwift/AppDelegate.swift"; sourceTree = "<group>"; };
+		76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntroViewController.swift; path = Controllers/IntroViewController.swift; sourceTree = "<group>"; };
+		76A1F6601AFAF9E000CB1825 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Assets/Images.xcassets; sourceTree = "<group>"; };
+		76A1F6631AFAF9E000CB1825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		76A1F6691AFAF9E000CB1825 /* GaggleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaggleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A1F66E1AFAF9E000CB1825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76A1F66F1AFAF9E000CB1825 /* GaggleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaggleTests.swift; sourceTree = "<group>"; };
+		76D360871BAE1D6A00022990 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginSignupViewController.swift; path = Controllers/LoginSignupViewController.swift; sourceTree = "<group>"; };
+		76D3608D1BAE275700022990 /* BarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
+		76D360901BAE28D600022990 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		76EA19C41B50B00C00A11248 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		76EA19C71B50C50000A11248 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		76EA19CD1B50CBB100A11248 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = Views/SeparatorView.swift; sourceTree = "<group>"; };
+		A3AB86BB39A99E6FC8228F16 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F69A5333407AE4A7B64279F7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7605EAAA1B09461A00F302BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D15D6FD1BF6A84F00F922DB /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A1F6511AFAF9E000CB1825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				231B62D0DBC41845C1585129 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A1F6661AFAF9E000CB1825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		765184061AFB056F00EA2DB6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				76EA19C41B50B00C00A11248 /* Animation.swift */,
+				76D3608D1BAE275700022990 /* BarButtonItem.swift */,
+				76054DD51BBA2C0200AA2D5A /* Button.swift */,
+				76D360901BAE28D600022990 /* NavigationController.swift */,
+				76EA19C71B50C50000A11248 /* Style.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		76A1F64B1AFAF9E000CB1825 = {
+			isa = PBXGroup;
+			children = (
+				76A1F6561AFAF9E000CB1825 /* Gaggle */,
+				76A1F66C1AFAF9E000CB1825 /* GaggleTests */,
+				76A1F6551AFAF9E000CB1825 /* Products */,
+				827F29B05CA273E02FB64F2E /* Pods */,
+				FBBC2EA3EA0F205DD24D2679 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		76A1F6551AFAF9E000CB1825 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76A1F6541AFAF9E000CB1825 /* Gaggle.app */,
+				76A1F6691AFAF9E000CB1825 /* GaggleTests.xctest */,
+				7605EAB41B09461A00F302BB /* GaggleDev.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76A1F6561AFAF9E000CB1825 /* Gaggle */ = {
+			isa = PBXGroup;
+			children = (
+				76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */,
+				76F1807C1B09582A00060958 /* Assets */,
+				76F1807F1B09584300060958 /* Controllers */,
+				76F1807D1B09583000060958 /* Models */,
+				76F1807E1B09583900060958 /* Views */,
+				76F1807B1B09579A00060958 /* Storyboards */,
+				765184061AFB056F00EA2DB6 /* Utilities */,
+				76A1F6571AFAF9E000CB1825 /* Supporting Files */,
+			);
+			path = Gaggle;
+			sourceTree = "<group>";
+		};
+		76A1F6571AFAF9E000CB1825 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D5495E51BF4F643002E0746 /* Gaggle-Bridging-Header.h */,
+				4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */,
+				76A1F6581AFAF9E000CB1825 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		76A1F66C1AFAF9E000CB1825 /* GaggleTests */ = {
+			isa = PBXGroup;
+			children = (
+				76A1F66F1AFAF9E000CB1825 /* GaggleTests.swift */,
+				76A1F66D1AFAF9E000CB1825 /* Supporting Files */,
+			);
+			path = GaggleTests;
+			sourceTree = "<group>";
+		};
+		76A1F66D1AFAF9E000CB1825 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				76A1F66E1AFAF9E000CB1825 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		76F1807B1B09579A00060958 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4D15D6ED1BF698BD00F922DB /* Intro.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		76F1807C1B09582A00060958 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				76A1F6601AFAF9E000CB1825 /* Images.xcassets */,
+				76A1F6621AFAF9E000CB1825 /* LaunchScreen.xib */,
+				4DBF07E61B6163210068092C /* Lato-Bold.ttf */,
+				4DBF07E71B6163210068092C /* Lato-Hairline.ttf */,
+				4DBF07E81B6163210068092C /* Lato-Light.ttf */,
+				4DBF07E91B6163210068092C /* Lato-Regular.ttf */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		76F1807D1B09583000060958 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		76F1807E1B09583900060958 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				761E0AC21B2A9262008C3E74 /* IntroView.swift */,
+				767F90061B2D12FC007895A8 /* IntroView.xib */,
+				76EA19CD1B50CBB100A11248 /* SeparatorView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		76F1807F1B09584300060958 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */,
+				76D360871BAE1D6A00022990 /* LoginSignupViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		827F29B05CA273E02FB64F2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F69A5333407AE4A7B64279F7 /* Pods.debug.xcconfig */,
+				A3AB86BB39A99E6FC8228F16 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FBBC2EA3EA0F205DD24D2679 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D15D6FC1BF6A84F00F922DB /* libPods.a */,
+				70118BB690DE390C19463A77 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7605EAA41B09461A00F302BB /* GaggleDev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7605EAB11B09461A00F302BB /* Build configuration list for PBXNativeTarget "GaggleDev" */;
+			buildPhases = (
+				7605EAA51B09461A00F302BB /* Check Pods Manifest.lock */,
+				7605EAA61B09461A00F302BB /* Sources */,
+				7605EAAA1B09461A00F302BB /* Frameworks */,
+				7605EAAC1B09461A00F302BB /* Resources */,
+				7605EAB01B09461A00F302BB /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GaggleDev;
+			productName = Gaggle;
+			productReference = 7605EAB41B09461A00F302BB /* GaggleDev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		76A1F6531AFAF9E000CB1825 /* Gaggle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76A1F6731AFAF9E000CB1825 /* Build configuration list for PBXNativeTarget "Gaggle" */;
+			buildPhases = (
+				A8635BA7A66F55718B8C396D /* Check Pods Manifest.lock */,
+				76A1F6501AFAF9E000CB1825 /* Sources */,
+				76A1F6511AFAF9E000CB1825 /* Frameworks */,
+				76A1F6521AFAF9E000CB1825 /* Resources */,
+				258443162F4338F9FBCA5C88 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gaggle;
+			productName = Gaggle;
+			productReference = 76A1F6541AFAF9E000CB1825 /* Gaggle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		76A1F6681AFAF9E000CB1825 /* GaggleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76A1F6761AFAF9E000CB1825 /* Build configuration list for PBXNativeTarget "GaggleTests" */;
+			buildPhases = (
+				76A1F6651AFAF9E000CB1825 /* Sources */,
+				76A1F6661AFAF9E000CB1825 /* Frameworks */,
+				76A1F6671AFAF9E000CB1825 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76A1F66B1AFAF9E000CB1825 /* PBXTargetDependency */,
+			);
+			name = GaggleTests;
+			productName = GaggleTests;
+			productReference = 76A1F6691AFAF9E000CB1825 /* GaggleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76A1F64C1AFAF9E000CB1825 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Matthew Bush";
+				TargetAttributes = {
+					7605EAA41B09461A00F302BB = {
+						DevelopmentTeam = Z76K8WHREZ;
+					};
+					76A1F6531AFAF9E000CB1825 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = Z76K8WHREZ;
+					};
+					76A1F6681AFAF9E000CB1825 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 76A1F6531AFAF9E000CB1825;
+					};
+				};
+			};
+			buildConfigurationList = 76A1F64F1AFAF9E000CB1825 /* Build configuration list for PBXProject "Gaggle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 76A1F64B1AFAF9E000CB1825;
+			productRefGroup = 76A1F6551AFAF9E000CB1825 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76A1F6531AFAF9E000CB1825 /* Gaggle */,
+				7605EAA41B09461A00F302BB /* GaggleDev */,
+				76A1F6681AFAF9E000CB1825 /* GaggleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7605EAAC1B09461A00F302BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */,
+				4DBF07ED1B6163210068092C /* Lato-Hairline.ttf in Resources */,
+				4DBF07F11B6163210068092C /* Lato-Regular.ttf in Resources */,
+				4D15D6F01BF698BD00F922DB /* Intro.storyboard in Resources */,
+				767F90081B2D12FC007895A8 /* IntroView.xib in Resources */,
+				4D15D6F51BF6995200F922DB /* GaggleDev-Info.plist in Resources */,
+				7605EAAE1B09461A00F302BB /* LaunchScreen.xib in Resources */,
+				7605EAAF1B09461A00F302BB /* Images.xcassets in Resources */,
+				4DBF07EF1B6163210068092C /* Lato-Light.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A1F6521AFAF9E000CB1825 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */,
+				4DBF07EC1B6163210068092C /* Lato-Hairline.ttf in Resources */,
+				4DBF07F01B6163210068092C /* Lato-Regular.ttf in Resources */,
+				4D15D6EF1BF698BD00F922DB /* Intro.storyboard in Resources */,
+				767F90071B2D12FC007895A8 /* IntroView.xib in Resources */,
+				4D15D6F41BF6995200F922DB /* GaggleDev-Info.plist in Resources */,
+				76A1F6641AFAF9E000CB1825 /* LaunchScreen.xib in Resources */,
+				76A1F6611AFAF9E000CB1825 /* Images.xcassets in Resources */,
+				4DBF07EE1B6163210068092C /* Lato-Light.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A1F6671AFAF9E000CB1825 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		258443162F4338F9FBCA5C88 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7605EAA51B09461A00F302BB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7605EAB01B09461A00F302BB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8635BA7A66F55718B8C396D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7605EAA61B09461A00F302BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76054DD71BBA2C0200AA2D5A /* Button.swift in Sources */,
+				76D360921BAE28D600022990 /* NavigationController.swift in Sources */,
+				76D3608F1BAE275700022990 /* BarButtonItem.swift in Sources */,
+				76EA19C91B50C50000A11248 /* Style.swift in Sources */,
+				7605EAA71B09461A00F302BB /* IntroViewController.swift in Sources */,
+				76EA19CF1B50CBB100A11248 /* SeparatorView.swift in Sources */,
+				76D360891BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
+				761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */,
+				76EA19C61B50B00C00A11248 /* Animation.swift in Sources */,
+				7605EAA91B09461A00F302BB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A1F6501AFAF9E000CB1825 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76054DD61BBA2C0200AA2D5A /* Button.swift in Sources */,
+				76D360911BAE28D600022990 /* NavigationController.swift in Sources */,
+				76D3608E1BAE275700022990 /* BarButtonItem.swift in Sources */,
+				76EA19C81B50C50000A11248 /* Style.swift in Sources */,
+				76A1F65C1AFAF9E000CB1825 /* IntroViewController.swift in Sources */,
+				76EA19CE1B50CBB100A11248 /* SeparatorView.swift in Sources */,
+				76D360881BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
+				761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */,
+				76EA19C51B50B00C00A11248 /* Animation.swift in Sources */,
+				76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A1F6651AFAF9E000CB1825 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A1F6701AFAF9E000CB1825 /* GaggleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		76A1F66B1AFAF9E000CB1825 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76A1F6531AFAF9E000CB1825 /* Gaggle */;
+			targetProxy = 76A1F66A1AFAF9E000CB1825 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		76A1F6621AFAF9E000CB1825 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76A1F6631AFAF9E000CB1825 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7605EAB21B09461A00F302BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F69A5333407AE4A7B64279F7 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/SupportingFiles/GaggleDev-Info.plist";
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = GaggleDev;
+				SWIFT_OBJC_BRIDGING_HEADER = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		7605EAB31B09461A00F302BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3AB86BB39A99E6FC8228F16 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/SupportingFiles/GaggleDev-Info.plist";
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = GaggleDev;
+				SWIFT_OBJC_BRIDGING_HEADER = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		76A1F6711AFAF9E000CB1825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76A1F6721AFAF9E000CB1825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76A1F6741AFAF9E000CB1825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F69A5333407AE4A7B64279F7 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/SupportingFiles/Info.plist";
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76A1F6751AFAF9E000CB1825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3AB86BB39A99E6FC8228F16 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/SupportingFiles/Info.plist";
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		76A1F6771AFAF9E000CB1825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GaggleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gaggle.app/Gaggle";
+			};
+			name = Debug;
+		};
+		76A1F6781AFAF9E000CB1825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GaggleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gaggle.app/Gaggle";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7605EAB11B09461A00F302BB /* Build configuration list for PBXNativeTarget "GaggleDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7605EAB21B09461A00F302BB /* Debug */,
+				7605EAB31B09461A00F302BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76A1F64F1AFAF9E000CB1825 /* Build configuration list for PBXProject "Gaggle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76A1F6711AFAF9E000CB1825 /* Debug */,
+				76A1F6721AFAF9E000CB1825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76A1F6731AFAF9E000CB1825 /* Build configuration list for PBXNativeTarget "Gaggle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76A1F6741AFAF9E000CB1825 /* Debug */,
+				76A1F6751AFAF9E000CB1825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76A1F6761AFAF9E000CB1825 /* Build configuration list for PBXNativeTarget "GaggleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76A1F6771AFAF9E000CB1825 /* Debug */,
+				76A1F6781AFAF9E000CB1825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76A1F64C1AFAF9E000CB1825 /* Project object */;
+}
