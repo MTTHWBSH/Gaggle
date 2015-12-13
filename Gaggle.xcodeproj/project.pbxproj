@@ -11,7 +11,6 @@
 		4D15D6EF1BF698BD00F922DB /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6ED1BF698BD00F922DB /* Intro.storyboard */; };
 		4D15D6F01BF698BD00F922DB /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6ED1BF698BD00F922DB /* Intro.storyboard */; };
 		4D15D6F41BF6995200F922DB /* GaggleDev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */; };
-		4D15D6F51BF6995200F922DB /* GaggleDev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */; };
 		4D15D6FD1BF6A84F00F922DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D15D6FC1BF6A84F00F922DB /* libPods.a */; };
 		4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
 		4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
@@ -29,6 +28,8 @@
 		7605EAAF1B09461A00F302BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A1F6601AFAF9E000CB1825 /* Images.xcassets */; };
 		761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E0AC21B2A9262008C3E74 /* IntroView.swift */; };
 		761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E0AC21B2A9262008C3E74 /* IntroView.swift */; };
+		765D6A361C1E3C39001C2242 /* PrivateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765D6A351C1E3C39001C2242 /* PrivateSettings.swift */; };
+		765D6A371C1E3C39001C2242 /* PrivateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765D6A351C1E3C39001C2242 /* PrivateSettings.swift */; };
 		767F90071B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
 		767F90081B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
 		76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */; };
@@ -73,10 +74,11 @@
 		76054DD51BBA2C0200AA2D5A /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		7605EAB41B09461A00F302BB /* GaggleDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaggleDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		761E0AC21B2A9262008C3E74 /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroView.swift; path = Views/IntroView.swift; sourceTree = "<group>"; };
+		765D6A351C1E3C39001C2242 /* PrivateSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateSettings.swift; sourceTree = "<group>"; };
 		767F90061B2D12FC007895A8 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroView.xib; path = Views/IntroView.xib; sourceTree = "<group>"; };
 		76A1F6541AFAF9E000CB1825 /* Gaggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A1F6581AFAF9E000CB1825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../Dropbox (Personal)/Work/BlueLibrarySwift/BlueLibrarySwift/AppDelegate.swift"; sourceTree = "<group>"; };
+		76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntroViewController.swift; path = Controllers/IntroViewController.swift; sourceTree = "<group>"; };
 		76A1F6601AFAF9E000CB1825 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Assets/Images.xcassets; sourceTree = "<group>"; };
 		76A1F6631AFAF9E000CB1825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		76A1F6571AFAF9E000CB1825 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				765D6A351C1E3C39001C2242 /* PrivateSettings.swift */,
 				4D5495E51BF4F643002E0746 /* Gaggle-Bridging-Header.h */,
 				4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */,
 				76A1F6581AFAF9E000CB1825 /* Info.plist */,
@@ -328,7 +331,7 @@
 			attributes = {
 				LastSwiftMigration = 0710;
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Matthew Bush";
 				TargetAttributes = {
 					7605EAA41B09461A00F302BB = {
@@ -374,7 +377,6 @@
 				4DBF07F11B6163210068092C /* Lato-Regular.ttf in Resources */,
 				4D15D6F01BF698BD00F922DB /* Intro.storyboard in Resources */,
 				767F90081B2D12FC007895A8 /* IntroView.xib in Resources */,
-				4D15D6F51BF6995200F922DB /* GaggleDev-Info.plist in Resources */,
 				7605EAAE1B09461A00F302BB /* LaunchScreen.xib in Resources */,
 				7605EAAF1B09461A00F302BB /* Images.xcassets in Resources */,
 				4DBF07EF1B6163210068092C /* Lato-Light.ttf in Resources */,
@@ -477,6 +479,7 @@
 				76054DD71BBA2C0200AA2D5A /* Button.swift in Sources */,
 				76D360921BAE28D600022990 /* NavigationController.swift in Sources */,
 				76D3608F1BAE275700022990 /* BarButtonItem.swift in Sources */,
+				765D6A371C1E3C39001C2242 /* PrivateSettings.swift in Sources */,
 				76EA19C91B50C50000A11248 /* Style.swift in Sources */,
 				7605EAA71B09461A00F302BB /* IntroViewController.swift in Sources */,
 				76EA19CF1B50CBB100A11248 /* SeparatorView.swift in Sources */,
@@ -494,6 +497,7 @@
 				76054DD61BBA2C0200AA2D5A /* Button.swift in Sources */,
 				76D360911BAE28D600022990 /* NavigationController.swift in Sources */,
 				76D3608E1BAE275700022990 /* BarButtonItem.swift in Sources */,
+				765D6A361C1E3C39001C2242 /* PrivateSettings.swift in Sources */,
 				76EA19C81B50C50000A11248 /* Style.swift in Sources */,
 				76A1F65C1AFAF9E000CB1825 /* IntroViewController.swift in Sources */,
 				76EA19CE1B50CBB100A11248 /* SeparatorView.swift in Sources */,
@@ -612,7 +616,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -650,7 +654,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
