@@ -67,14 +67,16 @@ class IntroViewController: UIViewController, EAIntroDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "Login") {
             let nc = segue.destinationViewController as! NavigationController
-            let vc = nc.topViewController
-            vc!.title = "Login"
-            // switch button label
+            if let vc = nc.topViewController as? LoginSignupViewController {
+                vc.title = "Login"
+                vc.loginSignupButton.setTitle("Login", forState: .Normal)
+            }
         } else if (segue.identifier == "Signup") {
             let nc = segue.destinationViewController as! NavigationController
-            let vc = nc.topViewController
-            vc!.title = "Sign Up"
-            // switch button label
+            if let vc = nc.topViewController as? LoginSignupViewController {
+                vc.title = "Sign Up"
+                vc.loginSignupButton.setTitle("Sign Up", forState: .Normal)
+            }
         }
     }
     

@@ -13,6 +13,7 @@ class LoginSignupViewController: UIViewController {
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var brandLabel: UILabel!
+    @IBOutlet var loginSignupButton: PrimaryButton!
     
     @IBAction func closeButtonPressed(sender: BarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)

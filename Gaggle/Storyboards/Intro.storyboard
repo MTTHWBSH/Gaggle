@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,12 +25,10 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOV-dZ-pfb" customClass="EAIntroView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="465"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-CD-z9u" customClass="RBPrimaryButton" customModule="Gaggle" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-CD-z9u" customClass="PrimaryButton" customModule="Gaggle" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
-                                <animations/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="jRZ-k1-9XV"/>
@@ -44,9 +42,8 @@
                                     <action selector="signupPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wHg-td-Nkb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxV-U0-E51" customClass="RBSecondaryButton" customModule="Gaggle" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxV-U0-E51" customClass="SecondaryButton" customModule="Gaggle" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="480" width="600" height="60"/>
-                                <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="VCn-03-C0N"/>
@@ -61,7 +58,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zIt-CD-z9u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Gi-Rj-awf"/>
@@ -102,7 +98,6 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BGl-39-svF">
                                 <rect key="frame" x="20" y="242" width="560" height="40"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mwo-KZ-nHl"/>
                                 </constraints>
@@ -111,7 +106,6 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0B-as-Dnv">
                                 <rect key="frame" x="20" y="302" width="560" height="40"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cbz-1u-kvd"/>
                                 </constraints>
@@ -120,14 +114,12 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gaggle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRX-VS-a19">
                                 <rect key="frame" x="20" y="144" width="560" height="39"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaB-my-Ze2" customClass="RBPrimaryButton" customModule="Gaggle" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaB-my-Ze2" customClass="PrimaryButton" customModule="Gaggle" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
-                                <animations/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="TXk-og-rN2"/>
@@ -137,7 +129,6 @@
                                 </state>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="v0B-as-Dnv" secondAttribute="trailing" constant="20" id="0Zz-fW-ZjM"/>
@@ -163,7 +154,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Login / Signup" id="A3o-qB-VCo">
-                        <barButtonItem key="leftBarButtonItem" image="Close" id="SvK-PG-dbf" customClass="RBBarButtonItem" customModule="Gaggle" customModuleProvider="target">
+                        <barButtonItem key="leftBarButtonItem" image="Close" id="SvK-PG-dbf" customClass="BarButtonItem" customModule="Gaggle" customModuleProvider="target">
                             <connections>
                                 <action selector="closeButtonPressed:" destination="gSz-6h-hLf" id="qPo-Rg-R4V"/>
                             </connections>
@@ -172,6 +163,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="brandLabel" destination="iRX-VS-a19" id="oVe-ki-T02"/>
+                        <outlet property="loginSignupButton" destination="BaB-my-Ze2" id="Xd0-w2-jOg"/>
                         <outlet property="passwordTextField" destination="v0B-as-Dnv" id="T4b-9w-vEM"/>
                         <outlet property="usernameTextField" destination="BGl-39-svF" id="UJg-SD-nO4"/>
                     </connections>
@@ -183,13 +175,12 @@
         <!--Navigation Controller-->
         <scene sceneID="EBu-dr-REK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JIh-JK-4kV" customClass="RBNavigationController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JIh-JK-4kV" customClass="NavigationController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wjz-Vk-4md">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
