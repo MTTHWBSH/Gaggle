@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.enableLocalDatastore()
+        
         if let environment = NSBundle.mainBundle().infoDictionary?["Environment"] as? String {
             switch environment {
             case "Production":
@@ -25,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 break
             }
         }
+        
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         return true
     }

@@ -68,14 +68,16 @@ class IntroViewController: UIViewController, EAIntroDelegate {
         if (segue.identifier == "Login") {
             let nc = segue.destinationViewController as! NavigationController
             if let vc = nc.topViewController as? LoginSignupViewController {
+                vc.selectedLogin = true
                 vc.title = "Login"
-                vc.loginSignupButton.setTitle("Login", forState: .Normal)
+                vc.loginSignupButtonText = "Login"
             }
         } else if (segue.identifier == "Signup") {
             let nc = segue.destinationViewController as! NavigationController
             if let vc = nc.topViewController as? LoginSignupViewController {
+                vc.selectedLogin = false
                 vc.title = "Sign Up"
-                vc.loginSignupButton.setTitle("Sign Up", forState: .Normal)
+                vc.loginSignupButtonText = "Sign Up"
             }
         }
     }

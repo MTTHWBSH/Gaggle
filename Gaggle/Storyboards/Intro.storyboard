@@ -127,6 +127,9 @@
                                 <state key="normal" title="Login / Signup">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginSignupButtonPressed:" destination="gSz-6h-hLf" eventType="touchUpInside" id="uV1-t7-Edu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
