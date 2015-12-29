@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		231B62D0DBC41845C1585129 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70118BB690DE390C19463A77 /* libPods.a */; };
+		4D12F5241C3318A8009EED79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D12F5231C3318A8009EED79 /* Main.storyboard */; };
+		4D12F5251C3318A8009EED79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D12F5231C3318A8009EED79 /* Main.storyboard */; };
+		4D12F5271C331973009EED79 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D12F5261C331973009EED79 /* FeedViewController.swift */; };
+		4D12F5281C331973009EED79 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D12F5261C331973009EED79 /* FeedViewController.swift */; };
 		4D15D6EF1BF698BD00F922DB /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6ED1BF698BD00F922DB /* Intro.storyboard */; };
 		4D15D6F01BF698BD00F922DB /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6ED1BF698BD00F922DB /* Intro.storyboard */; };
 		4D15D6F41BF6995200F922DB /* GaggleDev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */; };
 		4D15D6FD1BF6A84F00F922DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D15D6FC1BF6A84F00F922DB /* libPods.a */; };
+		4D2C28261C33138B00116068 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C28251C33138B00116068 /* Session.swift */; };
+		4D2C28271C33138B00116068 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C28251C33138B00116068 /* Session.swift */; };
 		4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
 		4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
 		4DBF07EC1B6163210068092C /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E71B6163210068092C /* Lato-Hairline.ttf */; };
@@ -62,9 +68,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D12F5231C3318A8009EED79 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4D12F5261C331973009EED79 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		4D15D6ED1BF698BD00F922DB /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Intro.storyboard; path = Gaggle/Storyboards/Intro.storyboard; sourceTree = SOURCE_ROOT; };
 		4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GaggleDev-Info.plist"; path = "Gaggle/SupportingFiles/GaggleDev-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4D15D6FC1BF6A84F00F922DB /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		4D2C28251C33138B00116068 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Gaggle/Models/Session.swift; sourceTree = SOURCE_ROOT; };
 		4D5495E51BF4F643002E0746 /* Gaggle-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Gaggle-Bridging-Header.h"; path = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		4DBF07E61B6163210068092C /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Assets/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		4DBF07E71B6163210068092C /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Hairline.ttf"; path = "Assets/Lato-Hairline.ttf"; sourceTree = "<group>"; };
@@ -122,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D12F5291C33198B009EED79 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				767F90061B2D12FC007895A8 /* IntroView.xib */,
+				4D12F5231C3318A8009EED79 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		765184061AFB056F00EA2DB6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +241,7 @@
 		76F1807D1B09583000060958 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4D2C28251C33138B00116068 /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,8 +249,8 @@
 		76F1807E1B09583900060958 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4D12F5291C33198B009EED79 /* Storyboards */,
 				761E0AC21B2A9262008C3E74 /* IntroView.swift */,
-				767F90061B2D12FC007895A8 /* IntroView.xib */,
 				76EA19CD1B50CBB100A11248 /* SeparatorView.swift */,
 			);
 			name = Views;
@@ -242,6 +261,7 @@
 			children = (
 				76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */,
 				76D360871BAE1D6A00022990 /* LoginSignupViewController.swift */,
+				4D12F5261C331973009EED79 /* FeedViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -375,6 +395,7 @@
 			files = (
 				4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */,
 				4DBF07ED1B6163210068092C /* Lato-Hairline.ttf in Resources */,
+				4D12F5251C3318A8009EED79 /* Main.storyboard in Resources */,
 				4DBF07F11B6163210068092C /* Lato-Regular.ttf in Resources */,
 				4D15D6F01BF698BD00F922DB /* Intro.storyboard in Resources */,
 				767F90081B2D12FC007895A8 /* IntroView.xib in Resources */,
@@ -388,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D12F5241C3318A8009EED79 /* Main.storyboard in Resources */,
 				4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */,
 				4DBF07EC1B6163210068092C /* Lato-Hairline.ttf in Resources */,
 				4DBF07F01B6163210068092C /* Lato-Regular.ttf in Resources */,
@@ -500,8 +522,10 @@
 				7605EAA71B09461A00F302BB /* IntroViewController.swift in Sources */,
 				76EA19CF1B50CBB100A11248 /* SeparatorView.swift in Sources */,
 				76D360891BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
+				4D2C28271C33138B00116068 /* Session.swift in Sources */,
 				761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */,
 				76EA19C61B50B00C00A11248 /* Animation.swift in Sources */,
+				4D12F5281C331973009EED79 /* FeedViewController.swift in Sources */,
 				7605EAA91B09461A00F302BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,8 +542,10 @@
 				76A1F65C1AFAF9E000CB1825 /* IntroViewController.swift in Sources */,
 				76EA19CE1B50CBB100A11248 /* SeparatorView.swift in Sources */,
 				76D360881BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
+				4D2C28261C33138B00116068 /* Session.swift in Sources */,
 				761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */,
 				76EA19C51B50B00C00A11248 /* Animation.swift in Sources */,
+				4D12F5271C331973009EED79 /* FeedViewController.swift in Sources */,
 				76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

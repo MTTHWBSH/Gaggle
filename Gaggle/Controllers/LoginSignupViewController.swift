@@ -31,6 +31,10 @@ class LoginSignupViewController: UIViewController {
         Style.addBottomBorder(toLayer: usernameTextField.layer, onFrame: usernameTextField.frame)
         Style.addBottomBorder(toLayer: passwordTextField.layer, onFrame: passwordTextField.frame)
         usernameTextField.tintColor = Style.redColor
+        usernameTextField.autocapitalizationType = .None
+        usernameTextField.autocorrectionType = .No
+        passwordTextField.autocapitalizationType = .None
+        passwordTextField.autocorrectionType = .No
         passwordTextField.tintColor = Style.redColor
         brandLabel.textColor = Style.redColor
         brandLabel.font = Style.regularFontWithSize(32.0)
@@ -53,18 +57,43 @@ class LoginSignupViewController: UIViewController {
     }
     
     func tryLogin(user: String, password: String) {
-//        PFUser.logInWithUsernameInBackground(user, password: password) {
-//            (user: PFUser!, error: NSError!) -> Void in
-//            if user != nil {
-//                
-//            } else {
-//                
-//            }
-//        }
-    }
-    
-    func trySignup(user: String, password: String) {
+        SVProgressHUD.showWithStatus("Loggin in", maskType: .Black)
         
+        PFUser.logInWithUsernameInBackground(user, password: password, block: { (user, error) -> Void in
+            
+            SVProgressHUD.dismiss()
+            
+            if ((user) != nil) {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    let vc:UIViewController = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Feed") as! FeedViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                })
+                
+            } else {
+                SVProgressHUD.showWithStatus("Login failed, please try again", maskType: .Black)
+            }
+        })
+    }
+
+    func trySignup(user: String, password: String) {
+        SVProgressHUD.showWithStatus("Signing up", maskType: .Black)
+        
+        let newUser = PFUser()
+        newUser.username = user
+        newUser.password = password
+        
+        newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
+            SVProgressHUD.dismiss()
+            
+            if ((error) != nil) {
+                SVProgressHUD.showWithStatus("Sign up failed, please try again", maskType: .Black)
+            } else {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    let vc:UIViewController = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Feed") as! FeedViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                })
+            }
+        })
     }
     
 }
