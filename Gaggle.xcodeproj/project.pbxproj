@@ -136,6 +136,7 @@
 			children = (
 				767F90061B2D12FC007895A8 /* IntroView.xib */,
 				4D12F5231C3318A8009EED79 /* Main.storyboard */,
+				4D15D6ED1BF698BD00F922DB /* Intro.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -181,7 +182,6 @@
 				76F1807F1B09584300060958 /* Controllers */,
 				76F1807D1B09583000060958 /* Models */,
 				76F1807E1B09583900060958 /* Views */,
-				76F1807B1B09579A00060958 /* Storyboards */,
 				765184061AFB056F00EA2DB6 /* Utilities */,
 				76A1F6571AFAF9E000CB1825 /* Supporting Files */,
 			);
@@ -215,14 +215,6 @@
 				76A1F66E1AFAF9E000CB1825 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		76F1807B1B09579A00060958 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				4D15D6ED1BF698BD00F922DB /* Intro.storyboard */,
-			);
-			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		76F1807C1B09582A00060958 /* Assets */ = {

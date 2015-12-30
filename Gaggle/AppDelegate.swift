@@ -31,6 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
+        if !Session.currentSession.loggedIn() {
+            let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as! IntroViewController
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        } else {
+            let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("") as UITabBarController
+        }
+        
         return true
     }
 

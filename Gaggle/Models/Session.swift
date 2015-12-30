@@ -16,5 +16,9 @@ class Session {
         }
         return Static.instance
     }
+    
+    func loggedIn() -> Bool {
+        return PFUser.currentUser() != nil
+    }
 
 }
