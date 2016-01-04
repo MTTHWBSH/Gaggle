@@ -36,8 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = vc
             window?.makeKeyAndVisible()
         } else {
-            let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("") as UITabBarController
+            let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
+            window?.rootViewController = nc
+            window?.makeKeyAndVisible()
         }
+        
+        SVProgressHUD.setFont(Style.regularFontWithSize(14.0))
         
         return true
     }

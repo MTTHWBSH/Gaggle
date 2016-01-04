@@ -16,6 +16,8 @@ class NavigationController: UINavigationController {
     }
     
     func styleView() {
+        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationBar.shadowImage = UIImage()
         navigationBar.barTintColor = Style.lightGrayColor
         navigationBar.tintColor = Style.blackColor
         navigationBar.translucent = false
