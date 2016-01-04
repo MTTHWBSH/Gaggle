@@ -86,8 +86,9 @@ class TabBarController: UITabBarController, UIImagePickerControllerDelegate, UIN
         tabBar.tintColor = Style.redColorSelected
         tabBar.barTintColor = Style.whiteColor
         tabBar.translucent = false
-        let textAttributes = [NSForegroundColorAttributeName: Style.redColor]
-        UITabBarItem.appearance().setTitleTextAttributes(textAttributes, forState: .Normal)
+        for tab in tabBar.items! {
+            tab.image = tab.image?.imageWithRenderingMode(.AlwaysOriginal)
+        }
     }
     
     func removeTabTitles() {
