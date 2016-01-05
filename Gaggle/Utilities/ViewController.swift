@@ -19,4 +19,10 @@ class ViewController: UIViewController {
         view.backgroundColor = Style.lightGrayColor
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        navigationItem.backBarButtonItem = backButton
+    }
+    
 }

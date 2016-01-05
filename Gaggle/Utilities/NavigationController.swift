@@ -23,6 +23,9 @@ class NavigationController: UINavigationController {
         navigationBar.translucent = false
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: Style.blackColor, NSFontAttributeName: Style.lightFontWithSize(18.0)]
         navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
+        navigationBar.backIndicatorImage = UIImage(named: "Close")
+        navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Close")
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
 
 }
