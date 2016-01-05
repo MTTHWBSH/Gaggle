@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="465"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-CD-z9u" customClass="PrimaryButton" customModule="Gaggle" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-CD-z9u" customClass="PrimaryButton" customModule="Gaggle" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -42,7 +42,7 @@
                                     <action selector="signupPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wHg-td-Nkb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxV-U0-E51" customClass="SecondaryButton" customModule="Gaggle" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxV-U0-E51" customClass="SecondaryButton" customModule="Gaggle" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="480" width="600" height="60"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

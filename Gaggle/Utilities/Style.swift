@@ -46,7 +46,7 @@ class Style {
     static let grayColorSelected = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 0.8)
     static let blackColor = UIColor(red: 5.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0)
     static let redColor = UIColor(red: 225.0/255.0, green: 56.0/255.0, blue: 47.0/255.0, alpha: 1.0)
-    static let redColorSelected = UIColor(red: 225.0/255.0, green: 56.0/255.0, blue: 47.0/255.0, alpha: 0.8)
+    static let redColorSelected = UIColor(red: 174.0/255.0, green: 5.0/255.0, blue: 0.0/255.0, alpha: 0.8)
     static let redColorSelectedTab = UIColor(red: 174.0/255.0, green: 5.0/255.0, blue: 0.0/255.0, alpha: 1.0)
     
     // MARK: Borders

@@ -44,6 +44,8 @@ class Button: UIButton {
         setTitleColor(Style.redColorSelected, forState: .Selected)
         setTitleColor(Style.redColorSelected, forState: .Highlighted)
         setTitleColor(Style.redColorSelected, forState: .Disabled)
+        adjustsImageWhenDisabled = false
+        adjustsImageWhenHighlighted = false
     }
     
 }
