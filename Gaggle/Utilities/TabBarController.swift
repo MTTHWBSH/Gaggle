@@ -83,7 +83,7 @@ class TabBarController: UITabBarController, UIImagePickerControllerDelegate, UIN
         removeTabTitles()
         tabBar.shadowImage = UIImage()
         tabBar.backgroundImage = UIImage()
-        tabBar.tintColor = Style.redColorSelected
+        tabBar.tintColor = Style.redColorSelectedTab
         tabBar.barTintColor = Style.whiteColor
         tabBar.translucent = false
         for tab in tabBar.items! {

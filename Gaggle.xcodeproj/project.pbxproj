@@ -40,10 +40,12 @@
 		762212BB1C39E502001CF9BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212B91C39E502001CF9BE /* ViewController.swift */; };
 		762212BD1C39EFCC001CF9BE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212BC1C39EFCC001CF9BE /* CameraViewController.swift */; };
 		762212BE1C39EFCC001CF9BE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212BC1C39EFCC001CF9BE /* CameraViewController.swift */; };
-		762212C01C39EFD3001CF9BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212BF1C39EFD3001CF9BE /* ProfileViewController.swift */; };
-		762212C11C39EFD3001CF9BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212BF1C39EFD3001CF9BE /* ProfileViewController.swift */; };
+		762212C01C39EFD3001CF9BE /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212BF1C39EFD3001CF9BE /* ProfileSettingsViewController.swift */; };
+		762212C11C39EFD3001CF9BE /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212BF1C39EFD3001CF9BE /* ProfileSettingsViewController.swift */; };
 		762212C31C39F671001CF9BE /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212C21C39F671001CF9BE /* Label.swift */; };
 		762212C41C39F671001CF9BE /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212C21C39F671001CF9BE /* Label.swift */; };
+		762212C61C3B591D001CF9BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212C51C3B591D001CF9BE /* ProfileViewController.swift */; };
+		762212C71C3B591D001CF9BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212C51C3B591D001CF9BE /* ProfileViewController.swift */; };
 		765D6A361C1E3C39001C2242 /* PrivateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765D6A351C1E3C39001C2242 /* PrivateSettings.swift */; };
 		765D6A371C1E3C39001C2242 /* PrivateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765D6A351C1E3C39001C2242 /* PrivateSettings.swift */; };
 		767F90071B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
@@ -96,8 +98,9 @@
 		762212B41C39DD7A001CF9BE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Utilities/TabBarController.swift; sourceTree = "<group>"; };
 		762212B91C39E502001CF9BE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		762212BC1C39EFCC001CF9BE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		762212BF1C39EFD3001CF9BE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		762212BF1C39EFD3001CF9BE /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		762212C21C39F671001CF9BE /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		762212C51C3B591D001CF9BE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		765D6A351C1E3C39001C2242 /* PrivateSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateSettings.swift; sourceTree = "<group>"; };
 		767F90061B2D12FC007895A8 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroView.xib; path = Views/IntroView.xib; sourceTree = "<group>"; };
 		76A1F6541AFAF9E000CB1825 /* Gaggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,7 +174,8 @@
 				762212B41C39DD7A001CF9BE /* TabBarController.swift */,
 				4D12F5261C331973009EED79 /* FeedViewController.swift */,
 				762212BC1C39EFCC001CF9BE /* CameraViewController.swift */,
-				762212BF1C39EFD3001CF9BE /* ProfileViewController.swift */,
+				762212BF1C39EFD3001CF9BE /* ProfileSettingsViewController.swift */,
+				762212C51C3B591D001CF9BE /* ProfileViewController.swift */,
 			);
 			name = Tabs;
 			sourceTree = "<group>";
@@ -549,8 +553,9 @@
 				765D6A371C1E3C39001C2242 /* PrivateSettings.swift in Sources */,
 				76EA19C91B50C50000A11248 /* Style.swift in Sources */,
 				7605EAA71B09461A00F302BB /* IntroViewController.swift in Sources */,
-				762212C11C39EFD3001CF9BE /* ProfileViewController.swift in Sources */,
+				762212C11C39EFD3001CF9BE /* ProfileSettingsViewController.swift in Sources */,
 				76EA19CF1B50CBB100A11248 /* SeparatorView.swift in Sources */,
+				762212C71C3B591D001CF9BE /* ProfileViewController.swift in Sources */,
 				76D360891BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
 				4D2C28271C33138B00116068 /* Session.swift in Sources */,
 				761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */,
@@ -574,8 +579,9 @@
 				765D6A361C1E3C39001C2242 /* PrivateSettings.swift in Sources */,
 				76EA19C81B50C50000A11248 /* Style.swift in Sources */,
 				76A1F65C1AFAF9E000CB1825 /* IntroViewController.swift in Sources */,
-				762212C01C39EFD3001CF9BE /* ProfileViewController.swift in Sources */,
+				762212C01C39EFD3001CF9BE /* ProfileSettingsViewController.swift in Sources */,
 				76EA19CE1B50CBB100A11248 /* SeparatorView.swift in Sources */,
+				762212C61C3B591D001CF9BE /* ProfileViewController.swift in Sources */,
 				76D360881BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
 				4D2C28261C33138B00116068 /* Session.swift in Sources */,
 				761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */,

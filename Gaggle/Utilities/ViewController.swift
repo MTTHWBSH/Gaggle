@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
     
     func styleView() {
-        view.backgroundColor = Style.grayColor
+        view.backgroundColor = Style.lightGrayColor
     }
     
 }

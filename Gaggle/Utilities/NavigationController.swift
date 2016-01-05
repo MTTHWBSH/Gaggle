@@ -18,10 +18,10 @@ class NavigationController: UINavigationController {
     func styleView() {
         navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationBar.shadowImage = UIImage()
-        navigationBar.barTintColor = Style.lightGrayColor
+        navigationBar.barTintColor = Style.whiteColor
         navigationBar.tintColor = Style.blackColor
         navigationBar.translucent = false
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: Style.blackColor, NSFontAttributeName: Style.boldFontWithSize(16.0)]
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: Style.blackColor, NSFontAttributeName: Style.lightFontWithSize(18.0)]
         navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
     }
 

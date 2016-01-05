@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--Profile Settings-->
         <scene sceneID="ie5-kD-cw8">
             <objects>
-                <viewController title="Profile" id="vLn-Xi-0CW" customClass="ProfileViewController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Profile Settings" id="vLn-Xi-0CW" customClass="ProfileSettingsViewController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YpI-wL-Fhf"/>
                         <viewControllerLayoutGuide type="bottom" id="Z7Z-vr-k85"/>
@@ -53,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVR-2n-sqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910" y="1428"/>
+            <point key="canvasLocation" x="2668" y="1428"/>
         </scene>
         <!--Camera-->
         <scene sceneID="mDA-4F-Dz6">
@@ -73,6 +73,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyB-VS-QR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1910" y="702"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="fkG-ar-eWr">
+            <objects>
+                <viewController title="Profile" id="Jj4-xo-IC3" customClass="ProfileViewController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="weX-hX-inG"/>
+                        <viewControllerLayoutGuide type="bottom" id="uwJ-jl-bxU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rAN-Ne-6cY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kwL-3d-NL6">
+                        <barButtonItem key="rightBarButtonItem" image="Gear" id="fbw-vw-ZTm">
+                            <connections>
+                                <action selector="settingsButtonPressed:" destination="Jj4-xo-IC3" id="Txo-QJ-bXg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="vLn-Xi-0CW" kind="show" identifier="ToSettings" id="2Rh-H8-anZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZB-5C-lax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902" y="1428"/>
         </scene>
         <!--Feed-->
         <scene sceneID="UF9-6e-LsE">
@@ -163,7 +191,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vLn-Xi-0CW" kind="relationship" relationship="rootViewController" id="Irz-FE-lqP"/>
+                        <segue destination="Jj4-xo-IC3" kind="relationship" relationship="rootViewController" id="oTL-Ej-N87"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3E-n5-5p0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,7 +200,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Camera" width="31" height="25"/>
+        <image name="Camera" width="32" height="25"/>
+        <image name="Gear" width="22" height="22"/>
         <image name="Home" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
     </resources>
