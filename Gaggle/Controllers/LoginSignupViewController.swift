@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginSignupViewController: UIViewController {
+class LoginSignupViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -25,23 +25,43 @@ class LoginSignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        styleView()
     }
     
     func setupView() {
-        Style.addBottomBorder(toLayer: usernameTextField.layer, onFrame: usernameTextField.frame)
-        Style.addBottomBorder(toLayer: passwordTextField.layer, onFrame: passwordTextField.frame)
-        usernameTextField.tintColor = Style.redColor
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
         usernameTextField.autocapitalizationType = .None
         usernameTextField.autocorrectionType = .No
         passwordTextField.autocapitalizationType = .None
         passwordTextField.autocorrectionType = .No
-        passwordTextField.tintColor = Style.redColor
-        brandLabel.textColor = Style.redColor
-        brandLabel.font = Style.regularFontWithSize(32.0)
         loginSignupButton.setTitle(loginSignupButtonText, forState: .Normal)
     }
     
+    func styleView() {
+        Style.addBottomBorder(toLayer: usernameTextField.layer, onFrame: usernameTextField.frame)
+        Style.addBottomBorder(toLayer: passwordTextField.layer, onFrame: passwordTextField.frame)
+        usernameTextField.tintColor = Style.redColor
+        passwordTextField.tintColor = Style.redColor
+        brandLabel.textColor = Style.redColor
+        brandLabel.font = Style.regularFontWithSize(32.0)
+    }
+    
     @IBAction func loginSignupButtonPressed(sender: AnyObject) {
+        tryLoginSignup()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == usernameTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+            tryLoginSignup()
+        }
+        return true
+    }
+    
+    func tryLoginSignup() {
         if usernameTextField.text != "" && passwordTextField.text != "" {
             if let user = usernameTextField.text, let password = passwordTextField.text {
                 if !selectedLogin {
