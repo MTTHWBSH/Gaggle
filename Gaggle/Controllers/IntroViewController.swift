@@ -71,7 +71,7 @@ class IntroViewController: UIViewController, EAIntroDelegate {
     }
     
     func skipIntro() {
-        let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
         presentViewController(vc, animated: true, completion: nil)
     }
     
