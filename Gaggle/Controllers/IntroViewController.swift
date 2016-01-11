@@ -51,9 +51,8 @@ class IntroViewController: UIViewController, EAIntroDelegate {
         introView.delegate = self
         introView.swipeToExit = false
 
-        introView.skipButton.tintColor = Style.blackColor
-        introView.skipButton.titleLabel?.textColor = Style.blackColor
-        introView.skipButton.titleLabel?.text = "skip"
+        introView.skipButton.setTitleColor(Style.blackColor, forState: .Normal)
+        introView.skipButton.setTitle("Skip", forState: .Normal)
         introView.skipButton.enabled = true
         
         introView.addConstraint(NSLayoutConstraint(item:self.introView, attribute:.Bottom, relatedBy: .Equal, toItem: self.introView.pageControl, attribute: .Bottom, multiplier: 1, constant: 10.0))
