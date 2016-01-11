@@ -23,6 +23,7 @@ class IntroViewController: UIViewController, EAIntroDelegate {
         super.viewDidLayoutSubviews()
         if (self.introView == nil) {
             setupIntroViews()
+            setupSkipButton()
         }
     }
     
@@ -50,10 +51,6 @@ class IntroViewController: UIViewController, EAIntroDelegate {
         introView = EAIntroView(frame: self.introViewContainer.bounds, andPages: [page1, page2, page3])
         introView.delegate = self
         introView.swipeToExit = false
-
-        introView.skipButton.setTitleColor(Style.blackColor, forState: .Normal)
-        introView.skipButton.setTitle("Skip", forState: .Normal)
-        introView.skipButton.enabled = true
         
         introView.addConstraint(NSLayoutConstraint(item:self.introView, attribute:.Bottom, relatedBy: .Equal, toItem: self.introView.pageControl, attribute: .Bottom, multiplier: 1, constant: 10.0))
         
@@ -61,6 +58,21 @@ class IntroViewController: UIViewController, EAIntroDelegate {
         introView.pageControl.pageIndicatorTintColor = Style.grayColor
         introView.pageControl.currentPageIndicatorTintColor = Style.redColor
         
+    }
+    
+    func setupSkipButton() {
+        let button = UIButton()
+        button.setTitle("Skip", forState: .Normal)
+        button.setTitleColor(Style.blackColor, forState: .Normal)
+        button.addTarget(self, action: "skipIntro", forControlEvents: .TouchUpInside)
+        
+        introView.skipButton = button
+        introView.skipButton.enabled = true
+    }
+    
+    func skipIntro() {
+        let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
+        presentViewController(vc, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

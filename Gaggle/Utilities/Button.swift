@@ -27,7 +27,6 @@ class Button: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         style()
-        
     }
     
     override func awakeFromNib() {
