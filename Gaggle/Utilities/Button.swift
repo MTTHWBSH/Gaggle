@@ -29,8 +29,8 @@ class Button: UIButton {
         style()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         style()
     }
     
@@ -53,6 +53,11 @@ class PrimaryButton: Button {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        style()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         style()
     }
     
@@ -79,6 +84,11 @@ class SecondaryButton: Button {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        style()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         style()
     }
     

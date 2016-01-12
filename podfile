@@ -4,3 +4,4 @@ pod 'EAIntroView', :git => 'https://github.com/ealeksandrov/EAIntroView.git', ta
 pod 'Parse'
 pod 'SDWebImage'
 pod 'SVProgressHUD'
+pod 'PureLayout'

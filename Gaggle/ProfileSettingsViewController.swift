@@ -20,8 +20,10 @@ class ProfileSettingsViewController: ViewController {
     func setup() {
         if let user = PFUser.currentUser() {
             navigationItem.title = user.username
+            // hide empty state
         } else {
             navigationItem.title = "Profile"
+            // show empty state
         }
         
         if let dict = NSBundle.mainBundle().infoDictionary {

@@ -12,7 +12,17 @@ class FeedViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Gaggle"
+        setup()
     }
-
+    
+    func setup() {
+        navigationItem.title = "Gaggle"
+        
+        if PFUser.currentUser() == nil {
+            // show empty state
+        } else {
+            // hide empty state
+        }
+    }
+    
 }
