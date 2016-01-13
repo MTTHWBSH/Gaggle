@@ -18,7 +18,8 @@ class ProfileSettingsViewController: ViewController {
     }
     
     func setup() {
-        if let user = PFUser.currentUser() {
+        if Session.currentSession.loggedIn()  {
+            guard let user = PFUser.currentUser() else { return }
             navigationItem.title = user.username
             // hide empty state
         } else {

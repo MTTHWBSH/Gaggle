@@ -21,10 +21,8 @@ class TabBarController: UITabBarController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         styleTabBar()
-        
-        navController = UINavigationController()
+        navController = NavigationController()
     }
     
     // MARK:- UITabBarController
@@ -52,17 +50,17 @@ class TabBarController: UITabBarController, UIImagePickerControllerDelegate, UIN
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//        self.dismissViewControllerAnimated(false, completion: nil)
-//        
-//        let image: UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
-//        
-//        let viewController: PAPEditPhotoViewController = PAPEditPhotoViewController(image: image)
-//        viewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-//        
-//        self.navController!.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-//        self.navController!.pushViewController(viewController, animated: false)
-//        
-//        self.presentViewController(self.navController!, animated: true, completion: nil)
+        self.dismissViewControllerAnimated(false, completion: nil)
+        
+        let image: UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+        let viewController: EditPostViewController = EditPhotoViewController(image: image)
+        viewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        
+        self.navController!.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.navController!.pushViewController(viewController, animated: false)
+        
+        self.presentViewController(self.navController!, animated: true, completion: nil)
     }
     
     // MARK:- TabBarController

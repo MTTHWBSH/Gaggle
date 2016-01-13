@@ -12,7 +12,17 @@ class CameraViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setup()
+    }
+    
+    func setup() {
+        navigationItem.title = "Create"
+        if Session.currentSession.loggedIn()  {
+            guard let user = PFUser.currentUser() else { return }
+            // hide empty state
+        } else {
+            // show empty state
+        }
     }
     
 }

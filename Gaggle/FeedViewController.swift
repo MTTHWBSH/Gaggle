@@ -18,10 +18,10 @@ class FeedViewController: ViewController {
     func setup() {
         navigationItem.title = "Gaggle"
         
-        if PFUser.currentUser() == nil {
-            // show empty state
-        } else {
+        if Session.currentSession.loggedIn()  {
             // hide empty state
+        } else {
+            // show empty state
         }
     }
     
