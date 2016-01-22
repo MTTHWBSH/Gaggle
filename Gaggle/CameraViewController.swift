@@ -16,7 +16,8 @@ class CameraViewController: ViewController {
     }
     
     func setup() {
-        navigationItem.title = "Create"
+        navigationItem.title = "Photo"
+        view.backgroundColor = Style.whiteColor
         if Session.currentSession.loggedIn()  {
             guard let user = PFUser.currentUser() else { return }
             // hide empty state

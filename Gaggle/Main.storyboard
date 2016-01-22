@@ -32,7 +32,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYA-9C-a3s" customClass="Label" customModule="Gaggle" customModuleProvider="target">
                                 <rect key="frame" x="20" y="447" width="560" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -68,7 +68,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IjP-n9-I1O"/>
+                    <navigationItem key="navigationItem" id="IjP-n9-I1O">
+                        <barButtonItem key="rightBarButtonItem" image="CameraRoll" id="4SN-Jm-XGd"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyB-VS-QR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,6 +203,7 @@
     </scenes>
     <resources>
         <image name="Camera" width="32" height="25"/>
+        <image name="CameraRoll" width="22" height="22"/>
         <image name="Gear" width="22" height="22"/>
         <image name="Home" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>

@@ -45,35 +45,35 @@ class TabBarController: UITabBarController, UIImagePickerControllerDelegate, UIN
     
     // MARK:- UIImagePickerDelegate
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        self.dismissViewControllerAnimated(false, completion: nil)
-        
-        let image: UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
-        
-        let viewController: EditPostViewController = EditPhotoViewController(image: image)
-        viewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        
-        self.navController!.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.navController!.pushViewController(viewController, animated: false)
-        
-        self.presentViewController(self.navController!, animated: true, completion: nil)
-    }
+//    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+//        dismissViewControllerAnimated(true, completion: nil)
+//    }
+//    
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        self.dismissViewControllerAnimated(false, completion: nil)
+//        
+//        let image: UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
+//        
+//        let viewController: EditPostViewController = EditPhotoViewController(image: image)
+//        viewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+//        
+//        self.navController!.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+//        self.navController!.pushViewController(viewController, animated: false)
+//        
+//        self.presentViewController(self.navController!, animated: true, completion: nil)
+//    }
     
     // MARK:- TabBarController
     
-    func shouldPresentPhotoCaptureController() -> Bool {
-        var presentedPhotoCaptureController: Bool = shouldStartCameraController()
-        
-        if !presentedPhotoCaptureController {
-            presentedPhotoCaptureController = shouldStartPhotoLibraryPickerController()
-        }
-        
-        return presentedPhotoCaptureController
-    }
+//    func shouldPresentPhotoCaptureController() -> Bool {
+//        var presentedPhotoCaptureController: Bool = shouldStartCameraController()
+//        
+//        if !presentedPhotoCaptureController {
+//            presentedPhotoCaptureController = shouldStartPhotoLibraryPickerController()
+//        }
+//        
+//        return presentedPhotoCaptureController
+//    }
     
     // MARK:- ()
     
@@ -96,92 +96,92 @@ class TabBarController: UITabBarController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    func photoCaptureButtonAction(sender: AnyObject) {
-        let cameraDeviceAvailable: Bool = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        let photoLibraryAvailable: Bool = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)
-        
-        if cameraDeviceAvailable && photoLibraryAvailable {
-            let actionController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-            
-            let takePhotoAction = UIAlertAction(title: NSLocalizedString("Take Photo", comment: ""), style: UIAlertActionStyle.Default, handler: { _ in self.shouldStartCameraController() })
-            let choosePhotoAction = UIAlertAction(title: NSLocalizedString("Choose Photo", comment: ""), style: UIAlertActionStyle.Default, handler: { _ in self.shouldStartPhotoLibraryPickerController() })
-            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil)
-            
-            actionController.addAction(takePhotoAction)
-            actionController.addAction(choosePhotoAction)
-            actionController.addAction(cancelAction)
-            
-            presentViewController(actionController, animated: true, completion: nil)
-        } else {
-            // if we don't have at least two options, we automatically show whichever is available (camera or roll)
-            shouldPresentPhotoCaptureController()
-        }
-    }
-    
-    func shouldStartCameraController() -> Bool {
-        
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) == false {
-            return false
-        }
-        
-        let cameraUI = UIImagePickerController()
-        
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-            && UIImagePickerController.availableMediaTypesForSourceType(UIImagePickerControllerSourceType.Camera)!.contains(kUTTypeImage as String) {
-                
-                cameraUI.mediaTypes = [kUTTypeImage as String]
-                cameraUI.sourceType = UIImagePickerControllerSourceType.Camera
-                
-                if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear) {
-                    cameraUI.cameraDevice = UIImagePickerControllerCameraDevice.Rear
-                } else if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front) {
-                    cameraUI.cameraDevice = UIImagePickerControllerCameraDevice.Front
-                }
-        } else {
-            return false
-        }
-        
-        cameraUI.allowsEditing = true
-        cameraUI.showsCameraControls = true
-        cameraUI.delegate = self
-        
-        presentViewController(cameraUI, animated: true, completion: nil)
-        
-        return true
-    }
-    
-    
-    func shouldStartPhotoLibraryPickerController() -> Bool {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) == false
-            && UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) == false {
-                return false
-        }
-        
-        let cameraUI = UIImagePickerController()
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)
-            && UIImagePickerController.availableMediaTypesForSourceType(UIImagePickerControllerSourceType.PhotoLibrary)!.contains(kUTTypeImage as String) {
-                
-                cameraUI.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-                cameraUI.mediaTypes = [kUTTypeImage as String]
-                
-        } else if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum)
-            && UIImagePickerController.availableMediaTypesForSourceType(UIImagePickerControllerSourceType.SavedPhotosAlbum)!.contains(kUTTypeImage as String) {
-                cameraUI.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
-                cameraUI.mediaTypes = [kUTTypeImage as String]
-                
-        } else {
-            return false
-        }
-        
-        cameraUI.allowsEditing = true
-        cameraUI.delegate = self
-        
-        presentViewController(cameraUI, animated: true, completion: nil)
-        
-        return true
-    }
-    
-    func handleGesture(gestureRecognizer: UIGestureRecognizer) {
-        shouldPresentPhotoCaptureController()
-    }
+//    func photoCaptureButtonAction(sender: AnyObject) {
+//        let cameraDeviceAvailable: Bool = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+//        let photoLibraryAvailable: Bool = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)
+//        
+//        if cameraDeviceAvailable && photoLibraryAvailable {
+//            let actionController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+//            
+//            let takePhotoAction = UIAlertAction(title: NSLocalizedString("Take Photo", comment: ""), style: UIAlertActionStyle.Default, handler: { _ in self.shouldStartCameraController() })
+//            let choosePhotoAction = UIAlertAction(title: NSLocalizedString("Choose Photo", comment: ""), style: UIAlertActionStyle.Default, handler: { _ in self.shouldStartPhotoLibraryPickerController() })
+//            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil)
+//            
+//            actionController.addAction(takePhotoAction)
+//            actionController.addAction(choosePhotoAction)
+//            actionController.addAction(cancelAction)
+//            
+//            presentViewController(actionController, animated: true, completion: nil)
+//        } else {
+//            // if we don't have at least two options, we automatically show whichever is available (camera or roll)
+//            shouldPresentPhotoCaptureController()
+//        }
+//    }
+//    
+//    func shouldStartCameraController() -> Bool {
+//        
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) == false {
+//            return false
+//        }
+//        
+//        let cameraUI = UIImagePickerController()
+//        
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+//            && UIImagePickerController.availableMediaTypesForSourceType(UIImagePickerControllerSourceType.Camera)!.contains(kUTTypeImage as String) {
+//                
+//                cameraUI.mediaTypes = [kUTTypeImage as String]
+//                cameraUI.sourceType = UIImagePickerControllerSourceType.Camera
+//                
+//                if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear) {
+//                    cameraUI.cameraDevice = UIImagePickerControllerCameraDevice.Rear
+//                } else if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front) {
+//                    cameraUI.cameraDevice = UIImagePickerControllerCameraDevice.Front
+//                }
+//        } else {
+//            return false
+//        }
+//        
+//        cameraUI.allowsEditing = true
+//        cameraUI.showsCameraControls = true
+//        cameraUI.delegate = self
+//        
+//        presentViewController(cameraUI, animated: true, completion: nil)
+//        
+//        return true
+//    }
+//    
+//    
+//    func shouldStartPhotoLibraryPickerController() -> Bool {
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) == false
+//            && UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) == false {
+//                return false
+//        }
+//        
+//        let cameraUI = UIImagePickerController()
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)
+//            && UIImagePickerController.availableMediaTypesForSourceType(UIImagePickerControllerSourceType.PhotoLibrary)!.contains(kUTTypeImage as String) {
+//                
+//                cameraUI.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+//                cameraUI.mediaTypes = [kUTTypeImage as String]
+//                
+//        } else if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum)
+//            && UIImagePickerController.availableMediaTypesForSourceType(UIImagePickerControllerSourceType.SavedPhotosAlbum)!.contains(kUTTypeImage as String) {
+//                cameraUI.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
+//                cameraUI.mediaTypes = [kUTTypeImage as String]
+//                
+//        } else {
+//            return false
+//        }
+//        
+//        cameraUI.allowsEditing = true
+//        cameraUI.delegate = self
+//        
+//        presentViewController(cameraUI, animated: true, completion: nil)
+//        
+//        return true
+//    }
+//    
+//    func handleGesture(gestureRecognizer: UIGestureRecognizer) {
+//        shouldPresentPhotoCaptureController()
+//    }
 }
