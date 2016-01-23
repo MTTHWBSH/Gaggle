@@ -19,10 +19,28 @@ class CameraViewController: ViewController {
         navigationItem.title = "Photo"
         view.backgroundColor = Style.whiteColor
         if Session.currentSession.loggedIn()  {
-            guard let user = PFUser.currentUser() else { return }
-            // hide empty state
+            guard let _ = PFUser.currentUser() else { return }
+            if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) ==  AVAuthorizationStatus.Authorized
+            {
+                createCameraPreview()
+            }
+            createCameraPreview()
         } else {
             // show empty state
+        }
+    }
+    
+    func createCameraPreview() {
+        let screenWidth = CGRectGetWidth(UIScreen.mainScreen().bounds)
+        let cameraPreviewRect: CGRect = CGRectMake(0.0, 0.0, screenWidth, screenWidth)
+        let camera = LLSimpleCamera(quality: AVCaptureSessionPresetHigh, position: LLCameraPositionRear, videoEnabled: false)
+        
+        camera.attachToViewController(self, withFrame: cameraPreviewRect)
+    }
+    
+    func requestCamera() {
+        LLSimpleCamera.requestCameraPermission { Void in
+            // do some stuff
         }
     }
     
