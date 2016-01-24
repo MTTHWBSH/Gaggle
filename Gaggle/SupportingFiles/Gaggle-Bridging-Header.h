@@ -12,4 +12,3 @@
 #import <SDWebImage/SDWebImagePrefetcher.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <PureLayout.h>
-#import <LLSimpleCamera.h>

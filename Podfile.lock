@@ -3,7 +3,6 @@ PODS:
   - EAIntroView (2.7.4):
     - EARestrictedScrollView (~> 0.2.0)
   - EARestrictedScrollView (0.2.0)
-  - LLSimpleCamera (4.1.0)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
   - PureLayout (3.0.1)
@@ -14,7 +13,6 @@ PODS:
 
 DEPENDENCIES:
   - EAIntroView (from `https://github.com/ealeksandrov/EAIntroView.git`, tag `2.7.4`)
-  - LLSimpleCamera (~> 4.1)
   - Parse
   - PureLayout
   - SDWebImage
@@ -34,7 +32,6 @@ SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   EAIntroView: 50b85eedf414260e61330070ffe5947e72493a62
   EARestrictedScrollView: f86d61e16c61d3e93c84f8e96e83122a2a3b7631
-  LLSimpleCamera: c2600d1621555473530ca2a70d4399d287086337
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84

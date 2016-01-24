@@ -11,7 +11,7 @@ import UIKit
 class EditPostViewController: ViewController {
 
     
-//    class PAPEditPhotoViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+//    class EditPhotoViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
 //        var scrollView: UIScrollView!
 //        var image: UIImage!
 //        var commentTextField: UITextField!
