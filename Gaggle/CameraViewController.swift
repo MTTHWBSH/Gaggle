@@ -25,10 +25,10 @@ class CameraViewController: ViewController {
         styleView()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        setup()
-    }
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        setup()
+//    }
     
     func setup() {
         navigationItem.title = "Photo"
@@ -68,13 +68,9 @@ class CameraViewController: ViewController {
     
     func requestCameraAccess() {
         AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: { [weak self] (granted :Bool) -> Void in
-//            if granted == true {
-//                self?.showCameraElements()
-//            } else {
-//                self?.hideCameraElements()
-//                self?.showEmptyState()
-//            }
-            self?.setup()
+            dispatch_async(dispatch_get_main_queue(), {
+                self?.setup()
+            })
         })
     }
     
