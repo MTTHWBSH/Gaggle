@@ -11,6 +11,7 @@ import UIKit
 class ProfileSettingsViewController: ViewController {
     
     @IBOutlet var versionLabel: Label!
+    @IBOutlet var signoutButton: PrimaryButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,14 +19,9 @@ class ProfileSettingsViewController: ViewController {
     }
     
     func setup() {
-        if Session.currentSession.loggedIn()  {
-            guard let user = PFUser.currentUser() else { return }
-            navigationItem.title = user.username
-            // hide empty state
-        } else {
-            navigationItem.title = "Profile"
-            // show empty state
-        }
+        guard let user = PFUser.currentUser() else { return }
+        navigationItem.title = user.username
+
         
         if let dict = NSBundle.mainBundle().infoDictionary {
             if let version = dict["CFBundleShortVersionString"] {

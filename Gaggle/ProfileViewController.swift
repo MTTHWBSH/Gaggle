@@ -8,7 +8,6 @@
 
 class ProfileViewController: ViewController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -18,14 +17,16 @@ class ProfileViewController: ViewController {
         if Session.currentSession.loggedIn()  {
             guard let user = PFUser.currentUser() else { return }
             navigationItem.title = user.username
-            // hide empty state
+            let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Gear"), style: .Plain, target: self, action: "settingsButtonPressed")
+            navigationItem.rightBarButtonItem = rightBarButtonItem
         } else {
             navigationItem.title = "Profile"
-            // show empty state
+            navigationItem.rightBarButtonItem = nil
+            
         }
     }
     
-    @IBAction func settingsButtonPressed(sender: AnyObject) {
+    func settingsButtonPressed() {
         performSegueWithIdentifier("ToSettings", sender: self)
     }
     
