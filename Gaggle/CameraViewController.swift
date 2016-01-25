@@ -68,12 +68,13 @@ class CameraViewController: ViewController {
     
     func requestCameraAccess() {
         AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: { [weak self] (granted :Bool) -> Void in
-            if granted == true {
-                self?.showCameraElements()
-            } else {
-                self?.hideCameraElements()
-                self?.showEmptyState()
-            }
+//            if granted == true {
+//                self?.showCameraElements()
+//            } else {
+//                self?.hideCameraElements()
+//                self?.showEmptyState()
+//            }
+            self?.setup()
         })
     }
     
