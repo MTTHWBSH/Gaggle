@@ -7,11 +7,26 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CameraViewController: ViewController {
     
+    @IBOutlet var previewView: UIView!
+    @IBOutlet var cameraButtonBorderView: UIView!
+    @IBOutlet var cameraButton: UIButton!
+    
+    var captureSession: AVCaptureSession?
+    var image: AVCaptureStillImageOutput?
+    var previewLayer: AVCaptureVideoPreviewLayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+        styleView()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         setup()
     }
     
@@ -19,21 +34,68 @@ class CameraViewController: ViewController {
         navigationItem.title = "Photo"
         view.backgroundColor = Style.whiteColor
         if Session.currentSession.loggedIn()  {
+            
             guard let _ = PFUser.currentUser() else { return }
+            
             if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) ==  AVAuthorizationStatus.Authorized {
-                createCameraPreview()
+                showCameraElements()
+            } else {
+                hideCameraElements()
+                showEmptyState()
+                requestCameraAccess()
             }
         } else {
-            // show empty state
+            showEmptyState()
         }
+    }
+    
+    override func styleView() {
+        cameraButtonBorderView.backgroundColor = UIColor.clearColor()
+        cameraButtonBorderView.layer.borderColor = Style.redColor.CGColor
+        cameraButtonBorderView.layer.borderWidth = 3.0
+        cameraButtonBorderView.layer.cornerRadius = cameraButtonBorderView.frame.size.width / 2
+        cameraButtonBorderView.clipsToBounds = true
+        
+        cameraButton.backgroundColor = Style.redColor
+        cameraButton.layer.cornerRadius = cameraButton.frame.size.width / 2
+        cameraButton.clipsToBounds = true
+        
     }
     
     func createCameraPreview() {
 
     }
     
-    func requestCamera() {
-
+    func requestCameraAccess() {
+        AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: { (granted :Bool) -> Void in
+            if granted == true {
+                self.showCameraElements()
+            } else {
+                self.hideCameraElements()
+                self.showEmptyState()
+            }
+        })
     }
+    
+    func showEmptyState() {
+        
+    }
+    
+    func hideCameraElements() {
+        cameraButton.hidden = true
+        cameraButtonBorderView.hidden = true
+        previewView.hidden = true
+    }
+    
+    func showCameraElements() {
+        cameraButton.hidden = false
+        cameraButtonBorderView.hidden = false
+        previewView.hidden = false
+    }
+    
+    @IBAction func didPressCameraButton(sender: AnyObject) {
+        Animation.springAnimation(cameraButton)
+    }
+    
     
 }

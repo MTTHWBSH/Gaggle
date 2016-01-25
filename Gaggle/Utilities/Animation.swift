@@ -30,5 +30,18 @@ class Animation {
             }
         }
     }
+    
+    class func springAnimation(view: UIView) {
+        view.transform = CGAffineTransformMakeScale(0.8, 0.8)
+        
+        UIView.animateWithDuration(1.7,
+            delay: 0,
+            usingSpringWithDamping: 0.40,
+            initialSpringVelocity: 6.00,
+            options: UIViewAnimationOptions.AllowUserInteraction,
+            animations: {
+                view.transform = CGAffineTransformIdentity
+            }, completion: nil)
+    }
 
 }

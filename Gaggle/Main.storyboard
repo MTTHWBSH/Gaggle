@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0IO-D6-UDX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Profile Settings-->
@@ -64,17 +65,80 @@
                         <viewControllerLayoutGuide type="bottom" id="qgC-sE-ptU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yED-r2-DPH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cz3-ye-hbZ">
+                                <rect key="frame" x="0.0" y="121" width="375" height="375"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Cz3-ye-hbZ" secondAttribute="height" multiplier="1:1" id="DsF-5j-EbZ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4H-8d-x3F">
+                                <rect key="frame" x="0.0" y="496" width="375" height="122"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhC-Zg-ZI5">
+                                        <rect key="frame" x="152.5" y="26" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="llh-ql-lYq"/>
+                                            <constraint firstAttribute="width" constant="70" id="zyp-8b-Vjd"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ron-gO-Hxr">
+                                        <rect key="frame" x="159" y="32.5" width="57" height="57"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="811-LT-aXp"/>
+                                            <constraint firstAttribute="width" constant="57" id="rz2-UB-Y2I"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="didPressCameraButton:" destination="3fT-va-sL0" eventType="touchUpInside" id="RHe-gu-CqA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ron-gO-Hxr" firstAttribute="centerX" secondItem="z4H-8d-x3F" secondAttribute="centerX" id="6Ld-Nn-5Em"/>
+                                    <constraint firstItem="jhC-Zg-ZI5" firstAttribute="centerX" secondItem="z4H-8d-x3F" secondAttribute="centerX" id="B0N-BT-xxy"/>
+                                    <constraint firstItem="jhC-Zg-ZI5" firstAttribute="centerY" secondItem="z4H-8d-x3F" secondAttribute="centerY" id="C2D-4T-JmG"/>
+                                    <constraint firstItem="Ron-gO-Hxr" firstAttribute="centerY" secondItem="z4H-8d-x3F" secondAttribute="centerY" id="Qk3-cX-h87"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="z4H-8d-x3F" secondAttribute="trailing" id="1B5-ZH-FQ1"/>
+                            <constraint firstItem="Cz3-ye-hbZ" firstAttribute="leading" secondItem="yED-r2-DPH" secondAttribute="leading" id="IdL-hV-u7r"/>
+                            <constraint firstItem="Cz3-ye-hbZ" firstAttribute="centerX" secondItem="yED-r2-DPH" secondAttribute="centerX" id="Moa-my-ooK"/>
+                            <constraint firstItem="z4H-8d-x3F" firstAttribute="leading" secondItem="yED-r2-DPH" secondAttribute="leading" id="PnJ-Bs-8rX"/>
+                            <constraint firstAttribute="trailing" secondItem="Cz3-ye-hbZ" secondAttribute="trailing" id="aQj-A7-eDj"/>
+                            <constraint firstItem="Cz3-ye-hbZ" firstAttribute="centerY" secondItem="yED-r2-DPH" secondAttribute="centerY" id="cw7-Gm-zyR"/>
+                            <constraint firstItem="z4H-8d-x3F" firstAttribute="top" secondItem="Cz3-ye-hbZ" secondAttribute="bottom" id="hvG-sH-DWb"/>
+                            <constraint firstAttribute="bottom" secondItem="z4H-8d-x3F" secondAttribute="bottom" id="kWQ-9q-buf"/>
+                            <constraint firstItem="Cz3-ye-hbZ" firstAttribute="top" secondItem="gKj-2M-QBc" secondAttribute="bottom" constant="20" id="ueV-Ky-6jr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ueV-Ky-6jr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="IjP-n9-I1O">
                         <barButtonItem key="rightBarButtonItem" image="CameraRoll" id="4SN-Jm-XGd"/>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="Ron-gO-Hxr" id="3ed-dH-cwD"/>
+                        <outlet property="cameraButtonBorderView" destination="jhC-Zg-ZI5" id="fxz-T6-llF"/>
+                        <outlet property="previewView" destination="Cz3-ye-hbZ" id="kYR-JO-JxB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyB-VS-QR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910" y="702"/>
+            <point key="canvasLocation" x="1909.5" y="701.5"/>
         </scene>
         <!--Profile-->
         <scene sceneID="fkG-ar-eWr">
