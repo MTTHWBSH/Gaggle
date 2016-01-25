@@ -55,7 +55,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="mzn-4m-tl1"/>
                     <connections>
-                        <outlet property="signoutButton" destination="Qom-Qd-Qvt" id="uN4-wn-xy6"/>
                         <outlet property="versionLabel" destination="CYA-9C-a3s" id="FWS-gu-o7Y"/>
                     </connections>
                 </viewController>

@@ -11,7 +11,6 @@ import UIKit
 class ProfileSettingsViewController: ViewController {
     
     @IBOutlet var versionLabel: Label!
-    @IBOutlet var signoutButton: PrimaryButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

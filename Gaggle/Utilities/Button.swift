@@ -35,6 +35,7 @@ class Button: UIButton {
     }
     
     func style() {
+        titleLabel?.font = Style.regularFontWithSize(14.0)
         setBackgroundColor(UIColor.clearColor(), forState: .Normal)
         setBackgroundColor(UIColor.clearColor(), forState: .Selected)
         setBackgroundColor(UIColor.clearColor(), forState: .Highlighted)
@@ -67,7 +68,7 @@ class PrimaryButton: Button {
     }
     
     override func style() {
-        Style.boldFontWithSize(18.0)
+        titleLabel?.font = Style.regularFontWithSize(18.0)
         setBackgroundColor(Style.redColor, forState: .Normal)
         setBackgroundColor(Style.redColorSelected, forState: .Selected)
         setBackgroundColor(Style.redColorSelected, forState: .Highlighted)
@@ -98,7 +99,7 @@ class SecondaryButton: Button {
     }
     
     override func style() {
-        Style.boldFontWithSize(18.0)
+        titleLabel?.font = Style.regularFontWithSize(18.0)
         setBackgroundColor(Style.grayColor, forState: .Normal)
         setBackgroundColor(Style.grayColorSelected, forState: .Selected)
         setBackgroundColor(Style.grayColorSelected, forState: .Highlighted)

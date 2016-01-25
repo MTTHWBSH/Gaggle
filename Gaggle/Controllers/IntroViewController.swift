@@ -12,8 +12,6 @@ class IntroViewController: UIViewController, EAIntroDelegate {
     
     @IBOutlet weak var introViewContainer: UIView!
     var introView: EAIntroView!
-    @IBOutlet weak var loginButton: SecondaryButton!
-    @IBOutlet weak var signUpButton: PrimaryButton!
     
     override func prefersStatusBarHidden() -> Bool {
         return true
