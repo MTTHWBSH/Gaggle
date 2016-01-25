@@ -67,12 +67,12 @@ class CameraViewController: ViewController {
     }
     
     func requestCameraAccess() {
-        AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: { (granted :Bool) -> Void in
+        AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: { [weak self] (granted :Bool) -> Void in
             if granted == true {
-                self.showCameraElements()
+                self?.showCameraElements()
             } else {
-                self.hideCameraElements()
-                self.showEmptyState()
+                self?.hideCameraElements()
+                self?.showEmptyState()
             }
         })
     }
@@ -94,7 +94,9 @@ class CameraViewController: ViewController {
     }
     
     @IBAction func didPressCameraButton(sender: AnyObject) {
-        Animation.springAnimation(cameraButton)
+        Animation.springAnimation(cameraButton, scale: 0.8, duration: 1.5) { Void in
+            print("completion called")
+        }
     }
     
     

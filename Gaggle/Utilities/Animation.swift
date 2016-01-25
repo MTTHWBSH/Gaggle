@@ -31,17 +31,21 @@ class Animation {
         }
     }
     
-    class func springAnimation(view: UIView) {
-        view.transform = CGAffineTransformMakeScale(0.8, 0.8)
+    class func springAnimation(view: UIView, scale: CGFloat, duration: Double, completion: (Void -> Void)?) {
+        view.transform = CGAffineTransformMakeScale(scale, scale)
         
-        UIView.animateWithDuration(1.7,
+        UIView.animateWithDuration(duration,
             delay: 0,
-            usingSpringWithDamping: 0.40,
-            initialSpringVelocity: 6.00,
+            usingSpringWithDamping: 0.8,
+            initialSpringVelocity: 4.0,
             options: UIViewAnimationOptions.AllowUserInteraction,
             animations: {
                 view.transform = CGAffineTransformIdentity
-            }, completion: nil)
+            }, completion: { finished in
+                if let completion = completion {
+                    completion()
+                }
+        })
     }
 
 }
