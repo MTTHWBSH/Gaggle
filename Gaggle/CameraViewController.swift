@@ -25,11 +25,6 @@ class CameraViewController: ViewController {
         styleView()
     }
     
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        setup()
-//    }
-    
     func setup() {
         navigationItem.title = "Photo"
         view.backgroundColor = Style.whiteColor
