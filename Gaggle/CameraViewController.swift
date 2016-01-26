@@ -115,10 +115,6 @@ class CameraViewController: ViewController {
         
     }
     
-    func showCameraDisabledState() {
-    
-    }
-    
     func hideCameraElements() {
         cameraButton.hidden = true
         cameraButtonBorderView.hidden = true
@@ -131,8 +127,17 @@ class CameraViewController: ViewController {
         previewView.hidden = false
     }
     
+    func showCameraDisabledState() {
+        let text = "Camera access must be enabled to use this feature.\n\n Go to app settings to enable camera."
+        showCenterLabelWithText(text)
+    }
+    
     func showNoCameraLabel() {
-        let labelText = "This feature is only available on devices that support camera functions.\n\n Select a photo from your camera roll to get started."
+        let text = "This feature is only available on devices that support camera functions.\n\n Select a photo from your camera roll to get started."
+        showCenterLabelWithText(text)
+    }
+    
+    func showCenterLabelWithText(text: String) {
         let labelFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
         let label = UILabel(frame: labelFrame)
         label.textAlignment = NSTextAlignment.Center
@@ -140,7 +145,7 @@ class CameraViewController: ViewController {
         label.lineBreakMode = .ByWordWrapping
         label.font = Style.lightFontWithSize(20.0)
         label.textColor = Style.blackColor
-        label.text = labelText
+        label.text = text
         view.addSubview(label)
         
         label.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0, 20.0, 0.0, 20.0))
@@ -165,6 +170,5 @@ class CameraViewController: ViewController {
             }
         }
     }
-    
     
 }
