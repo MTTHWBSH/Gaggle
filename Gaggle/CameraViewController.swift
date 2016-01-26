@@ -32,13 +32,22 @@ class CameraViewController: ViewController {
             
             guard let _ = PFUser.currentUser() else { return }
             
-            if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) ==  AVAuthorizationStatus.Authorized {
-                showCameraElements()
+            if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+                if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) ==  .Authorized {
+                    showCameraElements()
+                } else if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) == .Denied {
+                    hideCameraElements()
+                    showCameraDisabledState()
+                } else {
+                    hideCameraElements()
+                    showEmptyState()
+                    requestCameraAccess()
+                }
             } else {
                 hideCameraElements()
-                showEmptyState()
-                requestCameraAccess()
+                showNoCameraLabel()
             }
+            
         } else {
             showEmptyState()
         }
@@ -73,6 +82,10 @@ class CameraViewController: ViewController {
         
     }
     
+    func showCameraDisabledState() {
+    
+    }
+    
     func hideCameraElements() {
         cameraButton.hidden = true
         cameraButtonBorderView.hidden = true
@@ -85,9 +98,25 @@ class CameraViewController: ViewController {
         previewView.hidden = false
     }
     
+    func showNoCameraLabel() {
+        let labelText = "This feature is only available on devices that support camera functions.\n\n Select a photo from your camera roll to get started."
+        let labelFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        let label = UILabel(frame: labelFrame)
+        label.textAlignment = NSTextAlignment.Center
+        label.numberOfLines = 0
+        label.lineBreakMode = .ByWordWrapping
+        label.font = Style.lightFontWithSize(20.0)
+        label.textColor = Style.blackColor
+        label.text = labelText
+        view.addSubview(label)
+        
+        label.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0, 20.0, 0.0, 20.0))
+        label.autoCenterInSuperview()
+    }
+    
     @IBAction func didPressCameraButton(sender: AnyObject) {
         Animation.springAnimation(cameraButton, scale: 0.8, duration: 1.5) { Void in
-            print("completion called")
+            // segue to next view with image
         }
     }
     
