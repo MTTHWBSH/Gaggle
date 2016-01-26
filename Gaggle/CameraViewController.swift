@@ -21,8 +21,30 @@ class CameraViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         styleView()
+        setup()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setup()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        setup()
+    }
+    
+    override func styleView() {
+        cameraButtonBorderView.backgroundColor = UIColor.clearColor()
+        cameraButtonBorderView.layer.borderColor = Style.redColor.CGColor
+        cameraButtonBorderView.layer.borderWidth = 3.0
+        cameraButtonBorderView.layer.cornerRadius = cameraButtonBorderView.frame.size.width / 2
+        cameraButtonBorderView.clipsToBounds = true
+        
+        cameraButton.backgroundColor = Style.redColor
+        cameraButton.layer.cornerRadius = cameraButton.frame.size.width / 2
+        cameraButton.clipsToBounds = true
     }
     
     func setup() {
@@ -35,6 +57,7 @@ class CameraViewController: ViewController {
             if UIImagePickerController.isSourceTypeAvailable(.Camera) {
                 if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) ==  .Authorized {
                     showCameraElements()
+                    setupCaptureSession()
                 } else if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) == .Denied {
                     hideCameraElements()
                     showCameraDisabledState()
@@ -53,21 +76,31 @@ class CameraViewController: ViewController {
         }
     }
     
-    override func styleView() {
-        cameraButtonBorderView.backgroundColor = UIColor.clearColor()
-        cameraButtonBorderView.layer.borderColor = Style.redColor.CGColor
-        cameraButtonBorderView.layer.borderWidth = 3.0
-        cameraButtonBorderView.layer.cornerRadius = cameraButtonBorderView.frame.size.width / 2
-        cameraButtonBorderView.clipsToBounds = true
+    func setupCaptureSession() {
+        captureSession = AVCaptureSession()
+        let backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let input: AVCaptureDeviceInput?
         
-        cameraButton.backgroundColor = Style.redColor
-        cameraButton.layer.cornerRadius = cameraButton.frame.size.width / 2
-        cameraButton.clipsToBounds = true
+        guard let captureSession = captureSession else { return }
+        captureSession.sessionPreset = AVCaptureSessionPresetPhoto
         
-    }
-    
-    func createCameraPreview() {
-
+        do {
+            input = try AVCaptureDeviceInput(device: backCamera)
+            captureSession.addInput(input)
+        } catch _ {
+            fatalError("Error setting up capture session")
+        }
+        
+        image = AVCaptureStillImageOutput()
+        guard let image = image else { return }
+        image.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
+        captureSession.addOutput(image)
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        if let previewLayer = previewLayer {
+            previewView.layer.addSublayer(previewLayer)
+            previewLayer.frame = previewView.bounds
+        }
     }
     
     func requestCameraAccess() {
@@ -116,7 +149,20 @@ class CameraViewController: ViewController {
     
     @IBAction func didPressCameraButton(sender: AnyObject) {
         Animation.springAnimation(cameraButton, scale: 0.8, duration: 1.5) { Void in
-            // segue to next view with image
+            guard let image = self.image else { return }
+            if let videoConnection = image.connectionWithMediaType(AVMediaTypeVideo) {
+                image.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {(sampleBuffer, error) in
+                    
+                    let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+                    let dataProvider = CGDataProviderCreateWithCFData(imageData)
+                    
+                    if let CGImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault) {
+                        let image = UIImage(CGImage: CGImageRef, scale: 1.0, orientation: .Right)
+                        print(image)
+                    }
+    
+                })
+            }
         }
     }
     
