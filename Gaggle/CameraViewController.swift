@@ -19,20 +19,15 @@ class CameraViewController: ViewController {
     var image: AVCaptureStillImageOutput?
     var previewLayer: AVCaptureVideoPreviewLayer?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        styleView()
-        setup()
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setup()
+        styleView()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        setup()
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        captureSession?.stopRunning()
     }
     
     override func styleView() {
@@ -45,11 +40,12 @@ class CameraViewController: ViewController {
         cameraButton.backgroundColor = Style.redColor
         cameraButton.layer.cornerRadius = cameraButton.frame.size.width / 2
         cameraButton.clipsToBounds = true
+        
+        navigationItem.title = "Photo"
+        view.backgroundColor = Style.whiteColor
     }
     
     func setup() {
-        navigationItem.title = "Photo"
-        view.backgroundColor = Style.whiteColor
         if Session.currentSession.loggedIn()  {
             
             guard let _ = PFUser.currentUser() else { return }
@@ -77,6 +73,9 @@ class CameraViewController: ViewController {
     }
     
     func setupCaptureSession() {
+//        dispatch_async(dispatch_queue_t) { () -> Void in
+//            
+//        }
         captureSession = AVCaptureSession()
         let backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         let input: AVCaptureDeviceInput?
@@ -95,11 +94,13 @@ class CameraViewController: ViewController {
         guard let image = image else { return }
         image.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
         captureSession.addOutput(image)
+        captureSession.startRunning()
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         if let previewLayer = previewLayer {
-            previewView.layer.addSublayer(previewLayer)
             previewLayer.frame = previewView.bounds
+            previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+            previewView.layer.insertSublayer(previewLayer, above: previewView.layer)
         }
     }
     
