@@ -53,7 +53,10 @@ class CameraViewController: ViewController {
             if UIImagePickerController.isSourceTypeAvailable(.Camera) {
                 if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) ==  .Authorized {
                     showCameraElements()
-                    setupCaptureSession()
+                    let priority = DISPATCH_QUEUE_PRIORITY_BACKGROUND
+                    dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                        self.setupCaptureSession()
+                    }
                 } else if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) == .Denied {
                     hideCameraElements()
                     showCameraDisabledState()
@@ -73,9 +76,6 @@ class CameraViewController: ViewController {
     }
     
     func setupCaptureSession() {
-//        dispatch_async(dispatch_queue_t) { () -> Void in
-//            
-//        }
         captureSession = AVCaptureSession()
         let backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         let input: AVCaptureDeviceInput?
