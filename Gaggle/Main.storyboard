@@ -140,6 +140,7 @@
                         <outlet property="cameraButton" destination="Ron-gO-Hxr" id="3ed-dH-cwD"/>
                         <outlet property="cameraButtonBorderView" destination="jhC-Zg-ZI5" id="fxz-T6-llF"/>
                         <outlet property="previewView" destination="Cz3-ye-hbZ" id="kYR-JO-JxB"/>
+                        <segue destination="KVg-Fp-p9w" kind="presentation" identifier="toEditPost" id="sgp-Nm-Gsf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyB-VS-QR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,6 +264,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3E-n5-5p0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1098" y="1428"/>
+        </scene>
+        <!--Edit Post-->
+        <scene sceneID="McT-00-o3D">
+            <objects>
+                <viewController title="Edit Post" id="KVg-Fp-p9w" customClass="EditPostViewController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fMh-w4-Lft"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qjr-2i-qDv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2QY-f4-4w6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jd9-Fb-Rmm">
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jd9-Fb-Rmm" secondAttribute="height" multiplier="1:1" id="D39-Ss-Gc6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jd9-Fb-Rmm" firstAttribute="leading" secondItem="2QY-f4-4w6" secondAttribute="leading" id="0fa-lh-yXZ"/>
+                            <constraint firstAttribute="trailing" secondItem="jd9-Fb-Rmm" secondAttribute="trailing" id="NMx-Ma-0uR"/>
+                            <constraint firstItem="jd9-Fb-Rmm" firstAttribute="centerY" secondItem="2QY-f4-4w6" secondAttribute="centerY" id="O8j-78-meH"/>
+                            <constraint firstItem="jd9-Fb-Rmm" firstAttribute="centerX" secondItem="2QY-f4-4w6" secondAttribute="centerX" id="Scx-yC-n1j"/>
+                            <constraint firstItem="jd9-Fb-Rmm" firstAttribute="top" secondItem="fMh-w4-Lft" secondAttribute="bottom" constant="20" id="WmH-49-tKZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WmH-49-tKZ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="XER-ZU-pdX">
+                        <barButtonItem key="rightBarButtonItem" image="CameraRoll" id="AP8-A8-kLY"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="imageView" destination="jd9-Fb-Rmm" id="cIS-WM-MJI"/>
+                        <outlet property="previewView" destination="jd9-Fb-Rmm" id="5ZE-kT-Nlp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SEG-ho-6yt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2425.5" y="701.5"/>
         </scene>
     </scenes>
     <resources>
