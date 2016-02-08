@@ -36,6 +36,8 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.autocapitalizationType = .None
         passwordTextField.autocorrectionType = .No
         loginSignupButton.setTitle(loginSignupButtonText, forState: .Normal)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     func styleView() {
@@ -45,6 +47,10 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.tintColor = Style.redColor
         brandLabel.textColor = Style.redColor
         brandLabel.font = Style.regularFontWithSize(32.0)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func loginSignupButtonPressed(sender: AnyObject) {
@@ -89,8 +95,12 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
                     self.presentViewController(nc, animated: true, completion: nil)
                 })
                 
+            } else if ((error) != nil) {
+                if let error = error {
+                    SVProgressHUD.showErrorWithStatus(error.localizedDescription, maskType: .Black)
+                }
             } else {
-                SVProgressHUD.showWithStatus("Login failed, please try again", maskType: .Black)
+                SVProgressHUD.showErrorWithStatus("Login failed, please try again", maskType: .Black)
             }
         })
     }
@@ -106,11 +116,13 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
             SVProgressHUD.dismiss()
             
             if ((error) != nil) {
-                SVProgressHUD.showWithStatus("Sign up failed, please try again", maskType: .Black)
+                if let error = error {
+                    SVProgressHUD.showErrorWithStatus(error.localizedDescription, maskType: .Black)
+                }
             } else {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    let vc:UIViewController = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Feed") as! FeedViewController
-                    self.presentViewController(vc, animated: true, completion: nil)
+                    let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
+                    self.presentViewController(nc, animated: true, completion: nil)
                 })
             }
         })

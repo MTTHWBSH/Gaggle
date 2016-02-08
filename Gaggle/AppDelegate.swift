@@ -14,30 +14,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         
         Parse.enableLocalDatastore()
+        
+        let config = ParseClientConfiguration(block: {
+            (ParseMutableClientConfiguration) -> Void in
+            ParseMutableClientConfiguration.applicationId = parseAppID
+            ParseMutableClientConfiguration.clientKey = parseClientKey
+            ParseMutableClientConfiguration.server = parseServerURL
+        })
+        
+        let configDev = ParseClientConfiguration(block: {
+            (ParseMutableClientConfiguration) -> Void in
+            ParseMutableClientConfiguration.applicationId = parseDevAppID
+            ParseMutableClientConfiguration.clientKey = parseDevClientKey
+            ParseMutableClientConfiguration.server = parseDevServerURL
+        })
         
         if let environment = NSBundle.mainBundle().infoDictionary?["Environment"] as? String {
             switch environment {
             case "Production":
-                Parse.setApplicationId(parseDevAppID, clientKey: parseDevClientKey)
+                Parse.initializeWithConfiguration(config)
             case "Dev":
-                Parse.setApplicationId(parseDevAppID, clientKey: parseDevClientKey)
+                Parse.initializeWithConfiguration(configDev)
             default:
                 break
             }
         }
-        
-        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         if !Session.currentSession.loggedIn() {
             let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as! IntroViewController
             window?.rootViewController = vc
             window?.makeKeyAndVisible()
         } else {
-            let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
-            window?.rootViewController = nc
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
+            window?.rootViewController = vc
             window?.makeKeyAndVisible()
         }
         
