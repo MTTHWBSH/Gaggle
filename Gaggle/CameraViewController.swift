@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import AVFoundation
 
 class CameraViewController: ViewController {
@@ -28,6 +29,10 @@ class CameraViewController: ViewController {
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         captureSession?.stopRunning()
+        previewLayer?.removeFromSuperlayer()
+        for view in previewView.subviews{
+            view.removeFromSuperview()
+        }
     }
     
     override func styleView() {
@@ -51,11 +56,17 @@ class CameraViewController: ViewController {
             guard let _ = PFUser.currentUser() else { return }
             
             if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-                if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) ==  .Authorized {
+                if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) == .Authorized {
                     showCameraElements()
-                    let priority = DISPATCH_QUEUE_PRIORITY_BACKGROUND
+                    
+                    let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
                     dispatch_async(dispatch_get_global_queue(priority, 0)) {
                         self.setupCaptureSession()
+                        dispatch_async(dispatch_get_main_queue()) {
+                            if let captureSession = self.captureSession {
+                                self.addPreviewLayer(captureSession)
+                            }
+                        }
                     }
                 } else if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) == .Denied {
                     hideCameraElements()
@@ -95,13 +106,21 @@ class CameraViewController: ViewController {
         image.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
         captureSession.addOutput(image)
         captureSession.startRunning()
-        
+    }
+    
+    func addPreviewLayer(captureSession: AVCaptureSession) {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         if let previewLayer = previewLayer {
             previewLayer.frame = previewView.bounds
             previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
             previewView.layer.insertSublayer(previewLayer, above: previewView.layer)
         }
+    }
+    
+    func showPreview(image: UIImage) {
+        let imageView = UIImageView(image: image)
+        imageView.frame = previewView.bounds
+        previewView.insertSubview(imageView, aboveSubview: previewView)
     }
     
     func requestCameraAccess() {
@@ -154,21 +173,23 @@ class CameraViewController: ViewController {
     }
     
     @IBAction func didPressCameraButton(sender: AnyObject) {
+        guard let image = self.image else { return }
+        if let videoConnection = image.connectionWithMediaType(AVMediaTypeVideo) {
+            image.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {(sampleBuffer, error) in
+                
+                let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+                let dataProvider = CGDataProviderCreateWithCFData(imageData)
+                
+                if let CGImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault) {
+                    let image = UIImage(CGImage: CGImageRef, scale: 1.0, orientation: .Right)
+                    self.showPreview(image)
+                }
+                
+            })
+        }
+        
         Animation.springAnimation(cameraButton, scale: 0.8, duration: 1.5) { Void in
-            guard let image = self.image else { return }
-            if let videoConnection = image.connectionWithMediaType(AVMediaTypeVideo) {
-                image.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {(sampleBuffer, error) in
-                    
-                    let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
-                    let dataProvider = CGDataProviderCreateWithCFData(imageData)
-                    
-                    if let CGImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault) {
-                        let image = UIImage(CGImage: CGImageRef, scale: 1.0, orientation: .Right)
-                        print(image)
-                    }
-    
-                })
-            }
+
         }
     }
     
