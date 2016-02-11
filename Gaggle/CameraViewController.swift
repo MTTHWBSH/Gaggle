@@ -148,7 +148,7 @@ class CameraViewController: ViewController {
     }
     
     func showCameraDisabledState() {
-        let text = "Camera access must be enabled to use this feature.\n\n Go to app settings to enable camera."
+        let text = "Camera access must be enabled to use this feature.\n\n Go to settings to enable camera."
         showCenterLabelWithText(text)
     }
     
