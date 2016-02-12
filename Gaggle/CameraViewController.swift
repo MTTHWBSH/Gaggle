@@ -15,9 +15,12 @@ class CameraViewController: ViewController {
     @IBOutlet var previewView: UIView!
     @IBOutlet var cameraButtonBorderView: UIView!
     @IBOutlet var cameraButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var confirmButton: UIButton!
     
     var captureSession: AVCaptureSession?
     var image: AVCaptureStillImageOutput?
+    var imageToEdit: UIImage?
     var previewLayer: AVCaptureVideoPreviewLayer?
     
     override func viewWillAppear(animated: Bool) {
@@ -45,6 +48,9 @@ class CameraViewController: ViewController {
         cameraButton.backgroundColor = Style.redColor
         cameraButton.layer.cornerRadius = cameraButton.frame.size.width / 2
         cameraButton.clipsToBounds = true
+        
+        cancelButton.hidden = true
+        confirmButton.hidden = true
         
         navigationItem.title = "Photo"
         view.backgroundColor = Style.whiteColor
@@ -120,7 +126,17 @@ class CameraViewController: ViewController {
     func showPreview(image: UIImage) {
         let imageView = UIImageView(image: image)
         imageView.frame = previewView.bounds
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.clipsToBounds = true
         previewView.insertSubview(imageView, aboveSubview: previewView)
+        showActionButtons()
+    }
+    
+    func showActionButtons () {
+        cancelButton.hidden = false
+        confirmButton.hidden = false
+        Animation.springAnimation(cancelButton, scale: 1.8, duration: 1.2, completion: nil)
+        Animation.springAnimation(confirmButton, scale: 1.8, duration: 1.2, completion: nil)
     }
     
     func requestCameraAccess() {
@@ -172,8 +188,15 @@ class CameraViewController: ViewController {
         label.autoCenterInSuperview()
     }
     
+    func presentEditPostVC() {
+        
+    }
+    
     @IBAction func didPressCameraButton(sender: AnyObject) {
+        Animation.springAnimation(cameraButton, scale: 0.8, duration: 1.5, completion: nil)
+        
         guard let image = self.image else { return }
+        
         if let videoConnection = image.connectionWithMediaType(AVMediaTypeVideo) {
             image.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {(sampleBuffer, error) in
                 
@@ -183,14 +206,33 @@ class CameraViewController: ViewController {
                 if let CGImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault) {
                     let image = UIImage(CGImage: CGImageRef, scale: 1.0, orientation: .Right)
                     self.showPreview(image)
+                    self.imageToEdit = image
                 }
                 
             })
         }
         
-        Animation.springAnimation(cameraButton, scale: 0.8, duration: 1.5) { Void in
-
+//        Animation.springAnimation(cameraButton, scale: 0.8, duration: 1.5) { Void in
+//            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EditPost") as! EditPostViewController
+//            presentViewController(vc, animated: true, completion: nil)
+//        }
+    }
+    
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        Animation.springAnimation(cancelButton, scale: 1.2, duration: 1.2, completion: nil)
+        for view in self.previewView.subviews {
+            view.removeFromSuperview()
         }
     }
+    
+    @IBAction func confirmButtonpressed(sender: AnyObject) {
+        Animation.springAnimation(confirmButton, scale: 1.2, duration: 1.2) { Void in
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EditPost") as! EditPostViewController
+            vc.image = imageToEdit
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+    }
+    
+    
     
 }

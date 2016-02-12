@@ -85,7 +85,7 @@
                                 <rect key="frame" x="0.0" y="496" width="375" height="122"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhC-Zg-ZI5">
-                                        <rect key="frame" x="152.5" y="26" width="70" height="70"/>
+                                        <rect key="frame" x="152" y="26" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="llh-ql-lYq"/>
@@ -93,7 +93,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ron-gO-Hxr">
-                                        <rect key="frame" x="159" y="32.5" width="57" height="57"/>
+                                        <rect key="frame" x="159" y="32" width="57" height="57"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="57" id="811-LT-aXp"/>
@@ -103,13 +103,39 @@
                                             <action selector="didPressCameraButton:" destination="3fT-va-sL0" eventType="touchUpInside" id="RHe-gu-CqA"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y9-OJ-LBH">
+                                        <rect key="frame" x="256" y="41" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="5tm-o4-29m"/>
+                                            <constraint firstAttribute="height" constant="40" id="gfZ-Ly-5JT"/>
+                                        </constraints>
+                                        <state key="normal" image="Check"/>
+                                        <connections>
+                                            <action selector="confirmButtonpressed:" destination="3fT-va-sL0" eventType="touchUpInside" id="p4L-RJ-YGa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjk-Y8-Gx2">
+                                        <rect key="frame" x="79" y="41" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="q2p-1U-W5D"/>
+                                            <constraint firstAttribute="width" constant="40" id="wSP-os-pLd"/>
+                                        </constraints>
+                                        <state key="normal" image="Close"/>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="3fT-va-sL0" eventType="touchUpInside" id="M8Q-MM-o0E"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Ron-gO-Hxr" firstAttribute="centerX" secondItem="z4H-8d-x3F" secondAttribute="centerX" id="6Ld-Nn-5Em"/>
                                     <constraint firstItem="jhC-Zg-ZI5" firstAttribute="centerX" secondItem="z4H-8d-x3F" secondAttribute="centerX" id="B0N-BT-xxy"/>
+                                    <constraint firstItem="Jjk-Y8-Gx2" firstAttribute="centerY" secondItem="Ron-gO-Hxr" secondAttribute="centerY" id="Bw4-DR-aVX"/>
                                     <constraint firstItem="jhC-Zg-ZI5" firstAttribute="centerY" secondItem="z4H-8d-x3F" secondAttribute="centerY" id="C2D-4T-JmG"/>
                                     <constraint firstItem="Ron-gO-Hxr" firstAttribute="centerY" secondItem="z4H-8d-x3F" secondAttribute="centerY" id="Qk3-cX-h87"/>
+                                    <constraint firstItem="5Y9-OJ-LBH" firstAttribute="leading" secondItem="Ron-gO-Hxr" secondAttribute="trailing" constant="40" id="csA-uY-KU0"/>
+                                    <constraint firstItem="5Y9-OJ-LBH" firstAttribute="centerY" secondItem="Ron-gO-Hxr" secondAttribute="centerY" id="n9W-qx-nM4"/>
+                                    <constraint firstItem="Ron-gO-Hxr" firstAttribute="leading" secondItem="Jjk-Y8-Gx2" secondAttribute="trailing" constant="40" id="oRF-Iy-Wum"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -139,8 +165,9 @@
                     <connections>
                         <outlet property="cameraButton" destination="Ron-gO-Hxr" id="3ed-dH-cwD"/>
                         <outlet property="cameraButtonBorderView" destination="jhC-Zg-ZI5" id="fxz-T6-llF"/>
+                        <outlet property="cancelButton" destination="Jjk-Y8-Gx2" id="AMW-A2-Y1u"/>
+                        <outlet property="confirmButton" destination="5Y9-OJ-LBH" id="MiW-Cz-h3L"/>
                         <outlet property="previewView" destination="Cz3-ye-hbZ" id="kYR-JO-JxB"/>
-                        <segue destination="KVg-Fp-p9w" kind="presentation" identifier="toEditPost" id="sgp-Nm-Gsf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyB-VS-QR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,7 +295,7 @@
         <!--Edit Post-->
         <scene sceneID="McT-00-o3D">
             <objects>
-                <viewController title="Edit Post" id="KVg-Fp-p9w" customClass="EditPostViewController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditPost" title="Edit Post" id="KVg-Fp-p9w" customClass="EditPostViewController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fMh-w4-Lft"/>
                         <viewControllerLayoutGuide type="bottom" id="Qjr-2i-qDv"/>
@@ -284,6 +311,12 @@
                                     <constraint firstAttribute="width" secondItem="jd9-Fb-Rmm" secondAttribute="height" multiplier="1:1" id="D39-Ss-Gc6"/>
                                 </constraints>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bio-Uv-00F">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Share" id="ooV-7h-l6g"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -299,24 +332,23 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="XER-ZU-pdX">
-                        <barButtonItem key="rightBarButtonItem" image="CameraRoll" id="AP8-A8-kLY"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="gls-DS-jf9"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="imageView" destination="jd9-Fb-Rmm" id="cIS-WM-MJI"/>
-                        <outlet property="previewView" destination="jd9-Fb-Rmm" id="5ZE-kT-Nlp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEG-ho-6yt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425.5" y="701.5"/>
+            <point key="canvasLocation" x="2371.5" y="701.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="Camera" width="32" height="25"/>
         <image name="CameraRoll" width="22" height="22"/>
+        <image name="Check" width="22" height="22"/>
+        <image name="Close" width="22" height="22"/>
         <image name="Home" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
     </resources>
