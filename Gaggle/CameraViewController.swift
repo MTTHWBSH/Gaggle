@@ -20,6 +20,7 @@ class CameraViewController: ViewController {
     
     var captureSession: AVCaptureSession?
     var image: AVCaptureStillImageOutput?
+    var previewImage: UIImage?
     var imageToEdit: UIImage?
     var previewLayer: AVCaptureVideoPreviewLayer?
     
@@ -186,7 +187,6 @@ class CameraViewController: ViewController {
     func croppedImageToEdit(image: UIImage) -> UIImage {
         let rect = CGRectMake(previewView.bounds.minX, previewView.bounds.minY, previewView.bounds.width, previewView.bounds.height)
         guard let imageRef = CGImageCreateWithImageInRect(image.CGImage, rect) else { return image }
-        //        guard let imageRef = CGImageCreateWithImageInRect(image.CGImage, rect) else { return image }
         let croppedImage = UIImage(CGImage: imageRef)
         
         return croppedImage
@@ -203,13 +203,17 @@ class CameraViewController: ViewController {
     
     // MARK: Navigation
     
-    func presentEditPostVC() {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EditPost") as! EditPostViewController
-        if let image = imageToEdit {
-            vc.image = image
-            performSegueWithIdentifier("toEditPost", sender: self)
-        } else {
-            SVProgressHUD.showErrorWithStatus("There was an error saving your photo")
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toEditPost" {
+            let nc = segue.destinationViewController as! NavigationController
+            if let vc = nc.topViewController as? EditPostViewController {
+                if let preview = previewImage  {
+                    let image = croppedImageToEdit(preview)
+                    vc.image = image
+                    print(vc.image)
+                    performSegueWithIdentifier("toEditPost", sender: self)
+                }
+            }
         }
     }
     
@@ -228,8 +232,8 @@ class CameraViewController: ViewController {
                 
                 if let CGImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault) {
                     let image = UIImage(CGImage: CGImageRef, scale: 1.0, orientation: .Right)
+                    self.previewImage = image
                     self.showPreview(image)
-                    self.imageToEdit = self.croppedImageToEdit(image)
                 }
                 
             })
@@ -245,7 +249,7 @@ class CameraViewController: ViewController {
     
     @IBAction func confirmButtonpressed(sender: AnyObject) {
         Animation.springAnimation(confirmButton, scale: 1.2, duration: 1.2) { [weak self] Void in
-            self?.presentEditPostVC()
+            self?.performSegueWithIdentifier("toEditPost", sender: self)
         }
     }
     

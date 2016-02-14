@@ -347,7 +347,7 @@
         <!--Edit Post Navigation Controller-->
         <scene sceneID="ftc-tE-bcJ">
             <objects>
-                <navigationController title="Edit Post Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="y5h-ue-foP" sceneMemberID="viewController">
+                <navigationController title="Edit Post Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="y5h-ue-foP" customClass="NavigationController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
