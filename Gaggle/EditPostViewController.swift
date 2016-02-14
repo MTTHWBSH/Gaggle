@@ -13,19 +13,24 @@ class EditPostViewController: ViewController {
     @IBOutlet var imageView: UIView!
     var image: UIImage?
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setup()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setup()
     }
     
     func setup() {
+        title = "Share"
         setupImage()
     }
     
     func setupImage() {
         guard let image = image else { return }
         imageView = UIImageView(image: image)
-        imageView.setNeedsDisplay()
     }
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
