@@ -39,15 +39,20 @@ class Style {
     
     // MARK: Colors
     
-    static let whiteColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-    static let whiteColorSelected = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.8)
-    static let lightGrayColor = UIColor(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-    static let grayColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0)
-    static let grayColorSelected = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 0.8)
-    static let blackColor = UIColor(red: 5.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0)
     static let redColor = UIColor(red: 225.0/255.0, green: 56.0/255.0, blue: 47.0/255.0, alpha: 1.0)
     static let redColorSelected = UIColor(red: 174.0/255.0, green: 5.0/255.0, blue: 0.0/255.0, alpha: 0.8)
     static let redColorSelectedTab = UIColor(red: 174.0/255.0, green: 5.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+    
+    static let whiteColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+    static let whiteColorSelected = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.8)
+    static let lightGrayColor = UIColor(red: 236.0/255.0, green: 233.0/255.0, blue: 231.0/255.0, alpha: 1.0)
+    static let grayColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0)
+    static let grayColorSelected = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 0.8)
+    static let blackColor = UIColor(red: 76.0/255.0, green: 76.0/255.0, blue: 76.0/255.0, alpha: 1.0)
+    static let greenColor = UIColor(red: 52.0/255.0, green: 105.0/255.0, blue: 51.0/255.0, alpha: 1.0)
+    static let yellowColor = UIColor(red: 204.0/255.0, green: 165.0/255.0, blue: 44.0/255.0, alpha: 1.0)
+    static let blueColor = UIColor(red: 97.0/255.0, green: 191.0/255.0, blue: 202.0/255.0, alpha: 1.0)
+    static let orangeColor = UIColor(red: 211.0/255.0, green: 135.0/255.0, blue: 60.0/255.0, alpha: 1.0)
     
     // MARK: Borders
     
