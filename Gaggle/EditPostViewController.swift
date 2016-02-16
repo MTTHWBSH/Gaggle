@@ -10,7 +10,7 @@ import UIKit
 
 class EditPostViewController: ViewController {
 
-    @IBOutlet var imageView: UIView!
+    @IBOutlet var imageView: UIImageView!
     var image: UIImage?
     
     override func viewWillAppear(animated: Bool) {
@@ -29,8 +29,7 @@ class EditPostViewController: ViewController {
     }
     
     func setupImage() {
-        guard let image = image else { return }
-        imageView = UIImageView(image: image)
+        imageView.image = image
     }
     
     @IBAction func closeButtonPressed(sender: AnyObject) {

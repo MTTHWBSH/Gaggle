@@ -185,7 +185,8 @@ class CameraViewController: ViewController {
     }
     
     func croppedImageToEdit(image: UIImage) -> UIImage {
-        let rect = CGRectMake(previewView.bounds.minX, previewView.bounds.minY, previewView.bounds.width, previewView.bounds.height)
+        let ratio = image.size.width / previewView.frame.width
+        let rect = CGRectMake(ratio * previewView.frame.minX, ratio * previewView.frame.minY, ratio * previewView.frame.width, ratio * previewView.frame.height)
         guard let imageRef = CGImageCreateWithImageInRect(image.CGImage, rect) else { return image }
         let croppedImage = UIImage(CGImage: imageRef)
         
@@ -210,8 +211,6 @@ class CameraViewController: ViewController {
                 if let preview = previewImage  {
                     let image = croppedImageToEdit(preview)
                     vc.image = image
-                    print(vc.image)
-                    performSegueWithIdentifier("toEditPost", sender: self)
                 }
             }
         }

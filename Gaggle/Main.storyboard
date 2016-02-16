@@ -305,27 +305,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jd9-Fb-Rmm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p47-8d-9tk">
                                 <rect key="frame" x="0.0" y="146" width="375" height="375"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="jd9-Fb-Rmm" secondAttribute="height" multiplier="1:1" id="D39-Ss-Gc6"/>
+                                    <constraint firstAttribute="width" secondItem="p47-8d-9tk" secondAttribute="height" multiplier="1:1" id="dg0-ud-ZSf"/>
                                 </constraints>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jd9-Fb-Rmm" firstAttribute="leading" secondItem="2QY-f4-4w6" secondAttribute="leading" id="0fa-lh-yXZ"/>
-                            <constraint firstAttribute="trailing" secondItem="jd9-Fb-Rmm" secondAttribute="trailing" id="NMx-Ma-0uR"/>
-                            <constraint firstItem="jd9-Fb-Rmm" firstAttribute="centerY" secondItem="2QY-f4-4w6" secondAttribute="centerY" id="O8j-78-meH"/>
-                            <constraint firstItem="jd9-Fb-Rmm" firstAttribute="centerX" secondItem="2QY-f4-4w6" secondAttribute="centerX" id="Scx-yC-n1j"/>
-                            <constraint firstItem="jd9-Fb-Rmm" firstAttribute="top" secondItem="fMh-w4-Lft" secondAttribute="bottom" constant="20" id="WmH-49-tKZ"/>
+                            <constraint firstItem="p47-8d-9tk" firstAttribute="centerX" secondItem="2QY-f4-4w6" secondAttribute="centerX" id="TTA-dW-2qV"/>
+                            <constraint firstItem="p47-8d-9tk" firstAttribute="leading" secondItem="2QY-f4-4w6" secondAttribute="leading" id="VE3-u6-uER"/>
+                            <constraint firstAttribute="trailing" secondItem="p47-8d-9tk" secondAttribute="trailing" id="Vqv-Z4-YYV"/>
+                            <constraint firstItem="p47-8d-9tk" firstAttribute="centerY" secondItem="2QY-f4-4w6" secondAttribute="centerY" id="smn-l4-wLf"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="WmH-49-tKZ"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Share" id="gls-DS-jf9">
                         <barButtonItem key="leftBarButtonItem" image="Close" id="7if-e1-FbU" customClass="BarButtonItem" customModule="Gaggle" customModuleProvider="target">
@@ -337,7 +330,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="imageView" destination="jd9-Fb-Rmm" id="cIS-WM-MJI"/>
+                        <outlet property="imageView" destination="p47-8d-9tk" id="zdV-gc-zhM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEG-ho-6yt" userLabel="First Responder" sceneMemberID="firstResponder"/>
