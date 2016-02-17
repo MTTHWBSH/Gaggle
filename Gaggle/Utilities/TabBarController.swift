@@ -26,7 +26,7 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         removeTabTitles()
         tabBar.shadowImage = UIImage()
         tabBar.backgroundImage = UIImage()
-        tabBar.tintColor = Style.redColorSelectedTab
+        tabBar.tintColor = Style.orangeColorSelected
         tabBar.barTintColor = Style.whiteColor
         tabBar.translucent = false
         for tab in tabBar.items! {

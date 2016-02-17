@@ -40,10 +40,10 @@ class Button: UIButton {
         setBackgroundColor(UIColor.clearColor(), forState: .Selected)
         setBackgroundColor(UIColor.clearColor(), forState: .Highlighted)
         setBackgroundColor(UIColor.clearColor(), forState: .Disabled)
-        setTitleColor(Style.redColor, forState: .Normal)
-        setTitleColor(Style.redColorSelected, forState: .Selected)
-        setTitleColor(Style.redColorSelected, forState: .Highlighted)
-        setTitleColor(Style.redColorSelected, forState: .Disabled)
+        setTitleColor(Style.orangeColor, forState: .Normal)
+        setTitleColor(Style.orangeColorSelected, forState: .Selected)
+        setTitleColor(Style.orangeColorSelected, forState: .Highlighted)
+        setTitleColor(Style.orangeColorSelected, forState: .Disabled)
         adjustsImageWhenDisabled = false
         adjustsImageWhenHighlighted = false
     }
@@ -69,10 +69,10 @@ class PrimaryButton: Button {
     
     override func style() {
         titleLabel?.font = Style.regularFontWithSize(18.0)
-        setBackgroundColor(Style.redColor, forState: .Normal)
-        setBackgroundColor(Style.redColorSelected, forState: .Selected)
-        setBackgroundColor(Style.redColorSelected, forState: .Highlighted)
-        setBackgroundColor(Style.redColorSelected, forState: .Disabled)
+        setBackgroundColor(Style.blueColor, forState: .Normal)
+        setBackgroundColor(Style.orangeColorSelected, forState: .Selected)
+        setBackgroundColor(Style.orangeColorSelected, forState: .Highlighted)
+        setBackgroundColor(Style.orangeColorSelected, forState: .Disabled)
         setTitleColor(Style.whiteColor, forState: .Normal)
         setTitleColor(Style.whiteColorSelected, forState: .Selected)
         setTitleColor(Style.whiteColorSelected, forState: .Highlighted)
@@ -100,7 +100,7 @@ class SecondaryButton: Button {
     
     override func style() {
         titleLabel?.font = Style.regularFontWithSize(18.0)
-        setBackgroundColor(Style.grayColor, forState: .Normal)
+        setBackgroundColor(Style.blackColor, forState: .Normal)
         setBackgroundColor(Style.grayColorSelected, forState: .Selected)
         setBackgroundColor(Style.grayColorSelected, forState: .Highlighted)
         setBackgroundColor(Style.grayColorSelected, forState: .Disabled)

@@ -26,9 +26,9 @@ class IntroViewController: UIViewController, EAIntroDelegate {
     }
     
     func setupIntroViews() {
-        let image1 = UIImage(named: "Oval")
-        let image2 = UIImage(named: "Oval")
-        let image3 = UIImage(named: "Oval")
+        let image1 = UIImage(named: "Geese")
+        let image2 = UIImage(named: "Geese")
+        let image3 = UIImage(named: "Geese")
         
         let title1 = "Geese"
         let title2 = "Owls"
@@ -54,7 +54,7 @@ class IntroViewController: UIViewController, EAIntroDelegate {
         
         introView.showInView(self.introViewContainer, animateDuration: 0.3)
         introView.pageControl.pageIndicatorTintColor = Style.grayColor
-        introView.pageControl.currentPageIndicatorTintColor = Style.redColor
+        introView.pageControl.currentPageIndicatorTintColor = Style.blueColor
         
     }
     

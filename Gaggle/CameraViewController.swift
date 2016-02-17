@@ -41,12 +41,12 @@ class CameraViewController: ViewController {
     
     override func styleView() {
         cameraButtonBorderView.backgroundColor = UIColor.clearColor()
-        cameraButtonBorderView.layer.borderColor = Style.redColor.CGColor
+        cameraButtonBorderView.layer.borderColor = Style.blueColor.CGColor
         cameraButtonBorderView.layer.borderWidth = 3.0
         cameraButtonBorderView.layer.cornerRadius = cameraButtonBorderView.frame.size.width / 2
         cameraButtonBorderView.clipsToBounds = true
         
-        cameraButton.backgroundColor = Style.redColor
+        cameraButton.backgroundColor = Style.blueColor
         cameraButton.layer.cornerRadius = cameraButton.frame.size.width / 2
         cameraButton.clipsToBounds = true
         

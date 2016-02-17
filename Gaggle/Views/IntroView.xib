@@ -23,7 +23,7 @@
                     <rect key="frame" x="20" y="20" width="560" height="560"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="GAGGLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxX-w2-nGz">
-                            <rect key="frame" x="0.0" y="501" width="560" height="39"/>
+                            <rect key="frame" x="0.0" y="501" width="560" height="38.5"/>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="32"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="GEESE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwg-BK-I27">
-                            <rect key="frame" x="0.0" y="32" width="560" height="39"/>
+                            <rect key="frame" x="0.0" y="32" width="560" height="38.5"/>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="32"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -61,8 +61,8 @@
                                 <constraint firstAttribute="width" constant="280" id="tCe-zI-sq2"/>
                             </constraints>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-K6-ngW">
-                            <rect key="frame" x="271" y="271" width="19" height="19"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Geese" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-K6-ngW">
+                            <rect key="frame" x="144" y="144" width="272" height="272"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="aSJ-K6-ngW" secondAttribute="height" multiplier="1:1" id="JSK-zK-DWV"/>
                             </constraints>
@@ -124,6 +124,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Oval" width="19" height="19"/>
+        <image name="Geese" width="272" height="135"/>
     </resources>
 </document>
