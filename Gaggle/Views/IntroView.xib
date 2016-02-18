@@ -39,7 +39,7 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IS A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anS-fO-WFk">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="IS A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anS-fO-WFk">
                             <rect key="frame" x="0.0" y="472" width="560" height="24"/>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,7 +62,7 @@
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Geese" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-K6-ngW">
-                            <rect key="frame" x="144" y="144" width="272" height="272"/>
+                            <rect key="frame" x="130" y="130" width="300" height="300"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="aSJ-K6-ngW" secondAttribute="height" multiplier="1:1" id="JSK-zK-DWV"/>
                             </constraints>
@@ -70,12 +70,9 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="osy-1V-ssu" firstAttribute="top" secondItem="anS-fO-WFk" secondAttribute="bottom" constant="49" id="41O-5Z-nNU"/>
-                        <constraint firstAttribute="trailing" secondItem="aSJ-K6-ngW" secondAttribute="trailing" constant="20" id="8DN-R1-aX8"/>
                         <constraint firstItem="osy-1V-ssu" firstAttribute="top" secondItem="anS-fO-WFk" secondAttribute="bottom" constant="49" id="96v-Fc-hj5"/>
                         <constraint firstItem="CCJ-Py-oQu" firstAttribute="leading" secondItem="LWV-TX-2oq" secondAttribute="leading" id="9Ms-Cd-m2g"/>
                         <constraint firstItem="uwg-BK-I27" firstAttribute="leading" secondItem="LWV-TX-2oq" secondAttribute="leading" id="Ad9-kw-de5"/>
-                        <constraint firstItem="osy-1V-ssu" firstAttribute="top" secondItem="YxX-w2-nGz" secondAttribute="bottom" constant="5" id="AqP-hB-aXe"/>
                         <constraint firstAttribute="trailing" secondItem="uwg-BK-I27" secondAttribute="trailing" id="Gp3-aT-bbO"/>
                         <constraint firstItem="aSJ-K6-ngW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vsP-zK-okI" secondAttribute="bottom" priority="750" constant="20" id="GrU-JC-XE9"/>
                         <constraint firstAttribute="trailing" secondItem="YxX-w2-nGz" secondAttribute="trailing" id="IMV-hd-MyW"/>
@@ -83,12 +80,9 @@
                         <constraint firstAttribute="trailing" secondItem="CCJ-Py-oQu" secondAttribute="trailing" id="It5-TI-Uc7"/>
                         <constraint firstAttribute="centerX" secondItem="osy-1V-ssu" secondAttribute="centerX" id="QSa-4f-04Q"/>
                         <constraint firstItem="anS-fO-WFk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aSJ-K6-ngW" secondAttribute="bottom" priority="750" constant="20" id="RAJ-0v-waa"/>
-                        <constraint firstItem="vsP-zK-okI" firstAttribute="top" secondItem="uwg-BK-I27" secondAttribute="bottom" constant="5" id="ReX-MG-K0X"/>
                         <constraint firstAttribute="bottom" secondItem="osy-1V-ssu" secondAttribute="bottom" constant="14" id="UaS-aH-Syd"/>
-                        <constraint firstItem="YxX-w2-nGz" firstAttribute="top" secondItem="anS-fO-WFk" secondAttribute="bottom" constant="5" id="VcT-PP-Oj2"/>
                         <constraint firstAttribute="centerX" secondItem="aSJ-K6-ngW" secondAttribute="centerX" id="X8k-72-deo"/>
                         <constraint firstAttribute="centerY" secondItem="aSJ-K6-ngW" secondAttribute="centerY" id="Yxf-Ab-o4H"/>
-                        <constraint firstItem="aSJ-K6-ngW" firstAttribute="leading" secondItem="LWV-TX-2oq" secondAttribute="leading" constant="20" id="cNR-AQ-lp0"/>
                         <constraint firstAttribute="bottom" secondItem="YxX-w2-nGz" secondAttribute="bottom" constant="20" id="gYj-Di-dBM"/>
                         <constraint firstItem="CCJ-Py-oQu" firstAttribute="top" secondItem="LWV-TX-2oq" secondAttribute="top" id="hJH-sp-jd1"/>
                         <constraint firstItem="vsP-zK-okI" firstAttribute="top" secondItem="CCJ-Py-oQu" secondAttribute="bottom" constant="51" id="kFJ-jH-aoP"/>
@@ -97,16 +91,6 @@
                         <constraint firstAttribute="centerX" secondItem="vsP-zK-okI" secondAttribute="centerX" id="uvt-6d-x8y"/>
                         <constraint firstItem="anS-fO-WFk" firstAttribute="leading" secondItem="LWV-TX-2oq" secondAttribute="leading" id="yK2-rU-Ck8"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="ReX-MG-K0X"/>
-                            <exclude reference="8DN-R1-aX8"/>
-                            <exclude reference="cNR-AQ-lp0"/>
-                            <exclude reference="VcT-PP-Oj2"/>
-                            <exclude reference="41O-5Z-nNU"/>
-                            <exclude reference="AqP-hB-aXe"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -124,6 +108,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Geese" width="272" height="135"/>
+        <image name="Geese" width="300" height="300"/>
     </resources>
 </document>

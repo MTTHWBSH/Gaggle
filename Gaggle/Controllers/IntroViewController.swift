@@ -27,8 +27,8 @@ class IntroViewController: UIViewController, EAIntroDelegate {
     
     func setupIntroViews() {
         let image1 = UIImage(named: "Geese")
-        let image2 = UIImage(named: "Geese")
-        let image3 = UIImage(named: "Geese")
+        let image2 = UIImage(named: "Owls")
+        let image3 = UIImage(named: "Programmers")
         
         let title1 = "Geese"
         let title2 = "Owls"
