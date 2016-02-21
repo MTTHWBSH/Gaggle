@@ -36,17 +36,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Goose" translatesAutoresizingMaskIntoConstraints="NO" id="vNP-xP-gjj">
-                                <rect key="frame" x="200" y="175.5" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="Goose" translatesAutoresizingMaskIntoConstraints="NO" id="vNP-xP-gjj">
+                                <rect key="frame" x="233" y="115" width="133" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="liB-9k-qdG"/>
+                                    <constraint firstAttribute="width" secondItem="vNP-xP-gjj" secondAttribute="height" multiplier="133:200" id="rRN-fI-y90"/>
                                     <constraint firstAttribute="height" constant="200" id="vTm-AO-LTa"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="liB-9k-qdG"/>
+                                        <exclude reference="rRN-fI-y90"/>
+                                        <exclude reference="vTm-AO-LTa"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vNP-xP-gjj" firstAttribute="centerY" secondItem="fKR-k4-QeM" secondAttribute="centerY" id="2un-Pn-6l7"/>
+                            <constraint firstItem="vNP-xP-gjj" firstAttribute="centerY" secondItem="fKR-k4-QeM" secondAttribute="centerY" constant="-60" id="2un-Pn-6l7"/>
                             <constraint firstItem="Qom-Qd-Qvt" firstAttribute="leading" secondItem="fKR-k4-QeM" secondAttribute="leading" id="4HA-Re-IXv"/>
                             <constraint firstItem="Qom-Qd-Qvt" firstAttribute="top" secondItem="CYA-9C-a3s" secondAttribute="bottom" constant="20" id="6gn-l4-Bnv"/>
                             <constraint firstAttribute="trailing" secondItem="CYA-9C-a3s" secondAttribute="trailing" constant="20" id="8Z5-db-Qkn"/>

@@ -230,9 +230,10 @@ class CameraViewController: ViewController {
                 let dataProvider = CGDataProviderCreateWithCFData(imageData)
                 
                 if let CGImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault) {
-                    let image = UIImage(CGImage: CGImageRef, scale: 1.0, orientation: .Right)
-                    self.previewImage = image
-                    self.showPreview(image)
+                    let image = UIImage(CGImage: CGImageRef, scale: 1.0, orientation: .Up)
+                    let rotatedImage = image.imageRotatedByDegrees(90, flip: false)
+                    self.previewImage = rotatedImage
+                    self.showPreview(rotatedImage)
                 }
                 
             })
