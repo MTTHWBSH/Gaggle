@@ -208,6 +208,19 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         previewView.insertSubview(imageView, aboveSubview: previewView)
         showActionButtons()
     }
+
+    // MARK: - UIImagePickerControllerDelegate Methods
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        dismissViewControllerAnimated(true) { Void in
+            self.previewImage = image
+            self.showPreview(image)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     // MARK: Navigation
     
@@ -221,19 +234,6 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
                 }
             }
         }
-    }
-
-    // MARK: - UIImagePickerControllerDelegate Methods
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        dismissViewControllerAnimated(true) { Void in
-            self.previewImage = image
-            self.showPreview(image)
-        }
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: IBActions
@@ -279,7 +279,5 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
             self?.performSegueWithIdentifier("toEditPost", sender: self)
         }
     }
-    
-    
     
 }
