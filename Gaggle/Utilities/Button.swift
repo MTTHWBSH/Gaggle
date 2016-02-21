@@ -43,7 +43,7 @@ class Button: UIButton {
         setTitleColor(Style.orangeColor, forState: .Normal)
         setTitleColor(Style.orangeColorSelected, forState: .Selected)
         setTitleColor(Style.orangeColorSelected, forState: .Highlighted)
-        setTitleColor(Style.orangeColorSelected, forState: .Disabled)
+        setTitleColor(Style.orangeColor.colorWithAlphaComponent(0.8), forState: .Disabled)
         adjustsImageWhenDisabled = false
         adjustsImageWhenHighlighted = false
     }
@@ -72,11 +72,11 @@ class PrimaryButton: Button {
         setBackgroundColor(Style.blueColor, forState: .Normal)
         setBackgroundColor(Style.blueColorSelected, forState: .Selected)
         setBackgroundColor(Style.blueColorSelected, forState: .Highlighted)
-        setBackgroundColor(Style.blueColorSelected, forState: .Disabled)
+        setBackgroundColor(Style.blueColor.colorWithAlphaComponent(0.8), forState: .Disabled)
         setTitleColor(Style.whiteColor, forState: .Normal)
         setTitleColor(Style.whiteColorSelected, forState: .Selected)
         setTitleColor(Style.whiteColorSelected, forState: .Highlighted)
-        setTitleColor(Style.whiteColorSelected, forState: .Disabled)
+        setTitleColor(Style.whiteColor.colorWithAlphaComponent(0.8), forState: .Disabled)
     }
     
 }
@@ -103,11 +103,11 @@ class SecondaryButton: Button {
         setBackgroundColor(Style.blackColor, forState: .Normal)
         setBackgroundColor(Style.blackColorSelected, forState: .Selected)
         setBackgroundColor(Style.blackColorSelected, forState: .Highlighted)
-        setBackgroundColor(Style.blackColorSelected, forState: .Disabled)
+        setBackgroundColor(Style.blackColor.colorWithAlphaComponent(0.8), forState: .Disabled)
         setTitleColor(Style.whiteColor, forState: .Normal)
         setTitleColor(Style.whiteColorSelected, forState: .Selected)
         setTitleColor(Style.whiteColorSelected, forState: .Highlighted)
-        setTitleColor(Style.whiteColorSelected, forState: .Disabled)
+        setTitleColor(Style.whiteColor.colorWithAlphaComponent(0.8), forState: .Disabled)
     }
     
 }
