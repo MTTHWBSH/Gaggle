@@ -177,7 +177,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="IjP-n9-I1O">
-                        <barButtonItem key="rightBarButtonItem" image="CameraRoll" id="4SN-Jm-XGd"/>
+                        <barButtonItem key="rightBarButtonItem" image="CameraRoll" id="4SN-Jm-XGd">
+                            <connections>
+                                <action selector="imagePickerButtonPressed:" destination="3fT-va-sL0" id="axb-uH-1rq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>

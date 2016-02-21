@@ -10,13 +10,15 @@ import UIKit
 import Foundation
 import AVFoundation
 
-class CameraViewController: ViewController {
+class CameraViewController: ViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var previewView: UIView!
     @IBOutlet var cameraButtonBorderView: UIView!
     @IBOutlet var cameraButton: UIButton!
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var confirmButton: UIButton!
+    
+    let imagePicker = UIImagePickerController()
     
     var captureSession: AVCaptureSession?
     var image: AVCaptureStillImageOutput?
@@ -28,6 +30,11 @@ class CameraViewController: ViewController {
         super.viewWillAppear(animated)
         setup()
         styleView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        imagePicker.delegate = self
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -215,6 +222,19 @@ class CameraViewController: ViewController {
             }
         }
     }
+
+    // MARK: - UIImagePickerControllerDelegate Methods
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        dismissViewControllerAnimated(true) { Void in
+            self.previewImage = image
+            self.showPreview(image)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     // MARK: IBActions
     
@@ -238,6 +258,13 @@ class CameraViewController: ViewController {
                 
             })
         }
+    }
+    
+    @IBAction func imagePickerButtonPressed(sender: AnyObject) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
