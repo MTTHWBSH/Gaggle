@@ -49,14 +49,14 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.tintColor = Style.blueColor
         passwordTextField.tintColor = Style.blueColor
         brandLabel.textColor = Style.blueColor
-        brandLabel.font = Style.regularFontWithSize(72.0)
+        brandLabel.font = Style.brandFontWithSize(72.0)
     }
     
     func setupLogo() {
         let attachment:NSTextAttachment = NSTextAttachment()
         attachment.image = UIImage(named: "GooseWordMark")
         guard let image = attachment.image else { return }
-        attachment.bounds = CGRectMake(0, -15.0, image.size.width, image.size.height)
+        attachment.bounds = CGRectMake(0, -18.0, image.size.width, image.size.height)
         
         let attachmentString = NSAttributedString(attachment: attachment)
         let brandString = NSMutableAttributedString(string: "ga")

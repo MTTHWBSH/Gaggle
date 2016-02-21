@@ -17,6 +17,7 @@ class Style {
         static let kLightFontName = "Lato-Light"
         static let kHairlineFontName = "Lato-Hairline"
         static let kBoldFontName = "Lato-Bold"
+        static let kBrandFontName = "JosefinSans-Bold"
     }
     
     // MARK: Fonts
@@ -35,6 +36,10 @@ class Style {
     
     class func boldFontWithSize(size: CGFloat) -> UIFont {
         return UIFont(name: Constants.kBoldFontName, size: size)!
+    }
+    
+    class func brandFontWithSize(size: CGFloat) -> UIFont {
+        return UIFont(name: Constants.kBrandFontName, size: size)!
     }
     
     // MARK: Colors

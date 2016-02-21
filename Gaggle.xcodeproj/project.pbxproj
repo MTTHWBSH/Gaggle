@@ -69,6 +69,8 @@
 		76EA19C91B50C50000A11248 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19C71B50C50000A11248 /* Style.swift */; };
 		76EA19CE1B50CBB100A11248 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19CD1B50CBB100A11248 /* SeparatorView.swift */; };
 		76EA19CF1B50CBB100A11248 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19CD1B50CBB100A11248 /* SeparatorView.swift */; };
+		76ED4F831C79421800735EBD /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76ED4F821C79421800735EBD /* JosefinSans-Bold.ttf */; };
+		76ED4F841C79421800735EBD /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76ED4F821C79421800735EBD /* JosefinSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,7 @@
 		76EA19C41B50B00C00A11248 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		76EA19C71B50C50000A11248 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		76EA19CD1B50CBB100A11248 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = Views/SeparatorView.swift; sourceTree = "<group>"; };
+		76ED4F821C79421800735EBD /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
 		A3AB86BB39A99E6FC8228F16 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F69A5333407AE4A7B64279F7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,6 +281,7 @@
 				4DBF07E71B6163210068092C /* Lato-Hairline.ttf */,
 				4DBF07E81B6163210068092C /* Lato-Light.ttf */,
 				4DBF07E91B6163210068092C /* Lato-Regular.ttf */,
+				76ED4F821C79421800735EBD /* JosefinSans-Bold.ttf */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -446,6 +450,7 @@
 				7605EAAE1B09461A00F302BB /* LaunchScreen.xib in Resources */,
 				7605EAAF1B09461A00F302BB /* Images.xcassets in Resources */,
 				4DBF07EF1B6163210068092C /* Lato-Light.ttf in Resources */,
+				76ED4F841C79421800735EBD /* JosefinSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D12F5241C3318A8009EED79 /* Main.storyboard in Resources */,
+				76ED4F831C79421800735EBD /* JosefinSans-Bold.ttf in Resources */,
 				4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */,
 				4DBF07EC1B6163210068092C /* Lato-Hairline.ttf in Resources */,
 				4DBF07F01B6163210068092C /* Lato-Regular.ttf in Resources */,
