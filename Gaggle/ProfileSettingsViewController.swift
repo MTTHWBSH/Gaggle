@@ -32,8 +32,8 @@ class ProfileSettingsViewController: ViewController {
             versionLabel.text = ""
         }
         
-        versionLabel.font = Style.boldFontWithSize(22.0)
-        versionLabel.textColor = Style.grayColor
+        versionLabel.font = Style.regularFontWithSize(22.0)
+        versionLabel.textColor = Style.blackColor
     }
     
     @IBAction func SignOut(sender: PrimaryButton) {

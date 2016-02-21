@@ -36,13 +36,22 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Goose" translatesAutoresizingMaskIntoConstraints="NO" id="vNP-xP-gjj">
+                                <rect key="frame" x="200" y="175.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="liB-9k-qdG"/>
+                                    <constraint firstAttribute="height" constant="200" id="vTm-AO-LTa"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vNP-xP-gjj" firstAttribute="centerY" secondItem="fKR-k4-QeM" secondAttribute="centerY" id="2un-Pn-6l7"/>
                             <constraint firstItem="Qom-Qd-Qvt" firstAttribute="leading" secondItem="fKR-k4-QeM" secondAttribute="leading" id="4HA-Re-IXv"/>
                             <constraint firstItem="Qom-Qd-Qvt" firstAttribute="top" secondItem="CYA-9C-a3s" secondAttribute="bottom" constant="20" id="6gn-l4-Bnv"/>
                             <constraint firstAttribute="trailing" secondItem="CYA-9C-a3s" secondAttribute="trailing" constant="20" id="8Z5-db-Qkn"/>
                             <constraint firstItem="Z7Z-vr-k85" firstAttribute="top" secondItem="Qom-Qd-Qvt" secondAttribute="bottom" id="hJT-KC-M0U"/>
+                            <constraint firstItem="vNP-xP-gjj" firstAttribute="centerX" secondItem="fKR-k4-QeM" secondAttribute="centerX" id="oGJ-hX-xqs"/>
                             <constraint firstItem="CYA-9C-a3s" firstAttribute="leading" secondItem="fKR-k4-QeM" secondAttribute="leading" constant="20" id="pPn-GW-b3t"/>
                             <constraint firstItem="Qom-Qd-Qvt" firstAttribute="top" secondItem="CYA-9C-a3s" secondAttribute="bottom" constant="20" id="pnj-U9-IhO"/>
                             <constraint firstAttribute="trailing" secondItem="Qom-Qd-Qvt" secondAttribute="trailing" id="vIy-vK-ZZY"/>
@@ -363,6 +372,7 @@
         <image name="CameraRoll" width="22" height="22"/>
         <image name="Check" width="22" height="22"/>
         <image name="Close" width="22" height="22"/>
+        <image name="Goose" width="133" height="200"/>
         <image name="Home" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
     </resources>

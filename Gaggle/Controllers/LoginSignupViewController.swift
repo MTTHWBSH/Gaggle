@@ -29,6 +29,8 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setupView() {
+        setupLogo()
+        
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         usernameTextField.autocapitalizationType = .None
@@ -36,6 +38,7 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.autocapitalizationType = .None
         passwordTextField.autocorrectionType = .No
         loginSignupButton.setTitle(loginSignupButtonText, forState: .Normal)
+
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
     }
@@ -46,7 +49,22 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.tintColor = Style.blueColor
         passwordTextField.tintColor = Style.blueColor
         brandLabel.textColor = Style.blueColor
-        brandLabel.font = Style.regularFontWithSize(32.0)
+        brandLabel.font = Style.regularFontWithSize(72.0)
+    }
+    
+    func setupLogo() {
+        let attachment:NSTextAttachment = NSTextAttachment()
+        attachment.image = UIImage(named: "GooseWordMark")
+        guard let image = attachment.image else { return }
+        attachment.bounds = CGRectMake(0, -15.0, image.size.width, image.size.height)
+        
+        let attachmentString = NSAttributedString(attachment: attachment)
+        let brandString = NSMutableAttributedString(string: "ga")
+        let brandStringFinish = NSMutableAttributedString(string: "gle")
+        brandString.appendAttributedString(attachmentString)
+        brandString.appendAttributedString(brandStringFinish)
+        
+        brandLabel.attributedText = brandString
     }
     
     func dismissKeyboard() {
