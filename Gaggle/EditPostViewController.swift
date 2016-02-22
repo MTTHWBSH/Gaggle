@@ -45,7 +45,11 @@ class EditPostViewController: ViewController, UITextFieldDelegate {
     
     override func styleView() {
         view.backgroundColor = Style.whiteColor
-        maskView.backgroundColor = Style.blueColor.colorWithAlphaComponent(0.8)
+        
+        let maskViewColors = [Style.blueColor, Style.orangeColor, Style.greenColor, Style.yellowColor]
+        let randomIndex = Int(arc4random_uniform(UInt32(maskViewColors.count)))
+        let randomColor = maskViewColors[randomIndex]
+        maskView.backgroundColor = randomColor.colorWithAlphaComponent(0.85)
         
         Style.addBottomBorder(toLayer: titleTextField.layer, onFrame: titleTextField.frame, color: Style.whiteColor.CGColor)
         Style.addBottomBorder(toLayer: subtitleTextField.layer, onFrame: subtitleTextField.frame, color: Style.whiteColor.CGColor)
