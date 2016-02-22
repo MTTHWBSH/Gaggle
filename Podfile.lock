@@ -9,9 +9,6 @@ PODS:
     - Bolts/Tasks (~> 1.3)
     - Parse (~> 1.9)
   - PureLayout (3.0.1)
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
   - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
@@ -19,7 +16,6 @@ DEPENDENCIES:
   - Parse
   - ParseUI
   - PureLayout
-  - SDWebImage
   - SVProgressHUD
 
 EXTERNAL SOURCES:
@@ -39,7 +35,6 @@ SPEC CHECKSUMS:
   Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
 COCOAPODS: 0.39.0
