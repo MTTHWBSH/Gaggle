@@ -36,7 +36,7 @@ class IntroViewController: UIViewController, EAIntroDelegate {
         
         let subtitle1 = "Gaggle"
         let subtitle2 = "Parliament"
-        let subtitle3 = "Merge Conflict"
+        let subtitle3 = "Repository"
         
         let intro1: IntroView = IntroView.initWith(title1, subtitle: subtitle1, image: image1!)
         let intro2: IntroView = IntroView.initWith(title2, subtitle: subtitle2, image: image2!)
