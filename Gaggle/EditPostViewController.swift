@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditPostViewController: ViewController {
+class EditPostViewController: ViewController, UITextFieldDelegate {
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var submitButton: PrimaryButton!
@@ -30,21 +30,57 @@ class EditPostViewController: ViewController {
     
     func setup() {
         title = "Share"
-        view.backgroundColor = Style.whiteColor
-        submitButton.enabled = false
-        setupImage()
-    }
-    
-    func setupImage() {
         imageView.image = image
+        
+        titleTextField.delegate = self
+        subtitleTextField.delegate = self
+        titleTextField.autocapitalizationType = .None
+        titleTextField.autocorrectionType = .No
+        subtitleTextField.autocapitalizationType = .None
+        subtitleTextField.autocorrectionType = .No
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     override func styleView() {
+        view.backgroundColor = Style.whiteColor
         maskView.backgroundColor = Style.blueColor.colorWithAlphaComponent(0.8)
+        
+        Style.addBottomBorder(toLayer: titleTextField.layer, onFrame: titleTextField.frame, color: Style.whiteColor.CGColor)
+        Style.addBottomBorder(toLayer: subtitleTextField.layer, onFrame: subtitleTextField.frame, color: Style.whiteColor.CGColor)
+        titleTextField.tintColor = Style.whiteColor
+        titleTextField.textColor = Style.whiteColor
+        titleTextField.font = Style.regularFontWithSize(32.0)
+        subtitleTextField.tintColor = Style.whiteColor
+        subtitleTextField.textColor = Style.whiteColor
+        subtitleTextField.font = Style.regularFontWithSize(32.0)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == titleTextField {
+            subtitleTextField.becomeFirstResponder()
+        } else if textField == subtitleTextField {
+            subtitleTextField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func submitPost() {
+        if titleTextField.text != "" && subtitleTextField.text != "" {
+            
+        } else {
+            let alertText = "Looks like there are some empty fields, please fill them out and try again."
+            SVProgressHUD.showErrorWithStatus(alertText, maskType: SVProgressHUDMaskType.Black)
+        }
     }
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
-        
+        submitPost()
     }
     
     @IBAction func closeButtonPressed(sender: AnyObject) {

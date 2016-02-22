@@ -44,8 +44,8 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     func styleView() {
-        Style.addBottomBorder(toLayer: usernameTextField.layer, onFrame: usernameTextField.frame)
-        Style.addBottomBorder(toLayer: passwordTextField.layer, onFrame: passwordTextField.frame)
+        Style.addBottomBorder(toLayer: usernameTextField.layer, onFrame: usernameTextField.frame, color: Style.grayColor.CGColor)
+        Style.addBottomBorder(toLayer: passwordTextField.layer, onFrame: passwordTextField.frame, color: Style.grayColor.CGColor)
         usernameTextField.tintColor = Style.blueColor
         passwordTextField.tintColor = Style.blueColor
         brandLabel.textColor = Style.blueColor
