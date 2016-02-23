@@ -25,7 +25,7 @@
                     <rect key="frame" x="20" y="20" width="560" height="560"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="GAGGLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxX-w2-nGz">
-                            <rect key="frame" x="0.0" y="501" width="560" height="38.5"/>
+                            <rect key="frame" x="0.0" y="501" width="560" height="39"/>
                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="GEESE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwg-BK-I27">
-                            <rect key="frame" x="0.0" y="32" width="560" height="38.5"/>
+                            <rect key="frame" x="0.0" y="32" width="560" height="39"/>
                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>

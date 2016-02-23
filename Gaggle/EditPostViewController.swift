@@ -51,8 +51,6 @@ class EditPostViewController: ViewController, UITextFieldDelegate {
         let randomColor = maskViewColors[randomIndex]
         maskView.backgroundColor = randomColor.colorWithAlphaComponent(0.85)
         
-        Style.addBottomBorder(toLayer: titleTextField.layer, onFrame: titleTextField.frame, color: Style.whiteColor.CGColor)
-        Style.addBottomBorder(toLayer: subtitleTextField.layer, onFrame: subtitleTextField.frame, color: Style.whiteColor.CGColor)
         titleTextField.tintColor = Style.whiteColor
         titleTextField.textColor = Style.whiteColor
         titleTextField.font = Style.regularFontWithSize(32.0)

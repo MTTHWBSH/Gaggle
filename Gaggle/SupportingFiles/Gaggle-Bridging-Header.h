@@ -8,7 +8,5 @@
 
 #import <Parse/Parse.h>
 #import <EAIntroView/EAIntroView.h>
-#import <SDWebImage/UIImageView+WebCache.h>
-#import <SDWebImage/SDWebImagePrefetcher.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <PureLayout.h>

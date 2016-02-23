@@ -16,3 +16,10 @@ class SeparatorView: UIView {
     }
     
 }
+
+class SeparatorViewWhite: SeparatorView {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = Style.whiteColor
+    }
+}
