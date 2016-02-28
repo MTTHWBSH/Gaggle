@@ -41,9 +41,7 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidDisappear(animated)
         captureSession?.stopRunning()
         previewLayer?.removeFromSuperlayer()
-        for view in previewView.subviews{
-            view.removeFromSuperview()
-        }
+        removePreviewSubviews()
     }
     
     override func styleView() {
@@ -84,10 +82,9 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
                     }
                 } else if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) == .Denied {
                     hideCameraElements()
-                    showCameraDisabledState()
+                    showCameraDisabledLabel()
                 } else {
                     hideCameraElements()
-                    showEmptyState()
                     requestCameraAccess()
                 }
             } else {
@@ -96,7 +93,8 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
             }
             
         } else {
-            showEmptyState()
+            hideCameraElements()
+            showNoCameraLabel()
         }
     }
     
@@ -105,19 +103,14 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
             dispatch_async(dispatch_get_main_queue(), {
                 self?.setup()
             })
-            })
+        })
     }
     
     // MARK: UI Configuration
     
-    func showEmptyState() {
-        
-    }
-    
     func hideCameraElements() {
         cameraButton.hidden = true
         cameraButtonBorderView.hidden = true
-        previewView.hidden = true
     }
     
     func showCameraElements() {
@@ -126,7 +119,7 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         previewView.hidden = false
     }
     
-    func showCameraDisabledState() {
+    func showCameraDisabledLabel() {
         let text = "Camera access must be enabled to use this feature.\n\n Go to settings to enable camera."
         showCenterLabelWithText(text)
     }
@@ -143,9 +136,9 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         label.numberOfLines = 0
         label.lineBreakMode = .ByWordWrapping
         label.font = Style.lightFontWithSize(20.0)
-        label.textColor = Style.blackColor
+        label.textColor = Style.whiteColor
         label.text = text
-        view.addSubview(label)
+        previewView.addSubview(label)
         
         label.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0, 20.0, 0.0, 20.0))
         label.autoCenterInSuperview()
@@ -156,6 +149,12 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         confirmButton.hidden = false
         Animation.springAnimation(cancelButton, scale: 1.8, duration: 1.2, completion: nil)
         Animation.springAnimation(confirmButton, scale: 1.8, duration: 1.2, completion: nil)
+    }
+    
+    func removePreviewSubviews() {
+        for view in previewView.subviews{
+            view.removeFromSuperview()
+        }
     }
     
     // MARK: AV Setup
@@ -205,6 +204,7 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         imageView.frame = previewView.bounds
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.clipsToBounds = true
+        removePreviewSubviews()
         previewView.insertSubview(imageView, aboveSubview: previewView)
         showActionButtons()
     }

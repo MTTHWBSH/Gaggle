@@ -24,30 +24,18 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWV-TX-2oq">
                     <rect key="frame" x="20" y="20" width="560" height="560"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="GAGGLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxX-w2-nGz">
-                            <rect key="frame" x="0.0" y="501" width="560" height="39"/>
-                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A GROUP OF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCJ-Py-oQu">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="A GROUP OF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCJ-Py-oQu">
                             <rect key="frame" x="0.0" y="0.0" width="560" height="24"/>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="GEESE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwg-BK-I27">
-                            <rect key="frame" x="0.0" y="32" width="560" height="39"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="GEESE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwg-BK-I27">
+                            <rect key="frame" x="0.0" y="32" width="560" height="38.5"/>
                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="IS A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anS-fO-WFk">
-                            <rect key="frame" x="0.0" y="472" width="560" height="24"/>
-                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsP-zK-okI" customClass="SeparatorView" customModule="Gaggle" customModuleProvider="target">
+                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="vsP-zK-okI" customClass="SeparatorView" customModule="Gaggle" customModuleProvider="target">
                             <rect key="frame" x="140" y="75" width="280" height="1"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -55,7 +43,25 @@
                                 <constraint firstAttribute="height" constant="1" id="h1K-7e-Kr4"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osy-1V-ssu" customClass="SeparatorView" customModule="Gaggle" customModuleProvider="target">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="Geese" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-K6-ngW">
+                            <rect key="frame" x="130" y="130" width="300" height="300"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="aSJ-K6-ngW" secondAttribute="height" multiplier="1:1" id="JSK-zK-DWV"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="GAGGLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxX-w2-nGz">
+                            <rect key="frame" x="0.0" y="501" width="560" height="38.5"/>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="IS A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anS-fO-WFk">
+                            <rect key="frame" x="0.0" y="450" width="560" height="46"/>
+                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="osy-1V-ssu" customClass="SeparatorView" customModule="Gaggle" customModuleProvider="target">
                             <rect key="frame" x="140" y="545" width="280" height="1"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -63,12 +69,6 @@
                                 <constraint firstAttribute="width" constant="280" id="tCe-zI-sq2"/>
                             </constraints>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Geese" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-K6-ngW">
-                            <rect key="frame" x="130" y="130" width="300" height="300"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="aSJ-K6-ngW" secondAttribute="height" multiplier="1:1" id="JSK-zK-DWV"/>
-                            </constraints>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -81,7 +81,7 @@
                         <constraint firstAttribute="trailing" secondItem="anS-fO-WFk" secondAttribute="trailing" id="Ihz-Eb-FuA"/>
                         <constraint firstAttribute="trailing" secondItem="CCJ-Py-oQu" secondAttribute="trailing" id="It5-TI-Uc7"/>
                         <constraint firstAttribute="centerX" secondItem="osy-1V-ssu" secondAttribute="centerX" id="QSa-4f-04Q"/>
-                        <constraint firstItem="anS-fO-WFk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aSJ-K6-ngW" secondAttribute="bottom" priority="750" constant="20" id="RAJ-0v-waa"/>
+                        <constraint firstItem="anS-fO-WFk" firstAttribute="top" secondItem="aSJ-K6-ngW" secondAttribute="bottom" priority="750" constant="20" id="RAJ-0v-waa"/>
                         <constraint firstAttribute="bottom" secondItem="osy-1V-ssu" secondAttribute="bottom" constant="14" id="UaS-aH-Syd"/>
                         <constraint firstAttribute="centerX" secondItem="aSJ-K6-ngW" secondAttribute="centerX" id="X8k-72-deo"/>
                         <constraint firstAttribute="centerY" secondItem="aSJ-K6-ngW" secondAttribute="centerY" id="Yxf-Ab-o4H"/>
