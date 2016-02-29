@@ -18,6 +18,9 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     @IBOutlet var scrollView: UIScrollView!
     
     var image: UIImage?
+    var photoFile: PFFile?
+    var fileUploadBackgroundTaskId: UIBackgroundTaskIdentifier!
+    var postUploadBackgroundTaskId: UIBackgroundTaskIdentifier!
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
@@ -52,6 +55,11 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        fileUploadBackgroundTaskId = UIBackgroundTaskInvalid
+        postUploadBackgroundTaskId = UIBackgroundTaskInvalid
+        if let image = image {
+           shouldUploadImage(image, width: 550.0)
+        }
     }
     
     override func styleView() {
@@ -70,6 +78,8 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         subtitleTextField.font = Style.regularFontWithSize(32.0)
     }
     
+    // MARK: Text Field
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == titleTextField {
             subtitleTextField.becomeFirstResponder()
@@ -83,9 +93,71 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         view.endEditing(true)
     }
     
+    // MARK: Post Upload
+    
+    func shouldUploadImage(image: UIImage, width: CGFloat) {
+        let scale = width / image.size.width
+        let height = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSizeMake(width, height))
+        image.drawInRect(CGRectMake(0, 0, width, height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        guard let imageData: NSData = UIImageJPEGRepresentation(resizedImage, 1.0) else { return }
+        photoFile = PFFile(data: imageData)
+        
+        fileUploadBackgroundTaskId = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler {
+            UIApplication.sharedApplication().endBackgroundTask(self.fileUploadBackgroundTaskId)
+        }
+        
+        if let photoFile = photoFile {
+            photoFile.saveInBackgroundWithBlock { (completion, error) in
+                if completion {
+                    UIApplication.sharedApplication().endBackgroundTask(self.fileUploadBackgroundTaskId)
+                } else {
+                    UIApplication.sharedApplication().endBackgroundTask(self.fileUploadBackgroundTaskId)
+                }
+            }
+        }
+    }
+    
+    func uploadPost() {
+        guard let currentUser = PFUser.currentUser(), photoFile = photoFile else {
+            let alertText = "An error occured while uploading your photo. Please try again."
+            SVProgressHUD.showErrorWithStatus(alertText, maskType: SVProgressHUDMaskType.Black)
+            return
+        }
+        
+        let post = PFObject(className: Constants.PostClassKey)
+        post.setObject(currentUser, forKey: Constants.PostUserKey)
+        post.setObject(photoFile, forKey: Constants.PostImageKey)
+        if let title = titleTextField.text, subtitle = subtitleTextField.text {
+            post.setObject(title, forKey: Constants.PostTitleKey)
+            post.setObject(subtitle, forKey: Constants.PostSubtitleKey)
+        }
+        
+        postUploadBackgroundTaskId = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler {
+            UIApplication.sharedApplication().endBackgroundTask(self.postUploadBackgroundTaskId)
+        }
+        
+        post.saveInBackgroundWithBlock { (completion, error) in
+            if completion {
+                print("Saved post: \(post)")
+            } else {
+                print("Post failed to save: \(error)")
+                let alertText = "An error occured while uploading your photo: \(error)"
+                SVProgressHUD.showErrorWithStatus(alertText, maskType: SVProgressHUDMaskType.Black)
+                return
+            }
+            UIApplication.sharedApplication().endBackgroundTask(self.postUploadBackgroundTaskId)
+        }
+        
+        parentViewController!.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func submitPost() {
         if titleTextField.text != "" && subtitleTextField.text != "" {
-            
+            uploadPost()
         } else {
             let alertText = "Looks like there are some empty fields, please fill them out and try again."
             SVProgressHUD.showErrorWithStatus(alertText, maskType: SVProgressHUDMaskType.Black)
