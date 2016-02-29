@@ -101,7 +101,7 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     func tryLogin(user: String, password: String) {
-        SVProgressHUD.showWithStatus("Loggin in", maskType: .Black)
+        SVProgressHUD.showWithStatus("Logging in", maskType: .Black)
         
         PFUser.logInWithUsernameInBackground(user, password: password, block: { (user, error) -> Void in
             
