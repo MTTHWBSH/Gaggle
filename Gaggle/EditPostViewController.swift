@@ -123,14 +123,14 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     
     func uploadPost() {
         SVProgressHUD.showWithMaskType(.Black)
-        guard let currentUser = PFUser.currentUser(), photoFile = photoFile else {
+        guard let currentUserID = PFUser.currentUser()?.objectId, photoFile = photoFile else {
             let alertText = "An error occured while uploading your photo. Please try again."
             SVProgressHUD.showErrorWithStatus(alertText, maskType: SVProgressHUDMaskType.Black)
             return
         }
         
         let post = PFObject(className: Constants.PostClassKey)
-        post.setObject(currentUser, forKey: Constants.PostUserKey)
+        post.setObject(currentUserID, forKey: Constants.PostUserIDKey)
         post.setObject(photoFile, forKey: Constants.PostImageKey)
         if let title = titleTextField.text, subtitle = subtitleTextField.text {
             post.setObject(title, forKey: Constants.PostTitleKey)

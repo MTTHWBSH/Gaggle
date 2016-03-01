@@ -11,7 +11,7 @@ struct Constants {
     static let PostClassKey = "Post"
     
     // Field keys
-    static let PostUserKey  = "user"
+    static let PostUserIDKey  = "userID"
     static let PostImageKey = "image"
     static let PostTitleKey = "title"
     static let PostSubtitleKey = "subtitle"
