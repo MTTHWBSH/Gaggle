@@ -113,8 +113,10 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         if let photoFile = photoFile {
             photoFile.saveInBackgroundWithBlock { (completion, error) in
                 if completion {
+                    print("Photo file save in background completed")
                     UIApplication.sharedApplication().endBackgroundTask(self.fileUploadBackgroundTaskId)
                 } else {
+                    print(error?.description)
                     UIApplication.sharedApplication().endBackgroundTask(self.fileUploadBackgroundTaskId)
                 }
             }
