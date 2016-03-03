@@ -127,23 +127,23 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y9-OJ-LBH">
-                                        <rect key="frame" x="256" y="49" width="40" height="40"/>
+                                        <rect key="frame" x="252" y="47" width="44" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="5tm-o4-29m"/>
-                                            <constraint firstAttribute="height" constant="40" id="gfZ-Ly-5JT"/>
+                                            <constraint firstAttribute="width" constant="44" id="5tm-o4-29m"/>
+                                            <constraint firstAttribute="height" constant="44" id="gfZ-Ly-5JT"/>
                                         </constraints>
-                                        <state key="normal" image="Check"/>
+                                        <state key="normal" image="CameraCheck"/>
                                         <connections>
                                             <action selector="confirmButtonpressed:" destination="3fT-va-sL0" eventType="touchUpInside" id="p4L-RJ-YGa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjk-Y8-Gx2">
-                                        <rect key="frame" x="79" y="49" width="40" height="40"/>
+                                        <rect key="frame" x="78" y="47" width="44" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="q2p-1U-W5D"/>
-                                            <constraint firstAttribute="width" constant="40" id="wSP-os-pLd"/>
+                                            <constraint firstAttribute="height" constant="44" id="q2p-1U-W5D"/>
+                                            <constraint firstAttribute="width" constant="44" id="wSP-os-pLd"/>
                                         </constraints>
-                                        <state key="normal" image="Close"/>
+                                        <state key="normal" image="CameraCancel"/>
                                         <connections>
                                             <action selector="cancelButtonPressed:" destination="3fT-va-sL0" eventType="touchUpInside" id="M8Q-MM-o0E"/>
                                         </connections>
@@ -156,10 +156,18 @@
                                     <constraint firstItem="Jjk-Y8-Gx2" firstAttribute="centerY" secondItem="Ron-gO-Hxr" secondAttribute="centerY" id="Bw4-DR-aVX"/>
                                     <constraint firstItem="jhC-Zg-ZI5" firstAttribute="centerY" secondItem="z4H-8d-x3F" secondAttribute="centerY" id="C2D-4T-JmG"/>
                                     <constraint firstItem="Ron-gO-Hxr" firstAttribute="centerY" secondItem="z4H-8d-x3F" secondAttribute="centerY" id="Qk3-cX-h87"/>
+                                    <constraint firstItem="jhC-Zg-ZI5" firstAttribute="leading" secondItem="Jjk-Y8-Gx2" secondAttribute="trailing" constant="30" id="cV0-g0-2No"/>
                                     <constraint firstItem="5Y9-OJ-LBH" firstAttribute="leading" secondItem="Ron-gO-Hxr" secondAttribute="trailing" constant="40" id="csA-uY-KU0"/>
                                     <constraint firstItem="5Y9-OJ-LBH" firstAttribute="centerY" secondItem="Ron-gO-Hxr" secondAttribute="centerY" id="n9W-qx-nM4"/>
+                                    <constraint firstItem="5Y9-OJ-LBH" firstAttribute="leading" secondItem="jhC-Zg-ZI5" secondAttribute="trailing" constant="30" id="nzD-le-scp"/>
                                     <constraint firstItem="Ron-gO-Hxr" firstAttribute="leading" secondItem="Jjk-Y8-Gx2" secondAttribute="trailing" constant="40" id="oRF-Iy-Wum"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="oRF-Iy-Wum"/>
+                                        <exclude reference="csA-uY-KU0"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -554,8 +562,9 @@
     </scenes>
     <resources>
         <image name="Camera" width="32" height="25"/>
+        <image name="CameraCancel" width="44" height="44"/>
+        <image name="CameraCheck" width="44" height="44"/>
         <image name="CameraRoll" width="22" height="22"/>
-        <image name="Check" width="22" height="22"/>
         <image name="Close" width="22" height="22"/>
         <image name="Goose" width="133" height="200"/>
         <image name="Home" width="25" height="25"/>

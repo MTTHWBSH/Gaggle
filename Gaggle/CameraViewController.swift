@@ -144,11 +144,16 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         label.autoCenterInSuperview()
     }
     
-    func showActionButtons () {
+    func showActionButtons() {
         cancelButton.hidden = false
         confirmButton.hidden = false
-        Animation.springAnimation(cancelButton, scale: 1.8, duration: 1.2, completion: nil)
-        Animation.springAnimation(confirmButton, scale: 1.8, duration: 1.2, completion: nil)
+        Animation.springAnimation(cancelButton, scale: 0.1, duration: 0.8, completion: nil)
+        Animation.springAnimation(confirmButton, scale: 0.1, duration: 0.8, completion: nil)
+    }
+    
+    func hideActionButtons() {
+        cancelButton.hidden = true
+        confirmButton.hidden = true
     }
     
     func removePreviewSubviews() {
@@ -268,14 +273,14 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
-        Animation.springAnimation(cancelButton, scale: 1.2, duration: 1.2, completion: nil)
-        for view in self.previewView.subviews {
-            view.removeFromSuperview()
+        removePreviewSubviews()
+        Animation.springAnimation(cancelButton, scale: 0.8, duration: 0.8) { [weak self] Void in
+            self?.hideActionButtons()
         }
     }
     
     @IBAction func confirmButtonpressed(sender: AnyObject) {
-        Animation.springAnimation(confirmButton, scale: 1.2, duration: 1.2) { [weak self] Void in
+        Animation.springAnimation(confirmButton, scale: 0.8, duration: 0.8) { [weak self] Void in
             self?.performSegueWithIdentifier("toEditPost", sender: self)
         }
     }
