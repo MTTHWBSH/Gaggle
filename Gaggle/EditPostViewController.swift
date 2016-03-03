@@ -19,8 +19,6 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     
     var image: UIImage?
     var photoFile: PFFile?
-    var fileUploadBackgroundTaskId: UIBackgroundTaskIdentifier!
-    var postUploadBackgroundTaskId: UIBackgroundTaskIdentifier!
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
@@ -55,8 +53,6 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-        fileUploadBackgroundTaskId = UIBackgroundTaskInvalid
-        postUploadBackgroundTaskId = UIBackgroundTaskInvalid
         if let image = image {
            shouldUploadImage(image, width: 550.0)
         }
@@ -106,18 +102,12 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         guard let imageData: NSData = UIImageJPEGRepresentation(resizedImage, 1.0) else { return }
         photoFile = PFFile(data: imageData)
         
-        fileUploadBackgroundTaskId = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler {
-            UIApplication.sharedApplication().endBackgroundTask(self.fileUploadBackgroundTaskId)
-        }
-        
         if let photoFile = photoFile {
             photoFile.saveInBackgroundWithBlock { (completion, error) in
                 if completion {
                     print("Photo file save in background completed")
-                    UIApplication.sharedApplication().endBackgroundTask(self.fileUploadBackgroundTaskId)
                 } else {
                     print(error?.description)
-                    UIApplication.sharedApplication().endBackgroundTask(self.fileUploadBackgroundTaskId)
                 }
             }
         }
@@ -139,10 +129,6 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
             post.setObject(subtitle, forKey: Constants.PostSubtitleKey)
         }
         
-        postUploadBackgroundTaskId = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler {
-            UIApplication.sharedApplication().endBackgroundTask(self.postUploadBackgroundTaskId)
-        }
-        
         post.saveInBackgroundWithBlock { (completion, error) in
             SVProgressHUD.dismiss()
             if completion {
@@ -153,7 +139,6 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
                 SVProgressHUD.showErrorWithStatus(alertText, maskType: SVProgressHUDMaskType.Black)
                 return
             }
-            UIApplication.sharedApplication().endBackgroundTask(self.postUploadBackgroundTaskId)
         }
         
         parentViewController!.dismissViewControllerAnimated(true, completion: nil)
