@@ -25,11 +25,6 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        setup()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
