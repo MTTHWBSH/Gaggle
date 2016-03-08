@@ -1,7 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
 
-pod 'EAIntroView', :git => 'https://github.com/ealeksandrov/EAIntroView.git', tag: '2.7.4'
+#pod 'EAIntroView', :git => 'https://github.com/ealeksandrov/EAIntroView.git', tag: '2.7.4'
+pod 'EAIntroView'
 pod 'Parse'
 pod 'ParseUI'
 pod 'SVProgressHUD'
 pod 'PureLayout'
+pod 'RxSwift', '~> 2.0.0-beta'
+pod 'RxCocoa', '~> 2.0.0-beta'
+pod 'RxBlocking', '~> 2.0.0-beta'
