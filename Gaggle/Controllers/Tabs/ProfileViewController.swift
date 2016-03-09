@@ -6,6 +6,8 @@
 //  Copyright © 2016 Matthew Bush. All rights reserved.
 //
 
+import Parse
+
 class ProfileViewController: ViewController {
 
     override func viewDidLoad() {

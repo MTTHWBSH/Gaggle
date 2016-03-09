@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Matthew Bush. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Style {
     

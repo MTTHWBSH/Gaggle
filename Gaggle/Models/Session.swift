@@ -6,7 +6,7 @@
 //  Copyright © 2015 Matthew Bush. All rights reserved.
 //
 
-import Foundation
+import Parse
 
 class Session {
 

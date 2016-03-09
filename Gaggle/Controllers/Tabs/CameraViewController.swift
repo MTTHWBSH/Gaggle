@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import Foundation
+import Parse
 import AVFoundation
+import PureLayout
 
 class CameraViewController: ViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

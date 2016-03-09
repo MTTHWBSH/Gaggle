@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import SVProgressHUD
 
 class ProfileSettingsViewController: ViewController {
     

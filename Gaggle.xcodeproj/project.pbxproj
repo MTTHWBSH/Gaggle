@@ -14,9 +14,10 @@
 		4D15D6EF1BF698BD00F922DB /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6ED1BF698BD00F922DB /* Intro.storyboard */; };
 		4D15D6F01BF698BD00F922DB /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6ED1BF698BD00F922DB /* Intro.storyboard */; };
 		4D15D6F41BF6995200F922DB /* GaggleDev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */; };
-		4D15D6FD1BF6A84F00F922DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D15D6FC1BF6A84F00F922DB /* libPods.a */; };
 		4D2C28261C33138B00116068 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C28251C33138B00116068 /* Session.swift */; };
 		4D2C28271C33138B00116068 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C28251C33138B00116068 /* Session.swift */; };
+		4D5733DD1C90EBBA00BD8686 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D5733DC1C90EBBA00BD8686 /* Info.plist */; };
+		4D5733DF1C90ED1900BD8686 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5733DE1C90ED1900BD8686 /* Pods.framework */; };
 		4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
 		4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
 		4DBF07EC1B6163210068092C /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E71B6163210068092C /* Lato-Hairline.ttf */; };
@@ -95,6 +96,8 @@
 		4D15D6FC1BF6A84F00F922DB /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		4D2C28251C33138B00116068 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Gaggle/Models/Session.swift; sourceTree = SOURCE_ROOT; };
 		4D5495E51BF4F643002E0746 /* Gaggle-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Gaggle-Bridging-Header.h"; path = "Gaggle/Supporting Files/Gaggle-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		4D5733DC1C90EBBA00BD8686 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D5733DE1C90ED1900BD8686 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		4DBF07E61B6163210068092C /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Assets/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		4DBF07E71B6163210068092C /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Hairline.ttf"; path = "Assets/Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		4DBF07E81B6163210068092C /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "Assets/Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -139,7 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D15D6FD1BF6A84F00F922DB /* libPods.a in Frameworks */,
+				4D5733DF1C90ED1900BD8686 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +261,7 @@
 				4D5495E51BF4F643002E0746 /* Gaggle-Bridging-Header.h */,
 				4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */,
 				76A1F6581AFAF9E000CB1825 /* PrivateSettings.swift */,
+				4D5733DC1C90EBBA00BD8686 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -333,6 +337,7 @@
 		FBBC2EA3EA0F205DD24D2679 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D5733DE1C90ED1900BD8686 /* Pods.framework */,
 				4D15D6FC1BF6A84F00F922DB /* libPods.a */,
 				DDA580802BF7D1EE3CFC433F /* Pods.framework */,
 			);
@@ -473,6 +478,7 @@
 				4D15D6EF1BF698BD00F922DB /* Intro.storyboard in Resources */,
 				767F90071B2D12FC007895A8 /* IntroView.xib in Resources */,
 				4D15D6F41BF6995200F922DB /* GaggleDev-Info.plist in Resources */,
+				4D5733DD1C90EBBA00BD8686 /* Info.plist in Resources */,
 				76A1F6641AFAF9E000CB1825 /* LaunchScreen.xib in Resources */,
 				76A1F6611AFAF9E000CB1825 /* Images.xcassets in Resources */,
 				4DBF07EE1B6163210068092C /* Lato-Light.ttf in Resources */,
@@ -661,14 +667,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/SupportingFiles/GaggleDev-Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/Supporting Files/GaggleDev-Info.plist";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = GaggleDev;
-				SWIFT_OBJC_BRIDGING_HEADER = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Gaggle/Supporting Files/Gaggle-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Gaggle/Supporting Files/Gaggle-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -678,14 +688,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/SupportingFiles/GaggleDev-Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/Supporting Files/GaggleDev-Info.plist";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = GaggleDev;
-				SWIFT_OBJC_BRIDGING_HEADER = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Gaggle/Supporting Files/Gaggle-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Gaggle/Supporting Files/Gaggle-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -777,7 +791,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/Supporting Files/Info.plist";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -787,8 +801,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Gaggle/Supporting Files/Gaggle-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Gaggle/Supporting Files/Gaggle-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -799,7 +813,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/Supporting Files/Info.plist";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -809,8 +823,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Gaggle/SupportingFiles/Gaggle-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Gaggle/Supporting Files/Gaggle-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Gaggle/Supporting Files/Gaggle-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EAIntroView
 
 class IntroViewController: UIViewController, EAIntroDelegate {
     
