@@ -155,6 +155,7 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     func keyboardWillShow(note: NSNotification) {
         let keyboardFrameEnd: CGRect = (note.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
         var scrollViewContentSize: CGSize = scrollView.bounds.size
+        
         scrollViewContentSize.height += keyboardFrameEnd.size.height
         scrollView.contentSize = scrollViewContentSize
         
@@ -162,6 +163,14 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         scrollViewContentOffset.y = scrollViewContentOffset.y + keyboardFrameEnd.size.height*3.0 - UIScreen.mainScreen().bounds.size.height
         
         scrollView.setContentOffset(scrollViewContentOffset, animated: true)
+        
+        if let activeView = activeView() {
+            scrollView.scrollRectToVisible(activeView.frame, animated: false)
+        }
+    }
+    
+    func activeView() -> UIView? {
+        return [titleTextField, subtitleTextField].filter { return $0.isFirstResponder() }.first
     }
     
     func keyboardWillHide(note: NSNotification) {
