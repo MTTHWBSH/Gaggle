@@ -10,12 +10,13 @@ import UIKit
 import Parse
 import SVProgressHUD
 
-class LoginSignupViewController: UIViewController, UITextFieldDelegate {
+class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
 
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var brandLabel: UILabel!
     @IBOutlet var loginSignupButton: PrimaryButton!
+    @IBOutlet var scrollView: UIScrollView!
     
     var selectedLogin: Bool!
     var loginSignupButtonText = ""
@@ -24,10 +25,18 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         styleView()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func setupView() {
@@ -35,6 +44,7 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
         
         usernameTextField.delegate = self
         passwordTextField.delegate = self
+        scrollView.delegate = self
         usernameTextField.autocapitalizationType = .None
         usernameTextField.autocorrectionType = .No
         passwordTextField.autocapitalizationType = .None
@@ -86,6 +96,32 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+    // MARK: Keyboard Avoidance
+    
+    func keyboardWillShow(note: NSNotification) {
+        var keyboardFrame = (note.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+        keyboardFrame = view.convertRect(keyboardFrame, fromView: nil)
+        
+        var contentInset:UIEdgeInsets = scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 20
+        scrollView.contentInset = contentInset
+        
+        if let activeView = activeView() {
+            scrollView.scrollRectToVisible(activeView.frame, animated: false)
+        }
+    }
+    
+    func activeView() -> UIView? {
+        return [usernameTextField, passwordTextField].filter { return $0.isFirstResponder() }.first
+    }
+    
+    func keyboardWillHide(note: NSNotification) {
+        let contentInset:UIEdgeInsets = UIEdgeInsetsZero
+        scrollView.contentInset = contentInset
+    }
+    
+    // MARK: Login/Signup
     
     func tryLoginSignup() {
         if usernameTextField.text != "" && passwordTextField.text != "" {

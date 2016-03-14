@@ -16,7 +16,6 @@
 		4D15D6F41BF6995200F922DB /* GaggleDev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */; };
 		4D2C28261C33138B00116068 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C28251C33138B00116068 /* Session.swift */; };
 		4D2C28271C33138B00116068 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C28251C33138B00116068 /* Session.swift */; };
-		4D5733DD1C90EBBA00BD8686 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D5733DC1C90EBBA00BD8686 /* Info.plist */; };
 		4D5733DF1C90ED1900BD8686 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5733DE1C90ED1900BD8686 /* Pods.framework */; };
 		4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
 		4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
@@ -478,7 +477,6 @@
 				4D15D6EF1BF698BD00F922DB /* Intro.storyboard in Resources */,
 				767F90071B2D12FC007895A8 /* IntroView.xib in Resources */,
 				4D15D6F41BF6995200F922DB /* GaggleDev-Info.plist in Resources */,
-				4D5733DD1C90EBBA00BD8686 /* Info.plist in Resources */,
 				76A1F6641AFAF9E000CB1825 /* LaunchScreen.xib in Resources */,
 				76A1F6611AFAF9E000CB1825 /* Images.xcassets in Resources */,
 				4DBF07EE1B6163210068092C /* Lato-Light.ttf in Resources */,

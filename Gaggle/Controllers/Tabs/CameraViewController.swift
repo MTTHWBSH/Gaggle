@@ -19,6 +19,12 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var confirmButton: UIButton!
     
+    @IBOutlet var previewViewTopMargin: NSLayoutConstraint!
+    @IBOutlet var cameraButtonBorderWidth: NSLayoutConstraint!
+    @IBOutlet var cameraButtonWidth: NSLayoutConstraint!
+    @IBOutlet var confirmButtonWidth: NSLayoutConstraint!
+    @IBOutlet var cancelButtonWidth: NSLayoutConstraint!
+    
     let imagePicker = UIImagePickerController()
     
     var captureSession: AVCaptureSession?
@@ -46,6 +52,14 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     }
     
     override func styleView() {
+        if UIScreen.mainScreen().nativeBounds.height <= 960 {
+            previewViewTopMargin.constant = 0
+            cameraButtonBorderWidth.constant = 40
+            cameraButtonWidth.constant = 32
+            confirmButtonWidth.constant = 22
+            cancelButtonWidth.constant = 22
+        }
+        
         cameraButtonBorderView.backgroundColor = UIColor.clearColor()
         cameraButtonBorderView.layer.borderColor = Style.blueColor.CGColor
         cameraButtonBorderView.layer.borderWidth = 3.0

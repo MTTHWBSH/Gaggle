@@ -19,6 +19,8 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     @IBOutlet var subtitleTextField: UITextField!
     @IBOutlet var scrollView: UIScrollView!
     
+    @IBOutlet var imageViewTopMargin: NSLayoutConstraint!
+    
     var image: UIImage?
     var photoFile: PFFile?
     
@@ -57,6 +59,10 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     
     override func styleView() {
         view.backgroundColor = Style.whiteColor
+        
+        if UIScreen.mainScreen().nativeBounds.height <= 960 {
+            imageViewTopMargin.constant = 0
+        }
         
         let maskViewColors = [Style.blueColor, Style.orangeColor, Style.greenColor, Style.yellowColor]
         let randomIndex = Int(arc4random_uniform(UInt32(maskViewColors.count)))
@@ -153,16 +159,12 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     // MARK: Keyboard Avoidance
     
     func keyboardWillShow(note: NSNotification) {
-        let keyboardFrameEnd: CGRect = (note.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        var scrollViewContentSize: CGSize = scrollView.bounds.size
+        var keyboardFrame = (note.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+        keyboardFrame = view.convertRect(keyboardFrame, fromView: nil)
         
-        scrollViewContentSize.height += keyboardFrameEnd.size.height
-        scrollView.contentSize = scrollViewContentSize
-        
-        var scrollViewContentOffset: CGPoint = scrollView.contentOffset
-        scrollViewContentOffset.y = scrollViewContentOffset.y + keyboardFrameEnd.size.height*3.0 - UIScreen.mainScreen().bounds.size.height
-        
-        scrollView.setContentOffset(scrollViewContentOffset, animated: true)
+        var contentInset:UIEdgeInsets = scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 20
+        scrollView.contentInset = contentInset
         
         if let activeView = activeView() {
             scrollView.scrollRectToVisible(activeView.frame, animated: false)
@@ -174,12 +176,8 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     }
     
     func keyboardWillHide(note: NSNotification) {
-        let keyboardFrameEnd: CGRect = (note.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        var scrollViewContentSize: CGSize = scrollView.bounds.size
-        scrollViewContentSize.height -= keyboardFrameEnd.size.height
-        UIView.animateWithDuration(0.200, animations: {
-            self.scrollView.contentSize = scrollViewContentSize
-        })
+        let contentInset:UIEdgeInsets = UIEdgeInsetsZero
+        scrollView.contentInset = contentInset
     }
     
     // MARK: IBActions
