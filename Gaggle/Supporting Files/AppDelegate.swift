@@ -50,6 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
         } else {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
+            let query = PFQuery(className: Constants.PostClassKey)
+            let viewModel = FeedViewModel(query: query)
             window?.rootViewController = vc
             window?.makeKeyAndVisible()
         }

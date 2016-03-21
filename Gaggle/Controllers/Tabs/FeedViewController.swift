@@ -7,22 +7,84 @@
 //
 
 import UIKit
+import RxSwift
 
-class FeedViewController: ViewController {
+class FeedViewController: ViewController, UITableViewController {
+    
+    @IBOutlet var tableView: UITableView!
+    
+    var tableViewDataSource: RxTableViewDataSource!
+    var tableViewDelegate: RxTableViewDelegate!
+    
+    var viewModel: FeedViewModel? {
+        didSet {
+            renderViews()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        navigationItem.title = "Gaggle"
+        setupTableView()
     }
     
-    func setup() {
-        navigationItem.title = "Gaggle"
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        renderViews()
+    }
+    
+    func renderViews() {
+        tableView?.reloadData()
+    }
+    
+    func setupTableView() {
+        tableViewDataSource = RxTableViewDataSource(numberOfRowsInSection: { [weak self] _ in
+            return self?.viewModel?.numberOfPosts() ?? 0
+            }, cellForRowAtIndexPath: { [weak self] indexPath in
+                return self?.cellForRow()
+            })
         
-        if Session.currentSession.loggedIn()  {
-            // hide empty state
-        } else {
-            // show empty state
-        }
+        tableView.dataSource = tableViewDataSource
+        tableView.delegate = tableViewDelegate
+    }
+    
+    // MARK:- UITableViewDataSource
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.numberOfPosts() ?? 0
+    }
+    
+    // MARK:- UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return cellForRow()
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return heightForRow()
+    }
+    
+    // MARK:- UITableViewHelpers
+    
+    func heightForRow() -> CGFloat {
+        return 320.0
+    }
+    
+    func cellForRow() -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        return cell
     }
     
 }
