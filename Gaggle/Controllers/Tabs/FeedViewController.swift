@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class FeedViewController: ViewController, UITableViewController {
+class FeedViewController: UITableViewController {
     
     @IBOutlet var tableView: UITableView!
     

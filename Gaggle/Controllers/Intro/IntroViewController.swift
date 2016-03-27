@@ -62,7 +62,7 @@ class IntroViewController: UIViewController, EAIntroDelegate {
     func setupSkipButton() {
         let button = Button()
         button.setTitle("Skip", forState: .Normal)
-        button.addTarget(self, action: "skipIntro", forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(skipIntro), forControlEvents: .TouchUpInside)
         introView.skipButton = button
         introView.skipButton.enabled = true
     }

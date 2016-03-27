@@ -19,7 +19,7 @@ class ProfileViewController: ViewController {
         if Session.currentSession.loggedIn()  {
             guard let user = PFUser.currentUser() else { return }
             navigationItem.title = user.username
-            let rightBarButtonItem = BarButtonItem(image: UIImage(named: "Gear"), style: .Plain, target: self, action: "settingsButtonPressed")
+            let rightBarButtonItem = BarButtonItem(image: UIImage(named: "Gear"), style: .Plain, target: self, action: #selector(settingsButtonPressed))
             navigationItem.rightBarButtonItem = rightBarButtonItem
         } else {
             navigationItem.title = "Profile"

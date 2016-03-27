@@ -21,9 +21,9 @@ DEPENDENCIES:
   - Parse
   - ParseUI
   - PureLayout
-  - RxBlocking (~> 2.0.0-beta)
-  - RxCocoa (~> 2.0.0-beta)
-  - RxSwift (~> 2.0.0-beta)
+  - RxBlocking
+  - RxCocoa
+  - RxSwift
   - SVProgressHUD
 
 SPEC CHECKSUMS:

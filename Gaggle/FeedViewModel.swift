@@ -25,6 +25,7 @@ class FeedViewModel: NSObject {
     
     init(query: PFQuery) {
         super.init()
+        self.query = query
         loadData(withQuery: query)
     }
     
