@@ -11,8 +11,6 @@ import RxSwift
 
 class FeedViewController: UITableViewController {
     
-    @IBOutlet var tableView: UITableView!
-    
     var tableViewDataSource: RxTableViewDataSource!
     var tableViewDelegate: RxTableViewDelegate!
     
@@ -41,7 +39,7 @@ class FeedViewController: UITableViewController {
         tableViewDataSource = RxTableViewDataSource(numberOfRowsInSection: { [weak self] _ in
             return self?.viewModel?.numberOfPosts() ?? 0
             }, cellForRowAtIndexPath: { [weak self] indexPath in
-                return self?.cellForRow()
+                return self?.cellForRow(indexPath) ?? UITableViewCell()
             })
         
         tableView.dataSource = tableViewDataSource
@@ -68,10 +66,6 @@ class FeedViewController: UITableViewController {
         return 0.0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return cellForRow()
-    }
-    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return heightForRow()
     }
@@ -82,7 +76,7 @@ class FeedViewController: UITableViewController {
         return 320.0
     }
     
-    func cellForRow() -> UITableViewCell {
+    func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         return cell
     }

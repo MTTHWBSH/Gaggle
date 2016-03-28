@@ -17,15 +17,8 @@ class FeedViewModel: NSObject {
         }
     }
     
-    var query: PFQuery {
-        didSet {
-            loadData(withQuery: query)
-        }
-    }
-    
     init(query: PFQuery) {
         super.init()
-        self.query = query
         loadData(withQuery: query)
     }
     

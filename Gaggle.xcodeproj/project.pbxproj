@@ -36,6 +36,10 @@
 		761375771C83EF050089ACE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761375751C83EF050089ACE5 /* Constants.swift */; };
 		761915341C9F5B4F0053CEA4 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761915331C9F5B4F0053CEA4 /* FeedViewModel.swift */; };
 		761915351C9F5B4F0053CEA4 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761915331C9F5B4F0053CEA4 /* FeedViewModel.swift */; };
+		761BE06F1CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BE06E1CA8ACDA006E9E2A /* RxTableViewDataSource.swift */; };
+		761BE0701CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BE06E1CA8ACDA006E9E2A /* RxTableViewDataSource.swift */; };
+		761BE0721CA8ACF5006E9E2A /* RxTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BE0711CA8ACF5006E9E2A /* RxTableViewDelegate.swift */; };
+		761BE0731CA8ACF5006E9E2A /* RxTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BE0711CA8ACF5006E9E2A /* RxTableViewDelegate.swift */; };
 		761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E0AC21B2A9262008C3E74 /* IntroView.swift */; };
 		761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E0AC21B2A9262008C3E74 /* IntroView.swift */; };
 		762212B51C39DD7A001CF9BE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212B41C39DD7A001CF9BE /* TabBarController.swift */; };
@@ -107,6 +111,8 @@
 		7605EAB41B09461A00F302BB /* GaggleDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaggleDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		761375751C83EF050089ACE5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		761915331C9F5B4F0053CEA4 /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		761BE06E1CA8ACDA006E9E2A /* RxTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTableViewDataSource.swift; sourceTree = "<group>"; };
+		761BE0711CA8ACF5006E9E2A /* RxTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTableViewDelegate.swift; sourceTree = "<group>"; };
 		761E0AC21B2A9262008C3E74 /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroView.swift; path = Views/IntroView.swift; sourceTree = "<group>"; };
 		762212B41C39DD7A001CF9BE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Utilities/TabBarController.swift; sourceTree = "<group>"; };
 		762212B91C39E502001CF9BE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +216,8 @@
 				762212C21C39F671001CF9BE /* Label.swift */,
 				765357411C795AC20013FAE7 /* Gaggle+UIImage.swift */,
 				761375751C83EF050089ACE5 /* Constants.swift */,
+				761BE06E1CA8ACDA006E9E2A /* RxTableViewDataSource.swift */,
+				761BE0711CA8ACF5006E9E2A /* RxTableViewDelegate.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -591,8 +599,10 @@
 				7605EAA71B09461A00F302BB /* IntroViewController.swift in Sources */,
 				762212C11C39EFD3001CF9BE /* ProfileSettingsViewController.swift in Sources */,
 				76EA19CF1B50CBB100A11248 /* SeparatorView.swift in Sources */,
+				761BE0731CA8ACF5006E9E2A /* RxTableViewDelegate.swift in Sources */,
 				762212C71C3B591D001CF9BE /* ProfileViewController.swift in Sources */,
 				76D360891BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
+				761BE0701CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */,
 				4D2C28271C33138B00116068 /* Session.swift in Sources */,
 				761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */,
 				76EA19C61B50B00C00A11248 /* Animation.swift in Sources */,
@@ -621,8 +631,10 @@
 				76A1F65C1AFAF9E000CB1825 /* IntroViewController.swift in Sources */,
 				762212C01C39EFD3001CF9BE /* ProfileSettingsViewController.swift in Sources */,
 				76EA19CE1B50CBB100A11248 /* SeparatorView.swift in Sources */,
+				761BE0721CA8ACF5006E9E2A /* RxTableViewDelegate.swift in Sources */,
 				762212C61C3B591D001CF9BE /* ProfileViewController.swift in Sources */,
 				76D360881BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
+				761BE06F1CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */,
 				4D2C28261C33138B00116068 /* Session.swift in Sources */,
 				761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */,
 				76EA19C51B50B00C00A11248 /* Animation.swift in Sources */,
