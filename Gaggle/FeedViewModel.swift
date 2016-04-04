@@ -27,7 +27,7 @@ class FeedViewModel: NSObject {
     }
     
     func numberOfPosts() -> Int {
-        return 1
+        return 4
     }
     
 }

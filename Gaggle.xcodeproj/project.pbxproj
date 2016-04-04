@@ -62,6 +62,8 @@
 		7677F2401C45F4920090FCA1 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7677F23E1C45F4920090FCA1 /* EditPostViewController.swift */; };
 		767F90071B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
 		767F90081B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
+		7695E2431CB2018100552427 /* FeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695E2421CB2018100552427 /* FeedQuery.swift */; };
+		7695E2441CB2018100552427 /* FeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695E2421CB2018100552427 /* FeedQuery.swift */; };
 		76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */; };
 		76A1F65C1AFAF9E000CB1825 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */; };
 		76A1F6611AFAF9E000CB1825 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A1F6601AFAF9E000CB1825 /* Images.xcassets */; };
@@ -124,6 +126,7 @@
 		765D6A351C1E3C39001C2242 /* PrivateSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateSettings.swift; sourceTree = "<group>"; };
 		7677F23E1C45F4920090FCA1 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPostViewController.swift; path = Controllers/Posts/EditPostViewController.swift; sourceTree = "<group>"; };
 		767F90061B2D12FC007895A8 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroView.xib; path = Views/IntroView.xib; sourceTree = "<group>"; };
+		7695E2421CB2018100552427 /* FeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedQuery.swift; sourceTree = "<group>"; };
 		76A1F6541AFAF9E000CB1825 /* Gaggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A1F6581AFAF9E000CB1825 /* PrivateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateSettings.swift; sourceTree = "<group>"; };
 		76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
@@ -312,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				4D2C28251C33138B00116068 /* Session.swift */,
+				7695E2421CB2018100552427 /* FeedQuery.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -605,6 +609,7 @@
 				761BE0701CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */,
 				4D2C28271C33138B00116068 /* Session.swift in Sources */,
 				761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */,
+				7695E2441CB2018100552427 /* FeedQuery.swift in Sources */,
 				76EA19C61B50B00C00A11248 /* Animation.swift in Sources */,
 				762212B61C39DD7A001CF9BE /* TabBarController.swift in Sources */,
 				762212C41C39F671001CF9BE /* Label.swift in Sources */,
@@ -637,6 +642,7 @@
 				761BE06F1CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */,
 				4D2C28261C33138B00116068 /* Session.swift in Sources */,
 				761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */,
+				7695E2431CB2018100552427 /* FeedQuery.swift in Sources */,
 				76EA19C51B50B00C00A11248 /* Animation.swift in Sources */,
 				762212B51C39DD7A001CF9BE /* TabBarController.swift in Sources */,
 				762212C31C39F671001CF9BE /* Label.swift in Sources */,
