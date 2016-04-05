@@ -11,8 +11,7 @@ import Parse
 class FeedQuery: NSObject {
     
     class func allPosts() -> PFQuery {
-        let allPosts = PFQuery(className:Constants.PostClassKey)
-        return allPosts
+        return PFQuery(className:Constants.PostClassKey)
     }
     
 }

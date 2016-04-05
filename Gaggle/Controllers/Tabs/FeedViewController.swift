@@ -42,6 +42,8 @@ class FeedViewController: UITableViewController {
                 return self?.cellForRow(indexPath) ?? UITableViewCell()
             })
         
+        tableView.separatorStyle = .None
+        tableView.backgroundColor = Style.lightGrayColor
         tableView.dataSource = tableViewDataSource
         tableView.delegate = tableViewDelegate
     }
