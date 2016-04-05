@@ -17,13 +17,23 @@ class FeedViewModel: NSObject {
         }
     }
     
+    var posts = []
+    
     init(query: PFQuery) {
         super.init()
         loadData(withQuery: query)
     }
     
     func loadData(withQuery query: PFQuery) {
-
+        query.findObjectsInBackgroundWithBlock { [weak self] (posts, error) in
+            guard let posts = posts else { return }
+            if error == nil {
+                self?.posts = posts
+                print(posts)
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
     
     func numberOfPosts() -> Int {
