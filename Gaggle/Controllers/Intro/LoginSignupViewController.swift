@@ -149,6 +149,8 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScroll
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
                     
+                    
+                    if let
                     // won't get called, but need to setup vc here
                     if let vc = nc.selectedViewController as? FeedViewController {
                         vc.viewModel = FeedViewModel(query: FeedQuery.allPosts())

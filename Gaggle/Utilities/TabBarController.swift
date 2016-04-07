@@ -40,4 +40,9 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
             tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
         }
     }
+    
+    func feedViewController() -> FeedViewController? {
+        guard let firstVC = viewControllers?.first as? NavigationController else { return nil }
+        return firstVC.topViewController as? FeedViewController
+    }
 }
