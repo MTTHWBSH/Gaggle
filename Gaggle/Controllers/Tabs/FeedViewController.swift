@@ -11,12 +11,16 @@ import RxSwift
 
 class FeedViewController: UITableViewController {
     
+    private let kCellReuse = "PostTableViewCell"
+    
     var tableViewDataSource: RxTableViewDataSource!
     var tableViewDelegate: RxTableViewDelegate!
     
     var viewModel: FeedViewModel? {
         didSet {
-            renderViews()
+            viewModel?.render = { [weak self] in
+                self?.renderViews()
+            }
         }
     }
 
@@ -42,6 +46,7 @@ class FeedViewController: UITableViewController {
                 return self?.cellForRow(indexPath) ?? UITableViewCell()
             })
         
+        tableView.registerNib(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
         tableView.separatorStyle = .None
         tableView.backgroundColor = Style.lightGrayColor
         tableView.dataSource = tableViewDataSource
@@ -79,7 +84,7 @@ class FeedViewController: UITableViewController {
     }
     
     func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath)
         return cell
     }
     

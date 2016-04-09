@@ -81,6 +81,10 @@
 		76EA19C91B50C50000A11248 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19C71B50C50000A11248 /* Style.swift */; };
 		76EA19CE1B50CBB100A11248 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19CD1B50CBB100A11248 /* SeparatorView.swift */; };
 		76EA19CF1B50CBB100A11248 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA19CD1B50CBB100A11248 /* SeparatorView.swift */; };
+		76EAFB7A1CB8BE9B003AD416 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EAFB781CB8BE9B003AD416 /* PostTableViewCell.swift */; };
+		76EAFB7B1CB8BE9B003AD416 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EAFB781CB8BE9B003AD416 /* PostTableViewCell.swift */; };
+		76EAFB7C1CB8BE9B003AD416 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EAFB791CB8BE9B003AD416 /* PostTableViewCell.xib */; };
+		76EAFB7D1CB8BE9B003AD416 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EAFB791CB8BE9B003AD416 /* PostTableViewCell.xib */; };
 		76ED4F831C79421800735EBD /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76ED4F821C79421800735EBD /* JosefinSans-Bold.ttf */; };
 		76ED4F841C79421800735EBD /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76ED4F821C79421800735EBD /* JosefinSans-Bold.ttf */; };
 /* End PBXBuildFile section */
@@ -142,6 +146,8 @@
 		76EA19C41B50B00C00A11248 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		76EA19C71B50C50000A11248 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		76EA19CD1B50CBB100A11248 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = Views/SeparatorView.swift; sourceTree = "<group>"; };
+		76EAFB781CB8BE9B003AD416 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostTableViewCell.swift; path = Views/PostTableViewCell.swift; sourceTree = "<group>"; };
+		76EAFB791CB8BE9B003AD416 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostTableViewCell.xib; path = Views/PostTableViewCell.xib; sourceTree = "<group>"; };
 		76ED4F821C79421800735EBD /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JosefinSans-Bold.ttf"; path = "Assets/JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
 		A3AB86BB39A99E6FC8228F16 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DDA580802BF7D1EE3CFC433F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -326,6 +332,8 @@
 				4D12F5291C33198B009EED79 /* Storyboards */,
 				761E0AC21B2A9262008C3E74 /* IntroView.swift */,
 				76EA19CD1B50CBB100A11248 /* SeparatorView.swift */,
+				76EAFB781CB8BE9B003AD416 /* PostTableViewCell.swift */,
+				76EAFB791CB8BE9B003AD416 /* PostTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -470,6 +478,7 @@
 			files = (
 				4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */,
 				4DBF07ED1B6163210068092C /* Lato-Hairline.ttf in Resources */,
+				76EAFB7D1CB8BE9B003AD416 /* PostTableViewCell.xib in Resources */,
 				4D12F5251C3318A8009EED79 /* Main.storyboard in Resources */,
 				4DBF07F11B6163210068092C /* Lato-Regular.ttf in Resources */,
 				4D15D6F01BF698BD00F922DB /* Intro.storyboard in Resources */,
@@ -488,6 +497,7 @@
 				4D12F5241C3318A8009EED79 /* Main.storyboard in Resources */,
 				76ED4F831C79421800735EBD /* JosefinSans-Bold.ttf in Resources */,
 				4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */,
+				76EAFB7C1CB8BE9B003AD416 /* PostTableViewCell.xib in Resources */,
 				4DBF07EC1B6163210068092C /* Lato-Hairline.ttf in Resources */,
 				4DBF07F01B6163210068092C /* Lato-Regular.ttf in Resources */,
 				4D15D6EF1BF698BD00F922DB /* Intro.storyboard in Resources */,
@@ -617,6 +627,7 @@
 				4D12F5281C331973009EED79 /* FeedViewController.swift in Sources */,
 				7677F2401C45F4920090FCA1 /* EditPostViewController.swift in Sources */,
 				7605EAA91B09461A00F302BB /* AppDelegate.swift in Sources */,
+				76EAFB7B1CB8BE9B003AD416 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +661,7 @@
 				4D12F5271C331973009EED79 /* FeedViewController.swift in Sources */,
 				7677F23F1C45F4920090FCA1 /* EditPostViewController.swift in Sources */,
 				76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */,
+				76EAFB7A1CB8BE9B003AD416 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
