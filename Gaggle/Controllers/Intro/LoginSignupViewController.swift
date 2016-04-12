@@ -144,14 +144,9 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScroll
         PFUser.logInWithUsernameInBackground(user, password: password, block: { (user, error) -> Void in
             
             SVProgressHUD.dismiss()
-            
             if ((user) != nil) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
-                    if let vc = nc.feedViewController() {
-                        vc.viewModel = FeedViewModel(query: FeedQuery.allPosts())
-                        self.presentViewController(nc, animated: true, completion: nil)
-                    }
+                    self.showFeed()
                 })
                 
             } else if ((error) != nil) {
@@ -173,18 +168,24 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScroll
         
         newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
             SVProgressHUD.dismiss()
-            
             if ((error) != nil) {
                 if let error = error {
                     SVProgressHUD.showErrorWithStatus(error.localizedDescription, maskType: .Black)
                 }
             } else {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
-                    self.presentViewController(nc, animated: true, completion: nil)
+                    self.showFeed()
                 })
             }
         })
+    }
+    
+    func showFeed() {
+        let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
+        if let vc = nc.feedViewController() {
+            vc.viewModel = FeedViewModel(query: FeedQuery.allPosts())
+            self.presentViewController(nc, animated: true, completion: nil)
+        }
     }
     
 }

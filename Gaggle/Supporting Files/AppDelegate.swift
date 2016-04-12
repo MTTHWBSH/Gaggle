@@ -49,11 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = vc
             window?.makeKeyAndVisible()
         } else {
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
-            let query = PFQuery(className: Constants.PostClassKey)
-            let viewModel = FeedViewModel(query: query)
-            window?.rootViewController = vc
-            window?.makeKeyAndVisible()
+            let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
+            if let vc = nc.feedViewController() {
+                vc.viewModel = FeedViewModel(query: FeedQuery.allPosts())
+                window?.rootViewController = nc
+                window?.makeKeyAndVisible()
+            }
         }
         
         SVProgressHUD.setFont(Style.regularFontWithSize(14.0))

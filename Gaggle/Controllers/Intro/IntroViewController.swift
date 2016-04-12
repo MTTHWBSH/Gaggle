@@ -68,11 +68,15 @@ class IntroViewController: UIViewController, EAIntroDelegate {
     }
     
     func skipIntro() {
+        showFeed()
+    }
+    
+    func showFeed() {
         let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
-        if let vc = nc.selectedViewController as? FeedViewController {
+        if let vc = nc.feedViewController() {
             vc.viewModel = FeedViewModel(query: FeedQuery.allPosts())
+            self.presentViewController(nc, animated: true, completion: nil)
         }
-        presentViewController(nc, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
