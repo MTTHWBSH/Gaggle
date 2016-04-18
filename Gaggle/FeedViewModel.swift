@@ -17,7 +17,11 @@ class FeedViewModel: NSObject {
         }
     }
     
-    var posts = []
+    private var posts: [AnyObject]? {
+        didSet {
+            render?()
+        }
+    }
     
     init(query: PFQuery) {
         super.init()
@@ -29,7 +33,7 @@ class FeedViewModel: NSObject {
             guard let posts = posts else { return }
             if error == nil {
                 self?.posts = posts
-                print(posts)
+                self?.render?()
             } else {
                 print(error?.localizedDescription)
             }
@@ -37,7 +41,7 @@ class FeedViewModel: NSObject {
     }
     
     func numberOfPosts() -> Int {
-        return posts.count
+        return posts?.count ?? 0
     }
     
 }

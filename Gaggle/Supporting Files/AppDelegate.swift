@@ -44,17 +44,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        if !Session.currentSession.loggedIn() {
+        func showLogin() {
             let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as! IntroViewController
             window?.rootViewController = vc
             window?.makeKeyAndVisible()
-        } else {
+        }
+        
+        func showFeed() {
             let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
             if let vc = nc.feedViewController() {
                 vc.viewModel = FeedViewModel(query: FeedQuery.allPosts())
                 window?.rootViewController = nc
                 window?.makeKeyAndVisible()
             }
+        }
+        
+        if !Session.currentSession.loggedIn() {
+            showLogin()
+        } else {
+            showFeed()
         }
         
         SVProgressHUD.setFont(Style.regularFontWithSize(14.0))
