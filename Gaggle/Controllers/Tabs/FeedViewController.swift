@@ -80,7 +80,8 @@ class FeedViewController: UITableViewController {
     // MARK:- UITableViewHelpers
     
     func heightForRow() -> CGFloat {
-        return 360.0
+        print(CGRectGetWidth(UIScreen.mainScreen().bounds) + 40.0)
+        return CGRectGetWidth(UIScreen.mainScreen().bounds) + 40.0
     }
     
     func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
