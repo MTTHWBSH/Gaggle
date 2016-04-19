@@ -44,4 +44,8 @@ class FeedViewModel: NSObject {
         return posts?.count ?? 0
     }
     
+    func postForIndexPath(indexPath: NSIndexPath) -> AnyObject {
+        return UIView()
+    }
+    
 }

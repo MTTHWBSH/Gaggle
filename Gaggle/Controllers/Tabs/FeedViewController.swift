@@ -49,39 +49,19 @@ class FeedViewController: UITableViewController {
         tableView.registerNib(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
         tableView.separatorStyle = .None
         tableView.backgroundColor = Style.lightGrayColor
+        tableView.estimatedRowHeight = heightForRow()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.allowsSelection = false
         tableView.dataSource = tableViewDataSource
         tableView.delegate = tableViewDelegate
-    }
-    
-    // MARK:- UITableViewDataSource
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.numberOfPosts() ?? 0
-    }
-    
-    // MARK:- UITableViewDelegate
-    
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0
-    }
-    
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.0
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return heightForRow()
     }
     
-    // MARK:- UITableViewHelpers
-    
     func heightForRow() -> CGFloat {
-        print(CGRectGetWidth(UIScreen.mainScreen().bounds) + 40.0)
-        return CGRectGetWidth(UIScreen.mainScreen().bounds) + 40.0
+        return CGRectGetWidth(UIScreen.mainScreen().bounds) + 50.0
     }
     
     func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
