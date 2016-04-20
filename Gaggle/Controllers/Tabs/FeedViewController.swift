@@ -61,7 +61,7 @@ class FeedViewController: UITableViewController {
     }
     
     func heightForRow() -> CGFloat {
-        return CGRectGetWidth(UIScreen.mainScreen().bounds) + 50.0
+        return CGRectGetWidth(UIScreen.mainScreen().bounds) + 40.0
     }
     
     func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {

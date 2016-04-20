@@ -16,14 +16,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Geese" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-hw-mae">
-                        <rect key="frame" x="10" y="10" width="300" height="300"/>
+                        <rect key="frame" x="10" y="5" width="300" height="300"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Kas-hw-mae" secondAttribute="height" multiplier="1:1" id="yUE-jw-Nn5"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qyj-Nx-l6u">
-                        <rect key="frame" x="10" y="310" width="300" height="41.5"/>
+                        <rect key="frame" x="10" y="305" width="300" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nE-WI-zqu">
                                 <rect key="frame" x="8" y="10" width="37" height="21"/>
@@ -44,6 +44,7 @@
                             <constraint firstItem="eVq-fI-QOP" firstAttribute="centerY" secondItem="Qyj-Nx-l6u" secondAttribute="centerY" id="SS5-cJ-k5b"/>
                             <constraint firstItem="7nE-WI-zqu" firstAttribute="centerY" secondItem="Qyj-Nx-l6u" secondAttribute="centerY" id="XAB-4e-D6D"/>
                             <constraint firstItem="eVq-fI-QOP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7nE-WI-zqu" secondAttribute="trailing" constant="20" id="co2-5t-7BC"/>
+                            <constraint firstAttribute="height" constant="40" id="gWt-y3-s5e"/>
                             <constraint firstAttribute="trailing" secondItem="eVq-fI-QOP" secondAttribute="trailing" constant="8" id="rX8-gc-nS0"/>
                         </constraints>
                     </view>
@@ -51,10 +52,10 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="Qyj-Nx-l6u" firstAttribute="top" secondItem="Kas-hw-mae" secondAttribute="bottom" id="4AK-hg-mfA"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Qyj-Nx-l6u" secondAttribute="bottom" id="9y5-R8-6jn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Qyj-Nx-l6u" secondAttribute="bottom" constant="5" id="9y5-R8-6jn"/>
                     <constraint firstItem="Qyj-Nx-l6u" firstAttribute="trailing" secondItem="Kas-hw-mae" secondAttribute="trailing" id="AKy-b7-hlz"/>
                     <constraint firstAttribute="trailing" secondItem="Kas-hw-mae" secondAttribute="trailing" constant="10" id="bIb-Oq-pDt"/>
-                    <constraint firstItem="Kas-hw-mae" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jOW-G8-ykm"/>
+                    <constraint firstItem="Kas-hw-mae" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="jOW-G8-ykm"/>
                     <constraint firstItem="Kas-hw-mae" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="kvA-dR-bat"/>
                     <constraint firstItem="Qyj-Nx-l6u" firstAttribute="leading" secondItem="Kas-hw-mae" secondAttribute="leading" id="pdv-8K-GbY"/>
                 </constraints>
