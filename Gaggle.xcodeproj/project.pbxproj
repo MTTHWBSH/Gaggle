@@ -25,6 +25,8 @@
 		4DBF07EF1B6163210068092C /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E81B6163210068092C /* Lato-Light.ttf */; };
 		4DBF07F01B6163210068092C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E91B6163210068092C /* Lato-Regular.ttf */; };
 		4DBF07F11B6163210068092C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E91B6163210068092C /* Lato-Regular.ttf */; };
+		4DC1A0201CCAE3B500AB3A57 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A01F1CCAE3B500AB3A57 /* Post.swift */; };
+		4DC1A0211CCAE3B500AB3A57 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A01F1CCAE3B500AB3A57 /* Post.swift */; };
 		70D429147F8FA7164B81322A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA580802BF7D1EE3CFC433F /* Pods.framework */; };
 		76054DD61BBA2C0200AA2D5A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76054DD51BBA2C0200AA2D5A /* Button.swift */; };
 		76054DD71BBA2C0200AA2D5A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76054DD51BBA2C0200AA2D5A /* Button.swift */; };
@@ -113,6 +115,7 @@
 		4DBF07E71B6163210068092C /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Hairline.ttf"; path = "Assets/Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		4DBF07E81B6163210068092C /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "Assets/Lato-Light.ttf"; sourceTree = "<group>"; };
 		4DBF07E91B6163210068092C /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Assets/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		4DC1A01F1CCAE3B500AB3A57 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		76054DD51BBA2C0200AA2D5A /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		7605EAB41B09461A00F302BB /* GaggleDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaggleDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		761375751C83EF050089ACE5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -322,6 +325,7 @@
 			children = (
 				4D2C28251C33138B00116068 /* Session.swift */,
 				7695E2421CB2018100552427 /* FeedQuery.swift */,
+				4DC1A01F1CCAE3B500AB3A57 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -620,6 +624,7 @@
 				4D2C28271C33138B00116068 /* Session.swift in Sources */,
 				761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */,
 				7695E2441CB2018100552427 /* FeedQuery.swift in Sources */,
+				4DC1A0211CCAE3B500AB3A57 /* Post.swift in Sources */,
 				76EA19C61B50B00C00A11248 /* Animation.swift in Sources */,
 				762212B61C39DD7A001CF9BE /* TabBarController.swift in Sources */,
 				762212C41C39F671001CF9BE /* Label.swift in Sources */,
@@ -654,6 +659,7 @@
 				4D2C28261C33138B00116068 /* Session.swift in Sources */,
 				761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */,
 				7695E2431CB2018100552427 /* FeedQuery.swift in Sources */,
+				4DC1A0201CCAE3B500AB3A57 /* Post.swift in Sources */,
 				76EA19C51B50B00C00A11248 /* Animation.swift in Sources */,
 				762212B51C39DD7A001CF9BE /* TabBarController.swift in Sources */,
 				762212C31C39F671001CF9BE /* Label.swift in Sources */,

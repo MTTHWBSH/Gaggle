@@ -28,10 +28,6 @@ class FeedViewController: UITableViewController {
         super.viewDidLoad()
         navigationItem.title = "Gaggle"
         setupTableView()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         renderViews()
     }
     
@@ -45,10 +41,11 @@ class FeedViewController: UITableViewController {
             }, cellForRowAtIndexPath: { [weak self] indexPath in
                 return self?.cellForRow(indexPath) ?? UITableViewCell()
             })
+
         
-        tableView.registerNib(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
         tableView.dataSource = tableViewDataSource
         tableView.delegate = tableViewDelegate
+        tableView.registerNib(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
         styleTableView()
     }
     

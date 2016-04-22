@@ -85,7 +85,7 @@ class RxTableViewDataSource: NSObject, UITableViewDataSource {
             return callback(indexPath: indexPath)
         }
         else {
-            return true
+            return false
         }
     }
     

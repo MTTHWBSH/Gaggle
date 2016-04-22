@@ -33,6 +33,7 @@ class FeedViewModel: NSObject {
             guard let posts = posts else { return }
             if error == nil {
                 self?.posts = posts
+                print(self?.posts)
                 self?.render?()
             } else {
                 print(error?.localizedDescription)
@@ -44,8 +45,29 @@ class FeedViewModel: NSObject {
         return posts?.count ?? 0
     }
     
-    func postForIndexPath(indexPath: NSIndexPath) -> AnyObject {
-        return UIView()
+    func postForIndexPath(indexPath: NSIndexPath) -> Post? {
+        let post = posts?[indexPath.row]
+        let imageFile = post?["image"] as! PFFile
+        let subtitle = post?["subtitle"] as! String
+        let title = post?["title"] as! String
+        let userID = post?["userID"] as! String
+        
+        guard let image = convertPFFileToImage(imageFile) else { return nil }
+        
+        return Post(image: image, subtitle: subtitle, title: title, userID: userID)
+    }
+    
+    func convertPFFileToImage(file: PFFile) -> UIImage? {
+        var image: UIImage?
+        file.getDataInBackgroundWithBlock { (data, error) in
+            guard let data = data else { return }
+            if error == nil {
+                image = UIImage(data: data)
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+        return image
     }
     
 }

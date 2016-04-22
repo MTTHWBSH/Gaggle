@@ -27,7 +27,7 @@ class Label: UILabel {
     
 }
 
-class SecondaryLabel: UILabel {
+class SecondaryLabel: Label {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -39,7 +39,13 @@ class SecondaryLabel: UILabel {
         style()
     }
     
-    func style() {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        style()
+    }
+    
+    override func style() {
+        font = Style.regularFontWithSize(14.0)
         textColor = Style.grayColor
     }
     

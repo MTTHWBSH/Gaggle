@@ -34,6 +34,11 @@ class Button: UIButton {
         style()
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        style()
+    }
+    
     func style() {
         titleLabel?.font = Style.regularFontWithSize(14.0)
         setBackgroundColor(UIColor.clearColor(), forState: .Normal)
