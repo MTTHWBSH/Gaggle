@@ -65,7 +65,9 @@ class FeedViewController: UITableViewController {
     }
     
     func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath)
+        let post = viewModel?.postForIndexPath(indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as! PostTableViewCell
+        cell.userButton.setTitle(post?.userID, forState: .Normal)
         return cell
     }
     
