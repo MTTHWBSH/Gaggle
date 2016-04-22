@@ -9,9 +9,22 @@
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var userButton: SecondaryTextButton!
+    @IBOutlet weak var timeLabel: SecondaryLabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        styleView()
+    }
+    
+    func styleView() {
+        backgroundColor = Style.lightGrayColor
+        separatorInset = UIEdgeInsetsZero
+        layoutMargins = UIEdgeInsetsZero
+    }
+    
+    @IBAction func userButtonPressed(sender: AnyObject) {
         
     }
     

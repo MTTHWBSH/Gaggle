@@ -50,6 +50,32 @@ class Button: UIButton {
     
 }
 
+class SecondaryTextButton: Button {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        style()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        style()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        style()
+    }
+    
+    override func style() {
+        setTitleColor(Style.blueColor, forState: .Normal)
+        setTitleColor(Style.blueColorSelected, forState: .Selected)
+        setTitleColor(Style.blueColorSelected, forState: .Highlighted)
+        setTitleColor(Style.blueColor.colorWithAlphaComponent(0.8), forState: .Disabled)
+    }
+    
+}
+
 class PrimaryButton: Button {
     
     required init?(coder aDecoder: NSCoder) {

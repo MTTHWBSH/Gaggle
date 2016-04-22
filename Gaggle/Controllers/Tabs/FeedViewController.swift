@@ -47,17 +47,20 @@ class FeedViewController: UITableViewController {
             })
         
         tableView.registerNib(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
-        tableView.separatorStyle = .None
-        tableView.backgroundColor = Style.lightGrayColor
-        tableView.estimatedRowHeight = heightForRow()
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.allowsSelection = false
         tableView.dataSource = tableViewDataSource
         tableView.delegate = tableViewDelegate
+        styleTableView()
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return heightForRow()
+    func styleTableView() {
+        tableView.separatorStyle = .None
+        tableView.backgroundColor = Style.lightGrayColor
+        tableView.separatorInset = UIEdgeInsetsZero
+        tableView.layoutMargins = UIEdgeInsetsZero
+        tableView.contentInset = UIEdgeInsetsMake(6, 0, 6, 0)
+        tableView.estimatedRowHeight = heightForRow()
+        tableView.rowHeight = heightForRow()
+        tableView.allowsSelection = false
     }
     
     func heightForRow() -> CGFloat {
