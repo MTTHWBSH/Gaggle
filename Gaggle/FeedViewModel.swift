@@ -33,7 +33,6 @@ class FeedViewModel: NSObject {
             guard let posts = posts else { return }
             if error == nil {
                 self?.posts = posts
-                print(self?.posts)
                 self?.render?()
             } else {
                 print(error?.localizedDescription)

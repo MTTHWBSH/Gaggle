@@ -68,6 +68,7 @@ class FeedViewController: UITableViewController {
         let post = viewModel?.postForIndexPath(indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as! PostTableViewCell
         cell.userButton.setTitle(post?.userID, forState: .Normal)
+        cell.imageView?.image = post?.image
         return cell
     }
     
