@@ -52,22 +52,9 @@ class FeedViewModel: NSObject {
         let title = post?["title"] as! String
         let userID = post?["userID"] as! String
         
-        guard let image = convertPFFileToImage(imageFile) else { return nil }
+        guard let image = imageFile.convertToImage() else { return nil }
         
         return Post(image: image, subtitle: subtitle, title: title, userID: userID)
-    }
-    
-    func convertPFFileToImage(file: PFFile) -> UIImage? {
-        var image: UIImage?
-        file.getDataInBackgroundWithBlock { (data, error) in
-            guard let data = data else { return }
-            if error == nil {
-                image = UIImage(data: data)
-            } else {
-                print(error?.localizedDescription)
-            }
-        }
-        return image
     }
     
 }

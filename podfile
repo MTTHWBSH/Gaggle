@@ -1,12 +1,22 @@
 source 'https://github.com/CocoaPods/Specs.git'
+inhibit_all_warnings!
 use_frameworks!
 
-#pod 'EAIntroView', :git => 'https://github.com/ealeksandrov/EAIntroView.git', tag: '2.7.4'
-pod 'EAIntroView'
-pod 'Parse'
-pod 'ParseUI'
-pod 'SVProgressHUD'
-pod 'PureLayout'
-pod 'RxSwift'
-pod 'RxCocoa'
-pod 'RxBlocking'
+def all_pods
+	pod 'EAIntroView'
+	pod 'Parse'
+	pod 'ParseUI'
+	pod 'SVProgressHUD'
+	pod 'PureLayout'
+	pod 'RxSwift'
+	pod 'RxCocoa'
+	pod 'RxBlocking'
+end
+
+target 'Gaggle' do
+  all_pods
+end
+
+target 'GaggleDev' do
+  all_pods
+end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A000A545FB302AB0C3FCFA7 /* Pods_Gaggle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C348ADACE82251561BC43C45 /* Pods_Gaggle.framework */; };
 		4D12F5241C3318A8009EED79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D12F5231C3318A8009EED79 /* Main.storyboard */; };
 		4D12F5251C3318A8009EED79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D12F5231C3318A8009EED79 /* Main.storyboard */; };
 		4D12F5271C331973009EED79 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D12F5261C331973009EED79 /* FeedViewController.swift */; };
@@ -16,7 +17,6 @@
 		4D15D6F41BF6995200F922DB /* GaggleDev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */; };
 		4D2C28261C33138B00116068 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C28251C33138B00116068 /* Session.swift */; };
 		4D2C28271C33138B00116068 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C28251C33138B00116068 /* Session.swift */; };
-		4D5733DF1C90ED1900BD8686 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5733DE1C90ED1900BD8686 /* Pods.framework */; };
 		4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
 		4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
 		4DBF07EC1B6163210068092C /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E71B6163210068092C /* Lato-Hairline.ttf */; };
@@ -27,7 +27,8 @@
 		4DBF07F11B6163210068092C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E91B6163210068092C /* Lato-Regular.ttf */; };
 		4DC1A0201CCAE3B500AB3A57 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A01F1CCAE3B500AB3A57 /* Post.swift */; };
 		4DC1A0211CCAE3B500AB3A57 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A01F1CCAE3B500AB3A57 /* Post.swift */; };
-		70D429147F8FA7164B81322A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA580802BF7D1EE3CFC433F /* Pods.framework */; };
+		4DC1A0231CCE7C5D00AB3A57 /* Gaggle+PFFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A0221CCE7C5D00AB3A57 /* Gaggle+PFFile.swift */; };
+		4DC1A0241CCE7C5D00AB3A57 /* Gaggle+PFFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A0221CCE7C5D00AB3A57 /* Gaggle+PFFile.swift */; };
 		76054DD61BBA2C0200AA2D5A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76054DD51BBA2C0200AA2D5A /* Button.swift */; };
 		76054DD71BBA2C0200AA2D5A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76054DD51BBA2C0200AA2D5A /* Button.swift */; };
 		7605EAA71B09461A00F302BB /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */; };
@@ -89,6 +90,7 @@
 		76EAFB7D1CB8BE9B003AD416 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EAFB791CB8BE9B003AD416 /* PostTableViewCell.xib */; };
 		76ED4F831C79421800735EBD /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76ED4F821C79421800735EBD /* JosefinSans-Bold.ttf */; };
 		76ED4F841C79421800735EBD /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76ED4F821C79421800735EBD /* JosefinSans-Bold.ttf */; };
+		D8873F575D19DAC99902613C /* Pods_GaggleDev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56775B71593A7F6B00A958FA /* Pods_GaggleDev.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16FC846D5A29289BAE7C4963 /* Pods-Gaggle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gaggle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gaggle/Pods-Gaggle.debug.xcconfig"; sourceTree = "<group>"; };
+		211C9BABF87080379279BDE4 /* Pods-GaggleDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaggleDev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GaggleDev/Pods-GaggleDev.debug.xcconfig"; sourceTree = "<group>"; };
+		2640D5EF56CFE5174319BB29 /* Pods-Gaggle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gaggle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gaggle/Pods-Gaggle.release.xcconfig"; sourceTree = "<group>"; };
 		4D12F5231C3318A8009EED79 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		4D12F5261C331973009EED79 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = Controllers/Tabs/FeedViewController.swift; sourceTree = "<group>"; };
 		4D15D6ED1BF698BD00F922DB /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Intro.storyboard; path = Gaggle/Storyboards/Intro.storyboard; sourceTree = SOURCE_ROOT; };
@@ -116,6 +121,8 @@
 		4DBF07E81B6163210068092C /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "Assets/Lato-Light.ttf"; sourceTree = "<group>"; };
 		4DBF07E91B6163210068092C /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Assets/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		4DC1A01F1CCAE3B500AB3A57 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4DC1A0221CCE7C5D00AB3A57 /* Gaggle+PFFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gaggle+PFFile.swift"; sourceTree = "<group>"; };
+		56775B71593A7F6B00A958FA /* Pods_GaggleDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaggleDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76054DD51BBA2C0200AA2D5A /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		7605EAB41B09461A00F302BB /* GaggleDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaggleDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		761375751C83EF050089ACE5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -152,9 +159,9 @@
 		76EAFB781CB8BE9B003AD416 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostTableViewCell.swift; path = Views/PostTableViewCell.swift; sourceTree = "<group>"; };
 		76EAFB791CB8BE9B003AD416 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostTableViewCell.xib; path = Views/PostTableViewCell.xib; sourceTree = "<group>"; };
 		76ED4F821C79421800735EBD /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JosefinSans-Bold.ttf"; path = "Assets/JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
-		A3AB86BB39A99E6FC8228F16 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C348ADACE82251561BC43C45 /* Pods_Gaggle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gaggle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA580802BF7D1EE3CFC433F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F69A5333407AE4A7B64279F7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E97B284DCD3FE73AB22C7A92 /* Pods-GaggleDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaggleDev.release.xcconfig"; path = "Pods/Target Support Files/Pods-GaggleDev/Pods-GaggleDev.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D5733DF1C90ED1900BD8686 /* Pods.framework in Frameworks */,
+				D8873F575D19DAC99902613C /* Pods_GaggleDev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70D429147F8FA7164B81322A /* Pods.framework in Frameworks */,
+				4A000A545FB302AB0C3FCFA7 /* Pods_Gaggle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +191,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C68D4175A5A3D73629B8895 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				16FC846D5A29289BAE7C4963 /* Pods-Gaggle.debug.xcconfig */,
+				2640D5EF56CFE5174319BB29 /* Pods-Gaggle.release.xcconfig */,
+				211C9BABF87080379279BDE4 /* Pods-GaggleDev.debug.xcconfig */,
+				E97B284DCD3FE73AB22C7A92 /* Pods-GaggleDev.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4D12F5291C33198B009EED79 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +210,15 @@
 				4D15D6ED1BF698BD00F922DB /* Intro.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4DC1A0251CCE7C6D00AB3A57 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				765357411C795AC20013FAE7 /* Gaggle+UIImage.swift */,
+				4DC1A0221CCE7C5D00AB3A57 /* Gaggle+PFFile.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		762212B71C39DD93001CF9BE /* Intro */ = {
@@ -219,6 +246,7 @@
 		765184061AFB056F00EA2DB6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4DC1A0251CCE7C6D00AB3A57 /* Extensions */,
 				76EA19C41B50B00C00A11248 /* Animation.swift */,
 				76D3608D1BAE275700022990 /* BarButtonItem.swift */,
 				76054DD51BBA2C0200AA2D5A /* Button.swift */,
@@ -226,7 +254,6 @@
 				76EA19C71B50C50000A11248 /* Style.swift */,
 				762212B91C39E502001CF9BE /* ViewController.swift */,
 				762212C21C39F671001CF9BE /* Label.swift */,
-				765357411C795AC20013FAE7 /* Gaggle+UIImage.swift */,
 				761375751C83EF050089ACE5 /* Constants.swift */,
 				761BE06E1CA8ACDA006E9E2A /* RxTableViewDataSource.swift */,
 				761BE0711CA8ACF5006E9E2A /* RxTableViewDelegate.swift */,
@@ -248,8 +275,8 @@
 				76A1F6561AFAF9E000CB1825 /* Gaggle */,
 				76A1F66C1AFAF9E000CB1825 /* GaggleTests */,
 				76A1F6551AFAF9E000CB1825 /* Products */,
-				827F29B05CA273E02FB64F2E /* Pods */,
 				FBBC2EA3EA0F205DD24D2679 /* Frameworks */,
+				2C68D4175A5A3D73629B8895 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -352,21 +379,14 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		827F29B05CA273E02FB64F2E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F69A5333407AE4A7B64279F7 /* Pods.debug.xcconfig */,
-				A3AB86BB39A99E6FC8228F16 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		FBBC2EA3EA0F205DD24D2679 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				4D5733DE1C90ED1900BD8686 /* Pods.framework */,
 				4D15D6FC1BF6A84F00F922DB /* libPods.a */,
 				DDA580802BF7D1EE3CFC433F /* Pods.framework */,
+				C348ADACE82251561BC43C45 /* Pods_Gaggle.framework */,
+				56775B71593A7F6B00A958FA /* Pods_GaggleDev.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -378,11 +398,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7605EAB11B09461A00F302BB /* Build configuration list for PBXNativeTarget "GaggleDev" */;
 			buildPhases = (
-				7605EAA51B09461A00F302BB /* Check Pods Manifest.lock */,
+				8A71D9B4F49197AEA4962787 /* 📦 Check Pods Manifest.lock */,
 				7605EAA61B09461A00F302BB /* Sources */,
 				7605EAAA1B09461A00F302BB /* Frameworks */,
 				7605EAAC1B09461A00F302BB /* Resources */,
-				7605EAB01B09461A00F302BB /* Copy Pods Resources */,
+				A77F7DC117ACB924CF302640 /* 📦 Embed Pods Frameworks */,
+				B4332FA733DDEC85433EE93D /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -397,12 +418,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76A1F6731AFAF9E000CB1825 /* Build configuration list for PBXNativeTarget "Gaggle" */;
 			buildPhases = (
-				A8635BA7A66F55718B8C396D /* Check Pods Manifest.lock */,
+				598957462D0A91A009C3AB33 /* 📦 Check Pods Manifest.lock */,
 				76A1F6501AFAF9E000CB1825 /* Sources */,
 				76A1F6511AFAF9E000CB1825 /* Frameworks */,
 				76A1F6521AFAF9E000CB1825 /* Resources */,
-				258443162F4338F9FBCA5C88 /* Copy Pods Resources */,
-				59A66310AEA5132BB4E93902 /* Embed Pods Frameworks */,
+				F12907F059676184F872EBAB /* 📦 Embed Pods Frameworks */,
+				A6158B28310353673CD2122E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -523,44 +544,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		258443162F4338F9FBCA5C88 /* Copy Pods Resources */ = {
+		598957462D0A91A009C3AB33 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		59A66310AEA5132BB4E93902 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7605EAA51B09461A00F302BB /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,34 +559,79 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7605EAB01B09461A00F302BB /* Copy Pods Resources */ = {
+		8A71D9B4F49197AEA4962787 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A8635BA7A66F55718B8C396D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A6158B28310353673CD2122E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gaggle/Pods-Gaggle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A77F7DC117ACB924CF302640 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GaggleDev/Pods-GaggleDev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4332FA733DDEC85433EE93D /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GaggleDev/Pods-GaggleDev-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F12907F059676184F872EBAB /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gaggle/Pods-Gaggle-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -608,6 +644,7 @@
 				762212BB1C39E502001CF9BE /* ViewController.swift in Sources */,
 				761375771C83EF050089ACE5 /* Constants.swift in Sources */,
 				765357431C795AC20013FAE7 /* Gaggle+UIImage.swift in Sources */,
+				4DC1A0241CCE7C5D00AB3A57 /* Gaggle+PFFile.swift in Sources */,
 				76054DD71BBA2C0200AA2D5A /* Button.swift in Sources */,
 				76D360921BAE28D600022990 /* NavigationController.swift in Sources */,
 				76D3608F1BAE275700022990 /* BarButtonItem.swift in Sources */,
@@ -643,6 +680,7 @@
 				762212BA1C39E502001CF9BE /* ViewController.swift in Sources */,
 				761375761C83EF050089ACE5 /* Constants.swift in Sources */,
 				765357421C795AC20013FAE7 /* Gaggle+UIImage.swift in Sources */,
+				4DC1A0231CCE7C5D00AB3A57 /* Gaggle+PFFile.swift in Sources */,
 				76054DD61BBA2C0200AA2D5A /* Button.swift in Sources */,
 				76D360911BAE28D600022990 /* NavigationController.swift in Sources */,
 				76D3608E1BAE275700022990 /* BarButtonItem.swift in Sources */,
@@ -703,7 +741,7 @@
 /* Begin XCBuildConfiguration section */
 		7605EAB21B09461A00F302BB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F69A5333407AE4A7B64279F7 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 211C9BABF87080379279BDE4 /* Pods-GaggleDev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -724,7 +762,7 @@
 		};
 		7605EAB31B09461A00F302BB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3AB86BB39A99E6FC8228F16 /* Pods.release.xcconfig */;
+			baseConfigurationReference = E97B284DCD3FE73AB22C7A92 /* Pods-GaggleDev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -827,7 +865,7 @@
 		};
 		76A1F6741AFAF9E000CB1825 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F69A5333407AE4A7B64279F7 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 16FC846D5A29289BAE7C4963 /* Pods-Gaggle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -849,7 +887,7 @@
 		};
 		76A1F6751AFAF9E000CB1825 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3AB86BB39A99E6FC8228F16 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 2640D5EF56CFE5174319BB29 /* Pods-Gaggle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
