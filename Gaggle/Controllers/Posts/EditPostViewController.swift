@@ -117,10 +117,10 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     }
     
     func uploadPost() {
-        SVProgressHUD.showWithMaskType(.Black)
+        SVProgressHUD.show()
         guard let currentUserID = PFUser.currentUser()?.objectId, photoFile = photoFile else {
             let alertText = "An error occured while uploading your photo. Please try again."
-            SVProgressHUD.showErrorWithStatus(alertText, maskType: SVProgressHUDMaskType.Black)
+            SVProgressHUD.showErrorWithStatus(alertText)
             return
         }
         
@@ -139,7 +139,7 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
             } else {
                 print("Post failed to save: \(error)")
                 let alertText = "An error occured while uploading your photo: \(error)"
-                SVProgressHUD.showErrorWithStatus(alertText, maskType: SVProgressHUDMaskType.Black)
+                SVProgressHUD.showErrorWithStatus(alertText)
                 return
             }
         }
@@ -152,7 +152,7 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
             uploadPost()
         } else {
             let alertText = "Looks like there are some empty fields, please fill them out and try again."
-            SVProgressHUD.showErrorWithStatus(alertText, maskType: SVProgressHUDMaskType.Black)
+            SVProgressHUD.showErrorWithStatus(alertText)
         }
     }
     

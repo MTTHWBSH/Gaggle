@@ -134,12 +134,12 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScroll
             }
         } else {
             let alertText = "Looks like there are some empty fields, please fill them out and try again."
-            SVProgressHUD.showErrorWithStatus(alertText, maskType: SVProgressHUDMaskType.Black)
+            SVProgressHUD.showErrorWithStatus(alertText)
         }
     }
     
     func tryLogin(user: String, password: String) {
-        SVProgressHUD.showWithStatus("Logging in", maskType: .Black)
+        SVProgressHUD.showWithStatus("Logging in")
         
         PFUser.logInWithUsernameInBackground(user, password: password, block: { (user, error) -> Void in
             
@@ -151,16 +151,16 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScroll
                 
             } else if ((error) != nil) {
                 if let error = error {
-                    SVProgressHUD.showErrorWithStatus(error.localizedDescription, maskType: .Black)
+                    SVProgressHUD.showErrorWithStatus(error.localizedDescription)
                 }
             } else {
-                SVProgressHUD.showErrorWithStatus("Login failed, please try again", maskType: .Black)
+                SVProgressHUD.showErrorWithStatus("Login failed, please try again")
             }
         })
     }
 
     func trySignup(user: String, password: String) {
-        SVProgressHUD.showWithStatus("Signing up", maskType: .Black)
+        SVProgressHUD.showWithStatus("Signing up")
         
         let newUser = PFUser()
         newUser.username = user
@@ -170,7 +170,7 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScroll
             SVProgressHUD.dismiss()
             if ((error) != nil) {
                 if let error = error {
-                    SVProgressHUD.showErrorWithStatus(error.localizedDescription, maskType: .Black)
+                    SVProgressHUD.showErrorWithStatus(error.localizedDescription)
                 }
             } else {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in

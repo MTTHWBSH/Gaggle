@@ -1,20 +1,20 @@
 PODS:
-  - Bolts/Tasks (1.6.0)
-  - EAIntroView (2.8.1):
-    - EARestrictedScrollView (~> 0.2.0)
-  - EARestrictedScrollView (0.2.0)
+  - Bolts/Tasks (1.7.0)
+  - EAIntroView (2.8.3):
+    - EARestrictedScrollView (~> 1.1.0)
+  - EARestrictedScrollView (1.1.0)
   - Parse (1.13.0):
     - Bolts/Tasks (~> 1.6)
   - ParseUI (1.2.0):
     - Bolts/Tasks (~> 1.3)
     - Parse (~> 1.9)
   - PureLayout (3.0.1)
-  - RxBlocking (2.0.0):
-    - RxSwift (~> 2.0)
-  - RxCocoa (2.0.0):
-    - RxSwift (~> 2.0)
-  - RxSwift (2.0.0)
-  - SVProgressHUD (1.1.3)
+  - RxBlocking (2.4):
+    - RxSwift (~> 2.4)
+  - RxCocoa (2.4):
+    - RxSwift (~> 2.4)
+  - RxSwift (2.4)
+  - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - EAIntroView
@@ -27,16 +27,16 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC CHECKSUMS:
-  Bolts: f52a250053bb517ca874523c3913776359ab3def
-  EAIntroView: 73abfa89caa311f450af876421d950b96679e845
-  EARestrictedScrollView: f86d61e16c61d3e93c84f8e96e83122a2a3b7631
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  EAIntroView: e948c83e642f30010d427e643c18a6f2b529afed
+  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  RxBlocking: a95a10ed54eb5d116f6c9a87047ff671e181d07b
-  RxCocoa: b0ebd70b4f7450bdb3c8987b122f8fd568dc1e2f
-  RxSwift: d83246efa6f16c50c143bec134649d045498f601
-  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  RxBlocking: 1226c1fa0ca1e0ca5f964d4330ca3649f2128680
+  RxCocoa: 7d6cd877de99f5640306b3d6cf87f580c1d91b61
+  RxSwift: 67b9ef4e8b34fb394e200e754c6a09cc16559f94
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
 PODFILE CHECKSUM: 69c9adfbbd395d513054552c78c64aff00895589
 

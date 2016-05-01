@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         SVProgressHUD.setFont(Style.regularFontWithSize(14.0))
+        SVProgressHUD.setDefaultMaskType(.Black)
         
         return true
     }

@@ -39,7 +39,7 @@ class ProfileSettingsViewController: ViewController {
     }
     
     @IBAction func SignOut(sender: PrimaryButton) {
-        SVProgressHUD.showWithStatus("Signing out", maskType: .Black)
+        SVProgressHUD.showWithStatus("Signing out")
         PFUser.logOut()
         SVProgressHUD.dismiss()
         

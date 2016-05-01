@@ -142,7 +142,6 @@
 		767F90061B2D12FC007895A8 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroView.xib; path = Views/IntroView.xib; sourceTree = "<group>"; };
 		7695E2421CB2018100552427 /* FeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedQuery.swift; sourceTree = "<group>"; };
 		76A1F6541AFAF9E000CB1825 /* Gaggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		76A1F6581AFAF9E000CB1825 /* PrivateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateSettings.swift; sourceTree = "<group>"; };
 		76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
 		76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntroViewController.swift; path = Controllers/Intro/IntroViewController.swift; sourceTree = "<group>"; };
 		76A1F6601AFAF9E000CB1825 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Assets/Images.xcassets; sourceTree = "<group>"; };
@@ -310,7 +309,6 @@
 				765D6A351C1E3C39001C2242 /* PrivateSettings.swift */,
 				4D5495E51BF4F643002E0746 /* Gaggle-Bridging-Header.h */,
 				4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */,
-				76A1F6581AFAF9E000CB1825 /* PrivateSettings.swift */,
 				4D5733DC1C90EBBA00BD8686 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -873,10 +871,6 @@
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Gaggle/Supporting Files/Gaggle-Bridging-Header.h";
@@ -895,10 +889,6 @@
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mtthwbsh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Gaggle/Supporting Files/Gaggle-Bridging-Header.h";
