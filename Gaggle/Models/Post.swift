@@ -10,9 +10,10 @@ import UIKit
 
 struct Post {
     
-    let image: UIImage
-    let subtitle: String
-    let title: String
-    let userID: String
+    let image: UIImage?
+    let subtitle: String?
+    let title: String?
+    let timeSinceCreated: String?
+    let userID: String?
     
 }

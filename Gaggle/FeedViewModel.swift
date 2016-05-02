@@ -8,6 +8,7 @@
 
 import Foundation
 import Parse
+import SVProgressHUD
 
 class FeedViewModel: NSObject {
     
@@ -17,7 +18,7 @@ class FeedViewModel: NSObject {
         }
     }
     
-    private var posts: [AnyObject]? {
+    private var posts: [PFObject]? {
         didSet {
             render?()
         }
@@ -46,14 +47,30 @@ class FeedViewModel: NSObject {
     
     func postForIndexPath(indexPath: NSIndexPath) -> Post? {
         let post = posts?[indexPath.row]
-        let imageFile = post?["image"] as! PFFile
-        let subtitle = post?["subtitle"] as! String
-        let title = post?["title"] as! String
-        let userID = post?["userID"] as! String
+        let imageFile = post?["image"] as? PFFile
+        let subtitle = post?["subtitle"] as? String
+        let title = post?["title"] as? String
+        let userID = post?["userID"] as? String
         
-        guard let image = imageFile.convertToImage() else { return nil }
+//        let image = imageFile?.convertToImage()
+        let image = UIImage()
+        let timeString = timeSinceCreated(timeCreated: post?.createdAt)
         
-        return Post(image: image, subtitle: subtitle, title: title, userID: userID)
+        return Post(image: image, subtitle: subtitle, title: title, timeSinceCreated: timeString, userID: userID)
+    }
+    
+    func userNameForID(userID id:String) -> String? {
+        return id
+    }
+    
+    private func timeSinceCreated(timeCreated date:NSDate?) -> String {
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        calendar.timeZone = NSTimeZone.systemTimeZone()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeZone = calendar.timeZone
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        guard let date = date else { return "" }
+        return dateFormatter.stringFromDate(date)
     }
     
 }
