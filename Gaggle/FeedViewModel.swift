@@ -51,12 +51,12 @@ class FeedViewModel: NSObject {
         let subtitle = post?["subtitle"] as? String
         let title = post?["title"] as? String
         let userID = post?["userID"] as? String
-        
-//        let image = imageFile?.convertToImage()
-        let image = UIImage()
         let timeString = timeSinceCreated(timeCreated: post?.createdAt)
-        
-        return Post(image: image, subtitle: subtitle, title: title, timeSinceCreated: timeString, userID: userID)
+        var imageFromFile: UIImage?
+        imageFile?.convertToImage({ image in
+            imageFromFile = image
+        })
+        return Post(image: imageFromFile, subtitle: subtitle, title: title, timeSinceCreated: timeString, userID: userID)
     }
     
     func userNameForID(userID id:String) -> String? {
