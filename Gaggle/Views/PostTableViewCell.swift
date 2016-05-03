@@ -22,6 +22,7 @@ class PostTableViewCell: UITableViewCell {
         backgroundColor = Style.lightGrayColor
         separatorInset = UIEdgeInsetsZero
         layoutMargins = UIEdgeInsetsZero
+        timeLabel.clipsToBounds = false
     }
     
     @IBAction func userButtonPressed(sender: AnyObject) {

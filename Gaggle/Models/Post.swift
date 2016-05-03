@@ -13,7 +13,7 @@ struct Post {
     let image: UIImage?
     let subtitle: String?
     let title: String?
-    let timeSinceCreated: String?
+    let timeSinceCreated: NSAttributedString?
     let userID: String?
     
 }

@@ -51,26 +51,33 @@ class FeedViewModel: NSObject {
         let subtitle = post?["subtitle"] as? String
         let title = post?["title"] as? String
         let userID = post?["userID"] as? String
-        let timeString = timeSinceCreated(timeCreated: post?.createdAt)
+        
+        guard let timeString = post?.createdAt?.timeAgoSinceDate(true) else { return nil }
+        let timeSince = timeSinceString(forDateString: " \(timeString)")
         var imageFromFile: UIImage?
         imageFile?.convertToImage({ image in
             imageFromFile = image
         })
-        return Post(image: imageFromFile, subtitle: subtitle, title: title, timeSinceCreated: timeString, userID: userID)
+        return Post(image: imageFromFile, subtitle: subtitle, title: title, timeSinceCreated: timeSince, userID: userID)
     }
     
     func userNameForID(userID id:String) -> String? {
         return id
     }
     
-    private func timeSinceCreated(timeCreated date:NSDate?) -> String {
-        let calendar = NSCalendar.autoupdatingCurrentCalendar()
-        calendar.timeZone = NSTimeZone.systemTimeZone()
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.timeZone = calendar.timeZone
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        guard let date = date else { return "" }
-        return dateFormatter.stringFromDate(date)
+    private func timeSinceString(forDateString string: String) -> NSAttributedString? {
+        let attachment:NSTextAttachment = NSTextAttachment()
+        attachment.image = UIImage(named: "Clock")
+        guard let image = attachment.image else { return nil }
+        attachment.bounds = CGRectMake(0, -3, image.size.width, image.size.height)
+        
+        let timeStringForDateString = NSMutableAttributedString()
+        let attachmentString = NSAttributedString(attachment: attachment)
+        let timeString = NSAttributedString(string: string)
+        timeStringForDateString.appendAttributedString(attachmentString)
+        timeStringForDateString.appendAttributedString(timeString)
+        
+        return timeStringForDateString
     }
     
 }

@@ -11,7 +11,9 @@ import Parse
 class FeedQuery: NSObject {
     
     class func allPosts() -> PFQuery {
-        return PFQuery(className:Constants.PostClassKey)
+        let query = PFQuery(className:Constants.PostClassKey)
+        query.orderByDescending("createdAt")
+        return query
     }
     
 }
