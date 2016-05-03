@@ -67,7 +67,9 @@ class FeedViewController: UITableViewController {
     func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
         let post = viewModel?.postForIndexPath(indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as! PostTableViewCell
-        cell.userButton.setTitle(viewModel?.userNameForID(userID: post?.userID ?? ""), forState: .Normal)
+        viewModel?.userNameForID(post?.userID ?? "", completion: { username in
+            cell.userButton.setTitle(username, forState: .Normal)
+        })
         cell.timeLabel.attributedText = post?.timeSinceCreated
         cell.imageView?.image = post?.image
         return cell

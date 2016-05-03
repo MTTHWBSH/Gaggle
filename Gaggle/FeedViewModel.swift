@@ -58,11 +58,17 @@ class FeedViewModel: NSObject {
         imageFile?.convertToImage({ image in
             imageFromFile = image
         })
+        
         return Post(image: imageFromFile, subtitle: subtitle, title: title, timeSinceCreated: timeSince, userID: userID)
     }
     
-    func userNameForID(userID id:String) -> String? {
-        return id
+    func userNameForID(userID:String, completion: (String -> Void)?) {
+        let query = PFUser.query()
+        query?.whereKey("objectId", equalTo: userID)
+        query?.findObjectsInBackgroundWithBlock { (users, error) in
+            guard let user = users?.first as? PFUser, username = user.username else { return }
+            completion?(username)
+        }
     }
     
     private func timeSinceString(forDateString string: String) -> NSAttributedString? {
