@@ -15,7 +15,8 @@ extension PFFile {
         getDataInBackgroundWithBlock { (data, error) in
             guard let data = data else { return }
             if error == nil {
-                UIImage(data: data)
+                guard let image = UIImage(data: data) else { return }
+                imageCompletion?(image)
             } else {
                 print(error?.localizedDescription)
             }
