@@ -45,21 +45,19 @@ class FeedViewModel: NSObject {
         return posts?.count ?? 0
     }
     
-    func postForIndexPath(indexPath: NSIndexPath) -> Post? {
+    func postForIndexPath(indexPath: NSIndexPath, completion: (Post -> Void)?) {
         let post = posts?[indexPath.row]
         let imageFile = post?["image"] as? PFFile
         let subtitle = post?["subtitle"] as? String
         let title = post?["title"] as? String
         let userID = post?["userID"] as? String
         
-        guard let timeString = post?.createdAt?.timeAgoSinceDate(true) else { return nil }
+        guard let timeString = post?.createdAt?.timeAgoSinceDate(true) else { return }
         let timeSince = timeSinceString(forDateString: " \(timeString)")
-        var imageFromFile: UIImage?
         imageFile?.convertToImage({ image in
-            imageFromFile = image
+            let post = Post(image: image, subtitle: subtitle, title: title, timeSinceCreated: timeSince, userID: userID)
+            completion?(post)
         })
-        
-        return Post(image: imageFromFile, subtitle: subtitle, title: title, timeSinceCreated: timeSince, userID: userID)
     }
     
     func userNameForID(userID:String, completion: (String -> Void)?) {
