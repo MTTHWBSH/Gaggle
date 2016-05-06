@@ -18,8 +18,9 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var wrapperView: UIView!
+    
+    var userButtonTapped: (Void -> Void)?
 
-    var user: PFUser?
     var detailsShown = false
     
     override func awakeFromNib() {
@@ -60,7 +61,7 @@ class PostTableViewCell: UITableViewCell {
     }
     
     @IBAction func userButtonPressed(sender: AnyObject) {
-        guard let user = user else { return }
+        userButtonTapped?()
     }
     
 }

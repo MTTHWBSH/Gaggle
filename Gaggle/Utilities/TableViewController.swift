@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  TableViewController.swift
 //  Gaggle
 //
-//  Created by Matthew Bush on 1/3/16.
+//  Created by Matt Bush on 5/6/16.
 //  Copyright © 2016 Matthew Bush. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

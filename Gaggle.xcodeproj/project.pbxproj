@@ -17,6 +17,8 @@
 		4D15D6F41BF6995200F922DB /* GaggleDev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D6F31BF6995200F922DB /* GaggleDev-Info.plist */; };
 		4D2C28261C33138B00116068 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C28251C33138B00116068 /* Session.swift */; };
 		4D2C28271C33138B00116068 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C28251C33138B00116068 /* Session.swift */; };
+		4D88EAD51CDD4699004DFA48 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88EAD41CDD4699004DFA48 /* TableViewController.swift */; };
+		4D88EAD61CDD4699004DFA48 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88EAD41CDD4699004DFA48 /* TableViewController.swift */; };
 		4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
 		4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E61B6163210068092C /* Lato-Bold.ttf */; };
 		4DBF07EC1B6163210068092C /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E71B6163210068092C /* Lato-Hairline.ttf */; };
@@ -118,6 +120,7 @@
 		4D5495E51BF4F643002E0746 /* Gaggle-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Gaggle-Bridging-Header.h"; path = "Gaggle/Supporting Files/Gaggle-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		4D5733DC1C90EBBA00BD8686 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D5733DE1C90ED1900BD8686 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
+		4D88EAD41CDD4699004DFA48 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		4DBF07E61B6163210068092C /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Assets/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		4DBF07E71B6163210068092C /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Hairline.ttf"; path = "Assets/Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		4DBF07E81B6163210068092C /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "Assets/Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -260,6 +263,7 @@
 				761375751C83EF050089ACE5 /* Constants.swift */,
 				761BE06E1CA8ACDA006E9E2A /* RxTableViewDataSource.swift */,
 				761BE0711CA8ACF5006E9E2A /* RxTableViewDelegate.swift */,
+				4D88EAD41CDD4699004DFA48 /* TableViewController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -658,6 +662,7 @@
 				76EA19CF1B50CBB100A11248 /* SeparatorView.swift in Sources */,
 				761BE0731CA8ACF5006E9E2A /* RxTableViewDelegate.swift in Sources */,
 				762212C71C3B591D001CF9BE /* ProfileViewController.swift in Sources */,
+				4D88EAD61CDD4699004DFA48 /* TableViewController.swift in Sources */,
 				76D360891BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
 				761BE0701CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */,
 				4D2C28271C33138B00116068 /* Session.swift in Sources */,
@@ -695,6 +700,7 @@
 				76EA19CE1B50CBB100A11248 /* SeparatorView.swift in Sources */,
 				761BE0721CA8ACF5006E9E2A /* RxTableViewDelegate.swift in Sources */,
 				762212C61C3B591D001CF9BE /* ProfileViewController.swift in Sources */,
+				4D88EAD51CDD4699004DFA48 /* TableViewController.swift in Sources */,
 				76D360881BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
 				761BE06F1CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */,
 				4D2C28261C33138B00116068 /* Session.swift in Sources */,

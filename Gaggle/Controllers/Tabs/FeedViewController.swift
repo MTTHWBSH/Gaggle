@@ -8,8 +8,9 @@
 
 import UIKit
 import RxSwift
+import Parse
 
-class FeedViewController: UITableViewController {
+class FeedViewController: TableViewController {
     
     private let kCellReuse = "PostTableViewCell"
     
@@ -68,8 +69,8 @@ class FeedViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as! PostTableViewCell
         viewModel?.postForIndexPath(indexPath, completion: { [weak self] post in
             self?.viewModel?.userForID(post.userID ?? "", completion: { user in
-                cell.user = user
                 cell.userButton.setTitle(user.username, forState: .Normal)
+                cell.userButtonTapped = { [weak self] void in self?.showPosts(forUser: user) }
             })
             cell.timeLabel.attributedText = post.timeSinceCreated
             cell.postImageView?.image = post.image
@@ -77,6 +78,13 @@ class FeedViewController: UITableViewController {
             cell.subtitleLabel.text = post.subtitle
         })
         return cell
+    }
+    
+    func showPosts(forUser user:PFUser) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("FeedViewController") as! FeedViewController
+        vc.viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
+        vc.title = user.username
+        showViewController(vc, sender: self)
     }
     
 }

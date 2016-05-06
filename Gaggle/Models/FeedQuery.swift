@@ -16,4 +16,13 @@ class FeedQuery: NSObject {
         return query
     }
     
+    class func allPosts(forUser user: PFUser) -> PFQuery {
+        let query = PFQuery(className:Constants.PostClassKey)
+        if let userID = user.objectId {
+           query.whereKey("userID", equalTo: userID)
+        }
+        query.orderByDescending("createdAt")
+        return query
+    }
+    
 }
