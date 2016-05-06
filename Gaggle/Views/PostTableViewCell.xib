@@ -17,19 +17,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6N-RO-1jP">
                         <rect key="frame" x="12" y="6" width="296" height="338"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhotoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-hw-mae">
-                                <rect key="frame" x="0.0" y="0.0" width="296" height="296"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Kas-hw-mae" secondAttribute="height" multiplier="1:1" id="t5l-Y3-F6y"/>
-                                    <constraint firstAttribute="width" secondItem="Kas-hw-mae" secondAttribute="height" multiplier="1:1" id="yUE-jw-Nn5"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="t5l-Y3-F6y"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qyj-Nx-l6u">
                                 <rect key="frame" x="0.0" y="296" width="296" height="42"/>
                                 <subviews>
@@ -56,6 +43,19 @@
                                     <constraint firstItem="IxD-NN-46f" firstAttribute="centerY" secondItem="Qyj-Nx-l6u" secondAttribute="centerY" id="xId-ql-hVA"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhotoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-hw-mae">
+                                <rect key="frame" x="0.0" y="0.0" width="296" height="296"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Kas-hw-mae" secondAttribute="height" multiplier="1:1" id="t5l-Y3-F6y"/>
+                                    <constraint firstAttribute="width" secondItem="Kas-hw-mae" secondAttribute="height" multiplier="1:1" id="yUE-jw-Nn5"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="t5l-Y3-F6y"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -79,6 +79,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="postImageView" destination="Kas-hw-mae" id="bGo-s8-Y1a"/>
                 <outlet property="timeLabel" destination="eVq-fI-QOP" id="0ZW-EV-W0R"/>
                 <outlet property="userButton" destination="IxD-NN-46f" id="hIP-Au-aot"/>
             </connections>

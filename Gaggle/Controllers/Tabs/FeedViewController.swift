@@ -39,9 +39,7 @@ class FeedViewController: UITableViewController {
         tableViewDataSource = RxTableViewDataSource(numberOfRowsInSection: { [weak self] _ in
             return self?.viewModel?.numberOfPosts() ?? 0
             }, cellForRowAtIndexPath: { [weak self] indexPath in
-                self?.cellForRow(indexPath, completion: { cell in
-                    return cell
-                })
+                self?.cellForRow(indexPath) ?? PostTableViewCell()
             })
 
         
@@ -66,16 +64,17 @@ class FeedViewController: UITableViewController {
         return CGRectGetWidth(UIScreen.mainScreen().bounds) + 40.0
     }
     
-    func cellForRow(indexPath: NSIndexPath, completion:(UITableViewCell -> Void)?) {
+    func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as! PostTableViewCell
         viewModel?.postForIndexPath(indexPath, completion: { [weak self] post in
-            self?.viewModel?.userNameForID(post.userID ?? "", completion: { username in
-                cell.userButton.setTitle(username, forState: .Normal)
+            self?.viewModel?.userForID(post.userID ?? "", completion: { user in
+                cell.user = user
+                cell.userButton.setTitle(user.username, forState: .Normal)
             })
             cell.timeLabel.attributedText = post.timeSinceCreated
-            cell.imageView?.image = post.image
-            completion?(cell)
+            cell.postImageView?.image = post.image
         })
+        return cell
     }
     
 }

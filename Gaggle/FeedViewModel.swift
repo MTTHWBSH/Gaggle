@@ -60,12 +60,12 @@ class FeedViewModel: NSObject {
         })
     }
     
-    func userNameForID(userID:String, completion: (String -> Void)?) {
+    func userForID(userID:String, completion: (PFUser -> Void)?) {
         let query = PFUser.query()
         query?.whereKey("objectId", equalTo: userID)
         query?.findObjectsInBackgroundWithBlock { (users, error) in
-            guard let user = users?.first as? PFUser, username = user.username else { return }
-            completion?(username)
+            guard let user = users?.first as? PFUser else { return }
+            completion?(user)
         }
     }
     

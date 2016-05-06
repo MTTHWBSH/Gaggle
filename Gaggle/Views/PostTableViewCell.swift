@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Parse
 
 class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var userButton: SecondaryTextButton!
     @IBOutlet weak var timeLabel: SecondaryLabel!
+    @IBOutlet weak var postImageView: UIImageView!
+
+    var user: PFUser?
     
     override func awakeFromNib() {
         super.awakeFromNib()
