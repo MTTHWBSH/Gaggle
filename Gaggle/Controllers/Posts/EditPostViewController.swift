@@ -64,11 +64,7 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
             imageViewTopMargin.constant = 0
         }
         
-        let maskViewColors = [Style.blueColor, Style.orangeColor, Style.greenColor, Style.yellowColor]
-        let randomIndex = Int(arc4random_uniform(UInt32(maskViewColors.count)))
-        let randomColor = maskViewColors[randomIndex]
-        maskView.backgroundColor = randomColor.colorWithAlphaComponent(0.85)
-        
+        maskView.backgroundColor = Style.randomBrandColor(withOpacity: 0.85)
         titleTextField.tintColor = Style.whiteColor
         titleTextField.textColor = Style.whiteColor
         titleTextField.font = Style.regularFontWithSize(32.0)

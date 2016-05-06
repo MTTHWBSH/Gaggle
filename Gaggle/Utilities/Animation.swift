@@ -31,7 +31,7 @@ class Animation {
         }
     }
     
-    class func springAnimation(view: UIView, scale: CGFloat, duration: Double, completion: (Void -> Void)?) {
+    class func springAnimation(view: UIView, scale: CGFloat, duration: NSTimeInterval, completion: (Void -> Void)?) {
         view.transform = CGAffineTransformMakeScale(scale, scale)
         
         UIView.animateWithDuration(duration,
@@ -46,6 +46,20 @@ class Animation {
                     completion()
                 }
         })
+    }
+    
+    class func fadeIn(view: UIView, duration: NSTimeInterval) {
+        UIView.animateWithDuration(duration) { 
+            view.alpha = 1.0
+            return
+        }
+    }
+    
+    class func fadeOut(view: UIView, duration: NSTimeInterval) {
+        UIView.animateWithDuration(duration) {
+            view.alpha = 0.0
+            return
+        }
     }
 
 }

@@ -63,6 +63,13 @@ class Style {
     
     static let greenColor = UIColor(red: 52.0/255.0, green: 105.0/255.0, blue: 51.0/255.0, alpha: 1.0)
     static let yellowColor = UIColor(red: 204.0/255.0, green: 165.0/255.0, blue: 44.0/255.0, alpha: 1.0)
+    
+    class func randomBrandColor(withOpacity opacity:CGFloat) -> UIColor {
+        let colors = [blueColor, orangeColor, greenColor, yellowColor]
+        let randomIndex = Int(arc4random_uniform(UInt32(colors.count)))
+        let randomColor = colors[randomIndex]
+        return randomColor.colorWithAlphaComponent(opacity)
+    }
 
     // MARK: Borders
     

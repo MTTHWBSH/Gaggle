@@ -73,6 +73,8 @@ class FeedViewController: UITableViewController {
             })
             cell.timeLabel.attributedText = post.timeSinceCreated
             cell.postImageView?.image = post.image
+            cell.titleLabel.text = post.title
+            cell.subtitleLabel.text = post.subtitle
         })
         return cell
     }
