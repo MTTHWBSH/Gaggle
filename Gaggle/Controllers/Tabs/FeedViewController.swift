@@ -32,6 +32,11 @@ class FeedViewController: TableViewController {
         renderViews()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        renderViews()
+    }
+    
     func renderViews() {
         tableView?.reloadData()
     }
