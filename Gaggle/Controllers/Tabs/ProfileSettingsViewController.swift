@@ -41,9 +41,9 @@ class ProfileSettingsViewController: ViewController {
     @IBAction func SignOut(sender: PrimaryButton) {
         SVProgressHUD.showWithStatus("Signing out")
         PFUser.logOut()
-        SVProgressHUD.dismiss()
         
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            SVProgressHUD.dismiss()
             let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as! IntroViewController
             self.presentViewController(vc, animated: true, completion: nil)
         })

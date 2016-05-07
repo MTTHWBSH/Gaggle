@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import SVProgressHUD
 
-class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+class LoginSignupViewController: ViewController, UITextFieldDelegate, UIScrollViewDelegate {
 
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -55,7 +55,7 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScroll
         view.addGestureRecognizer(tap)
     }
     
-    func styleView() {
+    override func styleView() {
         Style.addBottomBorder(toLayer: usernameTextField.layer, onFrame: usernameTextField.frame, color: Style.grayColor.CGColor)
         Style.addBottomBorder(toLayer: passwordTextField.layer, onFrame: passwordTextField.frame, color: Style.grayColor.CGColor)
         usernameTextField.tintColor = Style.blueColor
@@ -143,9 +143,9 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScroll
         
         PFUser.logInWithUsernameInBackground(user, password: password, block: { (user, error) -> Void in
             
-            SVProgressHUD.dismiss()
             if ((user) != nil) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    SVProgressHUD.dismiss()
                     self.showFeed()
                 })
                 
@@ -167,13 +167,13 @@ class LoginSignupViewController: UIViewController, UITextFieldDelegate, UIScroll
         newUser.password = password
         
         newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
-            SVProgressHUD.dismiss()
             if ((error) != nil) {
                 if let error = error {
                     SVProgressHUD.showErrorWithStatus(error.localizedDescription)
                 }
             } else {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    SVProgressHUD.dismiss()
                     self.showFeed()
                 })
             }

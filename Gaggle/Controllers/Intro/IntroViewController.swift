@@ -9,7 +9,7 @@
 import UIKit
 import EAIntroView
 
-class IntroViewController: UIViewController, EAIntroDelegate {
+class IntroViewController: ViewController, EAIntroDelegate {
     
     @IBOutlet weak var introViewContainer: UIView!
     var introView: EAIntroView!
@@ -20,10 +20,15 @@ class IntroViewController: UIViewController, EAIntroDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if (self.introView == nil) {
+        if (introView == nil) {
             setupIntroViews()
             setupSkipButton()
         }
+    }
+    
+    override func styleView() {
+        super.styleView()
+        view.backgroundColor = Style.whiteColor
     }
     
     func setupIntroViews() {

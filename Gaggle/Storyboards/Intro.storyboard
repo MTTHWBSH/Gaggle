@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="JosefinSans-Bold.ttf">
@@ -83,7 +83,7 @@
         <!--Login / Signup-->
         <scene sceneID="4tL-WW-XVv">
             <objects>
-                <viewController id="gSz-6h-hLf" customClass="LoginSignupViewController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginSignupViewController" id="gSz-6h-hLf" customClass="LoginSignupViewController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cuo-3p-YaB"/>
                         <viewControllerLayoutGuide type="bottom" id="9bQ-D9-MMV"/>
@@ -102,7 +102,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="190"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gaggle" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRX-VS-a19">
-                                                        <rect key="frame" x="197" y="59" width="207" height="72"/>
+                                                        <rect key="frame" x="196.5" y="59" width="207" height="72"/>
                                                         <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="72"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -221,7 +221,7 @@
         <!--Navigation Controller-->
         <scene sceneID="EBu-dr-REK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JIh-JK-4kV" customClass="NavigationController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginSignupNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="JIh-JK-4kV" customClass="NavigationController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wjz-Vk-4md">

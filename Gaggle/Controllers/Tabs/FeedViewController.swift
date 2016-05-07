@@ -68,16 +68,14 @@ class FeedViewController: TableViewController {
     }
     
     func setupRefreshControl() {
-        refreshControl = UIRefreshControl()
-        guard let refreshControl = refreshControl else { return }
-        refreshControl.tintColor = Style.blueColor
-        refreshControl.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.tintColor = Style.blueColor
+        refreshControl?.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     func refresh() {
-        refreshControl?.beginRefreshing()
         setupTableView()
         refreshControl?.endRefreshing()
+        tableView.contentInset = UIEdgeInsetsMake(6, 0, 6, 0)
     }
     
     func heightForRow() -> CGFloat {

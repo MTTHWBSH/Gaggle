@@ -15,6 +15,13 @@ class TableViewController: UITableViewController {
         styleView()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if !Reachability.isConnectedToNetwork() {
+            presentViewController(Reachability.noConnectionAlert(), animated: true, completion: nil)
+        }
+    }
+    
     func styleView() {
         view.backgroundColor = Style.lightGrayColor
         let backButton = UIBarButtonItem()

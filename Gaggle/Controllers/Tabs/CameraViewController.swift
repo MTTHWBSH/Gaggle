@@ -82,6 +82,8 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
             
             guard let _ = PFUser.currentUser() else { return }
             
+            addCameraRollButton()
+            
             if UIImagePickerController.isSourceTypeAvailable(.Camera) {
                 if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) == .Authorized {
                     showCameraElements()
@@ -110,7 +112,18 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         } else {
             hideCameraElements()
             showNoCameraLabel()
+            addSignedOutView()
+            
         }
+    }
+    
+    func addSignedOutView() {
+        guard let signedOutView = NSBundle.mainBundle().loadNibNamed("SignedOutView", owner: self, options: nil).first as? SignedOutView else { return }
+        signedOutView.alertLabel.text = "To create a post please"
+        signedOutView.loginTapped = { [weak self] void in self?.showLogin() }
+        signedOutView.signupTapped = { [weak self] void in self?.showSignup() }
+        navigationController?.view.addSubview(signedOutView)
+        signedOutView.autoPinEdgesToSuperviewEdges()
     }
     
     func requestCameraAccess() {
@@ -122,6 +135,17 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     }
     
     // MARK: UI Configuration
+    
+    func addCameraRollButton() {
+        let rightBarButtonItem = BarButtonItem(image: UIImage(named: "CameraRoll"), style: .Plain, target: self, action: #selector(showCameraRoll))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+    
+    func showCameraRoll() {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
     
     func hideCameraElements() {
         cameraButton.hidden = true
@@ -280,13 +304,6 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    @IBAction func imagePickerButtonPressed(sender: AnyObject) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
-    
     @IBAction func cancelButtonPressed(sender: AnyObject) {
         removePreviewSubviews()
         Animation.springAnimation(cancelButton, scale: 0.8, duration: 0.8) { [weak self] Void in
@@ -297,6 +314,18 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func confirmButtonpressed(sender: AnyObject) {
         Animation.springAnimation(confirmButton, scale: 0.8, duration: 0.8) { [weak self] Void in
             self?.performSegueWithIdentifier("toEditPost", sender: self)
+        }
+    }
+
+    func showLogin() {
+        if let nc = Router.loginNavigationController() {
+            presentViewController(nc, animated: true, completion: nil)
+        }
+    }
+    
+    func showSignup() {
+        if let nc = Router.signupNavigationController() {
+            presentViewController(nc, animated: true, completion: nil)
         }
     }
     

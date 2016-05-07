@@ -61,6 +61,14 @@
 		762212C71C3B591D001CF9BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762212C51C3B591D001CF9BE /* ProfileViewController.swift */; };
 		765357421C795AC20013FAE7 /* Gaggle+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765357411C795AC20013FAE7 /* Gaggle+UIImage.swift */; };
 		765357431C795AC20013FAE7 /* Gaggle+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765357411C795AC20013FAE7 /* Gaggle+UIImage.swift */; };
+		765816C61CDE783C00E310A7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765816C51CDE783C00E310A7 /* Reachability.swift */; };
+		765816C71CDE783C00E310A7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765816C51CDE783C00E310A7 /* Reachability.swift */; };
+		765816C91CDE8BA500E310A7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765816C81CDE8BA500E310A7 /* Router.swift */; };
+		765816CA1CDE8BA600E310A7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765816C81CDE8BA500E310A7 /* Router.swift */; };
+		765816CC1CDE90A900E310A7 /* SignedOutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765816CB1CDE90A900E310A7 /* SignedOutView.xib */; };
+		765816CD1CDE90A900E310A7 /* SignedOutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765816CB1CDE90A900E310A7 /* SignedOutView.xib */; };
+		765816D31CDE940400E310A7 /* SignedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765816D21CDE940400E310A7 /* SignedOutView.swift */; };
+		765816D41CDE940400E310A7 /* SignedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765816D21CDE940400E310A7 /* SignedOutView.swift */; };
 		765D6A361C1E3C39001C2242 /* PrivateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765D6A351C1E3C39001C2242 /* PrivateSettings.swift */; };
 		765D6A371C1E3C39001C2242 /* PrivateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765D6A351C1E3C39001C2242 /* PrivateSettings.swift */; };
 		7664329A1CD94CB00093605E /* Gaggle+NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766432991CD94CB00093605E /* Gaggle+NSDate.swift */; };
@@ -131,7 +139,7 @@
 		76054DD51BBA2C0200AA2D5A /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		7605EAB41B09461A00F302BB /* GaggleDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaggleDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		761375751C83EF050089ACE5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		761915331C9F5B4F0053CEA4 /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		761915331C9F5B4F0053CEA4 /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewModel.swift; path = "View Models/FeedViewModel.swift"; sourceTree = "<group>"; };
 		761BE06E1CA8ACDA006E9E2A /* RxTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTableViewDataSource.swift; sourceTree = "<group>"; };
 		761BE0711CA8ACF5006E9E2A /* RxTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTableViewDelegate.swift; sourceTree = "<group>"; };
 		761E0AC21B2A9262008C3E74 /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroView.swift; path = Views/IntroView.swift; sourceTree = "<group>"; };
@@ -142,6 +150,10 @@
 		762212C21C39F671001CF9BE /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		762212C51C3B591D001CF9BE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Controllers/Tabs/ProfileViewController.swift; sourceTree = "<group>"; };
 		765357411C795AC20013FAE7 /* Gaggle+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gaggle+UIImage.swift"; sourceTree = "<group>"; };
+		765816C51CDE783C00E310A7 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		765816C81CDE8BA500E310A7 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		765816CB1CDE90A900E310A7 /* SignedOutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignedOutView.xib; path = Views/SignedOutView.xib; sourceTree = "<group>"; };
+		765816D21CDE940400E310A7 /* SignedOutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignedOutView.swift; path = Views/SignedOutView.swift; sourceTree = "<group>"; };
 		765D6A351C1E3C39001C2242 /* PrivateSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateSettings.swift; sourceTree = "<group>"; };
 		766432991CD94CB00093605E /* Gaggle+NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gaggle+NSDate.swift"; sourceTree = "<group>"; };
 		7677F23E1C45F4920090FCA1 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPostViewController.swift; path = Controllers/Posts/EditPostViewController.swift; sourceTree = "<group>"; };
@@ -241,7 +253,6 @@
 			children = (
 				762212B41C39DD7A001CF9BE /* TabBarController.swift */,
 				4D12F5261C331973009EED79 /* FeedViewController.swift */,
-				761915331C9F5B4F0053CEA4 /* FeedViewModel.swift */,
 				762212BC1C39EFCC001CF9BE /* CameraViewController.swift */,
 				762212BF1C39EFD3001CF9BE /* ProfileSettingsViewController.swift */,
 				762212C51C3B591D001CF9BE /* ProfileViewController.swift */,
@@ -264,8 +275,17 @@
 				761BE06E1CA8ACDA006E9E2A /* RxTableViewDataSource.swift */,
 				761BE0711CA8ACF5006E9E2A /* RxTableViewDelegate.swift */,
 				4D88EAD41CDD4699004DFA48 /* TableViewController.swift */,
+				765816C51CDE783C00E310A7 /* Reachability.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		765816CE1CDE90D700E310A7 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				761915331C9F5B4F0053CEA4 /* FeedViewModel.swift */,
+			);
+			name = "View Models";
 			sourceTree = "<group>";
 		};
 		7677F23D1C45F4710090FCA1 /* Posts */ = {
@@ -304,6 +324,7 @@
 				76F1807C1B09582A00060958 /* Assets */,
 				76F1807F1B09584300060958 /* Controllers */,
 				76F1807D1B09583000060958 /* Models */,
+				765816CE1CDE90D700E310A7 /* View Models */,
 				76F1807E1B09583900060958 /* Views */,
 				765184061AFB056F00EA2DB6 /* Utilities */,
 				76A1F6571AFAF9E000CB1825 /* Supporting Files */,
@@ -359,6 +380,7 @@
 				4D2C28251C33138B00116068 /* Session.swift */,
 				7695E2421CB2018100552427 /* FeedQuery.swift */,
 				4DC1A01F1CCAE3B500AB3A57 /* Post.swift */,
+				765816C81CDE8BA500E310A7 /* Router.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -371,6 +393,8 @@
 				76EA19CD1B50CBB100A11248 /* SeparatorView.swift */,
 				76EAFB781CB8BE9B003AD416 /* PostTableViewCell.swift */,
 				76EAFB791CB8BE9B003AD416 /* PostTableViewCell.xib */,
+				765816CB1CDE90A900E310A7 /* SignedOutView.xib */,
+				765816D21CDE940400E310A7 /* SignedOutView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -518,6 +542,7 @@
 				7605EAAF1B09461A00F302BB /* Images.xcassets in Resources */,
 				4DBF07EF1B6163210068092C /* Lato-Light.ttf in Resources */,
 				76ED4F841C79421800735EBD /* JosefinSans-Bold.ttf in Resources */,
+				765816CD1CDE90A900E310A7 /* SignedOutView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +550,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765816CC1CDE90A900E310A7 /* SignedOutView.xib in Resources */,
 				4D12F5241C3318A8009EED79 /* Main.storyboard in Resources */,
 				76ED4F831C79421800735EBD /* JosefinSans-Bold.ttf in Resources */,
 				4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */,
@@ -664,11 +690,13 @@
 				762212C71C3B591D001CF9BE /* ProfileViewController.swift in Sources */,
 				4D88EAD61CDD4699004DFA48 /* TableViewController.swift in Sources */,
 				76D360891BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
+				765816D41CDE940400E310A7 /* SignedOutView.swift in Sources */,
 				761BE0701CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */,
 				4D2C28271C33138B00116068 /* Session.swift in Sources */,
 				761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */,
 				7695E2441CB2018100552427 /* FeedQuery.swift in Sources */,
 				4DC1A0211CCAE3B500AB3A57 /* Post.swift in Sources */,
+				765816CA1CDE8BA600E310A7 /* Router.swift in Sources */,
 				76EA19C61B50B00C00A11248 /* Animation.swift in Sources */,
 				762212B61C39DD7A001CF9BE /* TabBarController.swift in Sources */,
 				7664329B1CD94CB00093605E /* Gaggle+NSDate.swift in Sources */,
@@ -677,6 +705,7 @@
 				4D12F5281C331973009EED79 /* FeedViewController.swift in Sources */,
 				7677F2401C45F4920090FCA1 /* EditPostViewController.swift in Sources */,
 				7605EAA91B09461A00F302BB /* AppDelegate.swift in Sources */,
+				765816C71CDE783C00E310A7 /* Reachability.swift in Sources */,
 				76EAFB7B1CB8BE9B003AD416 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,11 +731,13 @@
 				762212C61C3B591D001CF9BE /* ProfileViewController.swift in Sources */,
 				4D88EAD51CDD4699004DFA48 /* TableViewController.swift in Sources */,
 				76D360881BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
+				765816D31CDE940400E310A7 /* SignedOutView.swift in Sources */,
 				761BE06F1CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */,
 				4D2C28261C33138B00116068 /* Session.swift in Sources */,
 				761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */,
 				7695E2431CB2018100552427 /* FeedQuery.swift in Sources */,
 				4DC1A0201CCAE3B500AB3A57 /* Post.swift in Sources */,
+				765816C91CDE8BA500E310A7 /* Router.swift in Sources */,
 				76EA19C51B50B00C00A11248 /* Animation.swift in Sources */,
 				762212B51C39DD7A001CF9BE /* TabBarController.swift in Sources */,
 				7664329A1CD94CB00093605E /* Gaggle+NSDate.swift in Sources */,
@@ -715,6 +746,7 @@
 				4D12F5271C331973009EED79 /* FeedViewController.swift in Sources */,
 				7677F23F1C45F4920090FCA1 /* EditPostViewController.swift in Sources */,
 				76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */,
+				765816C61CDE783C00E310A7 /* Reachability.swift in Sources */,
 				76EAFB7A1CB8BE9B003AD416 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
