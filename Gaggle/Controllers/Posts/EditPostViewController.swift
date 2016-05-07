@@ -113,7 +113,7 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     }
     
     func uploadPost() {
-        SVProgressHUD.show()
+        SVProgressHUD.showProgress(0.1, status: "Uploading")
         guard let currentUserID = PFUser.currentUser()?.objectId, photoFile = photoFile else {
             let alertText = "An error occured while uploading your photo. Please try again."
             SVProgressHUD.showErrorWithStatus(alertText)
@@ -131,10 +131,10 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         post.saveInBackgroundWithBlock { (completion, error) in
             SVProgressHUD.dismiss()
             if completion {
-                print("Saved post: \(post)")
+                SVProgressHUD.showProgress(1.0, status: "Complete")
             } else {
                 print("Post failed to save: \(error)")
-                let alertText = "An error occured while uploading your photo: \(error)"
+                let alertText = "An error occured while uploading your photo"
                 SVProgressHUD.showErrorWithStatus(alertText)
                 return
             }

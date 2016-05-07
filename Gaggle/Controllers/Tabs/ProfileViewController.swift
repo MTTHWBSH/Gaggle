@@ -8,17 +8,19 @@
 
 import Parse
 
-class ProfileViewController: ViewController {
+class ProfileViewController: FeedViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         setup()
     }
     
-    func setup() {  
+    func setup() {
+        userNameHidden = true
         if Session.currentSession.loggedIn()  {
             guard let user = PFUser.currentUser() else { return }
             navigationItem.title = user.username
+            viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
             let rightBarButtonItem = BarButtonItem(image: UIImage(named: "Gear"), style: .Plain, target: self, action: #selector(settingsButtonPressed))
             navigationItem.rightBarButtonItem = rightBarButtonItem
         } else {

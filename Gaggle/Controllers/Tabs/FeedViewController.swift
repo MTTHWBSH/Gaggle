@@ -17,6 +17,8 @@ class FeedViewController: TableViewController {
     var tableViewDataSource: RxTableViewDataSource!
     var tableViewDelegate: RxTableViewDelegate!
     
+    var userNameHidden = false
+    
     var viewModel: FeedViewModel? {
         didSet {
             viewModel?.render = { [weak self] in
@@ -28,12 +30,12 @@ class FeedViewController: TableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Gaggle"
-        setupTableView()
-        renderViews()
+        setupRefreshControl()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        setupTableView()
         renderViews()
     }
     
@@ -44,10 +46,9 @@ class FeedViewController: TableViewController {
     func setupTableView() {
         tableViewDataSource = RxTableViewDataSource(numberOfRowsInSection: { [weak self] _ in
             return self?.viewModel?.numberOfPosts() ?? 0
-            }, cellForRowAtIndexPath: { [weak self] indexPath in
-                self?.cellForRow(indexPath) ?? PostTableViewCell()
-            })
-
+        }, cellForRowAtIndexPath: { [weak self] indexPath in
+            self?.cellForRow(indexPath) ?? PostTableViewCell()
+        })
         
         tableView.dataSource = tableViewDataSource
         tableView.delegate = tableViewDelegate
@@ -66,6 +67,19 @@ class FeedViewController: TableViewController {
         tableView.allowsSelection = false
     }
     
+    func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        guard let refreshControl = refreshControl else { return }
+        refreshControl.tintColor = Style.blueColor
+        refreshControl.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func refresh() {
+        refreshControl?.beginRefreshing()
+        setupTableView()
+        refreshControl?.endRefreshing()
+    }
+    
     func heightForRow() -> CGFloat {
         return CGRectGetWidth(UIScreen.mainScreen().bounds) + 40.0
     }
@@ -74,8 +88,11 @@ class FeedViewController: TableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as! PostTableViewCell
         viewModel?.postForIndexPath(indexPath, completion: { [weak self] post in
             self?.viewModel?.userForID(post.userID ?? "", completion: { user in
-                cell.userButton.setTitle(user.username, forState: .Normal)
-                cell.userButtonTapped = { [weak self] void in self?.showPosts(forUser: user) }
+                guard let strongSelf = self else { return }
+                if !strongSelf.userNameHidden {
+                    cell.userButton.setTitle(user.username, forState: .Normal)
+                    cell.userButtonTapped = { strongSelf.showPosts(forUser: user) }
+                }
             })
             cell.timeLabel.attributedText = post.timeSinceCreated
             cell.postImageView?.image = post.image
@@ -89,6 +106,7 @@ class FeedViewController: TableViewController {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("FeedViewController") as! FeedViewController
         vc.viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
         vc.title = user.username
+        vc.userNameHidden = true
         showViewController(vc, sender: self)
     }
     

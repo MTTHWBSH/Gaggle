@@ -36,7 +36,7 @@ class Animation {
         
         UIView.animateWithDuration(duration,
             delay: 0,
-            usingSpringWithDamping: 0.8,
+            usingSpringWithDamping: 1.0,
             initialSpringVelocity: 4.0,
             options: UIViewAnimationOptions.AllowUserInteraction,
             animations: {
