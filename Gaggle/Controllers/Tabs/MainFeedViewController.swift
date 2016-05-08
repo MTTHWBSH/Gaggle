@@ -20,6 +20,11 @@ class MainFeedViewController: FeedViewController {
         setup()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.logScreen("Home Feed")
+    }
+    
     override func refresh() {
         setup()
         super.refresh()

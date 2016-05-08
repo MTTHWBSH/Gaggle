@@ -43,6 +43,10 @@ class Configuration {
             }
         }
         
+        var configureError:NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
         SVProgressHUD.setFont(Style.regularFontWithSize(14.0))
         SVProgressHUD.setDefaultMaskType(.Black)
     }

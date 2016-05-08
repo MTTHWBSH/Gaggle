@@ -47,6 +47,8 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func detailsTapped() {
+        let label = detailsShown ? "Hide Details" : "Show Details"
+        Analytics.logEvent("Post", action: "Image Tapped", Label: label, key: "")
         detailsShown ? hideDetails() : showDetails()
     }
     
@@ -61,6 +63,7 @@ class PostTableViewCell: UITableViewCell {
     }
     
     @IBAction func userButtonPressed(sender: AnyObject) {
+        Analytics.logEvent("Post", action: "User Button", Label: "User Button Pressed", key: "")
         userButtonTapped?()
     }
     

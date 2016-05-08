@@ -16,6 +16,11 @@ class ProfileViewController: FeedViewController {
         setup()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.logScreen("Profile")
+    }
+    
     override func refresh() {
         guard let user = PFUser.currentUser() else { return }
         viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
@@ -55,12 +60,14 @@ class ProfileViewController: FeedViewController {
     }
     
     func showLogin() {
+        Analytics.logEvent("Profile", action: "Login", Label: "Login Button Pressed", key: "")
         if let nc = Router.loginNavigationController() {
             presentViewController(nc, animated: true, completion: nil)
         }
     }
     
     func showSignup() {
+        Analytics.logEvent("Profile", action: "Signup", Label: "Signup Button Pressed", key: "")
         if let nc = Router.signupNavigationController() {
             presentViewController(nc, animated: true, completion: nil)
         }

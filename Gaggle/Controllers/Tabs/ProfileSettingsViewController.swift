@@ -19,6 +19,11 @@ class ProfileSettingsViewController: ViewController {
         setup()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.logScreen("Profile Settings")
+    }
+    
     func setup() {
         guard let user = PFUser.currentUser() else { return }
         navigationItem.title = user.username
@@ -39,6 +44,7 @@ class ProfileSettingsViewController: ViewController {
     }
     
     @IBAction func SignOut(sender: PrimaryButton) {
+        Analytics.logEvent("Profile", action: "Sign Out", Label: "Sign Out Button Pressed", key: "")
         SVProgressHUD.showWithStatus("Signing out")
         PFUser.logOut()
         

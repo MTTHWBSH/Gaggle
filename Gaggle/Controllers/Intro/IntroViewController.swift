@@ -18,6 +18,11 @@ class IntroViewController: ViewController, EAIntroDelegate {
         return true
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.logScreen("Intro")
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if (introView == nil) {
@@ -73,6 +78,7 @@ class IntroViewController: ViewController, EAIntroDelegate {
     }
     
     func skipIntro() {
+        Analytics.logEvent("Intro", action: "Skip", Label: "Skip Button Pressed", key: "")
         showFeed()
     }
     

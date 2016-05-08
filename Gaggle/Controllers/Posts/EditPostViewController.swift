@@ -37,6 +37,11 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.logScreen("Edit Post")
+    }
+    
     func setup() {
         title = "Share"
         imageView.image = image
@@ -144,6 +149,7 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     }
     
     func submitPost() {
+        Analytics.logEvent("Post", action: "Submit", Label: "Submit Button Pressed", key: "")
         if titleTextField.text != "" && subtitleTextField.text != "" {
             uploadPost()
         } else {

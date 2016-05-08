@@ -12,6 +12,7 @@ def all_pods
 	pod 'RxCocoa'
 	pod 'RxBlocking'
     pod 'Instabug'
+    pod 'Google/Analytics'
 end
 
 target 'Gaggle' do

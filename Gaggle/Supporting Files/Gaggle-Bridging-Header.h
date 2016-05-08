@@ -7,3 +7,4 @@
 //
 
 #import <Instabug/Instabug.h>
+#import <Google/Analytics.h>

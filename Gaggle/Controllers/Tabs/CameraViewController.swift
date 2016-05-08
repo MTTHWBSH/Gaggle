@@ -44,6 +44,11 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         imagePicker.delegate = self
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.logScreen("Camera")
+    }
+    
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         captureSession?.stopRunning()
@@ -288,6 +293,7 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     // MARK: IBActions
     
     @IBAction func didPressCameraButton(sender: AnyObject) {
+        Analytics.logEvent("Post", action: "Camera", Label: "Camera Button Pressed", key: "")
         Animation.springAnimation(cameraButton, scale: 0.8, duration: 1.5, completion: nil)
         
         guard let image = self.image else { return }
@@ -310,6 +316,7 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
+        Analytics.logEvent("Post", action: "Camera", Label: "Cancel Button Pressed", key: "")
         removePreviewSubviews()
         Animation.springAnimation(cancelButton, scale: 0.8, duration: 0.8) { [weak self] Void in
             self?.hideActionButtons()
@@ -317,18 +324,21 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func confirmButtonpressed(sender: AnyObject) {
+        Analytics.logEvent("Post", action: "Camera", Label: "Confirm Button Pressed", key: "")
         Animation.springAnimation(confirmButton, scale: 0.8, duration: 0.8) { [weak self] Void in
             self?.performSegueWithIdentifier("toEditPost", sender: self)
         }
     }
 
     func showLogin() {
+        Analytics.logEvent("Profile", action: "Login", Label: "Login Button Pressed", key: "")
         if let nc = Router.loginNavigationController() {
             presentViewController(nc, animated: true, completion: nil)
         }
     }
     
     func showSignup() {
+        Analytics.logEvent("Profile", action: "Signup", Label: "Signup Button Pressed", key: "")
         if let nc = Router.signupNavigationController() {
             presentViewController(nc, animated: true, completion: nil)
         }

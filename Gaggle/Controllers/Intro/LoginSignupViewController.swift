@@ -39,6 +39,11 @@ class LoginSignupViewController: ViewController, UITextFieldDelegate, UIScrollVi
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.logScreen("Login/Signup")
+    }
+    
     func setupView() {
         setupLogo()
         
@@ -139,6 +144,7 @@ class LoginSignupViewController: ViewController, UITextFieldDelegate, UIScrollVi
     }
     
     func tryLogin(user: String, password: String) {
+        Analytics.logEvent("Login/Signup", action: "Login", Label: "Login Button Pressed", key: "")
         SVProgressHUD.showWithStatus("Logging in")
         
         PFUser.logInWithUsernameInBackground(user, password: password, block: { (user, error) -> Void in
@@ -160,6 +166,7 @@ class LoginSignupViewController: ViewController, UITextFieldDelegate, UIScrollVi
     }
 
     func trySignup(user: String, password: String) {
+        Analytics.logEvent("Login/Signup", action: "Signup", Label: "Signup Button Pressed", key: "")
         SVProgressHUD.showWithStatus("Signing up")
         
         let newUser = PFUser()
