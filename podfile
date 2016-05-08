@@ -11,6 +11,7 @@ def all_pods
 	pod 'RxSwift'
 	pod 'RxCocoa'
 	pod 'RxBlocking'
+    pod 'Instabug'
 end
 
 target 'Gaggle' do

@@ -79,6 +79,8 @@
 		767F90081B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
 		7684C5051CDEC0BB00BA6FD6 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684C5041CDEC0BB00BA6FD6 /* MainFeedViewController.swift */; };
 		7684C5061CDEC0BB00BA6FD6 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684C5041CDEC0BB00BA6FD6 /* MainFeedViewController.swift */; };
+		7684C50A1CDEC92A00BA6FD6 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684C5091CDEC92A00BA6FD6 /* Configuration.swift */; };
+		7684C50B1CDEC92A00BA6FD6 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684C5091CDEC92A00BA6FD6 /* Configuration.swift */; };
 		7695E2431CB2018100552427 /* FeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695E2421CB2018100552427 /* FeedQuery.swift */; };
 		7695E2441CB2018100552427 /* FeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695E2421CB2018100552427 /* FeedQuery.swift */; };
 		76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */; };
@@ -161,6 +163,7 @@
 		7677F23E1C45F4920090FCA1 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPostViewController.swift; path = Controllers/Posts/EditPostViewController.swift; sourceTree = "<group>"; };
 		767F90061B2D12FC007895A8 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroView.xib; path = Views/IntroView.xib; sourceTree = "<group>"; };
 		7684C5041CDEC0BB00BA6FD6 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
+		7684C5091CDEC92A00BA6FD6 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		7695E2421CB2018100552427 /* FeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedQuery.swift; sourceTree = "<group>"; };
 		76A1F6541AFAF9E000CB1825 /* Gaggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
@@ -267,19 +270,9 @@
 		765184061AFB056F00EA2DB6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				7684C5071CDEC8ED00BA6FD6 /* Interface */,
 				4DC1A0251CCE7C6D00AB3A57 /* Extensions */,
-				76EA19C41B50B00C00A11248 /* Animation.swift */,
-				76D3608D1BAE275700022990 /* BarButtonItem.swift */,
-				76054DD51BBA2C0200AA2D5A /* Button.swift */,
-				76D360901BAE28D600022990 /* NavigationController.swift */,
-				76EA19C71B50C50000A11248 /* Style.swift */,
-				762212B91C39E502001CF9BE /* ViewController.swift */,
-				762212C21C39F671001CF9BE /* Label.swift */,
-				761375751C83EF050089ACE5 /* Constants.swift */,
-				761BE06E1CA8ACDA006E9E2A /* RxTableViewDataSource.swift */,
-				761BE0711CA8ACF5006E9E2A /* RxTableViewDelegate.swift */,
-				4D88EAD41CDD4699004DFA48 /* TableViewController.swift */,
-				765816C51CDE783C00E310A7 /* Reachability.swift */,
+				7684C5081CDEC91300BA6FD6 /* Helpers */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -298,6 +291,33 @@
 				7677F23E1C45F4920090FCA1 /* EditPostViewController.swift */,
 			);
 			name = Posts;
+			sourceTree = "<group>";
+		};
+		7684C5071CDEC8ED00BA6FD6 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				76EA19C41B50B00C00A11248 /* Animation.swift */,
+				76D3608D1BAE275700022990 /* BarButtonItem.swift */,
+				76054DD51BBA2C0200AA2D5A /* Button.swift */,
+				76D360901BAE28D600022990 /* NavigationController.swift */,
+				76EA19C71B50C50000A11248 /* Style.swift */,
+				762212B91C39E502001CF9BE /* ViewController.swift */,
+				762212C21C39F671001CF9BE /* Label.swift */,
+				4D88EAD41CDD4699004DFA48 /* TableViewController.swift */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		7684C5081CDEC91300BA6FD6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				761375751C83EF050089ACE5 /* Constants.swift */,
+				761BE06E1CA8ACDA006E9E2A /* RxTableViewDataSource.swift */,
+				761BE0711CA8ACF5006E9E2A /* RxTableViewDelegate.swift */,
+				765816C51CDE783C00E310A7 /* Reachability.swift */,
+				7684C5091CDEC92A00BA6FD6 /* Configuration.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		76A1F64B1AFAF9E000CB1825 = {
@@ -707,6 +727,7 @@
 				762212C41C39F671001CF9BE /* Label.swift in Sources */,
 				762212BE1C39EFCC001CF9BE /* CameraViewController.swift in Sources */,
 				4D12F5281C331973009EED79 /* FeedViewController.swift in Sources */,
+				7684C50B1CDEC92A00BA6FD6 /* Configuration.swift in Sources */,
 				7677F2401C45F4920090FCA1 /* EditPostViewController.swift in Sources */,
 				7684C5061CDEC0BB00BA6FD6 /* MainFeedViewController.swift in Sources */,
 				7605EAA91B09461A00F302BB /* AppDelegate.swift in Sources */,
@@ -749,6 +770,7 @@
 				762212C31C39F671001CF9BE /* Label.swift in Sources */,
 				762212BD1C39EFCC001CF9BE /* CameraViewController.swift in Sources */,
 				4D12F5271C331973009EED79 /* FeedViewController.swift in Sources */,
+				7684C50A1CDEC92A00BA6FD6 /* Configuration.swift in Sources */,
 				7677F23F1C45F4920090FCA1 /* EditPostViewController.swift in Sources */,
 				7684C5051CDEC0BB00BA6FD6 /* MainFeedViewController.swift in Sources */,
 				76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */,

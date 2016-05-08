@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Parse
-import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,32 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        Parse.enableLocalDatastore()
-        
-        let config = ParseClientConfiguration(block: {
-            (ParseMutableClientConfiguration) -> Void in
-            ParseMutableClientConfiguration.applicationId = parseAppID
-            ParseMutableClientConfiguration.clientKey = parseClientKey
-            ParseMutableClientConfiguration.server = parseServerURL
-        })
-        
-        let configDev = ParseClientConfiguration(block: {
-            (ParseMutableClientConfiguration) -> Void in
-            ParseMutableClientConfiguration.applicationId = parseDevAppID
-            ParseMutableClientConfiguration.clientKey = parseDevClientKey
-            ParseMutableClientConfiguration.server = parseDevServerURL
-        })
-        
-        if let environment = NSBundle.mainBundle().infoDictionary?["Environment"] as? String {
-            switch environment {
-            case "Production":
-                Parse.initializeWithConfiguration(config)
-            case "Dev":
-                Parse.initializeWithConfiguration(configDev)
-            default:
-                break
-            }
-        }
+        Configuration.setupServices(launchOptions)
         
         func showLogin() {
             if let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController {
@@ -63,9 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             showFeed()
         }
-        
-        SVProgressHUD.setFont(Style.regularFontWithSize(14.0))
-        SVProgressHUD.setDefaultMaskType(.Black)
         
         return true
     }
