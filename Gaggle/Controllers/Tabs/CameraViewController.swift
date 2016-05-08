@@ -239,18 +239,32 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    func croppedImageToEdit(image: UIImage) -> UIImage {
-//        let sideLength = min(image.size.width, image.size.height)
-//        CGRectMake(your new x, your new y, sideLength, sideLength)
-//        let ratio = sideLength / previewView.frame.width
-//        let rect = CGRectMake(ratio * previewView.frame.minX, ratio * previewView.frame.minY, sideLength, sideLength)
+    func cropToSquare(image originalImage: UIImage) -> UIImage? {
+        guard let originalCGImage = originalImage.CGImage else { return nil }
+        let contextImage = UIImage(CGImage: originalCGImage)
+        let contextSize: CGSize = contextImage.size
+        let posX: CGFloat
+        let posY: CGFloat
+        let width: CGFloat
+        let height: CGFloat
         
-        let ratio = image.size.width / previewView.frame.width
-        let rect = CGRectMake(ratio * previewView.frame.minX, ratio * previewView.frame.minY, ratio * previewView.frame.width, ratio * previewView.frame.height)
-        guard let imageRef = CGImageCreateWithImageInRect(image.CGImage, rect) else { return image }
-        let croppedImage = UIImage(CGImage: imageRef)
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            width = contextSize.height
+            height = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            width = contextSize.width
+            height = contextSize.width
+        }
         
-        return croppedImage
+        let rect: CGRect = CGRectMake(posX, posY, width, height)
+        guard let imageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect) else { return nil }
+        let image = UIImage(CGImage: imageRef, scale: originalImage.scale, orientation: originalImage.imageOrientation)
+        
+        return image
     }
     
     func showPreview(image: UIImage) {
@@ -283,7 +297,7 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
             let nc = segue.destinationViewController as! NavigationController
             if let vc = nc.topViewController as? EditPostViewController {
                 if let preview = previewImage  {
-                    let image = croppedImageToEdit(preview)
+                    let image = cropToSquare(image: preview)
                     vc.image = image
                 }
             }
