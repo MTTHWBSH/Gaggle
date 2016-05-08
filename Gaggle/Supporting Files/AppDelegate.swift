@@ -16,26 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         Configuration.setupServices(launchOptions)
-        
-        func showLogin() {
-            if let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController {
-                window?.rootViewController = vc
-                window?.makeKeyAndVisible()
-            }
-        }
-        
-        func showFeed() {
-            if let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as? TabBarController {
-                window?.rootViewController = nc
-                window?.makeKeyAndVisible()
-            }
-        }
-        
-        if !Session.currentSession.loggedIn() {
-            showLogin()
-        } else {
-            showFeed()
-        }
+        Configuration.run(window)
         
         return true
     }

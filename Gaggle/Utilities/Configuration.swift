@@ -6,6 +6,7 @@
 //  Copyright © 2016 Matthew Bush. All rights reserved.
 //
 
+import UIKit
 import Parse
 import SVProgressHUD
 
@@ -44,6 +45,29 @@ class Configuration {
         
         SVProgressHUD.setFont(Style.regularFontWithSize(14.0))
         SVProgressHUD.setDefaultMaskType(.Black)
+    }
+    
+    class func run(window: UIWindow?) {
+        
+        func showLogin() {
+            if let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController {
+                window?.rootViewController = vc
+                window?.makeKeyAndVisible()
+            }
+        }
+        
+        func showFeed() {
+            if let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as? TabBarController {
+                window?.rootViewController = nc
+                window?.makeKeyAndVisible()
+            }
+        }
+        
+        if !Session.currentSession.loggedIn() {
+            showLogin()
+        } else {
+            showFeed()
+        }
     }
     
 }
