@@ -235,6 +235,11 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func croppedImageToEdit(image: UIImage) -> UIImage {
+//        let sideLength = min(image.size.width, image.size.height)
+//        CGRectMake(your new x, your new y, sideLength, sideLength)
+//        let ratio = sideLength / previewView.frame.width
+//        let rect = CGRectMake(ratio * previewView.frame.minX, ratio * previewView.frame.minY, sideLength, sideLength)
+        
         let ratio = image.size.width / previewView.frame.width
         let rect = CGRectMake(ratio * previewView.frame.minX, ratio * previewView.frame.minY, ratio * previewView.frame.width, ratio * previewView.frame.height)
         guard let imageRef = CGImageCreateWithImageInRect(image.CGImage, rect) else { return image }
@@ -256,9 +261,9 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     // MARK: - UIImagePickerControllerDelegate Methods
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        dismissViewControllerAnimated(true) { Void in
-            self.previewImage = image
-            self.showPreview(image)
+        dismissViewControllerAnimated(true) { [weak self] Void in
+            self?.previewImage = image
+            self?.showPreview(image)
         }
     }
     

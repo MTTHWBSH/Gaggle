@@ -77,6 +77,8 @@
 		7677F2401C45F4920090FCA1 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7677F23E1C45F4920090FCA1 /* EditPostViewController.swift */; };
 		767F90071B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
 		767F90081B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
+		7684C5051CDEC0BB00BA6FD6 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684C5041CDEC0BB00BA6FD6 /* MainFeedViewController.swift */; };
+		7684C5061CDEC0BB00BA6FD6 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684C5041CDEC0BB00BA6FD6 /* MainFeedViewController.swift */; };
 		7695E2431CB2018100552427 /* FeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695E2421CB2018100552427 /* FeedQuery.swift */; };
 		7695E2441CB2018100552427 /* FeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695E2421CB2018100552427 /* FeedQuery.swift */; };
 		76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */; };
@@ -158,6 +160,7 @@
 		766432991CD94CB00093605E /* Gaggle+NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gaggle+NSDate.swift"; sourceTree = "<group>"; };
 		7677F23E1C45F4920090FCA1 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPostViewController.swift; path = Controllers/Posts/EditPostViewController.swift; sourceTree = "<group>"; };
 		767F90061B2D12FC007895A8 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroView.xib; path = Views/IntroView.xib; sourceTree = "<group>"; };
+		7684C5041CDEC0BB00BA6FD6 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		7695E2421CB2018100552427 /* FeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedQuery.swift; sourceTree = "<group>"; };
 		76A1F6541AFAF9E000CB1825 /* Gaggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A1F6591AFAF9E000CB1825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
@@ -256,6 +259,7 @@
 				762212BC1C39EFCC001CF9BE /* CameraViewController.swift */,
 				762212BF1C39EFD3001CF9BE /* ProfileSettingsViewController.swift */,
 				762212C51C3B591D001CF9BE /* ProfileViewController.swift */,
+				7684C5041CDEC0BB00BA6FD6 /* MainFeedViewController.swift */,
 			);
 			name = Tabs;
 			sourceTree = "<group>";
@@ -704,6 +708,7 @@
 				762212BE1C39EFCC001CF9BE /* CameraViewController.swift in Sources */,
 				4D12F5281C331973009EED79 /* FeedViewController.swift in Sources */,
 				7677F2401C45F4920090FCA1 /* EditPostViewController.swift in Sources */,
+				7684C5061CDEC0BB00BA6FD6 /* MainFeedViewController.swift in Sources */,
 				7605EAA91B09461A00F302BB /* AppDelegate.swift in Sources */,
 				765816C71CDE783C00E310A7 /* Reachability.swift in Sources */,
 				76EAFB7B1CB8BE9B003AD416 /* PostTableViewCell.swift in Sources */,
@@ -745,6 +750,7 @@
 				762212BD1C39EFCC001CF9BE /* CameraViewController.swift in Sources */,
 				4D12F5271C331973009EED79 /* FeedViewController.swift in Sources */,
 				7677F23F1C45F4920090FCA1 /* EditPostViewController.swift in Sources */,
+				7684C5051CDEC0BB00BA6FD6 /* MainFeedViewController.swift in Sources */,
 				76A1F65A1AFAF9E000CB1825 /* AppDelegate.swift in Sources */,
 				765816C61CDE783C00E310A7 /* Reachability.swift in Sources */,
 				76EAFB7A1CB8BE9B003AD416 /* PostTableViewCell.swift in Sources */,

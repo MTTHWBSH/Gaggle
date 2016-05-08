@@ -29,14 +29,8 @@ class FeedViewController: TableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Gaggle"
-        setupRefreshControl()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         setupTableView()
-        renderViews()
+        setupRefreshControl()
     }
     
     func renderViews() {
@@ -73,7 +67,6 @@ class FeedViewController: TableViewController {
     }
     
     func refresh() {
-        setupTableView()
         refreshControl?.endRefreshing()
         tableView.contentInset = UIEdgeInsetsMake(6, 0, 6, 0)
     }

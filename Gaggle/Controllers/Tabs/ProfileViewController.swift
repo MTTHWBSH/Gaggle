@@ -16,6 +16,12 @@ class ProfileViewController: FeedViewController {
         setup()
     }
     
+    override func refresh() {
+        guard let user = PFUser.currentUser() else { return }
+        viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
+        super.refresh()
+    }
+    
     func setup() {
         userNameHidden = true
         if Session.currentSession.loggedIn()  {

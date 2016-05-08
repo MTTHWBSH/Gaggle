@@ -77,10 +77,8 @@ class IntroViewController: ViewController, EAIntroDelegate {
     }
     
     func showFeed() {
-        let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
-        if let vc = nc.feedViewController() {
-            vc.viewModel = FeedViewModel(query: FeedQuery.allPosts())
-            self.presentViewController(nc, animated: true, completion: nil)
+        if let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as? TabBarController {
+            presentViewController(nc, animated: true, completion: nil)
         }
     }
     

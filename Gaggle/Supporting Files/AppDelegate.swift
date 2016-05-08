@@ -45,15 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         func showLogin() {
-            let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as! IntroViewController
-            window?.rootViewController = vc
-            window?.makeKeyAndVisible()
+            if let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController {
+                window?.rootViewController = vc
+                window?.makeKeyAndVisible()
+            }
         }
         
         func showFeed() {
-            let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as! TabBarController
-            if let vc = nc.feedViewController() {
-                vc.viewModel = FeedViewModel(query: FeedQuery.allPosts())
+            if let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as? TabBarController {
                 window?.rootViewController = nc
                 window?.makeKeyAndVisible()
             }

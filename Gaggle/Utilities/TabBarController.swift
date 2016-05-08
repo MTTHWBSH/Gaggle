@@ -41,8 +41,8 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         }
     }
     
-    func feedViewController() -> FeedViewController? {
+    func mainFeedViewController() -> MainFeedViewController? {
         guard let firstVC = viewControllers?.first as? NavigationController else { return nil }
-        return firstVC.topViewController as? FeedViewController
+        return firstVC.topViewController as? MainFeedViewController
     }
 }
