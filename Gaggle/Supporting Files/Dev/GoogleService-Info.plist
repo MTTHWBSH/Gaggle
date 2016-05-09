@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>TRACKING_ID</key>
-	<string>UA-77443746-1</string>
+	<string>UA-77495065-1</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mtthwbsh.GaggleDev</string>
+	<string>club.gaggle.GaggleDev</string>
 	<key>PROJECT_ID</key>
 	<string>gaggledev-8acd8</string>
 	<key>IS_ADS_ENABLED</key>
@@ -21,6 +21,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<false/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:764895580211:ios:182a452bde7cf1fd</string>
+	<string>1:764895580211:ios:4fec93efe707d3a1</string>
 </dict>
 </plist>
