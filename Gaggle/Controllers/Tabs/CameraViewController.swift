@@ -127,7 +127,7 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
         signedOutView.alertLabel.text = "To create a post please"
         signedOutView.loginTapped = { [weak self] void in self?.showLogin() }
         signedOutView.signupTapped = { [weak self] void in self?.showSignup() }
-        navigationController?.view.addSubview(signedOutView)
+        view.addSubview(signedOutView)
         signedOutView.autoPinEdgesToSuperviewEdges()
     }
     

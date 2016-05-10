@@ -35,6 +35,9 @@ class ProfileViewController: FeedViewController {
             viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
             let rightBarButtonItem = BarButtonItem(image: UIImage(named: "Gear"), style: .Plain, target: self, action: #selector(settingsButtonPressed))
             navigationItem.rightBarButtonItem = rightBarButtonItem
+            if viewModel?.numberOfPosts() == 0  {
+                addEmptyView()
+            }
         } else {
             refreshControl = nil
             tableView.contentInset = UIEdgeInsetsZero
@@ -51,12 +54,21 @@ class ProfileViewController: FeedViewController {
         signedOutView.alertLabel.text = "To manage your profile please"
         signedOutView.loginTapped = { [weak self] void in self?.showLogin() }
         signedOutView.signupTapped = { [weak self] void in self?.showSignup() }
-        navigationController?.view.addSubview(signedOutView)
+        view.addSubview(signedOutView)
         signedOutView.autoPinEdgesToSuperviewEdges()
     }
     
+    func addEmptyView() {
+        guard let emptyView = NSBundle.mainBundle().loadNibNamed("ProfileEmptyView", owner: self, options: nil).first as? ProfileEmptyView else { return }
+        emptyView.getStartedTapped = { [weak self] void in self?.showCamera() }
+        view.addSubview(emptyView)
+        emptyView.autoPinEdgesToSuperviewEdges()
+    }
+    
     func settingsButtonPressed() {
-        performSegueWithIdentifier("ToSettings", sender: self)
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ProfileSettingsViewController") as? ProfileSettingsViewController {
+            showViewController(vc, sender: self)
+        }
     }
     
     func showLogin() {
@@ -71,6 +83,11 @@ class ProfileViewController: FeedViewController {
         if let nc = Router.signupNavigationController() {
             presentViewController(nc, animated: true, completion: nil)
         }
+    }
+    
+    func showCamera() {
+        Analytics.logEvent("Profile", action: "Get Started", Label: "Get Started Button Pressed", key: "")
+        tabBarController?.selectedIndex = 1
     }
     
 }
