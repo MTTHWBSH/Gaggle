@@ -73,6 +73,10 @@
 		765D6A371C1E3C39001C2242 /* PrivateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765D6A351C1E3C39001C2242 /* PrivateSettings.swift */; };
 		7664329A1CD94CB00093605E /* Gaggle+NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766432991CD94CB00093605E /* Gaggle+NSDate.swift */; };
 		7664329B1CD94CB00093605E /* Gaggle+NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766432991CD94CB00093605E /* Gaggle+NSDate.swift */; };
+		7664530D1CE156150096C0B2 /* ProfileEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7664530C1CE156150096C0B2 /* ProfileEmptyView.xib */; };
+		7664530E1CE156150096C0B2 /* ProfileEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7664530C1CE156150096C0B2 /* ProfileEmptyView.xib */; };
+		766453101CE156260096C0B2 /* ProfileEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7664530F1CE156260096C0B2 /* ProfileEmptyView.swift */; };
+		766453111CE156260096C0B2 /* ProfileEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7664530F1CE156260096C0B2 /* ProfileEmptyView.swift */; };
 		7677F23F1C45F4920090FCA1 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7677F23E1C45F4920090FCA1 /* EditPostViewController.swift */; };
 		7677F2401C45F4920090FCA1 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7677F23E1C45F4920090FCA1 /* EditPostViewController.swift */; };
 		767F90071B2D12FC007895A8 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767F90061B2D12FC007895A8 /* IntroView.xib */; };
@@ -164,6 +168,8 @@
 		765816D21CDE940400E310A7 /* SignedOutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignedOutView.swift; path = Views/SignedOutView.swift; sourceTree = "<group>"; };
 		765D6A351C1E3C39001C2242 /* PrivateSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateSettings.swift; sourceTree = "<group>"; };
 		766432991CD94CB00093605E /* Gaggle+NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gaggle+NSDate.swift"; sourceTree = "<group>"; };
+		7664530C1CE156150096C0B2 /* ProfileEmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileEmptyView.xib; path = Views/ProfileEmptyView.xib; sourceTree = "<group>"; };
+		7664530F1CE156260096C0B2 /* ProfileEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileEmptyView.swift; path = Views/ProfileEmptyView.swift; sourceTree = "<group>"; };
 		7677F23E1C45F4920090FCA1 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPostViewController.swift; path = Controllers/Posts/EditPostViewController.swift; sourceTree = "<group>"; };
 		767F90061B2D12FC007895A8 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroView.xib; path = Views/IntroView.xib; sourceTree = "<group>"; };
 		7684C5041CDEC0BB00BA6FD6 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainFeedViewController.swift; path = Controllers/Tabs/MainFeedViewController.swift; sourceTree = "<group>"; };
@@ -445,6 +451,8 @@
 				76EAFB791CB8BE9B003AD416 /* PostTableViewCell.xib */,
 				765816CB1CDE90A900E310A7 /* SignedOutView.xib */,
 				765816D21CDE940400E310A7 /* SignedOutView.swift */,
+				7664530C1CE156150096C0B2 /* ProfileEmptyView.xib */,
+				7664530F1CE156260096C0B2 /* ProfileEmptyView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -544,11 +552,11 @@
 				ORGANIZATIONNAME = "Matthew Bush";
 				TargetAttributes = {
 					7605EAA41B09461A00F302BB = {
-						DevelopmentTeam = Z76K8WHREZ;
+						DevelopmentTeam = 726J23ESFP;
 					};
 					76A1F6531AFAF9E000CB1825 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = Z76K8WHREZ;
+						DevelopmentTeam = 726J23ESFP;
 					};
 					76A1F6681AFAF9E000CB1825 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -581,6 +589,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7664530E1CE156150096C0B2 /* ProfileEmptyView.xib in Resources */,
 				7684C5101CDED1D600BA6FD6 /* GoogleService-Info.plist in Resources */,
 				4DBF07EB1B6163210068092C /* Lato-Bold.ttf in Resources */,
 				4DBF07ED1B6163210068092C /* Lato-Hairline.ttf in Resources */,
@@ -604,6 +613,7 @@
 				765816CC1CDE90A900E310A7 /* SignedOutView.xib in Resources */,
 				4D12F5241C3318A8009EED79 /* Main.storyboard in Resources */,
 				7684C5121CDED23D00BA6FD6 /* GoogleService-Info.plist in Resources */,
+				7664530D1CE156150096C0B2 /* ProfileEmptyView.xib in Resources */,
 				76ED4F831C79421800735EBD /* JosefinSans-Bold.ttf in Resources */,
 				4DBF07EA1B6163210068092C /* Lato-Bold.ttf in Resources */,
 				76EAFB7C1CB8BE9B003AD416 /* PostTableViewCell.xib in Resources */,
@@ -731,6 +741,7 @@
 				4DC1A0241CCE7C5D00AB3A57 /* Gaggle+PFFile.swift in Sources */,
 				76054DD71BBA2C0200AA2D5A /* Button.swift in Sources */,
 				76D360921BAE28D600022990 /* NavigationController.swift in Sources */,
+				766453111CE156260096C0B2 /* ProfileEmptyView.swift in Sources */,
 				76D3608F1BAE275700022990 /* BarButtonItem.swift in Sources */,
 				761915351C9F5B4F0053CEA4 /* FeedViewModel.swift in Sources */,
 				765D6A371C1E3C39001C2242 /* PrivateSettings.swift in Sources */,
@@ -775,6 +786,7 @@
 				4DC1A0231CCE7C5D00AB3A57 /* Gaggle+PFFile.swift in Sources */,
 				76054DD61BBA2C0200AA2D5A /* Button.swift in Sources */,
 				76D360911BAE28D600022990 /* NavigationController.swift in Sources */,
+				766453101CE156260096C0B2 /* ProfileEmptyView.swift in Sources */,
 				76D3608E1BAE275700022990 /* BarButtonItem.swift in Sources */,
 				761915341C9F5B4F0053CEA4 /* FeedViewModel.swift in Sources */,
 				765D6A361C1E3C39001C2242 /* PrivateSettings.swift in Sources */,
