@@ -22,3 +22,13 @@ Pods/
 # Project
 Gaggle/Supporting\ Files/PrivateSettings.swift
 .DS_Store
+
+# Fastlane
+fastlane/test_output/*
+fastlane/report.xml
+fastlane/Error*.png
+fastlane/Preview.html
+fastlane/screenshots/*
+
+# Fastlane
+fastlane/test_output/
