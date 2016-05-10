@@ -44,8 +44,10 @@ class ProfileViewController: FeedViewController {
             viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
             let rightBarButtonItem = BarButtonItem(image: UIImage(named: "Gear"), style: .Plain, target: self, action: #selector(settingsButtonPressed))
             navigationItem.rightBarButtonItem = rightBarButtonItem
-            if viewModel?.numberOfPosts() == 0  {
-                addEmptyView()
+            viewModel?.queryComplete = { [weak self] Void in
+                if self?.viewModel?.numberOfPosts() == 0  {
+                    self?.addEmptyView()
+                }
             }
         } else {
             refreshControl = nil

@@ -12,6 +12,8 @@ import SVProgressHUD
 
 class FeedViewModel: NSObject {
     
+    var queryComplete: (Void -> Void)?
+    
     var render: (Void -> Void)? {
         didSet {
             render?()
@@ -35,6 +37,7 @@ class FeedViewModel: NSObject {
             if error == nil {
                 self?.posts = posts
                 self?.render?()
+                self?.queryComplete?()
             } else {
                 print(error?.localizedDescription)
             }
