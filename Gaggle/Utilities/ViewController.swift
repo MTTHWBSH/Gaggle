@@ -17,9 +17,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if !Reachability.isConnectedToNetwork() {
-            presentViewController(Reachability.noConnectionAlert(), animated: true, completion: nil)
-        }
+        Reachability.tryReachability(self)
     }
     
     func styleView() {

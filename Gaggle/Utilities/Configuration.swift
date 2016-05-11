@@ -57,6 +57,7 @@ class Configuration {
             if let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController {
                 window?.rootViewController = vc
                 window?.makeKeyAndVisible()
+                Reachability.tryReachability(vc)
             }
         }
         
@@ -64,6 +65,7 @@ class Configuration {
             if let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as? TabBarController {
                 window?.rootViewController = nc
                 window?.makeKeyAndVisible()
+                Reachability.tryReachability(nc)
             }
         }
         
