@@ -3,6 +3,7 @@ default_platform :ios
 
 platform :ios do
   before_all do
+    clear_derived_data
     cocoapods
   end
 
@@ -12,20 +13,24 @@ platform :ios do
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
-  desc "This will also make sure the profile is up to date"
   lane :beta do
-    # match(type: "appstore") # more information: https://codesigning.guide
     gym(scheme: "Gaggle")
     pilot
   end
 
   desc "Deploy a new version to the App Store"
   lane :appstore do
-    # match(type: "appstore")
-    # snapshot
-    gym(scheme: "Gaggle") # Build your app - more options available
-    deliver(force: true)
-    # frameit
+    snapshot
+    gym(scheme: "Gaggle", workspace: "Gaggle.xcworkspace", export_team_id: "726J23ESFP")
+    commit_version_bump(
+      message: 'Build Version bump by Fastlane',
+      xcodeproj: "Gaggle.xcodeproj",
+      force: true
+    )
+    push_to_git_remote(
+      force: true
+    )
+    frameit
   end
 
   error do |lane, exception|
