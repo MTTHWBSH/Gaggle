@@ -1,0 +1,18 @@
+devices([
+  "iPhone 6s",
+  "iPhone 6s Plus",
+  "iPhone 5s",
+  "iPhone 4s",
+])
+
+languages([
+  "en-US",
+])
+
+scheme "Gaggle"
+
+output_directory "./screenshots"
+
+clear_previous_screenshots true
+
+workspace "./Gaggle.xcworkspace"

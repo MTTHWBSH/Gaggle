@@ -27,6 +27,8 @@
 		4DBF07EF1B6163210068092C /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E81B6163210068092C /* Lato-Light.ttf */; };
 		4DBF07F01B6163210068092C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E91B6163210068092C /* Lato-Regular.ttf */; };
 		4DBF07F11B6163210068092C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF07E91B6163210068092C /* Lato-Regular.ttf */; };
+		4DC058FF1CE4D75800999D2E /* GaggleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC058FE1CE4D75800999D2E /* GaggleUITests.swift */; };
+		4DC059071CE4D79A00999D2E /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC059061CE4D79A00999D2E /* SnapshotHelper.swift */; };
 		4DC1A0201CCAE3B500AB3A57 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A01F1CCAE3B500AB3A57 /* Post.swift */; };
 		4DC1A0211CCAE3B500AB3A57 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A01F1CCAE3B500AB3A57 /* Post.swift */; };
 		4DC1A0231CCE7C5D00AB3A57 /* Gaggle+PFFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A0221CCE7C5D00AB3A57 /* Gaggle+PFFile.swift */; };
@@ -118,6 +120,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4DC059011CE4D75800999D2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76A1F64C1AFAF9E000CB1825 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76A1F6531AFAF9E000CB1825;
+			remoteInfo = Gaggle;
+		};
 		76A1F66A1AFAF9E000CB1825 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 76A1F64C1AFAF9E000CB1825 /* Project object */;
@@ -145,6 +154,10 @@
 		4DBF07E71B6163210068092C /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Hairline.ttf"; path = "Assets/Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		4DBF07E81B6163210068092C /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "Assets/Lato-Light.ttf"; sourceTree = "<group>"; };
 		4DBF07E91B6163210068092C /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Assets/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		4DC058FC1CE4D75800999D2E /* GaggleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaggleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DC058FE1CE4D75800999D2E /* GaggleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaggleUITests.swift; sourceTree = "<group>"; };
+		4DC059001CE4D75800999D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC059061CE4D79A00999D2E /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		4DC1A01F1CCAE3B500AB3A57 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4DC1A0221CCE7C5D00AB3A57 /* Gaggle+PFFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gaggle+PFFile.swift"; sourceTree = "<group>"; };
 		56775B71593A7F6B00A958FA /* Pods_GaggleDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaggleDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +214,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4DC058F91CE4D75800999D2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7605EAAA1B09461A00F302BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,6 +266,16 @@
 				4D15D6ED1BF698BD00F922DB /* Intro.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4DC058FD1CE4D75800999D2E /* GaggleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4DC058FE1CE4D75800999D2E /* GaggleUITests.swift */,
+				4DC059061CE4D79A00999D2E /* SnapshotHelper.swift */,
+				4DC059001CE4D75800999D2E /* Info.plist */,
+			);
+			path = GaggleUITests;
 			sourceTree = "<group>";
 		};
 		4DC1A0251CCE7C6D00AB3A57 /* Extensions */ = {
@@ -355,6 +385,7 @@
 			children = (
 				76A1F6561AFAF9E000CB1825 /* Gaggle */,
 				76A1F66C1AFAF9E000CB1825 /* GaggleTests */,
+				4DC058FD1CE4D75800999D2E /* GaggleUITests */,
 				76A1F6551AFAF9E000CB1825 /* Products */,
 				FBBC2EA3EA0F205DD24D2679 /* Frameworks */,
 				2C68D4175A5A3D73629B8895 /* Pods */,
@@ -367,6 +398,7 @@
 				76A1F6541AFAF9E000CB1825 /* Gaggle.app */,
 				76A1F6691AFAF9E000CB1825 /* GaggleTests.xctest */,
 				7605EAB41B09461A00F302BB /* GaggleDev.app */,
+				4DC058FC1CE4D75800999D2E /* GaggleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -482,6 +514,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4DC058FB1CE4D75800999D2E /* GaggleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DC059031CE4D75800999D2E /* Build configuration list for PBXNativeTarget "GaggleUITests" */;
+			buildPhases = (
+				4DC058F81CE4D75800999D2E /* Sources */,
+				4DC058F91CE4D75800999D2E /* Frameworks */,
+				4DC058FA1CE4D75800999D2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DC059021CE4D75800999D2E /* PBXTargetDependency */,
+			);
+			name = GaggleUITests;
+			productName = GaggleUITests;
+			productReference = 4DC058FC1CE4D75800999D2E /* GaggleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		7605EAA41B09461A00F302BB /* GaggleDev */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7605EAB11B09461A00F302BB /* Build configuration list for PBXNativeTarget "GaggleDev" */;
@@ -547,10 +597,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0710;
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Matthew Bush";
 				TargetAttributes = {
+					4DC058FB1CE4D75800999D2E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 76A1F6531AFAF9E000CB1825;
+					};
 					7605EAA41B09461A00F302BB = {
 						DevelopmentTeam = 726J23ESFP;
 					};
@@ -580,11 +634,19 @@
 				76A1F6531AFAF9E000CB1825 /* Gaggle */,
 				7605EAA41B09461A00F302BB /* GaggleDev */,
 				76A1F6681AFAF9E000CB1825 /* GaggleTests */,
+				4DC058FB1CE4D75800999D2E /* GaggleUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4DC058FA1CE4D75800999D2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7605EAAC1B09461A00F302BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -731,6 +793,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4DC058F81CE4D75800999D2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DC058FF1CE4D75800999D2E /* GaggleUITests.swift in Sources */,
+				4DC059071CE4D79A00999D2E /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7605EAA61B09461A00F302BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -832,6 +903,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4DC059021CE4D75800999D2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76A1F6531AFAF9E000CB1825 /* Gaggle */;
+			targetProxy = 4DC059011CE4D75800999D2E /* PBXContainerItemProxy */;
+		};
 		76A1F66B1AFAF9E000CB1825 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 76A1F6531AFAF9E000CB1825 /* Gaggle */;
@@ -851,6 +927,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4DC059041CE4D75800999D2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = GaggleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mtthwbsh.GaggleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Gaggle;
+			};
+			name = Debug;
+		};
+		4DC059051CE4D75800999D2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = GaggleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mtthwbsh.GaggleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Gaggle;
+			};
+			name = Release;
+		};
 		7605EAB21B09461A00F302BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 211C9BABF87080379279BDE4 /* Pods-GaggleDev.debug.xcconfig */;
@@ -1050,6 +1157,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4DC059031CE4D75800999D2E /* Build configuration list for PBXNativeTarget "GaggleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DC059041CE4D75800999D2E /* Debug */,
+				4DC059051CE4D75800999D2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7605EAB11B09461A00F302BB /* Build configuration list for PBXNativeTarget "GaggleDev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
