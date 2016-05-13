@@ -19,4 +19,9 @@ class GaggleUITests: XCTestCase {
         app.launch()
     }
     
+    func testTakeScreenshots() {
+        let app = XCUIApplication()
+        
+    }
+    
 }

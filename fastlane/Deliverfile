@@ -1,10 +1,4 @@
-###################### More Options ######################
-# If you want to have even more control, check out the documentation
-# https://github.com/fastlane/fastlane/blob/master/deliver/Deliverfile.md
+app_identifier "club.gaggle.Gaggle"
+username "bushmat4@gmail.com"
 
-
-###################### Automatically generated ######################
-# Feel free to remove the following line if you use fastlane (which you should)
-
-app_identifier "club.gaggle.Gaggle" # The bundle identifier of your app
-username "bushmat4@gmail.com" # your Apple ID user
+screenshots_path ./screenshots
