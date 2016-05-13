@@ -21,6 +21,11 @@ Submit a new Beta Build to Apple TestFlight
 fastlane ios appstore
 ```
 Deploy a new version to the App Store
+### ios screenshot
+```
+fastlane ios screenshot
+```
+Take screenshots
 
 ----
 
