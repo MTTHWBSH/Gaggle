@@ -76,29 +76,30 @@ class FeedViewController: TableViewController {
     }
     
     func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as! PostTableViewCell
-        viewModel?.postForIndexPath(indexPath, completion: { [weak self] post in
-            self?.viewModel?.userForID(post.userID ?? "", completion: { user in
-                guard let strongSelf = self else { return }
-                if !strongSelf.userNameHidden {
-                    cell.userButton.setTitle(user.username, forState: .Normal)
-                    cell.userButtonTapped = { strongSelf.showPosts(forUser: user) }
-                }
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? PostTableViewCell else { return UITableViewCell() }
+            viewModel?.postForIndexPath(indexPath, completion: { [weak self] post in
+                self?.viewModel?.userForID(post.userID ?? "", completion: { user in
+                    guard let strongSelf = self else { return }
+                    if !strongSelf.userNameHidden {
+                        cell.userButton.setTitle(user.username, forState: .Normal)
+                        cell.userButtonTapped = { strongSelf.showPosts(forUser: user) }
+                    }
+                })
+                cell.timeLabel.attributedText = post.timeSinceCreated
+                cell.postImageView?.image = post.image
+                cell.titleLabel.text = post.title
+                cell.subtitleLabel.text = post.subtitle
             })
-            cell.timeLabel.attributedText = post.timeSinceCreated
-            cell.postImageView?.image = post.image
-            cell.titleLabel.text = post.title
-            cell.subtitleLabel.text = post.subtitle
-        })
-        return cell
+            return cell
     }
     
     func showPosts(forUser user:PFUser) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("FeedViewController") as! FeedViewController
-        vc.viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
-        vc.title = user.username
-        vc.userNameHidden = true
-        showViewController(vc, sender: self)
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("FeedViewController") as? FeedViewController {
+            vc.viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
+            vc.title = user.username
+            vc.userNameHidden = true
+            showViewController(vc, sender: self)
+        }
     }
     
 }

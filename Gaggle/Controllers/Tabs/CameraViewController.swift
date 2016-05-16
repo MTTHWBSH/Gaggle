@@ -294,8 +294,7 @@ class CameraViewController: ViewController, UIImagePickerControllerDelegate, UIN
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toEditPost" {
-            let nc = segue.destinationViewController as! NavigationController
-            if let vc = nc.topViewController as? EditPostViewController {
+            if let nc = segue.destinationViewController as? NavigationController, vc = nc.topViewController as? EditPostViewController {
                 if let preview = previewImage  {
                     let image = cropToSquare(image: preview)
                     vc.image = image

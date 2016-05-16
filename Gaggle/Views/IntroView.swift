@@ -34,7 +34,7 @@ class IntroView: UIView {
     }
     
     class func initWith(title: String, subtitle: String, image: UIImage) -> IntroView {
-        let introView: IntroView = NSBundle.mainBundle().loadNibNamed("IntroView", owner: self, options: nil).first as! IntroView
+        guard let introView: IntroView = NSBundle.mainBundle().loadNibNamed("IntroView", owner: self, options: nil).first as? IntroView else { return IntroView() }
         
         introView.title = title.capitalizedString
         introView.subtitle = subtitle.capitalizedString
