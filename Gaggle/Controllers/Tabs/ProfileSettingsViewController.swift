@@ -40,14 +40,14 @@ class ProfileSettingsViewController: ViewController {
         })
     }
     
-    func showAbout() {
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AboutViewController") as? AboutViewController {
+    func showInfo() {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("InfoViewController") as? InfoViewController {
             showViewController(vc, sender: self)
         }
     }
     
     @IBAction func aboutPressed(sender: AnyObject) {
-        showAbout()
+        showInfo()
     }
 
     @IBAction func signOutPressed(sender: AnyObject) {

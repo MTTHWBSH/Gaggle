@@ -1,12 +1,12 @@
 //
-//  AboutViewController.swift
+//  InfoViewController.swift
 //  Gaggle
 //
 //  Created by Matt Bush on 5/16/16.
 //  Copyright © 2016 Matthew Bush. All rights reserved.
 //
 
-class AboutViewController: TableViewController {
+class InfoViewController: TableViewController {
     
     private let kCellReuse = "PostTableViewCell"
     

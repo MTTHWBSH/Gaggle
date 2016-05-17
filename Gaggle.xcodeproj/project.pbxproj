@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A000A545FB302AB0C3FCFA7 /* Pods_Gaggle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C348ADACE82251561BC43C45 /* Pods_Gaggle.framework */; };
-		4D0EDD7E1CEA81AE002179E0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0EDD7D1CEA81AE002179E0 /* AboutViewController.swift */; };
-		4D0EDD7F1CEA81AE002179E0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0EDD7D1CEA81AE002179E0 /* AboutViewController.swift */; };
+		4D0EDD7E1CEA81AE002179E0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0EDD7D1CEA81AE002179E0 /* InfoViewController.swift */; };
+		4D0EDD7F1CEA81AE002179E0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0EDD7D1CEA81AE002179E0 /* InfoViewController.swift */; };
 		4D12F5241C3318A8009EED79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D12F5231C3318A8009EED79 /* Main.storyboard */; };
 		4D12F5251C3318A8009EED79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D12F5231C3318A8009EED79 /* Main.storyboard */; };
 		4D12F5271C331973009EED79 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D12F5261C331973009EED79 /* FeedViewController.swift */; };
@@ -142,7 +142,7 @@
 		16FC846D5A29289BAE7C4963 /* Pods-Gaggle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gaggle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gaggle/Pods-Gaggle.debug.xcconfig"; sourceTree = "<group>"; };
 		211C9BABF87080379279BDE4 /* Pods-GaggleDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaggleDev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GaggleDev/Pods-GaggleDev.debug.xcconfig"; sourceTree = "<group>"; };
 		2640D5EF56CFE5174319BB29 /* Pods-Gaggle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gaggle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gaggle/Pods-Gaggle.release.xcconfig"; sourceTree = "<group>"; };
-		4D0EDD7D1CEA81AE002179E0 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = Controllers/Tabs/AboutViewController.swift; sourceTree = "<group>"; };
+		4D0EDD7D1CEA81AE002179E0 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = Controllers/Tabs/InfoViewController.swift; sourceTree = "<group>"; };
 		4D12F5231C3318A8009EED79 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		4D12F5261C331973009EED79 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = Controllers/Tabs/FeedViewController.swift; sourceTree = "<group>"; };
 		4D15D6ED1BF698BD00F922DB /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Intro.storyboard; path = Gaggle/Storyboards/Intro.storyboard; sourceTree = SOURCE_ROOT; };
@@ -309,7 +309,7 @@
 				762212BF1C39EFD3001CF9BE /* ProfileSettingsViewController.swift */,
 				762212C51C3B591D001CF9BE /* ProfileViewController.swift */,
 				7684C5041CDEC0BB00BA6FD6 /* MainFeedViewController.swift */,
-				4D0EDD7D1CEA81AE002179E0 /* AboutViewController.swift */,
+				4D0EDD7D1CEA81AE002179E0 /* InfoViewController.swift */,
 			);
 			name = Tabs;
 			sourceTree = "<group>";
@@ -834,7 +834,7 @@
 				761E0AC41B2A9262008C3E74 /* IntroView.swift in Sources */,
 				7695E2441CB2018100552427 /* FeedQuery.swift in Sources */,
 				4DC1A0211CCAE3B500AB3A57 /* Post.swift in Sources */,
-				4D0EDD7F1CEA81AE002179E0 /* AboutViewController.swift in Sources */,
+				4D0EDD7F1CEA81AE002179E0 /* InfoViewController.swift in Sources */,
 				765816CA1CDE8BA600E310A7 /* Router.swift in Sources */,
 				76EA19C61B50B00C00A11248 /* Animation.swift in Sources */,
 				762212B61C39DD7A001CF9BE /* TabBarController.swift in Sources */,
@@ -880,7 +880,7 @@
 				761E0AC31B2A9262008C3E74 /* IntroView.swift in Sources */,
 				7695E2431CB2018100552427 /* FeedQuery.swift in Sources */,
 				4DC1A0201CCAE3B500AB3A57 /* Post.swift in Sources */,
-				4D0EDD7E1CEA81AE002179E0 /* AboutViewController.swift in Sources */,
+				4D0EDD7E1CEA81AE002179E0 /* InfoViewController.swift in Sources */,
 				765816C91CDE8BA500E310A7 /* Router.swift in Sources */,
 				76EA19C51B50B00C00A11248 /* Animation.swift in Sources */,
 				762212B51C39DD7A001CF9BE /* TabBarController.swift in Sources */,
