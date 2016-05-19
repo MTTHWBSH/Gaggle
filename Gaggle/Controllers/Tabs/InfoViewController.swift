@@ -8,10 +8,11 @@
 
 class InfoViewController: TableViewController {
     
-    private let kCellReuse = "PostTableViewCell"
+    enum Rows: Int {
+        case Rate, Terms, Count
+    }
     
-    var tableViewDataSource: RxTableViewDataSource!
-    var tableViewDelegate: RxTableViewDelegate!
+    private let kCellReuse = "InfoTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,39 +25,88 @@ class InfoViewController: TableViewController {
     }
     
     func setup() {
-        title = "About"
-        //        if let dict = NSBundle.mainBundle().infoDictionary {
-        //            if let version = dict["CFBundleShortVersionString"] {
-        //                versionLabel.text = "v\(version)"
-        //            } else {
-        //                versionLabel.text = ""
-        //            }
-        //        } else {
-        //            versionLabel.text = ""
-        //        }
-        //
-        //        versionLabel.font = Style.regularFontWithSize(22.0)
-        //        versionLabel.textColor = Style.blackColor
-    }
-    
-    func setupTableView() {
-        tableViewDataSource = RxTableViewDataSource(numberOfRowsInSection: { _ in
-            return 1
-            }, cellForRowAtIndexPath: { [weak self] indexPath in
-                return UITableViewCell()
-            })
-        
-        tableView.dataSource = tableViewDataSource
-        tableView.delegate = tableViewDelegate
-        tableView.registerNib(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
+        title = "Info"
+        setupTableView()
         styleTableView()
     }
     
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.registerNib(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
+    }
+    
     func styleTableView() {
-        tableView.separatorStyle = .None
+        tableView.rowHeight = 50
+        tableView.separatorStyle = .SingleLine
         tableView.backgroundColor = Style.lightGrayColor
         tableView.separatorInset = UIEdgeInsetsZero
+        tableView.separatorColor = Style.lightGrayColor
         tableView.layoutMargins = UIEdgeInsetsZero
+        tableView.contentInset = UIEdgeInsetsMake(6, 0, 6, 0)
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Rows.Count.rawValue
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return cellForRow(indexPath) ?? InfoTableViewCell()
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        didSelectRow(indexPath)
+        print(indexPath.row)
+    }
+    
+    private func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case Rows.Rate.rawValue:
+            setupRateCell(indexPath)
+        case Rows.Terms.rawValue:
+            setupTermsCell(indexPath)
+        default: ()
+        }
+        return UITableViewCell()
+    }
+    
+    private func didSelectRow(indexPath: NSIndexPath) {
+        switch indexPath.row {
+        case Rows.Rate.rawValue:
+            showRate()
+        case Rows.Terms.rawValue:
+            showTerms()
+        default: ()
+        }
+    }
+    
+    private func setupRateCell(indexPath: NSIndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
+        cell.titleLabel.text = "Rate in App Store"
+        cell.subtitleLabel.text = versionNumber()
+        return cell
+    }
+    
+    private func setupTermsCell(indexPath: NSIndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
+        cell.titleLabel.text = "Terms of Service"
+        cell.subtitleLabel.text = ""
+        return cell
+    }
+    
+    private func versionNumber() -> String? {
+        guard let dict = NSBundle.mainBundle().infoDictionary, version = dict["CFBundleShortVersionString"] else { return nil }
+        return "v\(version)"
+    }
+    
+    private func showRate() {
+        UIApplication.sharedApplication().openURL(NSURL(string:
+            "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1112225433&onlyLatestVersion=true&pageNumber=0&sortOrdering=1)"
+        )!);
+    }
+    
+    private func showTerms() {
+        
     }
 
 }
