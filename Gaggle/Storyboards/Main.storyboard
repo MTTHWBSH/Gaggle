@@ -203,7 +203,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IjP-n9-I1O">
-                        <barButtonItem key="rightBarButtonItem" image="7BDA7F6A-E147-47AF-B12D-1C27285BFC7D" id="4SN-Jm-XGd">
+                        <barButtonItem key="rightBarButtonItem" image="1B181D92-F4D4-462C-8DF0-0611D557ECE9" id="4SN-Jm-XGd">
                             <connections>
                                 <action selector="imagePickerButtonPressed:" destination="3fT-va-sL0" id="axb-uH-1rq"/>
                             </connections>
@@ -585,7 +585,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="7BDA7F6A-E147-47AF-B12D-1C27285BFC7D" width="22" height="22">
+        <image name="1B181D92-F4D4-462C-8DF0-0611D557ECE9" width="22" height="22">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGQkNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QDwcI
 ERYbHCUmJygwMzY8P1UkbnVsbNQJCgsMDQ4PEFYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVwc1dOU0Nv

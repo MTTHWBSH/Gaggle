@@ -218,6 +218,95 @@
             </objects>
             <point key="canvasLocation" x="1908" y="323"/>
         </scene>
+        <!--Terms of Service-->
+        <scene sceneID="LYp-cY-tPS">
+            <objects>
+                <viewController storyboardIdentifier="TermsViewController" id="GWH-Lx-mzR" customClass="TermsViewController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yTw-hJ-JBt"/>
+                        <viewControllerLayoutGuide type="bottom" id="9uh-xC-AN4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZdT-ok-nep">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZT-ua-ej9">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Gaggle App End User License Agreement
+
+This End User License Agreement (“Agreement”) is between you and Gaggle and governs use of this app made available through the Apple App Store. By installing the Gaggle App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Gaggle App.
+
+In order to ensure Gaggle provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found under each post.
+
+1. Parties
+
+This Agreement is between you and Gaggle only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Gaggle, not Apple, is solely responsible for the Gaggle App and its content.
+
+2. Privacy
+
+Gaggle may collect and use information about your usage of the Gaggle App, including certain types of information from and about your device. Gaggle may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the Gaggle App.
+
+3. Limited License
+
+Gaggle grants you a limited, non-exclusive, non-transferable, revocable license to use theGaggle App for your personal, non-commercial purposes. You may only use theGaggle App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
+
+4. Age Restrictions
+
+By using the Gaggle App, you represent and warrant that (a) you are 17 years of age or older and you agree to be bound by this Agreement; (b) if you are under 17 years of age, you have obtained verifiable consent from a parent or legal guardian; and (c) your use of the Gaggle App does not violate any applicable law or regulation. Your access to the Gaggle App may be terminated without warning if Gaggle believes, in its sole discretion, that you are under the age of 17 years and have not obtained verifiable consent from a parent or legal guardian. If you are a parent or legal guardian and you provide your consent to your child’s use of the Gaggle App, you agree to be bound by this Agreement in respect to your child’s use of the Gaggle App.
+
+5. Objectionable Content Policy
+
+Content may be submitted to Gaggle, who will moderate all content and ultimately decide whether or not to remove a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.
+
+6. Warranty
+
+Gaggle disclaims all warranties about the Gaggle App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, Gaggle, not Apple, shall be solely responsible for such warranty.
+
+7. Maintenance and Support
+
+Gaggle does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Gaggle, not Apple, shall be obligated to furnish any such maintenance or support.
+
+8. Product Claims
+
+Gaggle, not Apple, is responsible for addressing any claims by you relating to the Gaggle App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Gaggle App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
+
+9. Third Party Intellectual Property Claims
+
+Gaggle shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Gaggle App. To the extent Gaggle is required to provide indemnification by applicable law, Gaggle, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Gaggle App or your use of it infringes any third party intellectual property right.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tZT-ua-ej9" firstAttribute="leading" secondItem="ZdT-ok-nep" secondAttribute="leading" id="RZi-19-WBs"/>
+                            <constraint firstItem="tZT-ua-ej9" firstAttribute="top" secondItem="yTw-hJ-JBt" secondAttribute="bottom" id="nQp-tk-oIq"/>
+                            <constraint firstItem="9uh-xC-AN4" firstAttribute="top" secondItem="tZT-ua-ej9" secondAttribute="bottom" id="u8O-0k-RSp"/>
+                            <constraint firstAttribute="trailing" secondItem="tZT-ua-ej9" secondAttribute="trailing" id="uZI-qe-hyK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Terms of Service" id="RzE-UY-jtF">
+                        <barButtonItem key="leftBarButtonItem" image="Close" id="pzc-6q-2R5" customClass="BarButtonItem" customModule="Gaggle" customModuleProvider="target">
+                            <connections>
+                                <action selector="closePressed:" destination="GWH-Lx-mzR" id="E2z-W1-PmC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Agree" id="YTP-MA-JeO" customClass="BarButtonItem" customModule="Gaggle" customModuleProvider="target">
+                            <connections>
+                                <action selector="agreePressed:" destination="GWH-Lx-mzR" id="YLX-C7-pZV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="agreeBarButtonItem" destination="YTP-MA-JeO" id="Vad-BX-5al"/>
+                        <outlet property="termsTextView" destination="tZT-ua-ej9" id="h7P-fN-KD8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCk-G5-f7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2720" y="1097"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="EBu-dr-REK">
             <objects>
@@ -236,6 +325,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZt-LN-Zuc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1156" y="323"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iMj-9N-Jvy">
+            <objects>
+                <navigationController storyboardIdentifier="TermsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="A7Z-lB-6Tk" customClass="NavigationController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lU1-UN-c6Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GWH-Lx-mzR" kind="relationship" relationship="rootViewController" id="MPw-UU-Kg4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e37-EE-d7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1908" y="1097"/>
         </scene>
     </scenes>
     <resources>

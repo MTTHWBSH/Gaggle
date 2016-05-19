@@ -56,7 +56,6 @@ class InfoViewController: TableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         didSelectRow(indexPath)
-        print(indexPath.row)
     }
     
     private func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
@@ -100,13 +99,13 @@ class InfoViewController: TableViewController {
     }
     
     private func showRate() {
-        UIApplication.sharedApplication().openURL(NSURL(string:
-            "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1112225433&onlyLatestVersion=true&pageNumber=0&sortOrdering=1)"
-        )!);
+        UIApplication.sharedApplication().openURL(NSURL(string : "itms-apps://itunes.apple.com/app/1112225433")!);
     }
     
     private func showTerms() {
-        
+        if let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("TermsNavigationController") as? NavigationController {
+            navigationController?.presentViewController(nc, animated: true, completion: nil)
+        }
     }
 
 }

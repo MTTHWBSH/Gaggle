@@ -39,6 +39,8 @@
 		4DF87FC41CEE5A2F00254622 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF87FC11CEE5A2F00254622 /* InfoTableViewCell.swift */; };
 		4DF87FC51CEE5A2F00254622 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF87FC21CEE5A2F00254622 /* InfoTableViewCell.xib */; };
 		4DF87FC61CEE5A2F00254622 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF87FC21CEE5A2F00254622 /* InfoTableViewCell.xib */; };
+		4DF87FC81CEE6F0F00254622 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF87FC71CEE6F0F00254622 /* TermsViewController.swift */; };
+		4DF87FC91CEE6F0F00254622 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF87FC71CEE6F0F00254622 /* TermsViewController.swift */; };
 		76054DD61BBA2C0200AA2D5A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76054DD51BBA2C0200AA2D5A /* Button.swift */; };
 		76054DD71BBA2C0200AA2D5A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76054DD51BBA2C0200AA2D5A /* Button.swift */; };
 		7605EAA71B09461A00F302BB /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */; };
@@ -169,6 +171,7 @@
 		4DC1A0221CCE7C5D00AB3A57 /* Gaggle+PFFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gaggle+PFFile.swift"; sourceTree = "<group>"; };
 		4DF87FC11CEE5A2F00254622 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoTableViewCell.swift; path = Views/InfoTableViewCell.swift; sourceTree = "<group>"; };
 		4DF87FC21CEE5A2F00254622 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoTableViewCell.xib; path = Views/InfoTableViewCell.xib; sourceTree = "<group>"; };
+		4DF87FC71CEE6F0F00254622 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsViewController.swift; path = Controllers/Intro/TermsViewController.swift; sourceTree = "<group>"; };
 		56775B71593A7F6B00A958FA /* Pods_GaggleDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaggleDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76054DD51BBA2C0200AA2D5A /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		7605EAB41B09461A00F302BB /* GaggleDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaggleDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +303,7 @@
 		762212B71C39DD93001CF9BE /* Intro */ = {
 			isa = PBXGroup;
 			children = (
+				4DF87FC71CEE6F0F00254622 /* TermsViewController.swift */,
 				76A1F65B1AFAF9E000CB1825 /* IntroViewController.swift */,
 				76D360871BAE1D6A00022990 /* LoginSignupViewController.swift */,
 			);
@@ -838,6 +842,7 @@
 				761BE0731CA8ACF5006E9E2A /* RxTableViewDelegate.swift in Sources */,
 				762212C71C3B591D001CF9BE /* ProfileViewController.swift in Sources */,
 				4D88EAD61CDD4699004DFA48 /* TableViewController.swift in Sources */,
+				4DF87FC91CEE6F0F00254622 /* TermsViewController.swift in Sources */,
 				76D360891BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
 				765816D41CDE940400E310A7 /* SignedOutView.swift in Sources */,
 				761BE0701CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */,
@@ -885,6 +890,7 @@
 				761BE0721CA8ACF5006E9E2A /* RxTableViewDelegate.swift in Sources */,
 				762212C61C3B591D001CF9BE /* ProfileViewController.swift in Sources */,
 				4D88EAD51CDD4699004DFA48 /* TableViewController.swift in Sources */,
+				4DF87FC81CEE6F0F00254622 /* TermsViewController.swift in Sources */,
 				76D360881BAE1D6A00022990 /* LoginSignupViewController.swift in Sources */,
 				765816D31CDE940400E310A7 /* SignedOutView.swift in Sources */,
 				761BE06F1CA8ACDA006E9E2A /* RxTableViewDataSource.swift in Sources */,
