@@ -22,6 +22,8 @@ class InfoTableViewCell: UITableViewCell {
     func setup() {
         forwardImage.tintColor = Style.blackColor
         selectionStyle = .None
+        separatorInset = UIEdgeInsetsZero
+        layoutMargins = UIEdgeInsetsZero
     }
     
 }

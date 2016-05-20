@@ -9,7 +9,7 @@
 class InfoViewController: TableViewController {
     
     enum Rows: Int {
-        case Rate, Terms, Count
+        case Rate, Terms, Report, Feedback, Count
     }
     
     private let kCellReuse = "InfoTableViewCell"
@@ -43,7 +43,7 @@ class InfoViewController: TableViewController {
         tableView.separatorInset = UIEdgeInsetsZero
         tableView.separatorColor = Style.lightGrayColor
         tableView.layoutMargins = UIEdgeInsetsZero
-        tableView.contentInset = UIEdgeInsetsMake(6, 0, 6, 0)
+        tableView.contentInset = UIEdgeInsetsMake(1, 0, 1, 0)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,6 +64,10 @@ class InfoViewController: TableViewController {
             setupRateCell(indexPath)
         case Rows.Terms.rawValue:
             setupTermsCell(indexPath)
+        case Rows.Report.rawValue:
+            setupReportCell(indexPath)
+        case Rows.Feedback.rawValue:
+            setupFeedbackCell(indexPath)
         default: ()
         }
         return UITableViewCell()
@@ -75,6 +79,10 @@ class InfoViewController: TableViewController {
             showRate()
         case Rows.Terms.rawValue:
             showTerms()
+        case Rows.Report.rawValue:
+            reportIssue()
+        case Rows.Feedback.rawValue:
+            sendFeedback()
         default: ()
         }
     }
@@ -93,6 +101,20 @@ class InfoViewController: TableViewController {
         return cell
     }
     
+    private func setupReportCell(indexPath: NSIndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
+        cell.titleLabel.text = "Report an Issue"
+        cell.subtitleLabel.text = ""
+        return cell
+    }
+    
+    private func setupFeedbackCell(indexPath: NSIndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
+        cell.titleLabel.text = "Submit Feedback"
+        cell.subtitleLabel.text = ""
+        return cell
+    }
+    
     private func versionNumber() -> String? {
         guard let dict = NSBundle.mainBundle().infoDictionary, version = dict["CFBundleShortVersionString"] else { return nil }
         return "v\(version)"
@@ -106,6 +128,14 @@ class InfoViewController: TableViewController {
         if let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("TermsNavigationController") as? NavigationController {
             navigationController?.presentViewController(nc, animated: true, completion: nil)
         }
+    }
+    
+    private func reportIssue() {
+        Instabug.invokeWithInvocationMode(.BugReporter)
+    }
+    
+    private func sendFeedback() {
+        Instabug.invokeWithInvocationMode(.FeedbackSender)
     }
 
 }
