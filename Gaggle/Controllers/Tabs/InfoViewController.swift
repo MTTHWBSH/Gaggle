@@ -21,7 +21,7 @@ class InfoViewController: TableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        Analytics.logScreen("About")
+        Analytics.logScreen("InfoS")
     }
     
     func setup() {
