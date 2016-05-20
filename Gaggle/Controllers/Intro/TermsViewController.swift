@@ -17,16 +17,28 @@ class TermsViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        styleTextView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupTextView()
     }
     
     func setup() {
         if fromSettings == false ?? false { setupAgreeButton() }
         view.backgroundColor = Style.whiteColor
-        termsTextView.font = Style.regularFontWithSize(14.0)
+    }
+    
+    func setupTextView() {
         termsTextView.layoutMargins = UIEdgeInsetsZero
         termsTextView.contentInset = UIEdgeInsetsZero
+        termsTextView.contentOffset = CGPointZero
+    }
+    
+    func styleTextView() {
+       termsTextView.font = Style.regularFontWithSize(14.0)
         termsTextView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10)
-        termsTextView.scrollRangeToVisible(NSMakeRange(0, 0))
     }
     
     func setupAgreeButton() {
