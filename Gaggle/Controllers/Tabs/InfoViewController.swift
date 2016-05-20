@@ -74,6 +74,7 @@ class InfoViewController: TableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         didSelectRow(indexPath)
     }
     

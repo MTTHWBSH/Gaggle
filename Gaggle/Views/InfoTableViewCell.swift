@@ -19,7 +19,12 @@ class InfoTableViewCell: UITableViewCell {
         setup()
     }
     
+    override func setSelected(selected: Bool, animated: Bool) {
+        setup()
+    }
+    
     func setup() {
+        contentView.backgroundColor = selected ? Style.whiteColor : Style.whiteColor
         forwardImage.tintColor = Style.blackColor
         selectionStyle = .None
         separatorInset = UIEdgeInsetsZero
