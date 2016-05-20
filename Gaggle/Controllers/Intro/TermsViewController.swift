@@ -25,6 +25,11 @@ class TermsViewController: ViewController {
         setupTextView()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.logScreen("Terms")
+    }
+    
     func setup() {
         if fromSettings == false ?? false { setupAgreeButton() }
         view.backgroundColor = Style.whiteColor

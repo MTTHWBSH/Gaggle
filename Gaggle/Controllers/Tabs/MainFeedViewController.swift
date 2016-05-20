@@ -7,6 +7,7 @@
 //
 
 import Parse
+import PureLayout
 
 class MainFeedViewController: FeedViewController {
     
@@ -40,9 +41,11 @@ class MainFeedViewController: FeedViewController {
     func setupActivityIndicator() {
         activity = UIActivityIndicatorView()
         activity?.color = Style.blueColor
-        activity?.center = view.center
         activity?.startAnimating()
-        if let activity = activity { view.addSubview(activity) }
+        if let activity = activity {
+            view.addSubview(activity)
+            activity.autoCenterInSuperview()
+        }
     }
     
     func removeActivityIndicator() {
