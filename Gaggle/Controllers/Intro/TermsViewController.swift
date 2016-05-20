@@ -11,14 +11,16 @@ import UIKit
 class TermsViewController: ViewController {
     
     @IBOutlet weak var termsTextView: UITextView!
-    @IBOutlet weak var agreeBarButtonItem: BarButtonItem!
-
+    
+    var fromSettings: Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
     
     func setup() {
+        if fromSettings == false ?? false { setupAgreeButton() }
         view.backgroundColor = Style.whiteColor
         termsTextView.font = Style.regularFontWithSize(14.0)
         termsTextView.layoutMargins = UIEdgeInsetsZero
@@ -26,13 +28,24 @@ class TermsViewController: ViewController {
         termsTextView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10)
         termsTextView.scrollRangeToVisible(NSMakeRange(0, 0))
     }
-
-    @IBAction func closePressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    
+    func setupAgreeButton() {
+        let rightBarButtonItem = BarButtonItem(title: "Agree", style: .Plain, target: self, action: #selector(agree))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
-    @IBAction func agreePressed(sender: AnyObject) {
+    func agree() {
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: Constants.HasShownTerms)
         dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func closePressed(sender: AnyObject) {
+        if fromSettings ?? false {
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            guard let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController else { return }
+            presentViewController(vc, animated: true, completion: nil)
+        }
     }
     
 }

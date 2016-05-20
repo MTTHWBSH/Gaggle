@@ -6,11 +6,30 @@
 //  Copyright © 2016 Matthew Bush. All rights reserved.
 //
 
-class InfoViewController: TableViewController {
-    
-    enum Rows: Int {
-        case Rate, Terms, Report, Feedback, Count
+enum Rows: Int {
+    case Rate, Terms, Report, Feedback, Count
+}
+
+extension Rows {
+    var title: String {
+        switch self{
+        case Rate: return "Rate in App Store"
+        case Terms: return "Terms of Service"
+        case Report: return "Report an Issue"
+        case Feedback: return "Submit Feedback"
+        default: return ""
+        }
     }
+    
+    var subtitle: String {
+        switch self{
+        case Rate: return InfoViewController.versionNumber() ?? ""
+        default: return ""
+        }
+    }
+}
+
+class InfoViewController: TableViewController {
     
     private let kCellReuse = "InfoTableViewCell"
     
@@ -61,13 +80,13 @@ class InfoViewController: TableViewController {
     private func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.row {
         case Rows.Rate.rawValue:
-            setupRateCell(indexPath)
+            setupCell(indexPath, row: .Rate)
         case Rows.Terms.rawValue:
-            setupTermsCell(indexPath)
+            setupCell(indexPath, row: .Terms)
         case Rows.Report.rawValue:
-            setupReportCell(indexPath)
+            setupCell(indexPath, row: .Report)
         case Rows.Feedback.rawValue:
-            setupFeedbackCell(indexPath)
+            setupCell(indexPath, row: .Feedback)
         default: ()
         }
         return UITableViewCell()
@@ -87,35 +106,14 @@ class InfoViewController: TableViewController {
         }
     }
     
-    private func setupRateCell(indexPath: NSIndexPath) -> UITableViewCell {
+    private func setupCell(indexPath: NSIndexPath, row: Rows) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
-        cell.titleLabel.text = "Rate in App Store"
-        cell.subtitleLabel.text = versionNumber()
+        cell.titleLabel.text = row.title
+        cell.subtitleLabel.text = row.subtitle
         return cell
     }
     
-    private func setupTermsCell(indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
-        cell.titleLabel.text = "Terms of Service"
-        cell.subtitleLabel.text = ""
-        return cell
-    }
-    
-    private func setupReportCell(indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
-        cell.titleLabel.text = "Report an Issue"
-        cell.subtitleLabel.text = ""
-        return cell
-    }
-    
-    private func setupFeedbackCell(indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
-        cell.titleLabel.text = "Submit Feedback"
-        cell.subtitleLabel.text = ""
-        return cell
-    }
-    
-    private func versionNumber() -> String? {
+    class func versionNumber() -> String? {
         guard let dict = NSBundle.mainBundle().infoDictionary, version = dict["CFBundleShortVersionString"] else { return nil }
         return "v\(version)"
     }
@@ -125,9 +123,10 @@ class InfoViewController: TableViewController {
     }
     
     private func showTerms() {
-        if let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("TermsNavigationController") as? NavigationController {
-            navigationController?.presentViewController(nc, animated: true, completion: nil)
-        }
+        guard let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("TermsNavigationController") as? NavigationController,
+                  vc = nc.topViewController as? TermsViewController else { return }
+        vc.fromSettings = true
+        navigationController?.presentViewController(nc, animated: true, completion: nil)
     }
     
     private func reportIssue() {

@@ -34,9 +34,8 @@ class ProfileSettingsViewController: ViewController {
         
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             SVProgressHUD.dismiss()
-            if let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController {
-                self.presentViewController(vc, animated: true, completion: nil)
-            }
+            guard let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController else { return }
+            self.presentViewController(vc, animated: true, completion: nil)
         })
     }
     

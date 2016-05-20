@@ -15,4 +15,7 @@ struct Constants {
     static let PostImageKey = "image"
     static let PostTitleKey = "title"
     static let PostSubtitleKey = "subtitle"
+    
+    // NSUserDefaults
+    static let HasShownTerms = "hasShownTerms"
 }

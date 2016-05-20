@@ -9,7 +9,7 @@
 import Parse
 
 class MainFeedViewController: FeedViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Gaggle"
@@ -31,7 +31,15 @@ class MainFeedViewController: FeedViewController {
     }
     
     func setup() {
-        viewModel = FeedViewModel(query: FeedQuery.allPosts())
+        let hasShownTerms = NSUserDefaults.standardUserDefaults().boolForKey(Constants.HasShownTerms)
+        hasShownTerms ? viewModel = FeedViewModel(query: FeedQuery.allPosts()) : showTerms()
     }
-
+    
+    private func showTerms() {
+        guard let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("TermsNavigationController") as? NavigationController,
+            vc = nc.topViewController as? TermsViewController else { return }
+        vc.fromSettings = false
+        navigationController?.presentViewController(nc, animated: true, completion: nil)
+    }
+    
 }

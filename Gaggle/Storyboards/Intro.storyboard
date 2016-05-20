@@ -233,7 +233,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZT-ua-ej9">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Gaggle App End User License Agreement
+                                <string key="text">Gaggle App End User License Agreement
 
 This End User License Agreement (“Agreement”) is between you and Gaggle and governs use of this app made available through the Apple App Store. By installing the Gaggle App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Gaggle App.
 
@@ -273,7 +273,7 @@ Gaggle, not Apple, is responsible for addressing any claims by you relating to t
 
 9. Third Party Intellectual Property Claims
 
-Gaggle shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Gaggle App. To the extent Gaggle is required to provide indemnification by applicable law, Gaggle, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Gaggle App or your use of it infringes any third party intellectual property right.</mutableString>
+Gaggle shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Gaggle App. To the extent Gaggle is required to provide indemnification by applicable law, Gaggle, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Gaggle App or your use of it infringes any third party intellectual property right.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -292,14 +292,8 @@ Gaggle shall not be obligated to indemnify or defend you with respect to any thi
                                 <action selector="closePressed:" destination="GWH-Lx-mzR" id="E2z-W1-PmC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Agree" id="YTP-MA-JeO" customClass="BarButtonItem" customModule="Gaggle" customModuleProvider="target">
-                            <connections>
-                                <action selector="agreePressed:" destination="GWH-Lx-mzR" id="YLX-C7-pZV"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="agreeBarButtonItem" destination="YTP-MA-JeO" id="Vad-BX-5al"/>
                         <outlet property="termsTextView" destination="tZT-ua-ej9" id="h7P-fN-KD8"/>
                     </connections>
                 </viewController>
