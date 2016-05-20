@@ -18,6 +18,7 @@ class MainFeedViewController: FeedViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setup()
+        setupActivityIndicator()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -33,6 +34,19 @@ class MainFeedViewController: FeedViewController {
     func setup() {
         let hasShownTerms = NSUserDefaults.standardUserDefaults().boolForKey(Constants.HasShownTerms)
         hasShownTerms ? viewModel = FeedViewModel(query: FeedQuery.allPosts()) : showTerms()
+        viewModel?.queryComplete = { [weak self] void in self?.removeActivityIndicator() }
+    }
+    
+    func setupActivityIndicator() {
+        activity = UIActivityIndicatorView()
+        activity?.color = Style.blueColor
+        activity?.center = view.center
+        activity?.startAnimating()
+        if let activity = activity { view.addSubview(activity) }
+    }
+    
+    func removeActivityIndicator() {
+        activity?.removeFromSuperview()
     }
     
     private func showTerms() {

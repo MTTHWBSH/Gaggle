@@ -17,6 +17,7 @@ class FeedViewController: TableViewController {
     var tableViewDataSource: RxTableViewDataSource!
     var tableViewDelegate: RxTableViewDelegate!
     
+    var activity: UIActivityIndicatorView?
     var userNameHidden = false
     
     var viewModel: FeedViewModel? {

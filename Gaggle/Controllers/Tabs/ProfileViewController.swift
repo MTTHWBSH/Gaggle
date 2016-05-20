@@ -17,6 +17,7 @@ class ProfileViewController: FeedViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setup()
+        setupActivityIndicator()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -45,6 +46,7 @@ class ProfileViewController: FeedViewController {
             let rightBarButtonItem = BarButtonItem(image: UIImage(named: "Gear"), style: .Plain, target: self, action: #selector(settingsButtonPressed))
             navigationItem.rightBarButtonItem = rightBarButtonItem
             viewModel?.queryComplete = { [weak self] Void in
+                self?.removeActivityIndicator()
                 if self?.viewModel?.numberOfPosts() == 0  {
                     self?.addEmptyView()
                 }
@@ -58,6 +60,18 @@ class ProfileViewController: FeedViewController {
             navigationItem.rightBarButtonItem = nil
             addSignedOutView()
         }
+    }
+    
+    func setupActivityIndicator() {
+        activity = UIActivityIndicatorView()
+        activity?.color = Style.blueColor
+        activity?.center = view.center
+        activity?.startAnimating()
+        if let activity = activity { view.addSubview(activity) }
+    }
+    
+    func removeActivityIndicator() {
+        activity?.removeFromSuperview()
     }
     
     func addSignedOutView() {
