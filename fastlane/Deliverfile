@@ -1,2 +1,5 @@
 app_identifier "club.gaggle.Gaggle"
 username "bushmat4@gmail.com"
+
+skip_screenshots = true
+skip metadata = true
