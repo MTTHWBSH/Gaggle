@@ -21,6 +21,7 @@ platform :ios do
   desc "Deploy a new version to the App Store"
   lane :appstore do
     gym(scheme: "Gaggle", workspace: "Gaggle.xcworkspace", export_team_id: "726J23ESFP")
+    increment_build_number
     commit_version_bump(
       message: 'Build Version bump by Fastlane',
       xcodeproj: "Gaggle.xcodeproj",
