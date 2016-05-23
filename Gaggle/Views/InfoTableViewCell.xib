@@ -34,6 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="UWf-r5-tSz" firstAttribute="leading" secondItem="sk7-lf-Hmb" secondAttribute="trailing" constant="1" id="K4T-KG-FQC"/>
                     <constraint firstItem="fBo-6b-XBa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="P4W-b8-cbe"/>
@@ -50,6 +51,7 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="forwardImage" destination="UWf-r5-tSz" id="nB3-3p-yr3"/>
                 <outlet property="primaryLabel" destination="fBo-6b-XBa" id="C9J-qn-yBh"/>

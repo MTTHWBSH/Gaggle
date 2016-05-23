@@ -70,27 +70,26 @@ class InfoViewController: TableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return cellForRow(indexPath) ?? InfoTableViewCell()
+        return cellForRow(indexPath)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
         didSelectRow(indexPath)
     }
     
     private func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.row {
         case Rows.Rate.rawValue:
-            setupCell(indexPath, row: .Rate)
+            return setupCell(indexPath, row: .Rate)
         case Rows.Terms.rawValue:
-            setupCell(indexPath, row: .Terms)
+            return setupCell(indexPath, row: .Terms)
         case Rows.Report.rawValue:
-            setupCell(indexPath, row: .Report)
+            return setupCell(indexPath, row: .Report)
         case Rows.Feedback.rawValue:
-            setupCell(indexPath, row: .Feedback)
-        default: ()
+            return setupCell(indexPath, row: .Feedback)
+        default: return UITableViewCell()
         }
-        return UITableViewCell()
     }
     
     private func didSelectRow(indexPath: NSIndexPath) {
