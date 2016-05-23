@@ -10,8 +10,8 @@ import UIKit
 
 class InfoTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var titleLabel: Label!
-    @IBOutlet weak var subtitleLabel: SecondaryLabel!
+    @IBOutlet weak var primaryLabel: Label!
+    @IBOutlet weak var secondaryLabel: SecondaryLabel!
     @IBOutlet weak var forwardImage: UIImageView!
 
     override func awakeFromNib() {

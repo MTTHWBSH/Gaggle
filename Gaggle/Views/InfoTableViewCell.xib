@@ -52,8 +52,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="forwardImage" destination="UWf-r5-tSz" id="nB3-3p-yr3"/>
-                <outlet property="subtitleLabel" destination="sk7-lf-Hmb" id="qIm-9s-eDh"/>
-                <outlet property="titleLabel" destination="fBo-6b-XBa" id="7ag-JP-iyO"/>
+                <outlet property="primaryLabel" destination="fBo-6b-XBa" id="C9J-qn-yBh"/>
+                <outlet property="secondaryLabel" destination="sk7-lf-Hmb" id="rTU-C8-Vsr"/>
             </connections>
             <point key="canvasLocation" x="139" y="402"/>
         </tableViewCell>

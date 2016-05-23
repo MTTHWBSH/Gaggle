@@ -109,8 +109,8 @@ class InfoViewController: TableViewController {
     
     private func setupCell(indexPath: NSIndexPath, row: Rows) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
-        cell.titleLabel.text = row.title
-        cell.subtitleLabel.text = row.subtitle
+        cell.primaryLabel.text = row.title
+        cell.secondaryLabel.text = row.subtitle
         return cell
     }
     
