@@ -19,11 +19,6 @@ class InfoTableViewCell: UITableViewCell {
         setup()
     }
     
-//    override func setSelected(selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//        setup()
-//    }
-    
     func setup() {
         contentView.backgroundColor = Style.whiteColor
         forwardImage.tintColor = Style.blackColor
