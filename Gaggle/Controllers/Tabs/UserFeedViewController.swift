@@ -13,6 +13,11 @@ class UserFeedViewController: FeedViewController {
     
     var user: PFUser?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = user?.username ?? "Gaggle"
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setup()
@@ -31,7 +36,6 @@ class UserFeedViewController: FeedViewController {
     func setup() {
         guard let user = user else { return }
         setupActivityIndicator()
-        navigationItem.title = user.username
         viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
         viewModel?.queryComplete = { [weak self] void in self?.removeActivityIndicator() }
     }
