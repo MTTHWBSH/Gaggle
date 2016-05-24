@@ -35,6 +35,8 @@
 		4DC1A0211CCAE3B500AB3A57 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A01F1CCAE3B500AB3A57 /* Post.swift */; };
 		4DC1A0231CCE7C5D00AB3A57 /* Gaggle+PFFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A0221CCE7C5D00AB3A57 /* Gaggle+PFFile.swift */; };
 		4DC1A0241CCE7C5D00AB3A57 /* Gaggle+PFFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A0221CCE7C5D00AB3A57 /* Gaggle+PFFile.swift */; };
+		4DDBF0D91CF4F02A0008AB17 /* UserFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBF0D81CF4F02A0008AB17 /* UserFeedViewController.swift */; };
+		4DDBF0DA1CF4F02A0008AB17 /* UserFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBF0D81CF4F02A0008AB17 /* UserFeedViewController.swift */; };
 		4DF87FC31CEE5A2F00254622 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF87FC11CEE5A2F00254622 /* InfoTableViewCell.swift */; };
 		4DF87FC41CEE5A2F00254622 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF87FC11CEE5A2F00254622 /* InfoTableViewCell.swift */; };
 		4DF87FC51CEE5A2F00254622 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF87FC21CEE5A2F00254622 /* InfoTableViewCell.xib */; };
@@ -169,6 +171,7 @@
 		4DC059061CE4D79A00999D2E /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		4DC1A01F1CCAE3B500AB3A57 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4DC1A0221CCE7C5D00AB3A57 /* Gaggle+PFFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gaggle+PFFile.swift"; sourceTree = "<group>"; };
+		4DDBF0D81CF4F02A0008AB17 /* UserFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserFeedViewController.swift; path = Controllers/Tabs/UserFeedViewController.swift; sourceTree = "<group>"; };
 		4DF87FC11CEE5A2F00254622 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoTableViewCell.swift; path = Views/InfoTableViewCell.swift; sourceTree = "<group>"; };
 		4DF87FC21CEE5A2F00254622 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoTableViewCell.xib; path = Views/InfoTableViewCell.xib; sourceTree = "<group>"; };
 		4DF87FC71CEE6F0F00254622 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsViewController.swift; path = Controllers/Intro/TermsViewController.swift; sourceTree = "<group>"; };
@@ -320,6 +323,7 @@
 				762212C51C3B591D001CF9BE /* ProfileViewController.swift */,
 				7684C5041CDEC0BB00BA6FD6 /* MainFeedViewController.swift */,
 				4D0EDD7D1CEA81AE002179E0 /* InfoViewController.swift */,
+				4DDBF0D81CF4F02A0008AB17 /* UserFeedViewController.swift */,
 			);
 			name = Tabs;
 			sourceTree = "<group>";
@@ -855,6 +859,7 @@
 				76EA19C61B50B00C00A11248 /* Animation.swift in Sources */,
 				762212B61C39DD7A001CF9BE /* TabBarController.swift in Sources */,
 				7664329B1CD94CB00093605E /* Gaggle+NSDate.swift in Sources */,
+				4DDBF0DA1CF4F02A0008AB17 /* UserFeedViewController.swift in Sources */,
 				762212C41C39F671001CF9BE /* Label.swift in Sources */,
 				7684C5161CDED48F00BA6FD6 /* Analytics.swift in Sources */,
 				762212BE1C39EFCC001CF9BE /* CameraViewController.swift in Sources */,
@@ -903,6 +908,7 @@
 				76EA19C51B50B00C00A11248 /* Animation.swift in Sources */,
 				762212B51C39DD7A001CF9BE /* TabBarController.swift in Sources */,
 				7664329A1CD94CB00093605E /* Gaggle+NSDate.swift in Sources */,
+				4DDBF0D91CF4F02A0008AB17 /* UserFeedViewController.swift in Sources */,
 				762212C31C39F671001CF9BE /* Label.swift in Sources */,
 				7684C5151CDED48F00BA6FD6 /* Analytics.swift in Sources */,
 				762212BD1C39EFCC001CF9BE /* CameraViewController.swift in Sources */,

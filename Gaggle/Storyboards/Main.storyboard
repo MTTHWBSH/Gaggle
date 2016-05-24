@@ -203,7 +203,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IjP-n9-I1O">
-                        <barButtonItem key="rightBarButtonItem" image="811E8671-EBC3-4ED1-9AE8-0B3F99205843" id="4SN-Jm-XGd">
+                        <barButtonItem key="rightBarButtonItem" image="D716DA39-E52B-46BF-A9B4-E12FC470A120" id="4SN-Jm-XGd">
                             <connections>
                                 <action selector="imagePickerButtonPressed:" destination="3fT-va-sL0" id="axb-uH-1rq"/>
                             </connections>
@@ -322,6 +322,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCA-RT-kzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1615.5" y="-39.5"/>
+        </scene>
+        <!--User Feed View Controller-->
+        <scene sceneID="qGW-pu-bVA">
+            <objects>
+                <tableViewController storyboardIdentifier="UserFeedViewController" id="FOk-1i-j0M" customClass="UserFeedViewController" customModule="Gaggle" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="3kh-Zp-Ymd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="FOk-1i-j0M" id="bug-Ht-Ixl"/>
+                            <outlet property="delegate" destination="FOk-1i-j0M" id="tyv-pB-Oql"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7rd-Tr-Jhh"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bGO-rn-ZFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2070.5" y="-39.5"/>
         </scene>
         <!--Camera-->
         <scene sceneID="7jJ-YZ-DID">
@@ -585,7 +606,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="811E8671-EBC3-4ED1-9AE8-0B3F99205843" width="22" height="22">
+        <image name="Camera" width="32" height="25"/>
+        <image name="CameraCancel" width="44" height="44"/>
+        <image name="CameraCheck" width="44" height="44"/>
+        <image name="Close" width="22" height="22"/>
+        <image name="D716DA39-E52B-46BF-A9B4-E12FC470A120" width="22" height="22">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGQkNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QDwcI
 ERYbHCUmJygwMzY8P1UkbnVsbNQJCgsMDQ4PEFYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVwc1dOU0Nv
@@ -668,10 +693,6 @@ IwAtADIANwBJAE8AWABfAGwAcwB7AH0AggCEAIYAiwCWAJgAmgCcAKEApACmAKgAqgCsALcAvgDQAOMA
 nRGiEaoRrRG/EcIRxwAAAAAAAAIBAAAAAAAAAEYAAAAAAAAAAAAAAAAAABHJA
 </mutableData>
         </image>
-        <image name="Camera" width="32" height="25"/>
-        <image name="CameraCancel" width="44" height="44"/>
-        <image name="CameraCheck" width="44" height="44"/>
-        <image name="Close" width="22" height="22"/>
         <image name="Goose" width="133" height="200"/>
         <image name="Home" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>

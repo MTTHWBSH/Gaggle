@@ -95,11 +95,10 @@ class FeedViewController: TableViewController {
     }
     
     func showPosts(forUser user:PFUser) {
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("FeedViewController") as? FeedViewController {
-            vc.viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
-            vc.title = user.username
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("UserFeedViewController") as? UserFeedViewController {
+            vc.user = user
             vc.userNameHidden = true
-            showViewController(vc, sender: self)
+            navigationController?.showViewController(vc, sender: self)
         }
     }
     
