@@ -119,7 +119,7 @@ class InfoViewController: TableViewController {
     }
     
     private func showRate() {
-        UIApplication.sharedApplication().openURL(NSURL(string : "itms-apps://itunes.apple.com/app/1112225433")!);
+        UIApplication.sharedApplication().openURL(NSURL(string : "itms-apps://itunes.apple.com/app/id1112225433?mt=8&uo=4")!);
     }
     
     private func showTerms() {
