@@ -145,7 +145,12 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
             }
         }
         
-        parentViewController!.dismissViewControllerAnimated(true, completion: nil)
+        guard let parentVC = parentViewController as? NavigationController, presentingVC = presentingViewController as? TabBarController else { return }
+        presentingVC.selectedIndex = 0
+        
+        guard let selectedVC = presentingVC.selectedViewController as? NavigationController, vc = selectedVC.topViewController as? MainFeedViewController else { return }
+        vc.setup()
+        parentVC.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func submitPost() {

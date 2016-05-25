@@ -15,11 +15,6 @@ class UserFeedViewController: FeedViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = user?.username ?? "Gaggle"
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         setup()
     }
     
@@ -35,6 +30,7 @@ class UserFeedViewController: FeedViewController {
     
     func setup() {
         guard let user = user else { return }
+        navigationItem.title = user.username
         setupActivityIndicator()
         viewModel = FeedViewModel(query: FeedQuery.allPosts(forUser: user))
         viewModel?.queryComplete = { [weak self] void in self?.removeActivityIndicator() }

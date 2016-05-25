@@ -13,12 +13,8 @@ class MainFeedViewController: FeedViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Gaggle"
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         setup()
+        navigationItem.title = "Gaggle"
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -60,6 +56,7 @@ class MainFeedViewController: FeedViewController {
         guard let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("TermsNavigationController") as? NavigationController,
             vc = nc.topViewController as? TermsViewController else { return }
         vc.fromSettings = false
+        vc.agreePressed = { [weak self] void in self?.setup() }
         navigationController?.presentViewController(nc, animated: true, completion: nil)
     }
     

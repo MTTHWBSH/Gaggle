@@ -13,6 +13,7 @@ class TermsViewController: ViewController {
     @IBOutlet weak var termsTextView: UITextView!
     
     var fromSettings: Bool?
+    var agreePressed: (Void -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,7 @@ class TermsViewController: ViewController {
     
     func agree() {
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: Constants.HasShownTerms)
+        agreePressed?()
         dismissViewControllerAnimated(true, completion: nil)
     }
 
