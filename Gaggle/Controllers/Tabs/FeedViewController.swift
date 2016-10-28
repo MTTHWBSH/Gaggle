@@ -39,12 +39,12 @@ class FeedViewController: TableViewController {
     
     func setupTableView() {
         guard let tableView = tableView else { return }
+        let dataSource = Observable.just(viewModel?.posts)
         tableView.register(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
-        Observable
-            .just(viewModel?.posts)
+        dataSource
             .bindTo(tableView
             .rx
-            .items(cellIdentifier: kCellReuse, cellType: PostTableViewCell.self)) {
+            .items(cellIdentifier: kCellReuse, cellType: PostTableViewCell.self)) { row, chocolate, cell in
                     
             }
         .addDisposableTo(disposeBag)
