@@ -10,28 +10,28 @@ import Foundation
 
 class Analytics {
     
-    class func logScreen(key: String) {
+    class func logScreen(_ key: String) {
         logGAScreen(key)
     }
     
-    class func logEvent(category: String, action: String, Label: String, key: String) {
+    class func logEvent(_ category: String, action: String, Label: String, key: String) {
         logGAEvent(category, action: action, label: Label, key: key)
     }
     
-    class private func logGAScreen(key: String) {
-        let tracker = GAI.sharedInstance().defaultTracker
+    class fileprivate func logGAScreen(_ key: String) {
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
         tracker.set(kGAIScreenName, value: key)
         
-        let builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
+        let builder: NSObject = GAIDictionaryBuilder.createScreenView().build()
+        tracker.send(builder as? [NSObject : AnyObject])
     }
     
-    class private func logGAEvent(category: String, action: String, label: String, key: String) {
-        let tracker = GAI.sharedInstance().defaultTracker
+    class fileprivate func logGAEvent(_ category: String, action: String, label: String, key: String) {
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
         tracker.set(kGAIEventLabel, value: key)
         
-        let builder = GAIDictionaryBuilder.createEventWithCategory(category, action: action, label: label, value: 0)
-        tracker.send(builder.build() as [NSObject : AnyObject])
+        let builder: NSObject = GAIDictionaryBuilder.createEvent(withCategory: category, action: action, label: label, value: 0).build()
+        tracker.send(builder as? [NSObject : AnyObject])
     }
     
 }

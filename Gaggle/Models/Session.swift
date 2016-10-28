@@ -18,7 +18,7 @@ class Session {
     }
     
     func loggedIn() -> Bool {
-        return PFUser.currentUser() != nil
+        return PFUser.current() != nil
     }
 
 }

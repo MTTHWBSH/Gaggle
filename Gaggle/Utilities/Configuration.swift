@@ -9,10 +9,11 @@
 import UIKit
 import Parse
 import SVProgressHUD
+import ReachabilitySwift
 
 class Configuration {
     
-    class func setupServices(launchOptions: [NSObject: AnyObject]?) {
+    class func setupServices(_ launchOptions: [AnyHashable: Any]?) {
 
         Parse.enableLocalDatastore()
 
@@ -30,14 +31,14 @@ class Configuration {
             ParseMutableClientConfiguration.server = parseDevServerURL
         })
 
-        if let environment = NSBundle.mainBundle().infoDictionary?["Environment"] as? String {
+        if let environment = Bundle.main.infoDictionary?["Environment"] as? String {
             switch environment {
             case "Production":
-                Parse.initializeWithConfiguration(config)
-                Instabug.startWithToken(instabugToken, invocationEvent: .None)
+                Parse.initialize(with: config)
+                Instabug.start(withToken: instabugToken, invocationEvent: .none)
             case "Dev":
-                Parse.initializeWithConfiguration(configDev)
-                Instabug.startWithToken(instabugDevToken, invocationEvent: .None)
+                Parse.initialize(with: configDev)
+                Instabug.start(withToken: instabugDevToken, invocationEvent: .none)
             default:
                 break
             }
@@ -48,24 +49,26 @@ class Configuration {
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
         
         SVProgressHUD.setFont(Style.regularFontWithSize(14.0))
-        SVProgressHUD.setDefaultMaskType(.Black)
+        SVProgressHUD.setDefaultMaskType(.black)
     }
     
-    class func run(window: UIWindow?) {
+    class func run(_ window: UIWindow?) {
+        
+        let reachability = Reachability()
+        reachability?.whenUnreachable = { _ in SVProgressHUD.showError(withStatus: "Unable to connect to internet. Please check your connection and try again.") }
+        do { try reachability?.startNotifier() } catch { print("Unable to start reachability notifier") }
         
         func showLogin() {
-            if let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController {
+            if let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewController(withIdentifier: "Intro") as? IntroViewController {
                 window?.rootViewController = vc
                 window?.makeKeyAndVisible()
-                Reachability.tryReachability(vc)
             }
         }
         
         func showFeed() {
-            if let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as? TabBarController {
+            if let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main") as? TabBarController {
                 window?.rootViewController = nc
                 window?.makeKeyAndVisible()
-                Reachability.tryReachability(nc)
             }
         }
         

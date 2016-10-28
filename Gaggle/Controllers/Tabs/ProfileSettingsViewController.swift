@@ -17,39 +17,39 @@ class ProfileSettingsViewController: ViewController {
         setup()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Analytics.logScreen("Profile Settings")
     }
     
     func setup() {
-        guard let user = PFUser.currentUser() else { return }
+        guard let user = PFUser.current() else { return }
         navigationItem.title = user.username
     }
     
     func signOut() {
         Analytics.logEvent("Profile", action: "Sign Out", Label: "Sign Out Button Pressed", key: "")
-        SVProgressHUD.showWithStatus("Signing out")
+        SVProgressHUD.show(withStatus: "Signing out")
         PFUser.logOut()
         
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        DispatchQueue.main.async(execute: { () -> Void in
             SVProgressHUD.dismiss()
-            guard let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController else { return }
-            self.presentViewController(vc, animated: true, completion: nil)
+            guard let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewController(withIdentifier: "Intro") as? IntroViewController else { return }
+            self.present(vc, animated: true, completion: nil)
         })
     }
     
     func showInfo() {
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("InfoViewController") as? InfoViewController {
-            showViewController(vc, sender: self)
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InfoViewController") as? InfoViewController {
+            show(vc, sender: self)
         }
     }
     
-    @IBAction func aboutPressed(sender: AnyObject) {
+    @IBAction func aboutPressed(_ sender: AnyObject) {
         showInfo()
     }
 
-    @IBAction func signOutPressed(sender: AnyObject) {
+    @IBAction func signOutPressed(_ sender: AnyObject) {
         signOut()
     }
     

@@ -8,18 +8,17 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import Parse
 
 class FeedViewController: TableViewController {
     
-    private let kCellReuse = "PostTableViewCell"
+    fileprivate let kCellReuse = "PostTableViewCell"
     
-    var tableViewDataSource: RxTableViewDataSource!
-    var tableViewDelegate: RxTableViewDelegate!
+    let disposeBag = DisposeBag()
     
     var activity: UIActivityIndicatorView?
     var userNameHidden = false
-    
     var viewModel: FeedViewModel? {
         didSet {
             viewModel?.render = { [weak self] in
@@ -39,23 +38,31 @@ class FeedViewController: TableViewController {
     }
     
     func setupTableView() {
-        tableViewDataSource = RxTableViewDataSource(numberOfRowsInSection: { [weak self] _ in
-            return self?.viewModel?.numberOfPosts() ?? 0
-        }, cellForRowAtIndexPath: { [weak self] indexPath in
-            self?.cellForRow(indexPath) ?? PostTableViewCell()
-        })
+        guard let tableView = tableView else { return }
+        tableView.register(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
+        Observable
+            .just(viewModel?.posts)
+            .bindTo(tableView
+            .rx
+            .items(cellIdentifier: kCellReuse, cellType: PostTableViewCell.self)) {
+                    
+            }
+        .addDisposableTo(disposeBag)
         
-        tableView.dataSource = tableViewDataSource
-        tableView.delegate = tableViewDelegate
-        tableView.registerNib(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
+//        tableViewDataSource = RxTableViewDataSource(numberOfRowsInSection: { [weak self] _ in
+//            return self?.viewModel?.numberOfPosts() ?? 0
+//        }, cellForRowAtIndexPath: { [weak self] indexPath in
+//            self?.cellForRow(indexPath as IndexPath) ?? PostTableViewCell()
+//        })
+        
         styleTableView()
     }
     
     func styleTableView() {
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         tableView.backgroundColor = Style.lightGrayColor
-        tableView.separatorInset = UIEdgeInsetsZero
-        tableView.layoutMargins = UIEdgeInsetsZero
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.layoutMargins = UIEdgeInsets.zero
         tableView.contentInset = UIEdgeInsetsMake(6, 0, 6, 0)
         tableView.estimatedRowHeight = heightForRow()
         tableView.rowHeight = heightForRow()
@@ -64,7 +71,7 @@ class FeedViewController: TableViewController {
     
     func setupRefreshControl() {
         refreshControl?.tintColor = Style.blueColor
-        refreshControl?.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
     }
     
     func refresh() {
@@ -73,16 +80,16 @@ class FeedViewController: TableViewController {
     }
     
     func heightForRow() -> CGFloat {
-        return CGRectGetWidth(UIScreen.mainScreen().bounds) + 40.0
+        return UIScreen.main.bounds.width + 40.0
     }
     
-    func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? PostTableViewCell else { return UITableViewCell() }
+    func cellForRow(_ indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: kCellReuse, for: indexPath) as? PostTableViewCell else { return UITableViewCell() }
             viewModel?.postForIndexPath(indexPath, completion: { [weak self] post in
                 self?.viewModel?.userForID(post.userID ?? "", completion: { user in
                     guard let strongSelf = self else { return }
                     if !strongSelf.userNameHidden {
-                        cell.userButton.setTitle(user.username, forState: .Normal)
+                        cell.userButton.setTitle(user.username, for: UIControlState())
                         cell.userButtonTapped = { strongSelf.showPosts(forUser: user) }
                     }
                 })
@@ -95,10 +102,10 @@ class FeedViewController: TableViewController {
     }
     
     func showPosts(forUser user:PFUser) {
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("UserFeedViewController") as? UserFeedViewController {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserFeedViewController") as? UserFeedViewController {
             vc.user = user
             vc.userNameHidden = true
-            navigationController?.showViewController(vc, sender: self)
+            navigationController?.show(vc, sender: self)
         }
     }
     

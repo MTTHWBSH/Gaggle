@@ -12,7 +12,7 @@ class ProfileEmptyView: UIView {
     
     @IBOutlet var headerLabel: UILabel!
     
-    var getStartedTapped: (Void -> Void)?
+    var getStartedTapped: ((Void) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +20,7 @@ class ProfileEmptyView: UIView {
         headerLabel.text = "Your posts will appear here.\nGive your first one a try!"
     }
     
-    @IBAction func getStartedTapped(sender: AnyObject) {
+    @IBAction func getStartedTapped(_ sender: AnyObject) {
         getStartedTapped?()
     }
     

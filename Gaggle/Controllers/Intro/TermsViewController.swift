@@ -13,7 +13,7 @@ class TermsViewController: ViewController {
     @IBOutlet weak var termsTextView: UITextView!
     
     var fromSettings: Bool?
-    var agreePressed: (Void -> Void)?
+    var agreePressed: ((Void) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +26,20 @@ class TermsViewController: ViewController {
         setupTextView()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Analytics.logScreen("Terms")
     }
     
     func setup() {
-        if fromSettings == false ?? false { setupAgreeButton() }
+        if fromSettings == false { setupAgreeButton() }
         view.backgroundColor = Style.whiteColor
     }
     
     func setupTextView() {
-        termsTextView.layoutMargins = UIEdgeInsetsZero
-        termsTextView.contentInset = UIEdgeInsetsZero
-        termsTextView.contentOffset = CGPointZero
+        termsTextView.layoutMargins = UIEdgeInsets.zero
+        termsTextView.contentInset = UIEdgeInsets.zero
+        termsTextView.contentOffset = CGPoint.zero
     }
     
     func styleTextView() {
@@ -48,22 +48,22 @@ class TermsViewController: ViewController {
     }
     
     func setupAgreeButton() {
-        let rightBarButtonItem = BarButtonItem(title: "Agree", style: .Plain, target: self, action: #selector(agree))
+        let rightBarButtonItem = BarButtonItem(title: "Agree", style: .plain, target: self, action: #selector(agree))
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
     func agree() {
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: Constants.HasShownTerms)
+        UserDefaults.standard.set(true, forKey: Constants.HasShownTerms)
         agreePressed?()
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func closePressed(sender: AnyObject) {
+    @IBAction func closePressed(_ sender: AnyObject) {
         if fromSettings ?? false {
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
         } else {
-            guard let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("Intro") as? IntroViewController else { return }
-            presentViewController(vc, animated: true, completion: nil)
+            guard let vc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewController(withIdentifier: "Intro") as? IntroViewController else { return }
+            present(vc, animated: true, completion: nil)
         }
     }
     

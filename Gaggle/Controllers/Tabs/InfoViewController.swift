@@ -7,23 +7,23 @@
 //
 
 enum Rows: Int {
-    case Rate, Terms, Report, Feedback, Count
+    case rate, terms, report, feedback, count
 }
 
 extension Rows {
     var title: String {
         switch self{
-        case Rate: return "Rate in App Store"
-        case Terms: return "Terms of Service"
-        case Report: return "Report an Issue"
-        case Feedback: return "Submit Feedback"
+        case .rate: return "Rate in App Store"
+        case .terms: return "Terms of Service"
+        case .report: return "Report an Issue"
+        case .feedback: return "Submit Feedback"
         default: return ""
         }
     }
     
     var subtitle: String {
         switch self{
-        case Rate: return InfoViewController.versionNumber() ?? ""
+        case .rate: return InfoViewController.versionNumber() ?? ""
         default: return ""
         }
     }
@@ -31,14 +31,14 @@ extension Rows {
 
 class InfoViewController: TableViewController {
     
-    private let kCellReuse = "InfoTableViewCell"
+    fileprivate let kCellReuse = "InfoTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Analytics.logScreen("Info")
     }
@@ -52,89 +52,89 @@ class InfoViewController: TableViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.registerNib(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
+        tableView.register(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
     }
     
     func styleTableView() {
         tableView.rowHeight = 50
-        tableView.separatorStyle = .SingleLine
+        tableView.separatorStyle = .singleLine
         tableView.backgroundColor = Style.lightGrayColor
-        tableView.separatorInset = UIEdgeInsetsZero
+        tableView.separatorInset = UIEdgeInsets.zero
         tableView.separatorColor = Style.lightGrayColor
-        tableView.layoutMargins = UIEdgeInsetsZero
+        tableView.layoutMargins = UIEdgeInsets.zero
         tableView.contentInset = UIEdgeInsetsMake(1, 0, 1, 0)
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Rows.Count.rawValue
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Rows.count.rawValue
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return cellForRow(indexPath)
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         didSelectRow(indexPath)
     }
     
-    private func cellForRow(indexPath: NSIndexPath) -> UITableViewCell {
+    fileprivate func cellForRow(_ indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
-        case Rows.Rate.rawValue:
-            return setupCell(indexPath, row: .Rate)
-        case Rows.Terms.rawValue:
-            return setupCell(indexPath, row: .Terms)
-        case Rows.Report.rawValue:
-            return setupCell(indexPath, row: .Report)
-        case Rows.Feedback.rawValue:
-            return setupCell(indexPath, row: .Feedback)
+        case Rows.rate.rawValue:
+            return setupCell(indexPath, row: .rate)
+        case Rows.terms.rawValue:
+            return setupCell(indexPath, row: .terms)
+        case Rows.report.rawValue:
+            return setupCell(indexPath, row: .report)
+        case Rows.feedback.rawValue:
+            return setupCell(indexPath, row: .feedback)
         default: return UITableViewCell()
         }
     }
     
-    private func didSelectRow(indexPath: NSIndexPath) {
+    fileprivate func didSelectRow(_ indexPath: IndexPath) {
         switch indexPath.row {
-        case Rows.Rate.rawValue:
+        case Rows.rate.rawValue:
             showRate()
-        case Rows.Terms.rawValue:
+        case Rows.terms.rawValue:
             showTerms()
-        case Rows.Report.rawValue:
+        case Rows.report.rawValue:
             reportIssue()
-        case Rows.Feedback.rawValue:
+        case Rows.feedback.rawValue:
             sendFeedback()
         default: ()
         }
     }
     
-    private func setupCell(indexPath: NSIndexPath, row: Rows) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(kCellReuse, forIndexPath: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
+    fileprivate func setupCell(_ indexPath: IndexPath, row: Rows) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: kCellReuse, for: indexPath) as? InfoTableViewCell else { return UITableViewCell() }
         cell.primaryLabel.text = row.title
         cell.secondaryLabel.text = row.subtitle
         return cell
     }
     
     class func versionNumber() -> String? {
-        guard let dict = NSBundle.mainBundle().infoDictionary, version = dict["CFBundleShortVersionString"] else { return nil }
+        guard let dict = Bundle.main.infoDictionary, let version = dict["CFBundleShortVersionString"] else { return nil }
         return "v\(version)"
     }
     
-    private func showRate() {
-        UIApplication.sharedApplication().openURL(NSURL(string : "itms-apps://itunes.apple.com/app/id1112225433?mt=8&uo=4")!);
+    fileprivate func showRate() {
+        UIApplication.shared.openURL(URL(string : "itms-apps://itunes.apple.com/app/id1112225433?mt=8&uo=4")!);
     }
     
-    private func showTerms() {
-        guard let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("TermsNavigationController") as? NavigationController,
-                  vc = nc.topViewController as? TermsViewController else { return }
+    fileprivate func showTerms() {
+        guard let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewController(withIdentifier: "TermsNavigationController") as? NavigationController,
+                  let vc = nc.topViewController as? TermsViewController else { return }
         vc.fromSettings = true
-        navigationController?.presentViewController(nc, animated: true, completion: nil)
+        navigationController?.present(nc, animated: true, completion: nil)
     }
     
-    private func reportIssue() {
-        Instabug.invokeWithInvocationMode(.BugReporter)
+    fileprivate func reportIssue() {
+        Instabug.invoke(with: .newBug)
     }
     
-    private func sendFeedback() {
-        Instabug.invokeWithInvocationMode(.FeedbackSender)
+    fileprivate func sendFeedback() {
+        Instabug.invoke(with: .newFeedback)
     }
 
 }

@@ -16,16 +16,16 @@ class NavigationController: UINavigationController {
     }
     
     func styleView() {
-        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
         navigationBar.barTintColor = Style.whiteColor
         navigationBar.tintColor = Style.blackColor
-        navigationBar.translucent = false
+        navigationBar.isTranslucent = false
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: Style.blackColor, NSFontAttributeName: Style.lightFontWithSize(18.0)]
         navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
         navigationBar.backIndicatorImage = UIImage(named: "Back")
         navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Back")
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
 
 }

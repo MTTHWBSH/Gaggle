@@ -25,19 +25,19 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     var photoFile: PFFile?
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Analytics.logScreen("Edit Post")
     }
@@ -48,10 +48,10 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
         
         titleTextField.delegate = self
         subtitleTextField.delegate = self
-        titleTextField.autocapitalizationType = .None
-        titleTextField.autocorrectionType = .No
-        subtitleTextField.autocapitalizationType = .None
-        subtitleTextField.autocorrectionType = .No
+        titleTextField.autocapitalizationType = .none
+        titleTextField.autocorrectionType = .no
+        subtitleTextField.autocapitalizationType = .none
+        subtitleTextField.autocorrectionType = .no
         
         scrollView.delegate = self
         
@@ -65,7 +65,7 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     override func styleView() {
         view.backgroundColor = Style.whiteColor
         
-        if UIScreen.mainScreen().nativeBounds.height <= 960 {
+        if UIScreen.main.nativeBounds.height <= 960 {
             imageViewTopMargin.constant = 0
         }
         
@@ -80,7 +80,7 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     
     // MARK: Text Field
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == titleTextField {
             subtitleTextField.becomeFirstResponder()
         } else if textField == subtitleTextField {
@@ -95,23 +95,23 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     
     // MARK: Post Upload
     
-    func shouldUploadImage(image: UIImage, width: CGFloat) {
+    func shouldUploadImage(_ image: UIImage, width: CGFloat) {
         let scale = width / image.size.width
         let height = image.size.height * scale
-        UIGraphicsBeginImageContext(CGSizeMake(width, height))
-        image.drawInRect(CGRectMake(0, 0, width, height))
+        UIGraphicsBeginImageContext(CGSize(width: width, height: height))
+        image.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        guard let imageData: NSData = UIImageJPEGRepresentation(resizedImage, 1.0) else { return }
+        guard let imageData: Data = UIImageJPEGRepresentation(resizedImage!, 1.0) else { return }
         photoFile = PFFile(data: imageData)
         
         if let photoFile = photoFile {
-            photoFile.saveInBackgroundWithBlock { (completion, error) in
+            photoFile.saveInBackground { (completion, error) in
                 if completion {
                     print("Photo file save in background completed")
                 } else {
-                    print(error?.description)
+                    print(error?.localizedDescription ?? "Error saving file in background")
                 }
             }
         }
@@ -119,38 +119,38 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     
     func uploadPost() {
         SVProgressHUD.showProgress(0.1, status: "Uploading")
-        guard let currentUserID = PFUser.currentUser()?.objectId, photoFile = photoFile else {
+        guard let currentUserID = PFUser.current()?.objectId, let photoFile = photoFile else {
             let alertText = "An error occured while uploading your photo. Please try again."
-            SVProgressHUD.showErrorWithStatus(alertText)
+            SVProgressHUD.showError(withStatus: alertText)
             return
         }
         
         let post = PFObject(className: Constants.PostClassKey)
         post.setObject(currentUserID, forKey: Constants.PostUserIDKey)
         post.setObject(photoFile, forKey: Constants.PostImageKey)
-        if let title = titleTextField.text, subtitle = subtitleTextField.text {
+        if let title = titleTextField.text, let subtitle = subtitleTextField.text {
             post.setObject(title, forKey: Constants.PostTitleKey)
             post.setObject(subtitle, forKey: Constants.PostSubtitleKey)
         }
         
-        post.saveInBackgroundWithBlock { (completion, error) in
+        post.saveInBackground { (completion, error) in
             SVProgressHUD.dismiss()
             if completion {
                 SVProgressHUD.showProgress(1.0, status: "Complete")
             } else {
                 print("Post failed to save: \(error)")
                 let alertText = "An error occured while uploading your photo"
-                SVProgressHUD.showErrorWithStatus(alertText)
+                SVProgressHUD.showError(withStatus: alertText)
                 return
             }
         }
         
-        guard let parentVC = parentViewController as? NavigationController, presentingVC = presentingViewController as? TabBarController else { return }
+        guard let parentVC = parent as? NavigationController, let presentingVC = presentingViewController as? TabBarController else { return }
         presentingVC.selectedIndex = 0
         
-        guard let selectedVC = presentingVC.selectedViewController as? NavigationController, vc = selectedVC.topViewController as? MainFeedViewController else { return }
+        guard let selectedVC = presentingVC.selectedViewController as? NavigationController, let vc = selectedVC.topViewController as? MainFeedViewController else { return }
         vc.setup()
-        parentVC.dismissViewControllerAnimated(true, completion: nil)
+        parentVC.dismiss(animated: true, completion: nil)
     }
     
     func submitPost() {
@@ -159,15 +159,15 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
             uploadPost()
         } else {
             let alertText = "Looks like there are some empty fields, please fill them out and try again."
-            SVProgressHUD.showErrorWithStatus(alertText)
+            SVProgressHUD.showError(withStatus: alertText)
         }
     }
     
     // MARK: Keyboard Avoidance
     
-    func keyboardWillShow(note: NSNotification) {
-        var keyboardFrame = (note.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        keyboardFrame = view.convertRect(keyboardFrame, fromView: nil)
+    func keyboardWillShow(_ note: Notification) {
+        var keyboardFrame = (note.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = view.convert(keyboardFrame, from: nil)
         
         var contentInset:UIEdgeInsets = scrollView.contentInset
         contentInset.bottom = keyboardFrame.size.height + 20
@@ -179,22 +179,22 @@ class EditPostViewController: ViewController, UITextFieldDelegate, UIScrollViewD
     }
     
     func activeView() -> UIView? {
-        return [titleTextField, subtitleTextField].filter { return $0.isFirstResponder() }.first
+        return [titleTextField, subtitleTextField].filter { return $0.isFirstResponder }.first
     }
     
-    func keyboardWillHide(note: NSNotification) {
-        let contentInset:UIEdgeInsets = UIEdgeInsetsZero
+    func keyboardWillHide(_ note: Notification) {
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
     }
     
     // MARK: IBActions
     
-    @IBAction func submitButtonPressed(sender: AnyObject) {
+    @IBAction func submitButtonPressed(_ sender: AnyObject) {
         submitPost()
     }
     
-    @IBAction func closeButtonPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func closeButtonPressed(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
