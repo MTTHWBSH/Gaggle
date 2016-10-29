@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 	<key>Environment</key>
 	<string>Production</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -33,6 +33,8 @@
 	<string>Gaggle would like to access your camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Gaggle would like to access your photo library.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Gaggle would like to access your microphone.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Lato-Bold.ttf</string>
