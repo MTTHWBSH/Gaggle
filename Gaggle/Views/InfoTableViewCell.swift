@@ -22,9 +22,9 @@ class InfoTableViewCell: UITableViewCell {
     func setup() {
         contentView.backgroundColor = Style.whiteColor
         forwardImage.tintColor = Style.blackColor
-        selectionStyle = .None
-        separatorInset = UIEdgeInsetsZero
-        layoutMargins = UIEdgeInsetsZero
+        selectionStyle = .none
+        separatorInset = UIEdgeInsets.zero
+        layoutMargins = UIEdgeInsets.zero
     }
     
 }

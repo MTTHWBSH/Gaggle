@@ -12,19 +12,19 @@ class SignedOutView: UIView {
     
     @IBOutlet var alertLabel: UILabel!
     
-    var loginTapped: (Void -> Void)?
-    var signupTapped: (Void -> Void)?
+    var loginTapped: ((Void) -> Void)?
+    var signupTapped: ((Void) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = Style.whiteColor
     }
     
-    @IBAction func loginPressed(sender: AnyObject) {
+    @IBAction func loginPressed(_ sender: AnyObject) {
         loginTapped?()
     }
     
-    @IBAction func signupPressed(sender: AnyObject) {
+    @IBAction func signupPressed(_ sender: AnyObject) {
         signupTapped?()
     }
     

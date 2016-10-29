@@ -10,19 +10,19 @@ import UIKit
 
 class Animation {
     
-    class func delay(seconds seconds: Double, completion: Void -> Void) {
-        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
+    class func delay(seconds: Double, completion: @escaping (Void) -> Void) {
+        let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * seconds )) / Double(NSEC_PER_SEC)
         
-        dispatch_after(popTime, dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
             completion()
         }
     }
     
-    class func punchText(text: String, label: UILabel, completion: (Void -> Void)?) {
+    class func punchText(_ text: String, label: UILabel, completion: ((Void) -> Void)?) {
         if text.characters.count > 0 {
-            label.text = "\(label.text!)\(text.substringToIndex(text.startIndex.successor()))"
+            label.text = "\(label.text!)\(text.substring(to: text.characters.index(after: text.startIndex)))"
             delay(seconds: 0.16, completion: {
-                self.punchText(text.substringFromIndex(text.startIndex.successor()), label: label, completion: completion)
+                self.punchText(text.substring(from: text.characters.index(after: text.startIndex)), label: label, completion: completion)
             })
         } else {
             if let completion = completion {
@@ -31,16 +31,16 @@ class Animation {
         }
     }
     
-    class func springAnimation(view: UIView, scale: CGFloat, duration: NSTimeInterval, completion: (Void -> Void)?) {
-        view.transform = CGAffineTransformMakeScale(scale, scale)
+    class func springAnimation(_ view: UIView, scale: CGFloat, duration: TimeInterval, completion: ((Void) -> Void)?) {
+        view.transform = CGAffineTransform(scaleX: scale, y: scale)
         
-        UIView.animateWithDuration(duration,
+        UIView.animate(withDuration: duration,
             delay: 0,
             usingSpringWithDamping: 1.0,
             initialSpringVelocity: 4.0,
-            options: UIViewAnimationOptions.AllowUserInteraction,
+            options: UIViewAnimationOptions.allowUserInteraction,
             animations: {
-                view.transform = CGAffineTransformIdentity
+                view.transform = CGAffineTransform.identity
             }, completion: { finished in
                 if let completion = completion {
                     completion()
@@ -48,18 +48,18 @@ class Animation {
         })
     }
     
-    class func fadeIn(view: UIView, duration: NSTimeInterval) {
-        UIView.animateWithDuration(duration) { 
+    class func fadeIn(_ view: UIView, duration: TimeInterval) {
+        UIView.animate(withDuration: duration, animations: { 
             view.alpha = 1.0
             return
-        }
+        }) 
     }
     
-    class func fadeOut(view: UIView, duration: NSTimeInterval) {
-        UIView.animateWithDuration(duration) {
+    class func fadeOut(_ view: UIView, duration: TimeInterval) {
+        UIView.animate(withDuration: duration, animations: {
             view.alpha = 0.0
             return
-        }
+        }) 
     }
 
 }

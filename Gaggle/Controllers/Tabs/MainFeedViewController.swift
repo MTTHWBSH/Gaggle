@@ -17,7 +17,7 @@ class MainFeedViewController: FeedViewController {
         navigationItem.title = "Gaggle"
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Analytics.logScreen("Home Feed")
     }
@@ -28,7 +28,7 @@ class MainFeedViewController: FeedViewController {
     }
     
     func setup() {
-        let hasShownTerms = NSUserDefaults.standardUserDefaults().boolForKey(Constants.HasShownTerms)
+        let hasShownTerms = UserDefaults.standard.bool(forKey: Constants.HasShownTerms)
         if hasShownTerms {
             setupActivityIndicator()
             viewModel = FeedViewModel(query: FeedQuery.allPosts())
@@ -52,12 +52,12 @@ class MainFeedViewController: FeedViewController {
         activity?.removeFromSuperview()
     }
     
-    private func showTerms() {
-        guard let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("TermsNavigationController") as? NavigationController,
-            vc = nc.topViewController as? TermsViewController else { return }
+    fileprivate func showTerms() {
+        guard let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewController(withIdentifier: "TermsNavigationController") as? NavigationController,
+            let vc = nc.topViewController as? TermsViewController else { return }
         vc.fromSettings = false
         vc.agreePressed = { [weak self] void in self?.setup() }
-        navigationController?.presentViewController(nc, animated: true, completion: nil)
+        navigationController?.present(nc, animated: true, completion: nil)
     }
     
 }

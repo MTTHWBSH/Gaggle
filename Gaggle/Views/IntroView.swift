@@ -33,18 +33,18 @@ class IntroView: UIView {
         setup()
     }
     
-    class func initWith(title: String, subtitle: String, image: UIImage) -> IntroView {
-        guard let introView: IntroView = NSBundle.mainBundle().loadNibNamed("IntroView", owner: self, options: nil).first as? IntroView else { return IntroView() }
+    class func initWith(_ title: String, subtitle: String, image: UIImage) -> IntroView {
+        guard let introView: IntroView = Bundle.main.loadNibNamed("IntroView", owner: self, options: nil)?.first as? IntroView else { return IntroView() }
         
-        introView.title = title.capitalizedString
-        introView.subtitle = subtitle.capitalizedString
+        introView.title = title.capitalized
+        introView.subtitle = subtitle.capitalized
         introView.imageView.image = image
         
         return introView
     }
     
     func setup() {
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         titleLabel.textColor = Style.grayColor
         subtitleLabel.textColor = Style.grayColor
     }

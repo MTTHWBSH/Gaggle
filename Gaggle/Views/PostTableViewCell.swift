@@ -19,7 +19,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var wrapperView: UIView!
     
-    var userButtonTapped: (Void -> Void)?
+    var userButtonTapped: ((Void) -> Void)?
 
     var detailsShown = false
     
@@ -29,11 +29,21 @@ class PostTableViewCell: UITableViewCell {
         setupView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        if detailsShown { hideDetails(duration: 0.0) }
+        userButton.setTitle(nil, for: UIControlState())
+        timeLabel.attributedText = nil
+        postImageView?.image = UIImage(named: "PhotoPlaceholder")
+        titleLabel.text = nil
+        subtitleLabel.text = nil
+    }
+
     func styleView() {
         backgroundColor = Style.lightGrayColor
         postDetailsView.backgroundColor = Style.randomBrandColor(withOpacity: 0.85)
-        separatorInset = UIEdgeInsetsZero
-        layoutMargins = UIEdgeInsetsZero
+        separatorInset = UIEdgeInsets.zero
+        layoutMargins = UIEdgeInsets.zero
         timeLabel.clipsToBounds = false
         titleLabel.font = Style.regularFontWithSize(32.0)
         subtitleLabel.font = Style.regularFontWithSize(32.0)
@@ -41,7 +51,7 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func setupView() {
-        wrapperView.userInteractionEnabled = true
+        wrapperView.isUserInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(detailsTapped))
         wrapperView.addGestureRecognizer(gestureRecognizer)
     }
@@ -49,20 +59,20 @@ class PostTableViewCell: UITableViewCell {
     func detailsTapped() {
         let label = detailsShown ? "Hide Details" : "Show Details"
         Analytics.logEvent("Post", action: "Image Tapped", Label: label, key: "")
-        detailsShown ? hideDetails() : showDetails()
+        detailsShown ? hideDetails(duration: 0.6) : showDetails(duration: 0.6)
     }
     
-    func hideDetails() {
+    func hideDetails(duration: Double) {
         detailsShown = false
-        Animation.fadeOut(postDetailsView, duration: 0.6)
+        Animation.fadeOut(postDetailsView, duration: duration)
     }
     
-    func showDetails() {
+    func showDetails(duration: Double) {
         detailsShown = true
-        Animation.fadeIn(postDetailsView, duration: 0.6)
+        Animation.fadeIn(postDetailsView, duration: duration)
     }
     
-    @IBAction func userButtonPressed(sender: AnyObject) {
+    @IBAction func userButtonPressed(_ sender: AnyObject) {
         Analytics.logEvent("Post", action: "User Button", Label: "User Button Pressed", key: "")
         userButtonTapped?()
     }

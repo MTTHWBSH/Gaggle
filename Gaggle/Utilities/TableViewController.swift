@@ -15,11 +15,6 @@ class TableViewController: UITableViewController {
         styleView()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        Reachability.tryReachability(self)
-    }
-    
     func styleView() {
         view.backgroundColor = Style.lightGrayColor
         let backButton = UIBarButtonItem()

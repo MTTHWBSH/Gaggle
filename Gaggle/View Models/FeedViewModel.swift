@@ -12,9 +12,9 @@ import SVProgressHUD
 
 class FeedViewModel: NSObject {
     
-    var queryComplete: (Void -> Void)?
+    var queryComplete: ((Void) -> Void)?
     
-    var render: (Void -> Void)? {
+    var render: ((Void) -> Void)? {
         didSet {
             render?()
         }
@@ -26,20 +26,20 @@ class FeedViewModel: NSObject {
         }
     }
     
-    init(query: PFQuery) {
+    init(query: PFQuery<PFObject>) {
         super.init()
         loadData(withQuery: query)
     }
     
-    func loadData(withQuery query: PFQuery) {
-        query.findObjectsInBackgroundWithBlock { [weak self] (posts, error) in
+    func loadData(withQuery query: PFQuery<PFObject>) {
+        query.findObjectsInBackground { [weak self] (posts, error) in
             guard let posts = posts else { return }
             if error == nil {
                 self?.posts = posts
-                self?.render?()
                 self?.queryComplete?()
+                self?.render?()
             } else {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "error loading data")
             }
         }
     }
@@ -48,7 +48,7 @@ class FeedViewModel: NSObject {
         return posts?.count ?? 0
     }
     
-    func postForIndexPath(indexPath: NSIndexPath, completion: (Post -> Void)?) {
+    func postForIndexPath(_ indexPath: IndexPath, completion: ((Post) -> Void)?) {
         let post = posts?[indexPath.row]
         let imageFile = post?["image"] as? PFFile
         let subtitle = post?["subtitle"] as? String
@@ -63,26 +63,26 @@ class FeedViewModel: NSObject {
         })
     }
     
-    func userForID(userID:String, completion: (PFUser -> Void)?) {
+    func userForID(_ userID:String, completion: ((PFUser) -> Void)?) {
         let query = PFUser.query()
         query?.whereKey("objectId", equalTo: userID)
-        query?.findObjectsInBackgroundWithBlock { (users, error) in
+        query?.findObjectsInBackground { (users, error) in
             guard let user = users?.first as? PFUser else { return }
             completion?(user)
         }
     }
     
-    private func timeSinceString(forDateString string: String) -> NSAttributedString? {
+    fileprivate func timeSinceString(forDateString string: String) -> NSAttributedString? {
         let attachment:NSTextAttachment = NSTextAttachment()
         attachment.image = UIImage(named: "Clock")
         guard let image = attachment.image else { return nil }
-        attachment.bounds = CGRectMake(0, -3, image.size.width, image.size.height)
+        attachment.bounds = CGRect(x: 0, y: -3, width: image.size.width, height: image.size.height)
         
         let timeStringForDateString = NSMutableAttributedString()
         let attachmentString = NSAttributedString(attachment: attachment)
         let timeString = NSAttributedString(string: string)
-        timeStringForDateString.appendAttributedString(attachmentString)
-        timeStringForDateString.appendAttributedString(timeString)
+        timeStringForDateString.append(attachmentString)
+        timeStringForDateString.append(timeString)
         
         return timeStringForDateString
     }
