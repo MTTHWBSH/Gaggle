@@ -979,7 +979,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 211C9BABF87080379279BDE4 /* Pods-GaggleDev.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1002,7 +1002,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E97B284DCD3FE73AB22C7A92 /* Pods-GaggleDev.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1120,7 +1120,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 16FC846D5A29289BAE7C4963 /* Pods-Gaggle.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/Supporting Files/Info.plist";
@@ -1140,7 +1140,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2640D5EF56CFE5174319BB29 /* Pods-Gaggle.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Gaggle/Supporting Files/Info.plist";

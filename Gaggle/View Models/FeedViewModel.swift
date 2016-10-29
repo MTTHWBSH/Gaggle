@@ -20,7 +20,7 @@ class FeedViewModel: NSObject {
         }
     }
     
-    var posts: [PFObject]? {
+    private var posts: [PFObject]? {
         didSet {
             render?()
         }
@@ -36,8 +36,8 @@ class FeedViewModel: NSObject {
             guard let posts = posts else { return }
             if error == nil {
                 self?.posts = posts
-                self?.render?()
                 self?.queryComplete?()
+                self?.render?()
             } else {
                 print(error?.localizedDescription ?? "error loading data")
             }

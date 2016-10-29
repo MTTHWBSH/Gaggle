@@ -7,30 +7,26 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import Parse
 
 class FeedViewController: TableViewController {
     
     fileprivate let kCellReuse = "PostTableViewCell"
     
-    let disposeBag = DisposeBag()
-    
     var activity: UIActivityIndicatorView?
     var userNameHidden = false
+    
     var viewModel: FeedViewModel? {
         didSet {
-            viewModel?.render = { [weak self] in
-                self?.renderViews()
-            }
+            viewModel?.render = { [weak self] in self?.renderViews() }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        styleTableView()
         setupRefreshControl()
+        setupTableView()
     }
     
     func renderViews() {
@@ -38,24 +34,9 @@ class FeedViewController: TableViewController {
     }
     
     func setupTableView() {
-        guard let tableView = tableView else { return }
-        let dataSource = Observable.just(viewModel?.posts)
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: kCellReuse, bundle: nil), forCellReuseIdentifier: kCellReuse)
-        dataSource
-            .bindTo(tableView
-            .rx
-            .items(cellIdentifier: kCellReuse, cellType: PostTableViewCell.self)) { row, chocolate, cell in
-                    
-            }
-        .addDisposableTo(disposeBag)
-        
-//        tableViewDataSource = RxTableViewDataSource(numberOfRowsInSection: { [weak self] _ in
-//            return self?.viewModel?.numberOfPosts() ?? 0
-//        }, cellForRowAtIndexPath: { [weak self] indexPath in
-//            self?.cellForRow(indexPath as IndexPath) ?? PostTableViewCell()
-//        })
-        
-        styleTableView()
     }
     
     func styleTableView() {
@@ -109,4 +90,12 @@ class FeedViewController: TableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.numberOfPosts() ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return cellForRow(indexPath) 
+    }
+
 }

@@ -8,8 +8,6 @@ def all_pods
 	pod 'ParseUI'
 	pod 'SVProgressHUD'
 	pod 'PureLayout'
-    pod 'RxSwift',    '~> 3.0'
-    pod 'RxCocoa',    '~> 3.0'
     pod 'Instabug'
     pod 'Google/Analytics'
     pod 'ReachabilitySwift', '~> 3'
