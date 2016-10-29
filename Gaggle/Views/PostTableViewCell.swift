@@ -29,6 +29,16 @@ class PostTableViewCell: UITableViewCell {
         setupView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        if detailsShown { hideDetails(duration: 0.0) }
+        userButton.setTitle(nil, for: UIControlState())
+        timeLabel.attributedText = nil
+        postImageView?.image = UIImage(named: "PhotoPlaceholder")
+        titleLabel.text = nil
+        subtitleLabel.text = nil
+    }
+
     func styleView() {
         backgroundColor = Style.lightGrayColor
         postDetailsView.backgroundColor = Style.randomBrandColor(withOpacity: 0.85)
@@ -49,17 +59,17 @@ class PostTableViewCell: UITableViewCell {
     func detailsTapped() {
         let label = detailsShown ? "Hide Details" : "Show Details"
         Analytics.logEvent("Post", action: "Image Tapped", Label: label, key: "")
-        detailsShown ? hideDetails() : showDetails()
+        detailsShown ? hideDetails(duration: 0.6) : showDetails(duration: 0.6)
     }
     
-    func hideDetails() {
+    func hideDetails(duration: Double) {
         detailsShown = false
-        Animation.fadeOut(postDetailsView, duration: 0.6)
+        Animation.fadeOut(postDetailsView, duration: duration)
     }
     
-    func showDetails() {
+    func showDetails(duration: Double) {
         detailsShown = true
-        Animation.fadeIn(postDetailsView, duration: 0.6)
+        Animation.fadeIn(postDetailsView, duration: duration)
     }
     
     @IBAction func userButtonPressed(_ sender: AnyObject) {

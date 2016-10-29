@@ -11,6 +11,8 @@ import Parse
 import SVProgressHUD
 import ReachabilitySwift
 
+let reachability = Reachability()
+
 class Configuration {
     
     class func setupServices(_ launchOptions: [AnyHashable: Any]?) {
@@ -53,8 +55,6 @@ class Configuration {
     }
     
     class func run(_ window: UIWindow?) {
-        
-        let reachability = Reachability()
         reachability?.whenUnreachable = { _ in SVProgressHUD.showError(withStatus: "Unable to connect to internet. Please check your connection and try again.") }
         do { try reachability?.startNotifier() } catch { print("Unable to start reachability notifier") }
         
