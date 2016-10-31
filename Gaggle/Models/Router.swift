@@ -12,7 +12,7 @@ import UIKit
 class Router {
     
     class func loginNavigationController() -> NavigationController? {
-        if let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("LoginSignupNavigationController") as? NavigationController {
+        if let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewController(withIdentifier: "LoginSignupNavigationController") as? NavigationController {
             if let vc = nc.topViewController as? LoginSignupViewController {
                 vc.selectedLogin = true
                 vc.title = "Login"
@@ -24,7 +24,7 @@ class Router {
     }
     
     class func signupNavigationController() -> NavigationController? {
-        if let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewControllerWithIdentifier("LoginSignupNavigationController") as? NavigationController {
+        if let nc = UIStoryboard(name: "Intro", bundle: nil).instantiateViewController(withIdentifier: "LoginSignupNavigationController") as? NavigationController {
             if let vc = nc.topViewController as? LoginSignupViewController {
                 vc.selectedLogin = false
                 vc.title = "Sign Up"

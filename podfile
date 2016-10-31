@@ -8,11 +8,9 @@ def all_pods
 	pod 'ParseUI'
 	pod 'SVProgressHUD'
 	pod 'PureLayout'
-	pod 'RxSwift'
-	pod 'RxCocoa'
-	pod 'RxBlocking'
     pod 'Instabug'
     pod 'Google/Analytics'
+    pod 'ReachabilitySwift', '~> 3'
 end
 
 target 'Gaggle' do

@@ -12,7 +12,7 @@ class Style {
     
     // MARK: Constants
     
-    private struct Constants {
+    fileprivate struct Constants {
         static let kRegularFontName = "Lato-Regular"
         static let kLightFontName = "Lato-Light"
         static let kHairlineFontName = "Lato-Hairline"
@@ -22,23 +22,23 @@ class Style {
     
     // MARK: Fonts
     
-    class func regularFontWithSize(size: CGFloat) -> UIFont {
+    class func regularFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: Constants.kRegularFontName, size: size)!
     }
     
-    class func lightFontWithSize(size: CGFloat) -> UIFont {
+    class func lightFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: Constants.kLightFontName, size: size)!
     }
     
-    class func hairlineFontWithSize(size: CGFloat) -> UIFont {
+    class func hairlineFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: Constants.kHairlineFontName, size: size)!
     }
     
-    class func boldFontWithSize(size: CGFloat) -> UIFont {
+    class func boldFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: Constants.kBoldFontName, size: size)!
     }
     
-    class func brandFontWithSize(size: CGFloat) -> UIFont {
+    class func brandFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: Constants.kBrandFontName, size: size)!
     }
     
@@ -68,7 +68,7 @@ class Style {
         let colors = [blueColor, orangeColor, greenColor, yellowColor]
         let randomIndex = Int(arc4random_uniform(UInt32(colors.count)))
         let randomColor = colors[randomIndex]
-        return randomColor.colorWithAlphaComponent(opacity)
+        return randomColor.withAlphaComponent(opacity)
     }
 
     // MARK: Borders

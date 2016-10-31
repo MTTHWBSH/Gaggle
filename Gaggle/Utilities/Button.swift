@@ -10,14 +10,14 @@ import UIKit
 import Foundation
 
 extension UIButton {
-    func setBackgroundColor(color: UIColor, forState: UIControlState) {
+    func setBackgroundColor(_ color: UIColor, forState: UIControlState) {
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
-        CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), color.CGColor)
-        CGContextFillRect(UIGraphicsGetCurrentContext(), CGRect(x: 0, y: 0, width: 1, height: 1))
+        UIGraphicsGetCurrentContext()?.setFillColor(color.cgColor)
+        UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
         let colorImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        setBackgroundImage(colorImage, forState: forState)
+        setBackgroundImage(colorImage, for: forState)
     }
 }
 
@@ -41,14 +41,14 @@ class Button: UIButton {
     
     func style() {
         titleLabel?.font = Style.regularFontWithSize(14.0)
-        setBackgroundColor(UIColor.clearColor(), forState: .Normal)
-        setBackgroundColor(UIColor.clearColor(), forState: .Selected)
-        setBackgroundColor(UIColor.clearColor(), forState: .Highlighted)
-        setBackgroundColor(UIColor.clearColor(), forState: .Disabled)
-        setTitleColor(Style.orangeColor, forState: .Normal)
-        setTitleColor(Style.orangeColorSelected, forState: .Selected)
-        setTitleColor(Style.orangeColorSelected, forState: .Highlighted)
-        setTitleColor(Style.orangeColor.colorWithAlphaComponent(0.8), forState: .Disabled)
+        setBackgroundColor(UIColor.clear, forState: UIControlState())
+        setBackgroundColor(UIColor.clear, forState: .selected)
+        setBackgroundColor(UIColor.clear, forState: .highlighted)
+        setBackgroundColor(UIColor.clear, forState: .disabled)
+        setTitleColor(Style.orangeColor, for: UIControlState())
+        setTitleColor(Style.orangeColorSelected, for: .selected)
+        setTitleColor(Style.orangeColorSelected, for: .highlighted)
+        setTitleColor(Style.orangeColor.withAlphaComponent(0.8), for: .disabled)
         adjustsImageWhenDisabled = false
         adjustsImageWhenHighlighted = false
     }
@@ -73,10 +73,10 @@ class SecondaryTextButton: Button {
     }
     
     override func style() {
-        setTitleColor(Style.blueColor, forState: .Normal)
-        setTitleColor(Style.blueColorSelected, forState: .Selected)
-        setTitleColor(Style.blueColorSelected, forState: .Highlighted)
-        setTitleColor(Style.blueColor.colorWithAlphaComponent(0.8), forState: .Disabled)
+        setTitleColor(Style.blueColor, for: UIControlState())
+        setTitleColor(Style.blueColorSelected, for: .selected)
+        setTitleColor(Style.blueColorSelected, for: .highlighted)
+        setTitleColor(Style.blueColor.withAlphaComponent(0.8), for: .disabled)
     }
     
 }
@@ -100,14 +100,14 @@ class PrimaryButton: Button {
     
     override func style() {
         titleLabel?.font = Style.regularFontWithSize(18.0)
-        setBackgroundColor(Style.blueColor, forState: .Normal)
-        setBackgroundColor(Style.blueColorSelected, forState: .Selected)
-        setBackgroundColor(Style.blueColorSelected, forState: .Highlighted)
-        setBackgroundColor(Style.blueColor.colorWithAlphaComponent(0.8), forState: .Disabled)
-        setTitleColor(Style.whiteColor, forState: .Normal)
-        setTitleColor(Style.whiteColorSelected, forState: .Selected)
-        setTitleColor(Style.whiteColorSelected, forState: .Highlighted)
-        setTitleColor(Style.whiteColor.colorWithAlphaComponent(0.8), forState: .Disabled)
+        setBackgroundColor(Style.blueColor, forState: UIControlState())
+        setBackgroundColor(Style.blueColorSelected, forState: .selected)
+        setBackgroundColor(Style.blueColorSelected, forState: .highlighted)
+        setBackgroundColor(Style.blueColor.withAlphaComponent(0.8), forState: .disabled)
+        setTitleColor(Style.whiteColor, for: UIControlState())
+        setTitleColor(Style.whiteColorSelected, for: .selected)
+        setTitleColor(Style.whiteColorSelected, for: .highlighted)
+        setTitleColor(Style.whiteColor.withAlphaComponent(0.8), for: .disabled)
     }
     
 }
@@ -131,14 +131,14 @@ class SecondaryButton: Button {
     
     override func style() {
         titleLabel?.font = Style.regularFontWithSize(18.0)
-        setBackgroundColor(Style.blackColor, forState: .Normal)
-        setBackgroundColor(Style.blackColorSelected, forState: .Selected)
-        setBackgroundColor(Style.blackColorSelected, forState: .Highlighted)
-        setBackgroundColor(Style.blackColor.colorWithAlphaComponent(0.8), forState: .Disabled)
-        setTitleColor(Style.whiteColor, forState: .Normal)
-        setTitleColor(Style.whiteColorSelected, forState: .Selected)
-        setTitleColor(Style.whiteColorSelected, forState: .Highlighted)
-        setTitleColor(Style.whiteColor.colorWithAlphaComponent(0.8), forState: .Disabled)
+        setBackgroundColor(Style.blackColor, forState: UIControlState())
+        setBackgroundColor(Style.blackColorSelected, forState: .selected)
+        setBackgroundColor(Style.blackColorSelected, forState: .highlighted)
+        setBackgroundColor(Style.blackColor.withAlphaComponent(0.8), forState: .disabled)
+        setTitleColor(Style.whiteColor, for: UIControlState())
+        setTitleColor(Style.whiteColorSelected, for: .selected)
+        setTitleColor(Style.whiteColorSelected, for: .highlighted)
+        setTitleColor(Style.whiteColor.withAlphaComponent(0.8), for: .disabled)
     }
     
 }

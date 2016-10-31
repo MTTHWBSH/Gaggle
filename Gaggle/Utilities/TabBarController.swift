@@ -28,9 +28,9 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         tabBar.backgroundImage = UIImage()
         tabBar.tintColor = Style.orangeColorSelected
         tabBar.barTintColor = Style.whiteColor
-        tabBar.translucent = false
+        tabBar.isTranslucent = false
         for tab in tabBar.items! {
-            tab.image = tab.image?.imageWithRenderingMode(.AlwaysOriginal)
+            tab.image = tab.image?.withRenderingMode(.alwaysOriginal)
         }
     }
     

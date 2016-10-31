@@ -14,11 +14,11 @@ class IntroViewController: ViewController, EAIntroDelegate {
     @IBOutlet weak var introViewContainer: UIView!
     var introView: EAIntroView!
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Analytics.logScreen("Intro")
     }
@@ -61,9 +61,9 @@ class IntroViewController: ViewController, EAIntroDelegate {
         introView.delegate = self
         introView.swipeToExit = false
         
-        introView.addConstraint(NSLayoutConstraint(item:self.introView, attribute:.Bottom, relatedBy: .Equal, toItem: self.introView.pageControl, attribute: .Bottom, multiplier: 1, constant: 10.0))
+        introView.addConstraint(NSLayoutConstraint(item:self.introView, attribute:.bottom, relatedBy: .equal, toItem: self.introView.pageControl, attribute: .bottom, multiplier: 1, constant: 10.0))
         
-        introView.showInView(self.introViewContainer, animateDuration: 0.3)
+        introView.show(in: self.introViewContainer, animateDuration: 0.3)
         introView.pageControl.pageIndicatorTintColor = Style.grayColor
         introView.pageControl.currentPageIndicatorTintColor = Style.blueColor
         
@@ -71,10 +71,10 @@ class IntroViewController: ViewController, EAIntroDelegate {
     
     func setupSkipButton() {
         let button = Button()
-        button.setTitle("Skip", forState: .Normal)
-        button.addTarget(self, action: #selector(skipIntro), forControlEvents: .TouchUpInside)
+        button.setTitle("Skip", for: UIControlState())
+        button.addTarget(self, action: #selector(skipIntro), for: .touchUpInside)
         introView.skipButton = button
-        introView.skipButton.enabled = true
+        introView.skipButton.isEnabled = true
     }
     
     func skipIntro() {
@@ -83,20 +83,20 @@ class IntroViewController: ViewController, EAIntroDelegate {
     }
     
     func showFeed() {
-        if let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as? TabBarController {
-            presentViewController(nc, animated: true, completion: nil)
+        if let nc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main") as? TabBarController {
+            present(nc, animated: true, completion: nil)
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "Login") {
-            if let nc = segue.destinationViewController as? NavigationController, vc = nc.topViewController as? LoginSignupViewController {
+            if let nc = segue.destination as? NavigationController, let vc = nc.topViewController as? LoginSignupViewController {
                 vc.selectedLogin = true
                 vc.title = "Login"
                 vc.loginSignupButtonText = "Login"
             }
         } else if (segue.identifier == "Signup") {
-            if let nc = segue.destinationViewController as? NavigationController, vc = nc.topViewController as? LoginSignupViewController {
+            if let nc = segue.destination as? NavigationController, let vc = nc.topViewController as? LoginSignupViewController {
                 vc.selectedLogin = false
                 vc.title = "Sign Up"
                 vc.loginSignupButtonText = "Sign Up"
@@ -104,7 +104,7 @@ class IntroViewController: ViewController, EAIntroDelegate {
         }
     }
     
-    func intro(introView: EAIntroView!, pageAppeared page: EAIntroPage!, withIndex pageIndex: UInt) {
+    func intro(_ introView: EAIntroView!, pageAppeared page: EAIntroPage!, with pageIndex: UInt) {
         if let view = page.customView as? IntroView {
             view.titleLabel.text = ""
             view.subtitleLabel.text = ""
@@ -114,12 +114,12 @@ class IntroViewController: ViewController, EAIntroDelegate {
     
     // MARK: Actions
 
-    @IBAction func loginPressed(sender: UIButton) {
-        performSegueWithIdentifier("Login", sender: self)
+    @IBAction func loginPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "Login", sender: self)
     }
     
-    @IBAction func signupPressed(sender: UIButton) {
-        performSegueWithIdentifier("Signup", sender: self)
+    @IBAction func signupPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "Signup", sender: self)
     }
     
 }
